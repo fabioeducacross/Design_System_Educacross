@@ -97,7 +97,7 @@ pnpm build:storybook    # Build do Storybook
 pnpm lint               # ESLint
 pnpm typecheck          # TypeScript
 pnpm format             # Prettier
-pnpm test               # Vitest (380 testes)
+pnpm test               # Vitest (480 testes)
 pnpm test:watch         # Testes em modo watch
 pnpm test:coverage      # Cobertura de testes
 

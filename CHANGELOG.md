@@ -67,9 +67,10 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 - Configuração `type: module` adicionada ao package.json raiz
 
 ### Tests
-- 380 testes unitários cobrindo todos os componentes
+- 480 testes unitários cobrindo todos os componentes (94% cobertura)
 - Testes para Accordion (13), Avatar (17), DropdownMenu (21), Icon (29)
 - Testes para Pagination (17), Popover (15), Tabs (12), Tooltip (13)
+- Testes para Badge (16), Card (25), Skeleton (30), Table (29)
 - Play functions em 6 stories: Dialog, Toast, Select, Accordion, Tabs, DropdownMenu
 
 ## [Unreleased]
