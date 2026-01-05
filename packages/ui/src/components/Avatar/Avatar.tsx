@@ -53,8 +53,7 @@ const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
 );
 Avatar.displayName = "Avatar";
 
-export interface AvatarImageProps
-    extends React.ImgHTMLAttributes<HTMLImageElement> { }
+export type AvatarImageProps = React.ImgHTMLAttributes<HTMLImageElement>;
 
 /**
  * AvatarImage - the image displayed in the avatar.
@@ -83,8 +82,7 @@ const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(
 );
 AvatarImage.displayName = "AvatarImage";
 
-export interface AvatarFallbackProps
-    extends React.HTMLAttributes<HTMLSpanElement> { }
+export type AvatarFallbackProps = React.HTMLAttributes<HTMLSpanElement>;
 
 /**
  * AvatarFallback - displayed when the image fails to load or is not provided.

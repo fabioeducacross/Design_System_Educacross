@@ -115,7 +115,7 @@ export interface PopoverTriggerProps
  * PopoverTrigger - button to open the popover.
  */
 const PopoverTrigger = React.forwardRef<HTMLButtonElement, PopoverTriggerProps>(
-    ({ asChild, children, onClick, ...props }, ref) => {
+    ({ asChild, children, onClick, ...props }, _ref) => {
         const context = React.useContext(PopoverContext);
 
         const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -124,7 +124,7 @@ const PopoverTrigger = React.forwardRef<HTMLButtonElement, PopoverTriggerProps>(
         };
 
         if (asChild && React.isValidElement(children)) {
-            return React.cloneElement(children as React.ReactElement<any>, {
+            return React.cloneElement(children as React.ReactElement<Record<string, unknown>>, {
                 ref: context?.triggerRef,
                 onClick: handleClick,
                 "aria-expanded": context?.open,
@@ -214,7 +214,7 @@ const PopoverContent = React.forwardRef<HTMLDivElement, PopoverContentProps>(
         return (
             <div
                 ref={(node) => {
-                    (contentRef as any).current = node;
+                    (contentRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
                     if (typeof ref === "function") ref(node);
                     else if (ref) ref.current = node;
                 }}

@@ -175,7 +175,7 @@ const DialogTrigger = React.forwardRef<HTMLButtonElement, DialogTriggerProps>(
         };
 
         if (asChild && React.isValidElement(children)) {
-            return React.cloneElement(children as React.ReactElement<any>, {
+            return React.cloneElement(children as React.ReactElement<Record<string, unknown>>, {
                 onClick: handleClick,
                 ref,
             });
@@ -258,6 +258,7 @@ const DialogContent = React.forwardRef<HTMLDivElement, DialogContentProps>(
                 document.removeEventListener("keydown", handleKeyDown);
                 document.body.style.overflow = "";
             };
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally exclude context to avoid re-render loops
         }, [context?.open, context?.onOpenChange]);
 
         // Focus trap
@@ -355,6 +356,7 @@ const DialogTitle = React.forwardRef<
     React.useEffect(() => {
         context?.setTitleId(id);
         return () => context?.setTitleId("");
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- Only sync on id change, context ref is stable
     }, [id, context?.setTitleId]);
 
     return (
@@ -384,6 +386,7 @@ const DialogDescription = React.forwardRef<
     React.useEffect(() => {
         context?.setDescriptionId(id);
         return () => context?.setDescriptionId("");
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- Only sync on id change, context ref is stable
     }, [id, context?.setDescriptionId]);
 
     return (

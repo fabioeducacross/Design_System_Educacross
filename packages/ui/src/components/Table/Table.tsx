@@ -99,8 +99,7 @@ const TableRow = React.forwardRef<
 ));
 TableRow.displayName = "TableRow";
 
-export interface TableHeadProps
-    extends React.ThHTMLAttributes<HTMLTableCellElement> { }
+export type TableHeadProps = React.ThHTMLAttributes<HTMLTableCellElement>;
 
 /**
  * TableHead - table header cell.
@@ -120,8 +119,7 @@ const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
 );
 TableHead.displayName = "TableHead";
 
-export interface TableCellProps
-    extends React.TdHTMLAttributes<HTMLTableCellElement> { }
+export type TableCellProps = React.TdHTMLAttributes<HTMLTableCellElement>;
 
 /**
  * TableCell - table data cell.

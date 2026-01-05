@@ -104,7 +104,7 @@ function MoreHorizontalIcon({ className }: { className?: string }) {
     );
 }
 
-export interface PaginationProps extends React.HTMLAttributes<HTMLElement> { }
+export type PaginationProps = React.HTMLAttributes<HTMLElement>;
 
 /**
  * Pagination - navigation for multi-page content.
@@ -220,8 +220,7 @@ const PaginationButton = React.forwardRef<HTMLButtonElement, PaginationButtonPro
 );
 PaginationButton.displayName = "PaginationButton";
 
-export interface PaginationPreviousProps
-    extends React.AnchorHTMLAttributes<HTMLAnchorElement> { }
+export type PaginationPreviousProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 /**
  * PaginationPrevious - link to previous page.
@@ -246,8 +245,7 @@ const PaginationPrevious = React.forwardRef<
 ));
 PaginationPrevious.displayName = "PaginationPrevious";
 
-export interface PaginationNextProps
-    extends React.AnchorHTMLAttributes<HTMLAnchorElement> { }
+export type PaginationNextProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 /**
  * PaginationNext - link to next page.

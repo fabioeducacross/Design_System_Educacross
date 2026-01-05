@@ -13,12 +13,14 @@ describe("cn (className utility)", () => {
     });
 
     it("should handle false conditionals", () => {
-        const result = cn("px-4", false && "hidden", "py-2");
+        const condition = false;
+        const result = cn("px-4", condition && "hidden", "py-2");
         expect(result).toBe("px-4 py-2");
     });
 
     it("should handle true conditionals", () => {
-        const result = cn("px-4", true && "hidden", "py-2");
+        const condition = true;
+        const result = cn("px-4", condition && "hidden", "py-2");
         expect(result).toBe("px-4 hidden py-2");
     });
 

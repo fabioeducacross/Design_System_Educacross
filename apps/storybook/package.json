@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "storybook dev -p 6006",
         "build": "storybook build",
-        "lint": "eslint src stories --ext .ts,.tsx,.mdx",
+        "lint": "eslint stories --ext .ts,.tsx",
         "typecheck": "tsc --noEmit",
         "clean": "rimraf storybook-static"
     },

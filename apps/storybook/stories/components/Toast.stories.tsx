@@ -135,11 +135,11 @@ export const WithClose: Story = {
 export const Interactive: Story = {
     render: () => {
         const [toasts, setToasts] = useState<
-            Array<{ id: number; variant: string; title: string; description: string }>
+            Array<{ id: number; variant: "default" | "destructive" | "success"; title: string; description: string }>
         >([]);
 
         const addToast = (
-            variant: string,
+            variant: "default" | "destructive" | "success",
             title: string,
             description: string
         ) => {
@@ -183,7 +183,7 @@ export const Interactive: Story = {
                         <Toast
                             key={toast.id}
                             open
-                            variant={toast.variant as any}
+                            variant={toast.variant}
                             onClose={() => removeToast(toast.id)}
                             duration={3000}
                             className="relative"

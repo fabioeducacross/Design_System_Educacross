@@ -127,7 +127,7 @@ export interface DropdownMenuTriggerProps
  * DropdownMenuTrigger - button to open the menu.
  */
 const DropdownMenuTrigger = React.forwardRef<HTMLButtonElement, DropdownMenuTriggerProps>(
-    ({ asChild, children, onClick, ...props }, ref) => {
+    ({ asChild, children, onClick, ...props }, _ref) => {
         const context = React.useContext(DropdownMenuContext);
 
         const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -136,7 +136,7 @@ const DropdownMenuTrigger = React.forwardRef<HTMLButtonElement, DropdownMenuTrig
         };
 
         if (asChild && React.isValidElement(children)) {
-            return React.cloneElement(children as React.ReactElement<any>, {
+            return React.cloneElement(children as React.ReactElement<Record<string, unknown>>, {
                 ref: context?.triggerRef,
                 onClick: handleClick,
                 "aria-expanded": context?.open,

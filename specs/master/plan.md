@@ -1,20 +1,20 @@
-# Implementation Plan: Design System Educacross v1.0
+# Implementation Plan: Correção de Pendências v1.1
 
 **Branch**: `master` | **Date**: 2026-01-05 | **Spec**: [spec.md](./spec.md)
-**Input**: Feature specification from `/specs/master/spec.md`
+**Input**: Análise de pendências do Design System Educacross
 
 ## Summary
 
-Design System completo para Educacross com 21 componentes React + TypeScript, construído sobre Tailwind CSS e Radix UI. Infraestrutura de monorepo com pnpm + Turborepo, documentação via Storybook 8, e iconografia via Feather Icons. Próximos passos focam em testes, CI/CD e publicação NPM.
+Plano para corrigir todas as pendências identificadas no projeto: erros de lint (15), configuração de CI, warnings de código, e preparação para publicação NPM. O objetivo é deixar o CI 100% verde e o projeto pronto para release v0.1.0.
 
 ## Technical Context
 
 **Language/Version**: TypeScript 5.9.3, React 18.3.1  
-**Primary Dependencies**: Radix UI, Tailwind CSS 3.4, class-variance-authority 0.7.1, react-feather 2.0.10  
+**Primary Dependencies**: Radix UI, Tailwind CSS 3.4, CVA 0.7.1, react-feather 2.0.10  
 **Storage**: N/A (biblioteca de componentes)  
-**Testing**: Vitest + React Testing Library (pendente configuração)  
+**Testing**: Vitest + React Testing Library (243 testes passando)  
 **Target Platform**: Web (browsers modernos)  
-**Project Type**: Monorepo (pnpm workspaces)  
+**Project Type**: Monorepo (pnpm workspaces + Turborepo)  
 **Performance Goals**: Bundle < 100KB gzip, tree-shakeable  
 **Constraints**: WCAG 2.1 AA, zero a11y violations  
 **Scale/Scope**: 21 componentes, uso interno Educacross
@@ -25,260 +25,269 @@ Design System completo para Educacross com 21 componentes React + TypeScript, co
 
 | Principle | Status | Evidence |
 |-----------|--------|----------|
-| **I. Spec-First** | ✅ PASS | spec.md criado com user scenarios e acceptance criteria |
-| **II. Test-First** | ⚠️ PARTIAL | Stories com autodocs existem, play functions pendentes, Vitest não configurado |
-| **III. A11y-First** | ✅ PASS | Radix UI primitives, keyboard navigation, addon-a11y instalado |
-| **IV. Tokens-First** | ✅ PASS | CSS custom properties, Tailwind preset, sem magic values |
-| **V. Docs-First** | ✅ PASS | Storybook stories para todos os 21 componentes |
+| **I. Spec-First** | ✅ PASS | spec.md completo com user scenarios |
+| **II. Test-First** | ⚠️ PARTIAL | 243 unit tests OK, play functions parciais |
+| **III. A11y-First** | ✅ PASS | Radix UI, keyboard nav, addon-a11y |
+| **IV. Tokens-First** | ✅ PASS | CSS vars, Tailwind preset, zero magic values |
+| **V. Docs-First** | ✅ PASS | 21 stories com autodocs |
 
-### Gate Violations & Justification
+### Gate Violations & Resolution
 
-| Violation | Why Acceptable | Resolution Plan |
-|-----------|---------------|-----------------|
-| Test-First parcial | MVP focou em componentes e docs primeiro | M6: Configurar Vitest, adicionar play functions |
-| Unit tests ausentes | Componentes são wrappers de Radix (lógica mínima) | Adicionar testes para lógica customizada |
+| Violation | Resolution Plan | Priority |
+|-----------|-----------------|----------|
+| Test-First parcial | Adicionar play functions faltantes | P2 |
+| Lint errors | Corrigir 15 erros (Phase 1) | P0 |
 
 ## Project Structure
 
-### Documentation (this feature)
+### Documentation
 
 ```text
 specs/master/
-├── spec.md              # Feature specification ✅
-├── plan.md              # This file ✅
-├── research.md          # Phase 0 output
-├── quickstart.md        # Phase 1 output
-└── tasks.md             # Phase 2 output (/speckit.tasks)
+├── spec.md              # Especificação completa ✅
+├── plan.md              # Este arquivo ✅
+├── research.md          # Pesquisa técnica ✅
+├── quickstart.md        # Guia de início rápido ✅
+└── tasks.md             # Tarefas de implementação ✅
 ```
 
-### Source Code (repository root)
+### Source Code
 
 ```text
 packages/
-└── ui/                           # @educacross/ui publishable package
+└── ui/                           # @educacross/ui
     ├── src/
-    │   ├── components/           # 21 components
-    │   │   ├── Accordion/
-    │   │   ├── Alert/
-    │   │   ├── Avatar/
-    │   │   ├── Badge/
-    │   │   ├── Button/
-    │   │   ├── Card/
-    │   │   ├── Checkbox/
-    │   │   ├── Dialog/
-    │   │   ├── DropdownMenu/
-    │   │   ├── Icon/
-    │   │   ├── Input/
-    │   │   ├── Label/
-    │   │   ├── Pagination/
-    │   │   ├── Popover/
-    │   │   ├── Radio/
-    │   │   ├── Select/
-    │   │   ├── Skeleton/
-    │   │   ├── Table/
-    │   │   ├── Tabs/
-    │   │   ├── Toast/
-    │   │   ├── Tooltip/
-    │   │   └── index.ts          # Barrel exports
-    │   ├── lib/
-    │   │   └── utils.ts          # cn() utility
-    │   ├── styles.css            # CSS custom properties (tokens)
-    │   ├── tailwind-preset.ts    # Tailwind config preset
-    │   └── index.ts              # Public exports
-    ├── dist/                     # Build output
-    ├── package.json
-    ├── tsconfig.json
-    └── tsup.config.ts
+    │   ├── components/           # 21 componentes ✅
+    │   ├── utils/                # cn() utility ✅
+    │   ├── styles.css            # Tokens CSS ✅
+    │   └── tailwind-preset.ts    # Preset Tailwind ✅
+    └── dist/                     # Build output ✅
 
 apps/
-└── storybook/                    # Documentation app
-    ├── .storybook/
-    │   ├── main.ts
-    │   └── preview.ts
-    └── stories/
-        ├── components/           # Component stories (21 files)
-        └── foundations/          # Token documentation
+└── storybook/                    # Documentação ✅
 
 .github/
-└── workflows/                    # CI pipelines (pending)
+└── workflows/
+    ├── ci.yml                    # CI pipeline ✅ (lint failing)
+    └── publish.yml               # NPM publish ✅ (needs token)
 ```
 
-**Structure Decision**: Monorepo com pnpm workspaces, seguindo padrão shadcn/ui. Componentes em `packages/ui`, documentação em `apps/storybook`.
+**Structure Decision**: Monorepo com pnpm workspaces + Turborepo, padrão shadcn/ui.
 
 ## Complexity Tracking
 
-> **Fill ONLY if Constitution Check has violations that must be justified**
-
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| Test-First parcial | Priorização de componentes para MVP | Testes serão adicionados em M6 |
-
+| Violation | Why Needed | Simpler Alternative |
+|-----------|------------|---------------------|
+| Warnings suprimidos | Padrão CVA exports é válido | N/A - design system pattern |
 ---
 
-## Phase 0: Research Summary
+## Phase 1: Correção de Erros de Lint (P0 - Bloqueante)
 
-### R-1: Stack Validation
+**Objetivo**: CI lint job passa sem erros
 
-| Technology | Decision | Rationale |
-|------------|----------|-----------|
-| React 18 | ✅ Confirmed | Concurrent features, hooks, wide adoption |
-| TypeScript 5.x | ✅ Confirmed | Strict mode, decorators, template literals |
-| Tailwind CSS 3.4 | ✅ Confirmed | JIT, arbitrary values, @apply |
-| Radix UI | ✅ Confirmed | Accessibility, headless, composable |
-| CVA | ✅ Confirmed | Type-safe variants, composable |
-| tsup | ✅ Confirmed | ESM+CJS+DTS, fast builds |
-| pnpm | ✅ Confirmed | Fast, disk efficient, workspaces |
-| Turborepo | ✅ Confirmed | Build caching, parallel tasks |
-| Storybook 8 | ✅ Confirmed | React 18 support, MDX 3, Vite |
-| Feather Icons | ✅ Confirmed | 286 icons, SVG, React bindings |
+### 1.1 Erros `no-empty-object-type` (9 ocorrências)
 
-### R-2: Testing Strategy
+| Arquivo | Linha | Correção |
+|---------|-------|----------|
+| Accordion.tsx | 207, 251 | `type AccordionItemProps = ComponentPropsWithoutRef<...>` |
+| Avatar.tsx | 56, 86 | `type AvatarImageProps = ComponentPropsWithoutRef<...>` |
+| Pagination.tsx | 107, 223, 249 | Usar type alias ao invés de interface vazia |
+| Table.tsx | 102, 123 | Usar type alias ao invés de interface vazia |
 
-| Layer | Tool | Purpose |
-|-------|------|---------|
-| Unit | Vitest | Component logic, utilities |
-| Integration | Testing Library | Component behavior |
-| Interaction | Storybook play | User flows |
-| Accessibility | addon-a11y | WCAG compliance |
-| Visual | Chromatic (future) | Regression detection |
+**Padrão de correção:**
+```tsx
+// ❌ Antes (erro)
+export interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {}
 
-### R-3: CI/CD Strategy
-
-| Stage | Tool | Trigger |
-|-------|------|---------|
-| Lint | ESLint + Prettier | PR, push |
-| TypeCheck | tsc --noEmit | PR, push |
-| Build | turbo build | PR, push |
-| Test | vitest run | PR, push |
-| Storybook | storybook build | PR |
-| Publish | npm publish | tag release |
-
----
-
-## Phase 1: Design Artifacts
-
-### 1.1 Component API Contracts
-
-Todos os componentes seguem padrão consistente:
-
-```typescript
-// Padrão de Props
-interface ComponentProps {
-  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost";
-  size?: "sm" | "default" | "lg";
-  disabled?: boolean;
-  asChild?: boolean;  // Radix Slot pattern
-  className?: string;
-  children?: React.ReactNode;
-}
-
-// Padrão de Export
-export { Component, componentVariants, type ComponentProps };
+// ✅ Depois (correto)
+export type TableRowProps = React.HTMLAttributes<HTMLTableRowElement>;
 ```
 
-### 1.2 Token Structure
+### 1.2 Erros `no-unused-vars` (4 ocorrências)
 
-```css
-/* packages/ui/src/styles.css */
-:root {
-  /* Colors */
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --primary: 221.2 83.2% 53.3%;
-  --primary-foreground: 210 40% 98%;
-  /* Radii */
-  --radius: 0.5rem;
-}
+| Arquivo | Linha | Variável | Correção |
+|---------|-------|----------|----------|
+| DropdownMenu.tsx | 130 | `ref` | Renomear para `_ref` |
+| Popover.tsx | 118 | `ref` | Renomear para `_ref` |
+| Tooltip.tsx | 56 | `delayDuration` | Remover ou usar |
+| Tooltip.tsx | 201 | `side` | Renomear para `_side` |
 
-.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
+### 1.3 Erros `no-constant-binary-expression` (2 ocorrências)
+
+| Arquivo | Linha | Correção |
+|---------|-------|----------|
+| cn.test.ts | 16, 21 | Usar variável booleana ao invés de literal |
+
+**Padrão de correção:**
+```tsx
+// ❌ Antes (erro)
+expect(cn(true && "class")).toBe("class");
+
+// ✅ Depois (correto)
+const condition = true;
+expect(cn(condition && "class")).toBe("class");
+```
+
+### 1.4 Configuração Storybook Lint
+
+**Problema**: Script lint em `apps/storybook` tenta lint em `src/` que não existe.
+
+**Correção**: Atualizar `apps/storybook/package.json`:
+```json
+"lint": "eslint stories --ext .ts,.tsx"
+```
+
+---
+
+## Phase 2: Redução de Warnings (P1 - Recomendado)
+
+**Objetivo**: Reduzir warnings de 34 para < 5
+
+### 2.1 Warnings `react-refresh/only-export-components`
+
+**Decisão**: Adicionar regra no ESLint para permitir exports de variantes CVA.
+
+**Arquivo**: `eslint.config.js`
+```js
+rules: {
+  "react-refresh/only-export-components": [
+    "warn",
+    { allowConstantExport: true, allowExportNames: [".*Variants$"] }
+  ],
 }
 ```
 
-### 1.3 Build Outputs
+### 2.2 Warnings `react-hooks/exhaustive-deps` em Dialog.tsx
 
-| Output | Format | Size | Purpose |
-|--------|--------|------|---------|
-| index.mjs | ESM | ~84KB | Modern bundlers |
-| index.js | CJS | ~90KB | Node.js, legacy |
-| index.d.ts | DTS | ~40KB | TypeScript |
-| styles.css | CSS | ~2KB | Token variables |
-| tailwind-preset.mjs | ESM | ~3KB | Tailwind config |
+**Opções**:
+1. Adicionar `context` às dependências (pode causar re-renders)
+2. Usar `// eslint-disable-next-line` com comentário explicativo
 
----
+**Decisão**: Opção 2 - pattern é intencional para evitar loops.
 
-## Phase 2: Implementation Roadmap
+### 2.3 Warnings `no-explicit-any`
 
-### Completed Milestones
-
-| Phase | Deliverable | Status |
-|-------|-------------|--------|
-| M1 | Monorepo + Build | ✅ Complete |
-| M2 | P1 Components (3) | ✅ Complete |
-| M3 | P2 Components (8) | ✅ Complete |
-| M4 | P3 Components (8) | ✅ Complete |
-| M5 | Iconografia | ✅ Complete |
-
-### Pending Milestones
-
-| Phase | Deliverable | Priority | Est. Effort |
-|-------|-------------|----------|-------------|
-| M6 | Testes Unitários (Vitest) | P1 | 4-6h |
-| M7 | CI/CD (GitHub Actions) | P1 | 2-4h |
-| M8 | Publicação NPM | P2 | 1-2h |
-| M9 | Play Functions (Storybook) | P2 | 4-6h |
-| M10 | Visual Regression (Chromatic) | P3 | 2-4h |
+| Arquivo | Linha | Correção |
+|---------|-------|----------|
+| Dialog.tsx | 178 | Tipar corretamente o handler |
+| DropdownMenu.tsx | 139 | Tipar corretamente o handler |
+| Popover.tsx | 127, 217 | Tipar corretamente os handlers |
+| Tooltip.tsx | 162 | Tipar corretamente o handler |
 
 ---
 
-## Quickstart
+## Phase 3: Preparação NPM Publish (P1)
 
-### Instalação
+**Objetivo**: Pacote pronto para publicação
+
+### 3.1 Configurar NPM_TOKEN no GitHub
+
+**Passos manuais (owner do repo)**:
+1. Criar token no npmjs.com: Settings → Access Tokens → Generate New Token
+2. Tipo: "Automation" (para CI)
+3. No GitHub: Settings → Secrets → Actions → New repository secret
+4. Nome: `NPM_TOKEN`, Valor: token do npm
+
+### 3.2 Criar Release v0.1.0
 
 ```bash
-pnpm add @educacross/ui
-```
-
-### Configuração Tailwind
-
-```js
-// tailwind.config.js
-import educacrossPreset from "@educacross/ui/tailwind-preset";
-
-export default {
-  presets: [educacrossPreset],
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@educacross/ui/dist/**/*.{js,mjs}",
-  ],
-};
-```
-
-### Uso de Componentes
-
-```tsx
-import { Button, Input, Card, Icon } from "@educacross/ui";
-import "@educacross/ui/styles.css";
-
-function Example() {
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Login</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <Input placeholder="Email" />
-        <Button className="w-full">
-          <Icon name="LogIn" className="mr-2" />
-          Entrar
-        </Button>
-      </CardContent>
-    </Card>
-  );
-}
+git tag -a v0.1.0 -m "feat: initial release"
+git push origin v0.1.0
 ```
 
 ---
 
-**Generated**: 2026-01-05 | **Plan Version**: 1.0
+## Phase 4: Completar Testes (P2 - Constitution Compliance)
+
+**Objetivo**: Testes para componentes sem `.test.tsx`
+
+### 4.1 Componentes sem testes
+
+| Componente | Complexidade | Prioridade |
+|------------|--------------|------------|
+| Card | Baixa (wrapper) | P3 |
+| Badge | Baixa (wrapper) | P3 |
+| Avatar | Média (fallback logic) | P2 |
+| Icon | Média (mapeamento) | P2 |
+| Tabs | Alta (state) | P1 |
+| Accordion | Alta (state) | P1 |
+| Pagination | Alta (state) | P1 |
+| Popover | Média (Radix wrapper) | P2 |
+| DropdownMenu | Média (Radix wrapper) | P2 |
+| Skeleton | Baixa (visual only) | P3 |
+| Table | Baixa (wrapper) | P3 |
+| Tooltip | Média (Radix wrapper) | P2 |
+
+### 4.2 Play Functions faltantes
+
+| Story | Interação a testar |
+|-------|-------------------|
+| Dialog.stories.tsx | open → close → Escape |
+| Toast.stories.tsx | trigger → auto-dismiss |
+| Select.stories.tsx | open → select option |
+| Checkbox.stories.tsx | toggle checked |
+| Radio.stories.tsx | select option |
+| Accordion.stories.tsx | expand/collapse |
+| Tabs.stories.tsx | switch tabs |
+| DropdownMenu.stories.tsx | open → select item |
+
+---
+
+## Phase 5: Documentação e Manutenção (P3)
+
+### 5.1 Atualizar CHANGELOG.md
+
+Incluir todas as features implementadas na v0.1.0.
+
+### 5.2 Configurar Dependabot
+
+Criar `.github/dependabot.yml`:
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+```
+
+### 5.3 Branch Protection
+
+Configurar no GitHub:
+- Require status checks (CI)
+- Require PR reviews
+- Require linear history
+
+---
+
+## Execution Order
+
+```
+Phase 1 (Lint Errors) ──────────────────────────────────────────────┐
+                                                                    │
+Phase 2 (Warnings) ◄────────────────────────────────────────────────┘
+       │
+       ▼
+Phase 3 (NPM Publish) ─────► Manual: NPM_TOKEN
+       │
+       ▼
+Phase 4 (Tests) ──────────────────────────────────────────────────┐
+       │                                                          │
+       ▼                                                          │
+Phase 5 (Docs) ◄──────────────────────────────────────────────────┘
+```
+
+## Estimated Time
+
+| Phase | Tasks | Effort |
+|-------|-------|--------|
+| Phase 1 | Corrigir 15 erros | 45 min |
+| Phase 2 | Reduzir warnings | 30 min |
+| Phase 3 | Setup NPM (manual) | 15 min |
+| Phase 4 | Testes adicionais | 3h |
+| Phase 5 | Docs e config | 30 min |
+| **Total** | | **~5h** |
+
+---
+
+**Generated**: 2026-01-05 | **Plan Version**: 1.1

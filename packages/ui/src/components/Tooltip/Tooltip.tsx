@@ -53,9 +53,10 @@ export interface TooltipProviderProps {
  * TooltipProvider - provides global tooltip configuration.
  */
 function TooltipProvider({
-    delayDuration = 400,
+    delayDuration: _delayDuration = 400,
     children,
 }: TooltipProviderProps) {
+    // delayDuration is configured per-tooltip, provider just groups tooltips
     return <>{children}</>;
 }
 
@@ -159,7 +160,7 @@ const TooltipTrigger = React.forwardRef<HTMLSpanElement, TooltipTriggerProps>(
         }, []);
 
         if (asChild && React.isValidElement(children)) {
-            return React.cloneElement(children as React.ReactElement<any>, {
+            return React.cloneElement(children as React.ReactElement<Record<string, unknown>>, {
                 ref,
                 onMouseEnter: handleMouseEnter,
                 onMouseLeave: handleMouseLeave,
@@ -198,7 +199,7 @@ export interface TooltipContentProps
  * TooltipContent - the content displayed in the tooltip.
  */
 const TooltipContent = React.forwardRef<HTMLDivElement, TooltipContentProps>(
-    ({ className, side, sideOffset = 4, ...props }, ref) => {
+    ({ className, side: _side, sideOffset = 4, ...props }, ref) => {
         const context = React.useContext(TooltipContext);
 
         if (!context?.open) {

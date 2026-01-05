@@ -204,8 +204,7 @@ const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>(
 );
 AccordionItem.displayName = "AccordionItem";
 
-export interface AccordionTriggerProps
-    extends React.ButtonHTMLAttributes<HTMLButtonElement> { }
+export type AccordionTriggerProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 /**
  * AccordionTrigger - button to toggle accordion item.
@@ -248,8 +247,7 @@ const AccordionTrigger = React.forwardRef<HTMLButtonElement, AccordionTriggerPro
 );
 AccordionTrigger.displayName = "AccordionTrigger";
 
-export interface AccordionContentProps
-    extends React.HTMLAttributes<HTMLDivElement> { }
+export type AccordionContentProps = React.HTMLAttributes<HTMLDivElement>;
 
 /**
  * AccordionContent - content panel that expands/collapses.
