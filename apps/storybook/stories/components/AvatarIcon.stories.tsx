@@ -76,12 +76,12 @@ export const SizeComparison: Story = {
 };
 
 /**
- * Ícone usado dentro de um Avatar com fundo ciano.
+ * Ícone usado dentro de um Avatar com fundo transparente (o SVG já tem fundo ciano).
  */
 export const InAvatar: Story = {
     render: () => (
         <Avatar size="lg" className="border-2 border-[#06B6D4]">
-            <AvatarFallback className="bg-[#06B6D4] flex items-center justify-center">
+            <AvatarFallback className="bg-transparent flex items-center justify-center">
                 <AvatarIcon size="lg" />
             </AvatarFallback>
         </Avatar>
@@ -95,22 +95,22 @@ export const InMultipleAvatars: Story = {
     render: () => (
         <div className="flex items-center gap-4">
             <Avatar size="sm" className="border-2 border-[#06B6D4]">
-                <AvatarFallback className="bg-[#06B6D4] flex items-center justify-center">
+                <AvatarFallback className="bg-transparent flex items-center justify-center">
                     <AvatarIcon size="sm" />
                 </AvatarFallback>
             </Avatar>
             <Avatar size="default" className="border-2 border-[#06B6D4]">
-                <AvatarFallback className="bg-[#06B6D4] flex items-center justify-center">
+                <AvatarFallback className="bg-transparent flex items-center justify-center">
                     <AvatarIcon size="default" />
                 </AvatarFallback>
             </Avatar>
             <Avatar size="lg" className="border-2 border-[#06B6D4]">
-                <AvatarFallback className="bg-[#06B6D4] flex items-center justify-center">
+                <AvatarFallback className="bg-transparent flex items-center justify-center">
                     <AvatarIcon size="lg" />
                 </AvatarFallback>
             </Avatar>
             <Avatar size="xl" className="border-2 border-[#06B6D4]">
-                <AvatarFallback className="bg-[#06B6D4] flex items-center justify-center">
+                <AvatarFallback className="bg-transparent flex items-center justify-center">
                     <AvatarIcon size="lg" />
                 </AvatarFallback>
             </Avatar>

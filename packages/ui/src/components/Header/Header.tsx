@@ -115,7 +115,7 @@ export const Header = React.forwardRef<HTMLElement, HeaderProps>(
                     </div>
                     <Avatar size="lg" className="border-2 border-[#06B6D4]">
                         <AvatarImage src={avatarSrc} alt={userName} />
-                        <AvatarFallback className="bg-[#06B6D4] flex items-center justify-center">
+                        <AvatarFallback className="bg-transparent flex items-center justify-center">
                             <AvatarIcon size="lg" />
                         </AvatarFallback>
                     </Avatar>
