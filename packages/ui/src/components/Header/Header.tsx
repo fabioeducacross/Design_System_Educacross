@@ -3,6 +3,7 @@ import { Menu } from "react-feather";
 import { cn } from "../../utils";
 import { Avatar, AvatarFallback, AvatarImage } from "../Avatar";
 import { Button } from "../Button";
+import { Logo } from "../Logo";
 
 /**
  * HeaderProps - propriedades do componente Header.
@@ -92,37 +93,7 @@ export const Header = React.forwardRef<HTMLElement, HeaderProps>(
                 </Button>
 
                 {/* Logo Educacross */}
-                <div className="flex items-center gap-1">
-                    {/* Ícone dos óculos */}
-                    <svg
-                        width="32"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                    >
-                        <circle cx="10" cy="16" r="5" fill="#1F2937" />
-                        <circle cx="22" cy="16" r="5" fill="#1F2937" />
-                        <path
-                            d="M15 16 h2"
-                            stroke="#1F2937"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                        />
-                        <path
-                            d="M5 16 h2 M25 16 h2"
-                            stroke="#1F2937"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                        />
-                    </svg>
-                    {/* Texto Logo */}
-                    <span className="text-xl font-bold tracking-tight">
-                        <span className="text-[#1F2937]">educa</span>
-                        <span className="text-[#DC2626]">cross</span>
-                    </span>
-                </div>
+                <Logo size="default" />
 
                 {/* User Profile */}
                 <button

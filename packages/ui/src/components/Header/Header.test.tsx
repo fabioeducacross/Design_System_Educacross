@@ -46,8 +46,9 @@ describe("Header", () => {
                     avatarFallback="AF"
                 />
             );
-            expect(screen.getByText(/educa/)).toBeInTheDocument();
-            expect(screen.getByText(/cross/)).toBeInTheDocument();
+            const logo = screen.getByAltText("Educacross");
+            expect(logo).toBeInTheDocument();
+            expect(logo).toHaveAttribute("src", expect.stringContaining("logo-educacross"));
         });
 
         it("deve renderizar botão de menu", () => {

@@ -5,9 +5,15 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
-## [0.1.0] - 2026-01-05
+## [0.1.0] - 2026-01-06
 
 ### Added
+
+#### Branding
+- `Logo` - Componente reutilizável da logo Educacross com 3 tamanhos (sm, default, lg)
+- `Header` - Componente de cabeçalho com menu, logo e perfil do usuário
+- Integração de assets SVG no sistema de build (tsup + cópia para dist)
+- Suporte TypeScript para importação de SVGs e imagens
 
 #### Infrastructure
 - Setup inicial do monorepo com pnpm 9.15.0 + Turborepo 2.7.2
@@ -15,6 +21,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 - Tailwind preset com sistema de tokens CSS
 - CI/CD com GitHub Actions (lint, typecheck, build, test)
 - Storybook 8.4 com addons: Docs, Controls, Actions, Viewport, A11y, Interactions, Themes
+- Bundling de assets estáticos (SVG/imagens) no pacote npm
 
 #### Components P1 (Core)
 - `Button` - 6 variantes (default, secondary, destructive, outline, ghost, link), 4 tamanhos, loading state
@@ -67,7 +74,8 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 - Configuração `type: module` adicionada ao package.json raiz
 
 ### Tests
-- 480 testes unitários cobrindo todos os componentes (94% cobertura)
+- 509 testes unitários cobrindo todos os componentes (94% cobertura)
+- Testes para Logo (11), Header (18)
 - Testes para Accordion (13), Avatar (17), DropdownMenu (21), Icon (29)
 - Testes para Pagination (17), Popover (15), Tabs (12), Tooltip (13)
 - Testes para Badge (16), Card (25), Skeleton (30), Table (29)

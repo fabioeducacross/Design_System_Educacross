@@ -23,6 +23,7 @@
 
 // Layout Components
 export { Header, type HeaderProps } from "./components/Header";
+export { Logo, type LogoProps } from "./components/Logo";
 
 // P1 Components
 export { Button, buttonVariants, type ButtonProps } from "./components/Button";
