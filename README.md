@@ -124,7 +124,7 @@ pnpm clean              # Remove dist e node_modules
 ### Outros
 - `--radius` - Border radius base
 - Shadows: `sm`, `md`, `lg`
-- Typography: Inter font, escala Tailwind
+- Typography: Montserrat font (pesos 300-700), escala Tailwind
 
 ## Light / Dark Mode
 

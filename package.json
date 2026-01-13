@@ -16,12 +16,19 @@
     "build:storybook": "pnpm --filter @educacross/storybook build",
     "clean": "turbo run clean && rimraf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
+    "sync:figma": "tsx scripts/sync-figma.ts",
+    "sync:figma:watch": "tsx scripts/sync-figma.ts --watch",
+    "figma:server": "tsx scripts/figma-local-server.ts",
+    "figma:test": "tsx scripts/test-figma-local.ts",
+    "figma:selection": "tsx scripts/get-figma-selection.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@modelcontextprotocol/sdk": "^1.0.4",
     "@playwright/test": "^1.57.0",
     "@types/node": "^22.10.0",
+    "dotenv": "^16.4.7",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",
@@ -30,6 +37,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
     "turbo": "^2.3.3",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.0"

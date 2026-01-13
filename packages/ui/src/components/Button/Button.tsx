@@ -24,13 +24,25 @@ const buttonVariants = cva(
     {
         variants: {
             variant: {
+                // Botão primário padrão (roxo filled)
                 default: "bg-[var(--color-primary-500)] text-white hover:bg-[var(--color-primary-600)] active:bg-[var(--color-primary-700)]",
+                
+                // Botão-secundário (roxo outline)
+                secondary:
+                    "border-2 border-[var(--color-primary-500)] bg-transparent text-[var(--color-primary-500)] hover:bg-[var(--color-primary-8)] active:bg-[var(--color-primary-16)]",
+                
+                // Botão-de-atenção (amarelo filled)
+                attention: "bg-[var(--color-warning-500)] text-[var(--text-primary)] hover:bg-[var(--color-warning-600)] active:bg-[var(--color-warning-700)]",
+                
+                // Botão-negativo (outline neutro)
+                negative:
+                    "border-2 border-[var(--color-primary-500)] bg-transparent text-[var(--color-primary-500)] hover:bg-[var(--color-primary-8)] active:bg-[var(--color-primary-16)]",
+                
+                // Variantes existentes mantidas
                 destructive:
                     "bg-[var(--color-error-500)] text-white hover:bg-[var(--color-error-600)] active:bg-[var(--color-error-700)]",
                 outline:
                     "border border-[var(--input-border)] bg-transparent text-[var(--text-primary)] hover:bg-[var(--action-hover)] active:bg-[var(--action-selected)]",
-                secondary:
-                    "bg-[var(--color-secondary-500)] text-white hover:bg-[var(--color-secondary-600)] active:bg-[var(--color-secondary-700)]",
                 ghost: "bg-transparent text-[var(--text-primary)] hover:bg-[var(--action-hover)] active:bg-[var(--action-selected)]",
                 link: "text-[var(--color-primary-500)] underline-offset-4 hover:underline",
                 success: "bg-[var(--color-success-500)] text-white hover:bg-[var(--color-success-600)] active:bg-[var(--color-success-700)]",

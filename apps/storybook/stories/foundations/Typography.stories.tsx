@@ -9,7 +9,7 @@ const meta: Meta = {
                 component: `
 # Tipografia
 
-O sistema tipográfico do Educacross Design System é baseado na fonte **Inter**.
+O sistema tipográfico do Educacross Design System é baseado na fonte **Montserrat**.
 
 ## Uso
 
@@ -23,6 +23,15 @@ O sistema tipográfico do Educacross Design System é baseado na fonte **Inter**
 ## Escala Tipográfica
 
 Usamos a escala padrão do Tailwind com ajustes para line-height otimizado.
+
+## Pesos Disponíveis
+
+Montserrat está configurada com os seguintes pesos:
+- **Light (300)**: Para textos grandes ou com ênfase suave
+- **Regular (400)**: Peso padrão para corpo de texto
+- **Medium (500)**: Para destaque moderado
+- **Semibold (600)**: Para subtítulos e elementos de interface
+- **Bold (700)**: Para títulos e ênfase forte
         `,
             },
         },
@@ -76,12 +85,13 @@ export const Scale: Story = {
 export const FontWeights: Story = {
     render: () => (
         <div className="p-8 bg-background space-y-4">
-            <h2 className="text-2xl font-bold mb-8 text-foreground">Pesos de Fonte</h2>
+            <h2 className="text-2xl font-bold mb-8 text-foreground">Pesos de Fonte - Montserrat</h2>
 
-            <p className="text-xl font-normal text-foreground">Normal (400) - The quick brown fox</p>
-            <p className="text-xl font-medium text-foreground">Medium (500) - The quick brown fox</p>
-            <p className="text-xl font-semibold text-foreground">Semibold (600) - The quick brown fox</p>
-            <p className="text-xl font-bold text-foreground">Bold (700) - The quick brown fox</p>
+            <p className="text-xl font-light text-foreground">Light (300) - The quick brown fox jumps over the lazy dog</p>
+            <p className="text-xl font-normal text-foreground">Regular (400) - The quick brown fox jumps over the lazy dog</p>
+            <p className="text-xl font-medium text-foreground">Medium (500) - The quick brown fox jumps over the lazy dog</p>
+            <p className="text-xl font-semibold text-foreground">Semibold (600) - The quick brown fox jumps over the lazy dog</p>
+            <p className="text-xl font-bold text-foreground">Bold (700) - The quick brown fox jumps over the lazy dog</p>
         </div>
     ),
 };

@@ -313,9 +313,11 @@ export const educacrossPreset: Config = {
             },
             fontFamily: {
                 sans: [
-                    "Inter",
-                    "ui-sans-serif",
-                    "system-ui",
+                    "Montserrat",
+                    "-apple-system",
+                    "BlinkMacSystemFont",
+                    '"Segoe UI"',
+                    "Roboto",
                     "sans-serif",
                     '"Apple Color Emoji"',
                     '"Segoe UI Emoji"',

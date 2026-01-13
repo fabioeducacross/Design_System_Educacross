@@ -35,6 +35,13 @@ export {
     type SidebarItemProps,
     type SidebarSubItemProps,
 } from "./components/Sidebar";
+export { 
+    CustomIcon, 
+    customIconVariants, 
+    customIcons,
+    type CustomIconProps,
+    type IconCategory 
+} from "./components/CustomIcon";
 
 // P1 Components
 export { Button, buttonVariants, type ButtonProps } from "./components/Button";

@@ -256,7 +256,7 @@ export const InCard: Story = {
  */
 export const Rounded: Story = {
     render: () => (
-        <div className="w-full" style={{ fontFamily: 'Montserrat, Helvetica, Arial, sans-serif' }}>
+        <div className="w-full">
             <div className="relative bg-white">
                 {/* Container principal */}
                 <div className="flex items-end justify-between">
@@ -326,7 +326,7 @@ export const Rounded: Story = {
  */
 export const RoundedSimple: Story = {
     render: () => (
-        <div className="w-full max-w-3xl" style={{ fontFamily: 'Montserrat, Helvetica, Arial, sans-serif' }}>
+        <div className="w-full max-w-3xl">
             <div className="relative bg-white rounded-md shadow-sm">
                 <Tabs defaultValue="tab1" variant="rounded">
                     {/* Tabs container */}

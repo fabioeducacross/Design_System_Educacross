@@ -1,0 +1,19 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/config.json",
+  "mcpServers": {
+    "figma-local": {
+      "url": "http://127.0.0.1:3845/mcp",
+      "transport": "sse",
+      "description": "Servidor Figma local via SSE"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "c:\\Users\\Educacross\\Documents\\Educacross\\Design_System_Educacross\\Design_System_Educacross\\packages\\ui\\src\\tokens"
+      ],
+      "description": "Acesso aos tokens do design system"
+    }
+  }
+}
