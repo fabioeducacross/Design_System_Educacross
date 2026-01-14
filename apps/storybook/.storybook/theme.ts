@@ -3,7 +3,7 @@ import { create } from "@storybook/theming/create";
 export default create({
     base: "light",
     brandTitle: "Educacross Design System",
-    brandUrl: "https://educacross.com",
+    brandUrl: "#", // Sem link externo
     brandImage: "/logo-educacross.svg",
     brandTarget: "_self",
 
