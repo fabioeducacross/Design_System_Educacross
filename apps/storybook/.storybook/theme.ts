@@ -1,10 +1,11 @@
 import { create } from "@storybook/theming/create";
+import logoEducacross from "../public/logo-educacross.svg";
 
 export default create({
     base: "light",
     brandTitle: "Educacross Design System",
     brandUrl: "#", // Sem link externo
-    brandImage: "/logo-educacross.svg",
+    brandImage: logoEducacross,
     brandTarget: "_self",
 
     // UI
