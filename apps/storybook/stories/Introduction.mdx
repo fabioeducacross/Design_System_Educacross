@@ -43,52 +43,49 @@ import { BrandHeader, FeatureCard, DiagramGrid, Callout } from '../src/component
 
 ## 🚀 Começando
 
-<Callout type="info" title="Instalação Rápida">
+<Callout type="info" title="Instalação via GitHub">
   ```bash
-  pnpm add @educacross/ui
+  pnpm add github:fabioeducacross/Design_System_Educacross
   ```
 </Callout>
 
-### 1. Configure o Tailwind
+**📚 Guias Completos:**
+- [Guia Rápido](?path=/docs/getting-started-guia-rápido--docs) - Setup em 3 passos
+- [Para IAs](?path=/docs/getting-started-para-ias--docs) - Documentação estruturada para agentes
+- [API Reference](?path=/docs/getting-started-api-reference--docs) - Props de todos os componentes
 
-```ts
-// tailwind.config.ts
+### Quick Start
+
+```tsx
+// 1. Instalar
+pnpm add github:fabioeducacross/Design_System_Educacross
+
+// 2. Configurar Tailwind
 import { educacrossPreset } from "@educacross/ui/tailwind-preset";
 
 export default {
   presets: [educacrossPreset],
   content: [
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@educacross/ui/dist/**/*.js",
+    "./node_modules/@educacross/ui/dist/**/*.{js,mjs}",
   ],
 };
-```
 
-### 2. Importe os estilos
-
-```css
-/* globals.css */
+// 3. Importar estilos (globals.css)
 @import "@educacross/ui/styles.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-```
 
-### 3. Use os componentes
-
-```tsx
-import { Button, Input, Label } from "@educacross/ui";
+// 4. Usar componentes
+import { Button, Card, Input } from "@educacross/ui";
 
 function App() {
   return (
-    <div className="space-y-4">
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input id="email" type="email" placeholder="you@example.com" />
-      </div>
-      <Button>Enviar</Button>
-    </div>
+    <Card className="p-6">
+      <Input placeholder="Email" className="mb-4" />
+      <Button className="w-full">Entrar</Button>
+    </Card>
   );
 }
 ```

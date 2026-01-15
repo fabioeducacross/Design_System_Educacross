@@ -1,0 +1,562 @@
+<Meta title="Getting Started/Para IAs" />
+
+# 🤖 Guia para Agentes de IA
+
+Documentação estruturada para assistentes de código, copilots e agentes autônomos.
+
+---
+
+## 📋 Informações do Pacote
+
+```json
+{
+  "name": "@educacross/ui",
+  "version": "0.1.0",
+  "repository": "https://github.com/fabioeducacross/Design_System_Educacross",
+  "license": "MIT",
+  "framework": "React 18+",
+  "styling": "Tailwind CSS 3.4+",
+  "accessibility": "WCAG 2.1 AA",
+  "typescript": true,
+  "darkMode": true
+}
+```
+
+---
+
+## 🎯 Instalação
+
+### Comando Único
+
+```bash
+pnpm add github:fabioeducacross/Design_System_Educacross
+```
+
+### Dependências Peer
+
+```json
+{
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "tailwindcss": "^3.4.17"
+}
+```
+
+---
+
+## ⚙️ Configuração Mínima
+
+### 1. Tailwind Config
+
+```typescript
+// tailwind.config.ts
+import { educacrossPreset } from "@educacross/ui/tailwind-preset";
+
+export default {
+  presets: [educacrossPreset],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@educacross/ui/dist/**/*.{js,mjs}",
+  ],
+};
+```
+
+### 2. CSS Import
+
+```css
+/* globals.css */
+@import "@educacross/ui/styles.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+---
+
+## 📦 Todos os Componentes (Imports)
+
+### Formulários
+
+```typescript
+import {
+  Button,          // type ButtonProps, buttonVariants
+  Input,           // type InputProps
+  Label,           // type LabelProps
+  Checkbox,        // type CheckboxProps
+  Radio,           // type RadioProps & RadioGroupProps
+  Select,          // type SelectProps, SelectItem, SelectTrigger, SelectContent, SelectValue
+  Textarea,        // type TextareaProps
+} from "@educacross/ui";
+```
+
+### Layout
+
+```typescript
+import {
+  Card,            // type CardProps
+  CardHeader,      // type CardHeaderProps
+  CardTitle,       // type CardTitleProps
+  CardDescription, // type CardDescriptionProps
+  CardContent,     // type CardContentProps
+  CardFooter,      // type CardFooterProps
+  Separator,       // type SeparatorProps
+  Skeleton,        // type SkeletonProps
+} from "@educacross/ui";
+```
+
+### Navegação
+
+```typescript
+import {
+  Tabs,            // type TabsProps
+  TabsList,        // type TabsListProps
+  TabsTrigger,     // type TabsTriggerProps
+  TabsContent,     // type TabsContentProps
+  Accordion,       // type AccordionProps
+  AccordionItem,   // type AccordionItemProps
+  AccordionTrigger, // type AccordionTriggerProps
+  AccordionContent, // type AccordionContentProps
+  DropdownMenu,    // + DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem
+  Popover,         // + PopoverTrigger, PopoverContent
+} from "@educacross/ui";
+```
+
+### Feedback
+
+```typescript
+import {
+  Alert,           // type AlertProps
+  AlertTitle,      // type AlertTitleProps
+  AlertDescription, // type AlertDescriptionProps
+  Toast,           // type ToastProps
+  useToast,        // Hook: const { toast } = useToast()
+  Dialog,          // + DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter
+  Tooltip,         // + TooltipTrigger, TooltipContent, TooltipProvider
+} from "@educacross/ui";
+```
+
+### Data Display
+
+```typescript
+import {
+  Table,           // + TableHeader, TableBody, TableRow, TableHead, TableCell
+  Badge,           // type BadgeProps, badgeVariants
+  Avatar,          // + AvatarImage, AvatarFallback
+  Pagination,      // + PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext
+} from "@educacross/ui";
+```
+
+---
+
+## 🎨 Props dos Componentes Principais
+
+### Button
+
+```typescript
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link";
+  size?: "default" | "sm" | "lg" | "icon";
+  asChild?: boolean;
+}
+
+// Exemplo
+<Button variant="default" size="lg">Click me</Button>
+```
+
+### Input
+
+```typescript
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  error?: boolean;
+}
+
+// Exemplo
+<Input type="email" placeholder="email@example.com" error={false} />
+```
+
+### Card
+
+```typescript
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+// Estrutura completa
+<Card>
+  <CardHeader>
+    <CardTitle>Título</CardTitle>
+    <CardDescription>Descrição</CardDescription>
+  </CardHeader>
+  <CardContent>Conteúdo</CardContent>
+  <CardFooter>Rodapé</CardFooter>
+</Card>
+```
+
+### Dialog
+
+```typescript
+// Estrutura completa
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Abrir</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Título</DialogTitle>
+      <DialogDescription>Descrição</DialogDescription>
+    </DialogHeader>
+    <div>Conteúdo</div>
+    <DialogFooter>
+      <Button variant="outline">Cancelar</Button>
+      <Button>Confirmar</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+### Select
+
+```typescript
+<Select>
+  <SelectTrigger className="w-[200px]">
+    <SelectValue placeholder="Selecione..." />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="option1">Opção 1</SelectItem>
+    <SelectItem value="option2">Opção 2</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+### Toast
+
+```typescript
+// Hook
+const { toast } = useToast();
+
+// Uso
+toast({
+  title: "Sucesso",
+  description: "Operação concluída.",
+  variant: "default" | "destructive",
+});
+```
+
+---
+
+## 🎨 Design Tokens (CSS Variables)
+
+### Cores
+
+```css
+/* Light Mode */
+--primary: 221.2 83.2% 53.3%;
+--secondary: 215.4 16.3% 46.9%;
+--success: 142.1 76.2% 36.3%;
+--destructive: 0 84.2% 60.2%;
+--info: 199 89.1% 48.0%;
+--warning: 26.5 100% 61.8%;
+
+/* Background */
+--background: 0 0% 100%;
+--foreground: 222.2 84% 4.9%;
+
+/* Muted */
+--muted: 210 40% 96.1%;
+--muted-foreground: 215.4 16.3% 46.9%;
+
+/* Border */
+--border: 214.3 31.8% 91.4%;
+--input: 214.3 31.8% 91.4%;
+--ring: 221.2 83.2% 53.3%;
+
+/* Dark Mode */
+.dark {
+  --primary: 217.2 91.2% 59.8%;
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  /* ... etc */
+}
+```
+
+### Espaçamento (Tailwind Classes)
+
+```plaintext
+space-0    = 0
+space-1    = 0.25rem (4px)
+space-2    = 0.5rem (8px)
+space-3    = 0.75rem (12px)
+space-4    = 1rem (16px)
+space-6    = 1.5rem (24px)
+space-8    = 2rem (32px)
+space-12   = 3rem (48px)
+space-16   = 4rem (64px)
+space-20   = 5rem (80px)
+```
+
+### Tipografia (Classes)
+
+```plaintext
+text-xs    = 0.75rem (12px)
+text-sm    = 0.875rem (14px)
+text-base  = 1rem (16px)
+text-lg    = 1.125rem (18px)
+text-xl    = 1.25rem (20px)
+text-2xl   = 1.5rem (24px)
+text-3xl   = 1.875rem (30px)
+text-4xl   = 2.25rem (36px)
+```
+
+---
+
+## 🏗️ Padrões de Composição
+
+### Formulário Completo
+
+```tsx
+import { Button, Input, Label, Card, CardHeader, CardTitle, CardContent } from "@educacross/ui";
+
+function LoginForm() {
+  return (
+    <Card className="max-w-md">
+      <CardHeader>
+        <CardTitle>Login</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="email" required>Email</Label>
+            <Input id="email" type="email" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="password" required>Senha</Label>
+            <Input id="password" type="password" />
+          </div>
+          <Button type="submit" className="w-full">Entrar</Button>
+        </form>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+### Modal de Confirmação
+
+```tsx
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, Button } from "@educacross/ui";
+
+function ConfirmDialog({ open, onOpenChange, onConfirm }) {
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Confirmar ação</DialogTitle>
+        </DialogHeader>
+        <p className="text-sm text-muted-foreground">
+          Esta ação não pode ser desfeita.
+        </p>
+        <DialogFooter>
+          <Button variant="outline" onClick={() => onOpenChange(false)}>
+            Cancelar
+          </Button>
+          <Button variant="destructive" onClick={onConfirm}>
+            Confirmar
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
+```
+
+### Tabela com Paginação
+
+```tsx
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell, Pagination } from "@educacross/ui";
+
+function DataTable({ data, page, totalPages, onPageChange }) {
+  return (
+    <>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Nome</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Status</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {data.map((item) => (
+            <TableRow key={item.id}>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.email}</TableCell>
+              <TableCell>
+                <Badge>{item.status}</Badge>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      
+      <Pagination 
+        currentPage={page} 
+        totalPages={totalPages} 
+        onPageChange={onPageChange} 
+      />
+    </>
+  );
+}
+```
+
+---
+
+## 🌙 Dark Mode
+
+### Ativar
+
+```tsx
+// Layout root
+<html className="dark">
+  <body>{children}</body>
+</html>
+```
+
+### Toggle programático
+
+```typescript
+// Ativar
+document.documentElement.classList.add("dark");
+
+// Desativar
+document.documentElement.classList.remove("dark");
+
+// Toggle
+document.documentElement.classList.toggle("dark");
+```
+
+---
+
+## ♿ Acessibilidade
+
+### Regras Automáticas
+
+- ✅ Navegação por teclado em todos os componentes
+- ✅ Focus visible com `ring-2 ring-ring`
+- ✅ ARIA labels e roles corretos
+- ✅ Contraste WCAG AA (4.5:1 texto, 3:1 UI)
+- ✅ Estados disabled com `pointer-events-none opacity-50`
+
+### Props de A11y
+
+```tsx
+// Label com required
+<Label htmlFor="email" required>Email</Label>
+
+// Input com aria-invalid
+<Input aria-invalid={hasError} aria-describedby="error-msg" />
+
+// Button com aria-label
+<Button aria-label="Fechar" variant="ghost">
+  <X className="h-4 w-4" />
+</Button>
+```
+
+---
+
+## 🐛 Erros Comuns
+
+### 1. Estilos não carregam
+
+**Causa:** `@educacross/ui/styles.css` não importado.
+
+**Fix:**
+```css
+/* globals.css - PRIMEIRA linha */
+@import "@educacross/ui/styles.css";
+```
+
+### 2. TypeScript não reconhece módulo
+
+**Causa:** Cache desatualizado.
+
+**Fix:**
+```bash
+rm -rf node_modules .next
+pnpm install
+```
+
+### 3. Componentes sem estilos Tailwind
+
+**Causa:** `content` do Tailwind não inclui o pacote.
+
+**Fix:**
+```js
+// tailwind.config.ts
+content: [
+  "./src/**/*.{ts,tsx}",
+  "./node_modules/@educacross/ui/dist/**/*.{js,mjs}", // ← Adicionar
+]
+```
+
+### 4. Dark mode não funciona
+
+**Causa:** Classe `dark` ausente.
+
+**Fix:**
+```tsx
+<html className="dark">
+```
+
+---
+
+## 📊 Decisões de Design
+
+### Quando usar cada variante de Button
+
+- `default` → Ação primária (enviar formulário, confirmar)
+- `secondary` → Ação secundária alternativa
+- `destructive` → Ações destrutivas (deletar, remover)
+- `outline` → Ações menos enfatizadas (cancelar, voltar)
+- `ghost` → Ações sutis (fechar modal, menu items)
+- `link` → Navegação inline
+
+### Quando usar Card vs Div
+
+- Use `Card` quando o conteúdo for agrupado logicamente
+- Use `div` para layouts genéricos sem semântica
+
+### Quando usar Dialog vs Popover
+
+- `Dialog` → Requer atenção total (confirmação, formulário)
+- `Popover` → Informação adicional (ajuda, menu contextual)
+
+---
+
+## 🔄 Ciclo de Atualização
+
+```bash
+# Atualizar para última versão
+pnpm remove @educacross/ui
+pnpm add github:fabioeducacross/Design_System_Educacross
+```
+
+---
+
+## 📚 Recursos para IAs
+
+- **Storybook**: Todos os componentes com exemplos
+- **TypeScript**: Tipos completos em `.d.ts`
+- **GitHub**: Código-fonte em `packages/ui/src/components/`
+- **USAGE.md**: Documentação detalhada
+
+---
+
+## ✅ Checklist de Implementação
+
+Para garantir sucesso ao gerar código:
+
+- [ ] Importar de `@educacross/ui`
+- [ ] Usar props tipadas corretamente
+- [ ] Adicionar `className` para customizações
+- [ ] Incluir labels acessíveis em inputs
+- [ ] Usar `space-y-*` para espaçamento vertical
+- [ ] Testar em dark mode com `className="dark"`
+- [ ] Verificar contraste de cores (WCAG AA)

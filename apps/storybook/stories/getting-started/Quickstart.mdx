@@ -1,0 +1,337 @@
+<Meta title="Getting Started/Guia Rápido" />
+
+# 🚀 Guia Rápido de Uso
+
+Comece a usar o Educacross Design System em menos de 5 minutos.
+
+---
+
+## 📦 Instalação
+
+### Via GitHub (Atual)
+
+```bash
+# pnpm (recomendado)
+pnpm add github:fabioeducacross/Design_System_Educacross
+
+# npm
+npm install github:fabioeducacross/Design_System_Educacross
+
+# yarn
+yarn add github:fabioeducacross/Design_System_Educacross
+```
+
+### Via npm (Quando publicado)
+
+```bash
+pnpm add @educacross/ui
+```
+
+---
+
+## ⚙️ Configuração
+
+### 1️⃣ Instale dependências peer
+
+```bash
+pnpm add react react-dom tailwindcss
+```
+
+### 2️⃣ Configure Tailwind CSS
+
+Crie ou edite `tailwind.config.ts`:
+
+```typescript
+import type { Config } from "tailwindcss";
+import { educacrossPreset } from "@educacross/ui/tailwind-preset";
+
+const config: Config = {
+  presets: [educacrossPreset],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@educacross/ui/dist/**/*.{js,mjs}",
+  ],
+};
+
+export default config;
+```
+
+### 3️⃣ Importe os estilos base
+
+No arquivo CSS principal (`src/app/globals.css` ou `src/index.css`):
+
+```css
+@import "@educacross/ui/styles.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+---
+
+## 🎯 Uso Básico
+
+### Importar componentes
+
+```tsx
+import { Button, Input, Label, Card } from "@educacross/ui";
+
+export function LoginForm() {
+  return (
+    <Card className="p-6 max-w-md">
+      <h2 className="text-2xl font-bold mb-4">Login</h2>
+      
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="email" required>Email</Label>
+          <Input 
+            id="email" 
+            type="email" 
+            placeholder="seu@email.com" 
+          />
+        </div>
+        
+        <div className="space-y-2">
+          <Label htmlFor="password" required>Senha</Label>
+          <Input 
+            id="password" 
+            type="password" 
+            placeholder="••••••••" 
+          />
+        </div>
+        
+        <Button type="submit" className="w-full">
+          Entrar
+        </Button>
+      </div>
+    </Card>
+  );
+}
+```
+
+---
+
+## 📚 Componentes Disponíveis
+
+### Formulários
+- `Button` - 6 variantes (default, secondary, destructive, outline, ghost, link)
+- `Input` - Campos de texto com estados (error, disabled)
+- `Label` - Labels com indicador "required"
+- `Checkbox` - Caixas de seleção
+- `Radio` - Botões de rádio
+- `Select` - Dropdowns customizados
+- `Textarea` - Áreas de texto multilinha
+
+### Layout
+- `Card` - Cards com header, content, footer
+- `Separator` - Divisores horizontais/verticais
+- `Skeleton` - Loading placeholders
+
+### Navegação
+- `Tabs` - Abas com conteúdo
+- `Accordion` - Acordeões expansíveis
+- `DropdownMenu` - Menus dropdown
+- `Popover` - Popovers customizados
+
+### Feedback
+- `Alert` - Alertas contextuais (info, success, warning, error)
+- `Toast` - Notificações temporárias
+- `Dialog` - Modais
+- `Tooltip` - Tooltips informativos
+
+### Data Display
+- `Table` - Tabelas responsivas
+- `Badge` - Badges de status
+- `Avatar` - Avatares de usuário
+- `Pagination` - Paginação de dados
+
+---
+
+## 🌙 Dark Mode
+
+### Ativar tema escuro
+
+```tsx
+// Adicione a classe "dark" no elemento <html>
+export default function RootLayout({ children }) {
+  return (
+    <html lang="pt-BR" className="dark">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+### Toggle de tema
+
+```tsx
+"use client";
+
+import { Button } from "@educacross/ui";
+import { Moon, Sun } from "lucide-react";
+
+export function ThemeToggle() {
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleTheme = () => {
+    document.documentElement.classList.toggle("dark");
+    setIsDark(!isDark);
+  };
+
+  return (
+    <Button variant="ghost" size="icon" onClick={toggleTheme}>
+      {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+    </Button>
+  );
+}
+```
+
+---
+
+## ⚡ Next.js 14/15 (App Router)
+
+### Configuração completa
+
+**1. Instalar:**
+```bash
+pnpm add github:fabioeducacross/Design_System_Educacross
+```
+
+**2. `tailwind.config.ts`:**
+```typescript
+import { educacrossPreset } from "@educacross/ui/tailwind-preset";
+
+export default {
+  presets: [educacrossPreset],
+  content: [
+    "./src/**/*.{ts,tsx}",
+    "./node_modules/@educacross/ui/dist/**/*.{js,mjs}",
+  ],
+};
+```
+
+**3. `src/app/globals.css`:**
+```css
+@import "@educacross/ui/styles.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+**4. `src/app/layout.tsx`:**
+```tsx
+import "./globals.css";
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="pt-BR">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+**5. `src/app/page.tsx`:**
+```tsx
+import { Button, Card } from "@educacross/ui";
+
+export default function Home() {
+  return (
+    <main className="p-8">
+      <Card className="p-6 max-w-md mx-auto">
+        <h1 className="text-2xl font-bold mb-4">
+          Educacross Design System
+        </h1>
+        <p className="text-muted-foreground mb-4">
+          Funcionando! 🎉
+        </p>
+        <Button className="w-full">Começar</Button>
+      </Card>
+    </main>
+  );
+}
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Estilos não aparecem
+
+**Problema:** Componentes sem estilos.
+
+**Solução:**
+1. Verifique se `@educacross/ui/styles.css` está importado
+2. Confirme que o `content` do Tailwind inclui:
+   ```js
+   "./node_modules/@educacross/ui/dist/**/*.{js,mjs}"
+   ```
+
+### Erro TypeScript
+
+**Problema:** `Cannot find module '@educacross/ui'`
+
+**Solução:**
+```bash
+# Limpar cache e reinstalar
+rm -rf node_modules .next
+pnpm install
+```
+
+### Dark mode não funciona
+
+**Problema:** Cores não mudam.
+
+**Solução:** Adicione `className="dark"` no `<html>`:
+```tsx
+<html className="dark">
+```
+
+---
+
+## 🎨 Customização
+
+### Sobrescrever cores
+
+```css
+/* src/app/globals.css */
+:root {
+  --primary: 220 90% 56%; /* Nova cor primária */
+  --radius: 0.75rem; /* Novo border-radius */
+}
+```
+
+### Adicionar classes customizadas
+
+```tsx
+<Button className="bg-gradient-to-r from-purple-500 to-pink-500">
+  Botão Customizado
+</Button>
+```
+
+---
+
+## 📖 Próximos Passos
+
+1. **Explore componentes** - Navegue pela sidebar à esquerda
+2. **Veja exemplos** - Cada componente tem múltiplos exemplos
+3. **Leia guidelines** - Acesse "Guidelines" → "Accessibility" e "States"
+4. **Use patterns** - Veja "Patterns" para composições prontas
+
+---
+
+## 🔗 Links Úteis
+
+- [GitHub](https://github.com/fabioeducacross/Design_System_Educacross)
+- [Documentação Completa (USAGE.md)](https://github.com/fabioeducacross/Design_System_Educacross/blob/master/USAGE.md)
+- [Exemplo Next.js](https://github.com/fabioeducacross/Design_System_Educacross/tree/master/examples/next-app)
+
+---
+
+## 💡 Dicas
+
+- ✅ Use TypeScript para autocomplete de props
+- ✅ Todos componentes são acessíveis (WCAG 2.1 AA)
+- ✅ Tree-shaking automático - apenas o usado é incluído
+- ✅ Dark mode funciona out-of-the-box

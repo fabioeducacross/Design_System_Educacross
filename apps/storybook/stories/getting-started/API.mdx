@@ -1,0 +1,665 @@
+<Meta title="Getting Started/API Reference" />
+
+# 📚 API Reference
+
+Referência completa de todos os componentes e suas props.
+
+---
+
+## Button
+
+Botão clicável com múltiplas variantes e tamanhos.
+
+### Props
+
+```typescript
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link";
+  size?: "default" | "sm" | "lg" | "icon";
+  asChild?: boolean;
+}
+```
+
+### Variantes
+
+| Variante | Uso | Cor Base |
+|----------|-----|----------|
+| `default` | Ação primária | `bg-primary text-primary-foreground` |
+| `secondary` | Ação secundária | `bg-secondary text-secondary-foreground` |
+| `destructive` | Ações destrutivas | `bg-destructive text-destructive-foreground` |
+| `outline` | Contorno | `border border-input bg-background` |
+| `ghost` | Ação sutil | `hover:bg-accent hover:text-accent-foreground` |
+| `link` | Link inline | `text-primary underline-offset-4` |
+
+### Tamanhos
+
+| Size | Classes | Altura |
+|------|---------|--------|
+| `default` | `h-10 px-4 py-2` | 40px |
+| `sm` | `h-9 rounded-md px-3` | 36px |
+| `lg` | `h-11 rounded-md px-8` | 44px |
+| `icon` | `h-10 w-10` | 40px × 40px |
+
+### Exemplo
+
+```tsx
+<Button variant="default" size="lg" onClick={() => console.log("clicked")}>
+  Clique aqui
+</Button>
+```
+
+---
+
+## Input
+
+Campo de entrada de texto.
+
+### Props
+
+```typescript
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  error?: boolean;
+}
+```
+
+### Classes Base
+
+```css
+h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm
+ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium
+placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2
+focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed
+disabled:opacity-50
+```
+
+### Exemplo
+
+```tsx
+<Input 
+  type="email" 
+  placeholder="email@example.com" 
+  error={false}
+  disabled={false}
+/>
+```
+
+---
+
+## Label
+
+Label acessível para inputs.
+
+### Props
+
+```typescript
+interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  required?: boolean;
+}
+```
+
+### Exemplo
+
+```tsx
+<Label htmlFor="email" required>
+  Email
+</Label>
+<Input id="email" type="email" />
+```
+
+---
+
+## Card
+
+Container para agrupar conteúdo relacionado.
+
+### Componentes
+
+- `Card` - Container principal
+- `CardHeader` - Cabeçalho (opcional)
+- `CardTitle` - Título
+- `CardDescription` - Descrição
+- `CardContent` - Conteúdo principal
+- `CardFooter` - Rodapé (opcional)
+
+### Props
+
+```typescript
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
+```
+
+### Estrutura Completa
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Título do Card</CardTitle>
+    <CardDescription>Descrição opcional</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Conteúdo principal aqui</p>
+  </CardContent>
+  <CardFooter>
+    <Button>Ação</Button>
+  </CardFooter>
+</Card>
+```
+
+---
+
+## Dialog
+
+Modal para ações que requerem atenção do usuário.
+
+### Componentes
+
+- `Dialog` - Container root
+- `DialogTrigger` - Botão que abre
+- `DialogContent` - Conteúdo do modal
+- `DialogHeader` - Cabeçalho
+- `DialogTitle` - Título
+- `DialogDescription` - Descrição
+- `DialogFooter` - Rodapé com ações
+
+### Props Principais
+
+```typescript
+interface DialogProps {
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  defaultOpen?: boolean;
+}
+```
+
+### Exemplo Controlado
+
+```tsx
+const [open, setOpen] = useState(false);
+
+<Dialog open={open} onOpenChange={setOpen}>
+  <DialogTrigger asChild>
+    <Button>Abrir Dialog</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Confirmar ação</DialogTitle>
+      <DialogDescription>
+        Esta ação não pode ser desfeita.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <Button variant="outline" onClick={() => setOpen(false)}>
+        Cancelar
+      </Button>
+      <Button onClick={handleConfirm}>
+        Confirmar
+      </Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+---
+
+## Select
+
+Dropdown customizado para seleção de opções.
+
+### Componentes
+
+- `Select` - Container root
+- `SelectTrigger` - Botão que abre
+- `SelectValue` - Valor selecionado
+- `SelectContent` - Container das opções
+- `SelectItem` - Item individual
+
+### Props
+
+```typescript
+interface SelectProps {
+  value?: string;
+  onValueChange?: (value: string) => void;
+  defaultValue?: string;
+  disabled?: boolean;
+}
+```
+
+### Exemplo
+
+```tsx
+const [value, setValue] = useState("");
+
+<Select value={value} onValueChange={setValue}>
+  <SelectTrigger className="w-[200px]">
+    <SelectValue placeholder="Selecione uma opção" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="option1">Opção 1</SelectItem>
+    <SelectItem value="option2">Opção 2</SelectItem>
+    <SelectItem value="option3">Opção 3</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+---
+
+## Toast
+
+Notificações temporárias.
+
+### Hook
+
+```typescript
+const { toast, dismiss } = useToast();
+```
+
+### Métodos
+
+```typescript
+toast({
+  title: string;
+  description?: string;
+  variant?: "default" | "destructive";
+  duration?: number; // ms, default: 5000
+})
+
+dismiss(toastId?: string) // Fecha um ou todos os toasts
+```
+
+### Exemplo
+
+```tsx
+import { useToast } from "@educacross/ui";
+
+function Component() {
+  const { toast } = useToast();
+
+  const showSuccess = () => {
+    toast({
+      title: "Sucesso!",
+      description: "Operação concluída com sucesso.",
+    });
+  };
+
+  const showError = () => {
+    toast({
+      title: "Erro",
+      description: "Algo deu errado.",
+      variant: "destructive",
+    });
+  };
+
+  return (
+    <>
+      <Button onClick={showSuccess}>Sucesso</Button>
+      <Button onClick={showError} variant="destructive">Erro</Button>
+    </>
+  );
+}
+```
+
+---
+
+## Alert
+
+Mensagens de destaque para feedback contextual.
+
+### Componentes
+
+- `Alert` - Container principal
+- `AlertTitle` - Título
+- `AlertDescription` - Descrição
+
+### Props
+
+```typescript
+interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: "default" | "destructive";
+}
+```
+
+### Exemplo
+
+```tsx
+<Alert variant="default">
+  <AlertTitle>Informação</AlertTitle>
+  <AlertDescription>
+    Esta é uma mensagem informativa.
+  </AlertDescription>
+</Alert>
+
+<Alert variant="destructive">
+  <AlertTitle>Erro</AlertTitle>
+  <AlertDescription>
+    Ocorreu um erro ao processar sua solicitação.
+  </AlertDescription>
+</Alert>
+```
+
+---
+
+## Badge
+
+Indicadores de status compactos.
+
+### Props
+
+```typescript
+interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: "default" | "secondary" | "destructive" | "outline";
+}
+```
+
+### Variantes
+
+| Variante | Uso | Cor |
+|----------|-----|-----|
+| `default` | Status padrão | `bg-primary text-primary-foreground` |
+| `secondary` | Status secundário | `bg-secondary text-secondary-foreground` |
+| `destructive` | Status de erro | `bg-destructive text-destructive-foreground` |
+| `outline` | Badge com contorno | `border border-input` |
+
+### Exemplo
+
+```tsx
+<Badge variant="default">Ativo</Badge>
+<Badge variant="secondary">Pendente</Badge>
+<Badge variant="destructive">Erro</Badge>
+<Badge variant="outline">Novo</Badge>
+```
+
+---
+
+## Table
+
+Tabela responsiva para exibição de dados.
+
+### Componentes
+
+- `Table` - Container principal
+- `TableHeader` - Cabeçalho
+- `TableBody` - Corpo
+- `TableRow` - Linha
+- `TableHead` - Célula de cabeçalho
+- `TableCell` - Célula de dados
+
+### Exemplo
+
+```tsx
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Nome</TableHead>
+      <TableHead>Email</TableHead>
+      <TableHead>Status</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>João Silva</TableCell>
+      <TableCell>joao@example.com</TableCell>
+      <TableCell>
+        <Badge>Ativo</Badge>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+---
+
+## Tabs
+
+Navegação por abas.
+
+### Componentes
+
+- `Tabs` - Container root
+- `TabsList` - Lista de triggers
+- `TabsTrigger` - Botão da aba
+- `TabsContent` - Conteúdo da aba
+
+### Props
+
+```typescript
+interface TabsProps {
+  value?: string;
+  onValueChange?: (value: string) => void;
+  defaultValue?: string;
+}
+```
+
+### Exemplo
+
+```tsx
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+    <TabsTrigger value="tab3">Tab 3</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">
+    <p>Conteúdo da Tab 1</p>
+  </TabsContent>
+  <TabsContent value="tab2">
+    <p>Conteúdo da Tab 2</p>
+  </TabsContent>
+  <TabsContent value="tab3">
+    <p>Conteúdo da Tab 3</p>
+  </TabsContent>
+</Tabs>
+```
+
+---
+
+## Accordion
+
+Seções expansíveis.
+
+### Componentes
+
+- `Accordion` - Container root
+- `AccordionItem` - Item individual
+- `AccordionTrigger` - Botão para expandir
+- `AccordionContent` - Conteúdo expansível
+
+### Props
+
+```typescript
+interface AccordionProps {
+  type?: "single" | "multiple";
+  collapsible?: boolean;
+  defaultValue?: string | string[];
+}
+```
+
+### Exemplo
+
+```tsx
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Pergunta 1</AccordionTrigger>
+    <AccordionContent>
+      Resposta da pergunta 1.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Pergunta 2</AccordionTrigger>
+    <AccordionContent>
+      Resposta da pergunta 2.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+---
+
+## Checkbox
+
+Caixa de seleção binária.
+
+### Props
+
+```typescript
+interface CheckboxProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  checked?: boolean;
+  onCheckedChange?: (checked: boolean) => void;
+  disabled?: boolean;
+}
+```
+
+### Exemplo
+
+```tsx
+const [checked, setChecked] = useState(false);
+
+<div className="flex items-center space-x-2">
+  <Checkbox 
+    id="terms" 
+    checked={checked} 
+    onCheckedChange={setChecked} 
+  />
+  <Label htmlFor="terms">
+    Aceito os termos e condições
+  </Label>
+</div>
+```
+
+---
+
+## Avatar
+
+Imagem de perfil com fallback.
+
+### Componentes
+
+- `Avatar` - Container
+- `AvatarImage` - Imagem
+- `AvatarFallback` - Fallback (iniciais, ícone)
+
+### Exemplo
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+```
+
+---
+
+## Tooltip
+
+Dica informativa ao hover.
+
+### Componentes
+
+- `TooltipProvider` - Provider (root do app)
+- `Tooltip` - Container
+- `TooltipTrigger` - Elemento que ativa
+- `TooltipContent` - Conteúdo do tooltip
+
+### Exemplo
+
+```tsx
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@educacross/ui";
+
+// No root do app
+<TooltipProvider>
+  <App />
+</TooltipProvider>
+
+// No componente
+<Tooltip>
+  <TooltipTrigger asChild>
+    <Button variant="ghost" size="icon">
+      <Info className="h-4 w-4" />
+    </Button>
+  </TooltipTrigger>
+  <TooltipContent>
+    <p>Informação adicional</p>
+  </TooltipContent>
+</Tooltip>
+```
+
+---
+
+## Skeleton
+
+Placeholder animado para loading.
+
+### Props
+
+```typescript
+interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {}
+```
+
+### Exemplo
+
+```tsx
+<div className="space-y-2">
+  <Skeleton className="h-4 w-[250px]" />
+  <Skeleton className="h-4 w-[200px]" />
+  <Skeleton className="h-4 w-[150px]" />
+</div>
+```
+
+---
+
+## Separator
+
+Divisor visual horizontal ou vertical.
+
+### Props
+
+```typescript
+interface SeparatorProps {
+  orientation?: "horizontal" | "vertical";
+}
+```
+
+### Exemplo
+
+```tsx
+<div>
+  <p>Seção 1</p>
+  <Separator className="my-4" />
+  <p>Seção 2</p>
+</div>
+```
+
+---
+
+## 🎨 Utilitários
+
+### cn()
+
+Função para merge de classes Tailwind com conflito resolution.
+
+```typescript
+import { cn } from "@educacross/ui";
+
+// Uso
+<div className={cn("base-class", condition && "conditional-class", className)} />
+```
+
+### buttonVariants()
+
+Gera classes de botão para elementos customizados.
+
+```typescript
+import { buttonVariants } from "@educacross/ui";
+
+// Criar link com estilo de botão
+<a href="/page" className={buttonVariants({ variant: "outline", size: "lg" })}>
+  Link
+</a>
+```
+
+---
+
+## 📖 Próximos Passos
+
+- Explore os componentes na sidebar
+- Veja exemplos práticos em cada página
+- Teste no Storybook interativo
+- Consulte [USAGE.md](https://github.com/fabioeducacross/Design_System_Educacross/blob/master/USAGE.md) para guias completos
