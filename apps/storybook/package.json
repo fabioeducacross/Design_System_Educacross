@@ -14,7 +14,7 @@
     "@educacross/ui": "workspace:*",
     "lucide-react": "^0.562.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.2.3",
     "react-feather": "^2.0.10",
     "react-zoom-pan-pinch": "^3.7.0"
   },
@@ -26,7 +26,7 @@
     "@storybook/react": "10.1.11",
     "@storybook/react-vite": "10.1.11",
     "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "eslint-plugin-storybook": "10.1.11",
