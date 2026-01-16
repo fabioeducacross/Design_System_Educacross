@@ -268,7 +268,7 @@ dismiss(toastId?: string) // Fecha um ou todos os toasts
 ### Exemplo
 
 ```tsx
-import { useToast } from "@educacross/ui";
+import { useToast } from "@fabioaap/ui";
 
 function Component() {
   const { toast } = useToast();
@@ -561,7 +561,7 @@ Dica informativa ao hover.
 ### Exemplo
 
 ```tsx
-import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@educacross/ui";
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@fabioaap/ui";
 
 // No root do app
 <TooltipProvider>
@@ -636,7 +636,7 @@ interface SeparatorProps {
 Função para merge de classes Tailwind com conflito resolution.
 
 ```typescript
-import { cn } from "@educacross/ui";
+import { cn } from "@fabioaap/ui";
 
 // Uso
 <div className={cn("base-class", condition && "conditional-class", className)} />
@@ -647,7 +647,7 @@ import { cn } from "@educacross/ui";
 Gera classes de botão para elementos customizados.
 
 ```typescript
-import { buttonVariants } from "@educacross/ui";
+import { buttonVariants } from "@fabioaap/ui";
 
 // Criar link com estilo de botão
 <a href="/page" className={buttonVariants({ variant: "outline", size: "lg" })}>
@@ -663,3 +663,4 @@ import { buttonVariants } from "@educacross/ui";
 - Veja exemplos práticos em cada página
 - Teste no Storybook interativo
 - Consulte [USAGE.md](https://github.com/fabioeducacross/Design_System_Educacross/blob/master/USAGE.md) para guias completos
+

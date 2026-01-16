@@ -1,10 +1,14 @@
 {
-    "name": "@educacross/ui",
+    "name": "@fabioaap/ui",
     "version": "0.1.0",
     "description": "Educacross Design System - UI Components",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://npm.pkg.github.com"
+    },
     "sideEffects": [
         "**/*.css"
     ],
@@ -75,10 +79,6 @@
         "tsup": "^8.3.5",
         "typescript": "^5.7.2",
         "vitest": "^4.0.16"
-    },
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://npm.pkg.github.com"
     },
     "repository": {
         "type": "git",

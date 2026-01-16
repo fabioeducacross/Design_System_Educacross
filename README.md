@@ -18,7 +18,7 @@ Sistema de design em código para reduzir inconsistências visuais, acelerar des
 ├── apps/
 │   └── storybook/          # Catálogo de componentes
 ├── packages/
-│   └── ui/                 # @educacross/ui - Design System
+│   └── ui/                 # @fabioaap/ui - Design System
 │       ├── src/
 │       │   ├── components/ # Button, Input, Label...
 │       │   ├── utils/      # Utilitários (cn)
@@ -32,20 +32,14 @@ Sistema de design em código para reduzir inconsistências visuais, acelerar des
 
 ### 📦 Instalação
 
-#### Via GitHub (Versão Estável)
+#### Via GitHub Packages
 
 ```bash
-# Instalar versão específica (recomendado)
-pnpm add github:fabioeducacross/Design_System_Educacross#v0.1.0
+# 1. Criar .npmrc na raiz do projeto
+echo "@fabioaap:registry=https://npm.pkg.github.com" > .npmrc
 
-# Ou instalar a branch master (desenvolvimento)
-pnpm add github:fabioeducacross/Design_System_Educacross#master
-```
-
-#### Via npm (Em breve)
-
-```bash
-pnpm add @educacross/ui
+# 2. Instalar pacote
+pnpm add @fabioaap/ui@0.1.0
 ```
 
 **📖 Guia Completo**: Veja [USAGE.md](./USAGE.md) para instruções detalhadas de configuração.
@@ -67,28 +61,31 @@ pnpm storybook
 ### Configuração Básica (React)
 
 ```bash
-# Instale via GitHub
-pnpm add github:fabioeducacross/Deisign_System_Educacross#master
+# Criar .npmrc
+echo "@fabioaap:registry=https://npm.pkg.github.com" > .npmrc
+
+# Instalar pacote
+pnpm add @fabioaap/ui@0.1.0
 
 # No tailwind.config.ts
-import { educacrossPreset } from "@educacross/ui/tailwind-preset";
+import { educacrossPreset } from "@fabioaap/ui/tailwind-preset";
 
 export default {
   presets: [educacrossPreset],
   content: [
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@educacross/ui/dist/**/*.js",
+    "./node_modules/@fabioaap/ui/dist/**/*.js",
   ],
 };
 
 # No seu CSS principal
-@import "@educacross/ui/styles.css";
+@import "@fabioaap/ui/styles.css";
 ```
 
 ### Usando componentes
 
 ```tsx
-import { Button, Input, Label } from "@educacross/ui";
+import { Button, Input, Label } from "@fabioaap/ui";
 
 function LoginForm() {
   return (
@@ -170,3 +167,4 @@ Veja [CONTRIBUTING.md](./CONTRIBUTING.md) para guidelines.
 ## Licença
 
 MIT
+
