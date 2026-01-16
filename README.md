@@ -30,14 +30,25 @@ Sistema de design em código para reduzir inconsistências visuais, acelerar des
 
 ## Quick Start
 
-### 📦 Instalação via GitHub
+### 📦 Instalação
+
+#### Via GitHub (Versão Estável)
 
 ```bash
-# Instalar diretamente do GitHub
-pnpm add github:fabioeducacross/Deisign_System_Educacross#master
+# Instalar versão específica (recomendado)
+pnpm add github:fabioeducacross/Design_System_Educacross#v0.1.0
+
+# Ou instalar a branch master (desenvolvimento)
+pnpm add github:fabioeducacross/Design_System_Educacross#master
 ```
 
-**📖 Para instruções completas de instalação em React, Vue e Vanilla, veja [INSTALLATION.md](./INSTALLATION.md)**
+#### Via npm (Em breve)
+
+```bash
+pnpm add @educacross/ui
+```
+
+**📖 Guia Completo**: Veja [USAGE.md](./USAGE.md) para instruções detalhadas de configuração.
 
 ### Desenvolvimento Local
 

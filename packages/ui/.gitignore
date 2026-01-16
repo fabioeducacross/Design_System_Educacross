@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# IDE
+.idea/
+*.swp
+*.swo
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+coverage/
+
+# ⚠️ IMPORTANTE: NÃO ignore dist/ neste pacote!
+# O diretório dist/ DEVE ser commitado para permitir
+# instalação via GitHub (github:fabioeducacross/Design_System_Educacross)
+# 
+# Quando usuários instalam via pnpm add github:org/repo,
+# o npm/pnpm espera encontrar os arquivos buildados (dist/)
+# já presentes no repositório.

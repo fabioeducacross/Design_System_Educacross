@@ -26,18 +26,27 @@ Documentação estruturada para assistentes de código, copilots e agentes autô
 
 ## 🎯 Instalação
 
-### Comando Único
+### Comando de Instalação
 
 ```bash
-pnpm add github:fabioeducacross/Design_System_Educacross
+# Versão específica (recomendado)
+pnpm add github:fabioeducacross/Design_System_Educacross#v0.1.0
+
+# Branch master (desenvolvimento)
+pnpm add github:fabioeducacross/Design_System_Educacross#master
+
+# Futuro: via npm registry
+pnpm add @educacross/ui
 ```
 
-### Dependências Peer
+### Dependências Peer (Obrigatórias)
 
 ```json
 {
   "react": "^18.3.1",
   "react-dom": "^18.3.1",
+  "tailwindcss": "^3.4.0"
+}
   "tailwindcss": "^3.4.17"
 }
 ```

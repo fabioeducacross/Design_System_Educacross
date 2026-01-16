@@ -6,24 +6,27 @@ Guia completo para instalar e usar o **@educacross/ui** em seus projetos.
 
 ## 🎯 Instalação Rápida
 
-### Opção 1: Via GitHub (Recomendado para desenvolvimento)
+### Opção 1: Via GitHub com Versionamento (Recomendado)
+
+Use uma tag de versão específica para garantir estabilidade:
 
 ```bash
-# npm
-npm install github:fabioeducacross/Design_System_Educacross
+# Versão específica (recomendado)
+pnpm add github:fabioeducacross/Design_System_Educacross#v0.1.0
 
-# pnpm
+# Ou a versão mais recente
 pnpm add github:fabioeducacross/Design_System_Educacross
-
-# yarn
-yarn add github:fabioeducacross/Design_System_Educacross
 ```
 
-### Opção 2: Via npm (quando publicado)
+> **💡 Dica**: Sempre use tags de versão (`#v0.1.0`) em produção para evitar quebras inesperadas.
+
+### Opção 2: Via npm (quando publicado no npm registry)
 
 ```bash
-npm install @educacross/ui
+pnpm add @educacross/ui
 ```
+
+> **ℹ️ Status**: Atualmente disponível apenas via GitHub. Publicação no npm em breve.
 
 ---
 

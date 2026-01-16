@@ -44,7 +44,46 @@ jobs:
       - name: Run tests
         run: pnpm test
 
-      - name: Publish to NPM
+      - name: Commitar dist/ para permitir instalação via GitHub
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add packages/ui/dist/ || true
+          git diff --staged --quiet || git commit -m "build: atualizar dist/ para ${GITHUB_REF#refs/tags/}"
+          git push origin HEAD:master || echo "Nenhuma mudança para commitar"
+      
+      - name: Criar GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${GITHUB_REF#refs/tags/}
+          body: |
+            ## 🎨 Educacross Design System ${GITHUB_REF#refs/tags/}
+            
+            ### 📦 Instalação via GitHub
+            
+            ```bash
+            pnpm add github:fabioeducacross/Design_System_Educacross#${GITHUB_REF#refs/tags/}
+            ```
+            
+            ### 📚 Documentação
+            
+            - [Storybook](https://fabioeducacross.github.io/Design_System_Educacross/)
+            - [Guia de Uso](https://github.com/fabioeducacross/Design_System_Educacross/blob/master/USAGE.md)
+            
+            ### ✨ Conteúdo
+            
+            - ✅ 21+ componentes React com TypeScript
+            - ✅ Tailwind CSS preset (educacrossPreset)
+            - ✅ Design tokens (CSS variables)
+            - ✅ Dark mode nativo
+            - ✅ Acessibilidade WCAG 2.1 AA
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Publish to NPM (se NPM_TOKEN configurado)
+        if: ${{ secrets.NPM_TOKEN != '' }}
         run: pnpm --filter @educacross/ui publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
