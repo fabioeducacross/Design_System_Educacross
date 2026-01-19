@@ -1,6 +1,6 @@
 # 📖 Como Usar o Educacross Design System
 
-Guia completo para instalar e usar o **@fabioaap/ui** em seus projetos.
+Guia completo para instalar e usar o **@fabioeducacross/ui** em seus projetos.
 
 ---
 
@@ -17,7 +17,7 @@ Guia completo para instalar e usar o **@fabioaap/ui** em seus projetos.
 **Passo 2**: Instale o pacote:
 
 ```bash
-pnpm add @fabioaap/ui@0.1.0
+pnpm add @fabioeducacross/ui@0.1.0
 ```
 
 > **💡 Dica**: O arquivo `.npmrc` configura o npm/pnpm para buscar pacotes com escopo `@fabioaap` no GitHub Packages.
@@ -44,13 +44,13 @@ Crie ou edite `tailwind.config.ts`:
 
 ```typescript
 import type { Config } from "tailwindcss";
-import { educacrossPreset } from "@fabioaap/ui/tailwind-preset";
+import { educacrossPreset } from "@fabioeducacross/ui/tailwind-preset";
 
 const config: Config = {
   presets: [educacrossPreset],
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@fabioaap/ui/dist/**/*.{js,mjs}",
+    "./node_modules/@fabioeducacross/ui/dist/**/*.{js,mjs}",
   ],
 };
 
@@ -62,7 +62,7 @@ export default config;
 No seu CSS principal (ex: `src/app/globals.css` ou `src/index.css`):
 
 ```css
-@import "@fabioaap/ui/styles.css";
+@import "@fabioeducacross/ui/styles.css";
 
 @tailwind base;
 @tailwind components;
@@ -76,7 +76,7 @@ No seu CSS principal (ex: `src/app/globals.css` ou `src/index.css`):
 ### Importar componentes
 
 ```tsx
-import { Button, Input, Label } from "@fabioaap/ui";
+import { Button, Input, Label } from "@fabioeducacross/ui";
 
 export function LoginForm() {
   return (
@@ -118,7 +118,7 @@ export function LoginForm() {
 ### 1. **Botões com Variantes**
 
 ```tsx
-import { Button } from "@fabioaap/ui";
+import { Button } from "@fabioeducacross/ui";
 
 export function ButtonExamples() {
   return (
@@ -137,7 +137,7 @@ export function ButtonExamples() {
 ### 2. **Card com Informações**
 
 ```tsx
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@fabioaap/ui";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@fabioeducacross/ui";
 
 export function ProfileCard() {
   return (
@@ -168,7 +168,7 @@ export function ProfileCard() {
 ### 3. **Dialog (Modal)**
 
 ```tsx
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, Button } from "@fabioaap/ui";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, Button } from "@fabioeducacross/ui";
 
 export function ConfirmDialog() {
   return (
@@ -196,7 +196,7 @@ export function ConfirmDialog() {
 ### 4. **Toast (Notificações)**
 
 ```tsx
-import { useToast, Button } from "@fabioaap/ui";
+import { useToast, Button } from "@fabioeducacross/ui";
 
 export function ToastExample() {
   const { toast } = useToast();
@@ -219,7 +219,7 @@ export function ToastExample() {
 ### 5. **Select (Dropdown)**
 
 ```tsx
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@fabioaap/ui";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@fabioeducacross/ui";
 
 export function SelectExample() {
   return (
@@ -257,7 +257,7 @@ Você pode estender o preset ou sobrescrever tokens CSS:
 ### Adicionar classes personalizadas
 
 ```tsx
-import { Button } from "@fabioaap/ui";
+import { Button } from "@fabioeducacross/ui";
 
 export function CustomButton() {
   return (
@@ -293,7 +293,7 @@ export default function RootLayout({ children }) {
 ```tsx
 "use client";
 
-import { Button } from "@fabioaap/ui";
+import { Button } from "@fabioeducacross/ui";
 import { Moon, Sun } from "lucide-react";
 
 export function ThemeToggle() {
@@ -363,18 +363,18 @@ export function ThemeToggle() {
 **Problema**: Componentes não têm estilos aplicados.
 
 **Solução**:
-1. Verifique se importou `@fabioaap/ui/styles.css` no CSS principal
+1. Verifique se importou `@fabioeducacross/ui/styles.css` no CSS principal
 2. Confirme que o `content` do Tailwind inclui o caminho do pacote:
    ```js
    content: [
      "./src/**/*.{js,ts,jsx,tsx}",
-     "./node_modules/@fabioaap/ui/dist/**/*.{js,mjs}"
+     "./node_modules/@fabioeducacross/ui/dist/**/*.{js,mjs}"
    ]
    ```
 
 ### Erro de TypeScript
 
-**Problema**: `Cannot find module '@fabioaap/ui'`
+**Problema**: `Cannot find module '@fabioeducacross/ui'`
 
 **Solução**:
 1. Reinstale as dependências: `pnpm install`
@@ -410,4 +410,5 @@ https://github.com/fabioeducacross/Design_System_Educacross/issues
 ---
 
 **Feito com ❤️ pela equipe Educacross**
+
 

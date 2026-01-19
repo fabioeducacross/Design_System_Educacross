@@ -18,7 +18,7 @@ Sistema de design em código para reduzir inconsistências visuais, acelerar des
 ├── apps/
 │   └── storybook/          # Catálogo de componentes
 ├── packages/
-│   └── ui/                 # @fabioaap/ui - Design System
+│   └── ui/                 # @fabioeducacross/ui - Design System
 │       ├── src/
 │       │   ├── components/ # Button, Input, Label...
 │       │   ├── utils/      # Utilitários (cn)
@@ -39,7 +39,7 @@ Sistema de design em código para reduzir inconsistências visuais, acelerar des
 echo "@fabioaap:registry=https://npm.pkg.github.com" > .npmrc
 
 # 2. Instalar pacote
-pnpm add @fabioaap/ui@0.1.0
+pnpm add @fabioeducacross/ui@0.1.0
 ```
 
 **📖 Guia Completo**: Veja [USAGE.md](./USAGE.md) para instruções detalhadas de configuração.
@@ -65,27 +65,27 @@ pnpm storybook
 echo "@fabioaap:registry=https://npm.pkg.github.com" > .npmrc
 
 # Instalar pacote
-pnpm add @fabioaap/ui@0.1.0
+pnpm add @fabioeducacross/ui@0.1.0
 
 # No tailwind.config.ts
-import { educacrossPreset } from "@fabioaap/ui/tailwind-preset";
+import { educacrossPreset } from "@fabioeducacross/ui/tailwind-preset";
 
 export default {
   presets: [educacrossPreset],
   content: [
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@fabioaap/ui/dist/**/*.js",
+    "./node_modules/@fabioeducacross/ui/dist/**/*.js",
   ],
 };
 
 # No seu CSS principal
-@import "@fabioaap/ui/styles.css";
+@import "@fabioeducacross/ui/styles.css";
 ```
 
 ### Usando componentes
 
 ```tsx
-import { Button, Input, Label } from "@fabioaap/ui";
+import { Button, Input, Label } from "@fabioeducacross/ui";
 
 function LoginForm() {
   return (
@@ -167,4 +167,5 @@ Veja [CONTRIBUTING.md](./CONTRIBUTING.md) para guidelines.
 ## Licença
 
 MIT
+
 

@@ -49,7 +49,7 @@ import { BrandHeader, FeatureCard, DiagramGrid, Callout } from '../src/component
   echo "@fabioaap:registry=https://npm.pkg.github.com" > .npmrc
   
   # 2. Instalar pacote
-  pnpm add @fabioaap/ui@0.1.0
+  pnpm add @fabioeducacross/ui@0.1.0
   
   # Branch master (desenvolvimento)
   pnpm add github:fabioeducacross/Design_System_Educacross#master
@@ -68,24 +68,24 @@ import { BrandHeader, FeatureCard, DiagramGrid, Callout } from '../src/component
 pnpm add github:fabioeducacross/Design_System_Educacross#v0.1.0
 
 // 2. Configurar Tailwind
-import { educacrossPreset } from "@fabioaap/ui/tailwind-preset";
+import { educacrossPreset } from "@fabioeducacross/ui/tailwind-preset";
 
 export default {
   presets: [educacrossPreset],
   content: [
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@fabioaap/ui/dist/**/*.{js,mjs}",
+    "./node_modules/@fabioeducacross/ui/dist/**/*.{js,mjs}",
   ],
 };
 
 // 3. Importar estilos (globals.css)
-@import "@fabioaap/ui/styles.css";
+@import "@fabioeducacross/ui/styles.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 // 4. Usar componentes
-import { Button, Card, Input } from "@fabioaap/ui";
+import { Button, Card, Input } from "@fabioeducacross/ui";
 
 function App() {
   return (
@@ -177,7 +177,7 @@ na toolbar do Storybook para alternar.
 ## 🔗 Links Úteis
 
 - **GitHub**: [github.com/fabioeducacross/Design_System_Educacross](https://github.com/fabioeducacross/Design_System_Educacross)
-- **NPM Package**: `@fabioaap/ui`
+- **NPM Package**: `@fabioeducacross/ui`
 - **Figma**: [Design Tokens & Components](#)
 
 ---
@@ -197,4 +197,5 @@ em produtos da empresa.
 - [README](https://github.com/fabioeducacross/Deisign_System_Educacross)
 - [CONTRIBUTING](https://github.com/fabioeducacross/Deisign_System_Educacross/blob/master/CONTRIBUTING.md)
 - [Changelog](https://github.com/fabioeducacross/Deisign_System_Educacross/blob/master/CHANGELOG.md)
+
 
