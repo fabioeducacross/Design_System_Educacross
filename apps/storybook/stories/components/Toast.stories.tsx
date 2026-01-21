@@ -7,7 +7,7 @@ import {
     ToastAction,
     ToastViewport,
     Button,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 import { useState } from "react";
 
 const meta: Meta<typeof Toast> = {

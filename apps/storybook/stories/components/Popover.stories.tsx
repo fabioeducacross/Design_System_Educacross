@@ -8,7 +8,7 @@ import {
     Button,
     Input,
     Label,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 
 const meta: Meta<typeof Popover> = {
     title: "Components/Popover",

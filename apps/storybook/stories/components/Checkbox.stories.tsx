@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Checkbox } from "@educacross/ui";
+import { Checkbox } from "@fabioeducacross/ui";
 import { useState } from "react";
 
 const meta: Meta<typeof Checkbox> = {

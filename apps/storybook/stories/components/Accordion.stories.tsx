@@ -6,7 +6,7 @@ import {
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 
 const meta: Meta<typeof Accordion> = {
     title: "Components/Accordion",

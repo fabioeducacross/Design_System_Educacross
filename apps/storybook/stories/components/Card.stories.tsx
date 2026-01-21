@@ -7,7 +7,7 @@ import {
     CardDescription,
     CardContent,
     Button,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 
 const meta: Meta<typeof Card> = {
     title: "Components/Card",

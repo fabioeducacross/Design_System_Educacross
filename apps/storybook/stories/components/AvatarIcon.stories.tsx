@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { AvatarIcon, Avatar, AvatarFallback } from "@educacross/ui";
+import { AvatarIcon, Avatar, AvatarFallback } from "@fabioeducacross/ui";
 
 const meta = {
     title: "Components/AvatarIcon",

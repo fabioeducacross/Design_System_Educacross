@@ -5,7 +5,7 @@ import {
     TooltipContent,
     TooltipProvider,
     Button,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 
 const meta: Meta<typeof Tooltip> = {
     title: "Components/Tooltip",

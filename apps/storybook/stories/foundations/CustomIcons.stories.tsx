@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { CustomIcon, customIcons, type CustomIconCategory } from "@educacross/ui";
+import { CustomIcon, customIcons, type CustomIconCategory } from "@fabioeducacross/ui";
 import { useState } from "react";
 
 const meta: Meta<typeof CustomIcon> = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { colors, spacing, borderRadius, opacityColors, themeVariables, misc } from "@educacross/ui";
+import { colors, spacing, borderRadius, opacityColors, themeVariables, misc } from "@fabioeducacross/ui";
 
 const meta: Meta = {
     title: "Foundations/Primitives",
@@ -27,7 +27,7 @@ As primitivas estão disponíveis como:
 <div className="bg-primary-500 text-primary-100">
 
 // TypeScript
-import { colors } from "@educacross/ui";
+import { colors } from "@fabioeducacross/ui";
 console.log(colors.primary[500]); // "#7367F0"
 \`\`\`
                 `,
@@ -269,7 +269,7 @@ export const AllTokens: StoryObj = {
                 <h3 className="font-semibold mb-2">💡 Como usar</h3>
                 <pre className="text-sm overflow-x-auto">
 {`// Importar tokens TypeScript
-import { colors, spacing, borderRadius } from "@educacross/ui";
+import { colors, spacing, borderRadius } from "@fabioeducacross/ui";
 
 // Usar CSS Custom Properties
 <div style={{ 

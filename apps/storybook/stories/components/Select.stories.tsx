@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
-import { Select } from "@educacross/ui";
+import { Select } from "@fabioeducacross/ui";
 import { useState } from "react";
 
 const meta: Meta<typeof Select> = {

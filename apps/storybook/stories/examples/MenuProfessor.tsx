@@ -3,7 +3,7 @@ import {
     Sidebar,
     SidebarItem,
     SidebarSubItem,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 
 /**
  * Exemplo completo do menu do perfil de professor.

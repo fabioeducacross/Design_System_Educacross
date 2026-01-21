@@ -21,7 +21,7 @@ import {
     Button,
     Avatar,
     AvatarFallback,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 import {
     TrendingUp,
     PieChart,

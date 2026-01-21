@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Logo } from "@educacross/ui";
+import { Logo } from "@fabioeducacross/ui";
 
 const meta = {
     title: "Components/Logo",

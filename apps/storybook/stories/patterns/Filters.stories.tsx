@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Select, Button } from "@educacross/ui";
+import { Select, Button } from "@fabioeducacross/ui";
 import { useState } from "react";
 
 const meta: Meta = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button, Input, Label } from "@educacross/ui";
+import { Button, Input, Label } from "@fabioeducacross/ui";
 import { useState } from "react";
 
 const meta: Meta = {

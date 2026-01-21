@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Sidebar, SidebarItem, SidebarSubItem } from "@educacross/ui";
+import { Sidebar, SidebarItem, SidebarSubItem } from "@fabioeducacross/ui";
 
 export const MenuAdministrador = () => {
     const [expandedItems, setExpandedItems] = React.useState<Record<string, boolean>>({

@@ -6,7 +6,7 @@ import {
     SkeletonCard,
     SkeletonAvatar,
     SkeletonTable,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 
 const meta: Meta<typeof Skeleton> = {
     title: "Components/Skeleton",

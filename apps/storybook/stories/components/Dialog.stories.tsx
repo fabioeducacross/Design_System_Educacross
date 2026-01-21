@@ -12,7 +12,7 @@ import {
     Button,
     Input,
     Label,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 import { useState } from "react";
 
 const meta: Meta<typeof Dialog> = {

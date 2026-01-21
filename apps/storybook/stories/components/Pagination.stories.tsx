@@ -9,7 +9,7 @@ import {
     PaginationPrevious,
     PaginationNext,
     PaginationEllipsis,
-} from "@educacross/ui";
+} from "@fabioeducacross/ui";
 
 const meta: Meta<typeof Pagination> = {
     title: "Components/Pagination",

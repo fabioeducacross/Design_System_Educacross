@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn, expect, userEvent, within } from "storybook/test";
-import { ThemeSwitcher, ThemeProvider } from "@educacross/ui";
+import { ThemeSwitcher, ThemeProvider } from "@fabioeducacross/ui";
 
 const meta: Meta<typeof ThemeSwitcher> = {
     title: "Components/ThemeSwitcher",
@@ -37,7 +37,7 @@ O **ThemeSwitcher** é um componente para alternar entre os modos Light e Dark d
 Envolva sua aplicação com o \`ThemeProvider\`:
 
 \`\`\`tsx
-import { ThemeProvider } from "@educacross/ui";
+import { ThemeProvider } from "@fabioeducacross/ui";
 
 function App() {
   return (
@@ -52,7 +52,7 @@ function App() {
 Acesse o tema programaticamente:
 
 \`\`\`tsx
-import { useTheme } from "@educacross/ui";
+import { useTheme } from "@fabioeducacross/ui";
 
 function MyComponent() {
   const { theme, resolvedTheme, setTheme, toggleTheme } = useTheme();

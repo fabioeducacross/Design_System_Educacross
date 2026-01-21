@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn, expect, userEvent, within } from "storybook/test";
-import { Button } from "@educacross/ui";
+import { Button } from "@fabioeducacross/ui";
 
 const meta: Meta<typeof Button> = {
     title: "Components/Button",

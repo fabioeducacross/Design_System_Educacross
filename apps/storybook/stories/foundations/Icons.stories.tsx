@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
-import { Icon, iconCategories, iconNames, Button, Input } from "@educacross/ui";
-import type { IconName } from "@educacross/ui";
+import { Icon, iconCategories, iconNames, Button, Input } from "@fabioeducacross/ui";
+import type { IconName } from "@fabioeducacross/ui";
 
 const meta: Meta<typeof Icon> = {
     title: "Foundations/Icons",
@@ -43,12 +43,12 @@ Feather é uma coleção de ícones open-source, desenhados com princípios de s
 
 ## Instalação
 
-Os ícones já estão incluídos no pacote \`@educacross/ui\`.
+Os ícones já estão incluídos no pacote \`@fabioeducacross/ui\`.
 
 ## Uso Básico
 
 \`\`\`tsx
-import { Icon } from "@educacross/ui";
+import { Icon } from "@fabioeducacross/ui";
 
 // Uso simples
 <Icon name="Check" />
@@ -68,7 +68,7 @@ import { Icon } from "@educacross/ui";
 Você também pode importar ícones diretamente:
 
 \`\`\`tsx
-import { Check, AlertCircle, Heart } from "@educacross/ui";
+import { Check, AlertCircle, Heart } from "@fabioeducacross/ui";
 
 <Check size={24} />
 <AlertCircle className="text-destructive" />
