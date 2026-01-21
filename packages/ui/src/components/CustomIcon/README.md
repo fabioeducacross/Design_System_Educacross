@@ -49,6 +49,7 @@ export default function MyCustomIcon() {
 <CustomIcon name="ios_share" category="acao" />
 <CustomIcon name="link" category="acao" />
 <CustomIcon name="mail_lock" category="acao" />
+<CustomIcon name="missao-mista" category="acao" /> {/* NOVO: Missão coletiva + individual */}
 <CustomIcon name="person_search" category="acao" />
 <CustomIcon name="pie_chart" category="acao" />
 <CustomIcon name="social_leaderboard" category="acao" />
@@ -71,7 +72,16 @@ export default function MyCustomIcon() {
 <CustomIcon name="search" category="menu" />
 ```
 
-### 4. **Métricas** (Indicadores)
+### 4. **Interface** (UI Elements)
+```tsx
+<CustomIcon name="Acesso" category="interface" />
+<CustomIcon name="classroom" category="interface" /> {/* NOVO: Sala de aula/classroom */}
+<CustomIcon name="Group 9555" category="interface" />
+<CustomIcon name="open-book" category="interface" /> {/* NOVO: Livro aberto (eventos) */}
+<CustomIcon name="videogame-asset" category="interface" /> {/* NOVO: Controle de jogo */}
+```
+
+### 5. **Métricas** (Indicadores)
 ```tsx
 <CustomIcon name="Desafios" category="metricas" />
 <CustomIcon name="Dificuldade" category="metricas" />
@@ -143,14 +153,22 @@ export default function MyCustomIcon() {
 <CustomIcon name="não fizeram" category="proficiencia" />
 ```
 
-### 11-17. **Avaliações Educacionais**
+### 11. **Educação Infantil** (BNCC)
+```tsx
+<CustomIcon name="Bncc-CorpoGestosMovimentos" category="educacao-infantil" />
+<CustomIcon name="Bncc-EscutaFalaPensamentoImaginacao" category="educacao-infantil" />
+<CustomIcon name="Bncc-EspacosTemposQuantidadesRelacoesTransformacoes" category="educacao-infantil" />
+<CustomIcon name="Bncc-OEuOOutroONos" category="educacao-infantil" />
+<CustomIcon name="Bncc-TracosSonsCoresFormas" category="educacao-infantil" />
+<CustomIcon name="progress-classes" category="educacao-infantil" /> {/* NOVO: Progresso de aulas */}
+<CustomIcon name="student-hat" category="educacao-infantil" /> {/* NOVO: Chapéu de formatura */}
+```
+
+### 12-17. **Avaliações Educacionais**
 
 BNCC, SAEB, SARESP, Avalia (categorias específicas de campos e tópicos pedagógicos)
 
 ```tsx
-// BNCC - Educação Infantil
-<CustomIcon name="Bncc-CorpoGestosMovimentos" category="educacao-infantil" />
-
 // BNCC - Língua Portuguesa
 <CustomIcon name="Bncc-CampoArtisticoLiterario" category="lingua-portuguesa-bncc" />
 

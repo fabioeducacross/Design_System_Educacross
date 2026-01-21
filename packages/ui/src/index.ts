@@ -40,7 +40,7 @@ export {
     customIconVariants, 
     customIcons,
     type CustomIconProps,
-    type IconCategory 
+    type CustomIconCategory 
 } from "./components/CustomIcon";
 
 // P1 Components

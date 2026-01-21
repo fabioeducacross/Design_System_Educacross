@@ -5,7 +5,7 @@ import { cn } from "../../utils";
 /**
  * Categorias de ícones customizados do Educacross
  */
-export type IconCategory =
+export type CustomIconCategory =
     | "conhecimento"
     | "acao"
     | "menu"
@@ -49,6 +49,7 @@ export const customIcons = {
         "ios_share",
         "link",
         "mail_lock",
+        "missao-mista",
         "person_search",
         "pie_chart",
         "social_leaderboard",
@@ -75,7 +76,13 @@ export const customIcons = {
         "search",
         "work",
     ],
-    interface: ["Acesso", "Group 9555"],
+    interface: [
+        "Acesso",
+        "classroom",
+        "Group 9555",
+        "open-book",
+        "videogame-asset",
+    ],
     metricas: [
         "Desafios",
         "Dificuldade",
@@ -122,6 +129,8 @@ export const customIcons = {
         "Bncc-EspacosTemposQuantidadesRelacoesTransformacoes",
         "Bncc-OEuOOutroONos",
         "Bncc-TracosSonsCoresFormas",
+        "progress-classes",
+        "student-hat",
     ],
     "lingua-portuguesa-bncc": [
         "Bncc-CampoArtisticoLiterario",
@@ -211,7 +220,7 @@ export interface CustomIconProps
     /**
      * Categoria do ícone.
      */
-    category: IconCategory;
+    category: CustomIconCategory;
     /**
      * Nome do ícone dentro da categoria.
      */

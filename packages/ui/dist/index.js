@@ -998,6 +998,7 @@ var customIcons = {
     "ios_share",
     "link",
     "mail_lock",
+    "missao-mista",
     "person_search",
     "pie_chart",
     "social_leaderboard",
@@ -1024,7 +1025,13 @@ var customIcons = {
     "search",
     "work"
   ],
-  interface: ["Acesso", "Group 9555"],
+  interface: [
+    "Acesso",
+    "classroom",
+    "Group 9555",
+    "open-book",
+    "videogame-asset"
+  ],
   metricas: [
     "Desafios",
     "Dificuldade",
@@ -1070,7 +1077,9 @@ var customIcons = {
     "Bncc-EscutaFalaPensamentoImaginacao",
     "Bncc-EspacosTemposQuantidadesRelacoesTransformacoes",
     "Bncc-OEuOOutroONos",
-    "Bncc-TracosSonsCoresFormas"
+    "Bncc-TracosSonsCoresFormas",
+    "progress-classes",
+    "student-hat"
   ],
   "lingua-portuguesa-bncc": [
     "Bncc-CampoArtisticoLiterario",

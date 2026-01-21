@@ -1,1 +1,1 @@
-export { CustomIcon, customIconVariants, customIcons, type CustomIconProps, type IconCategory } from "./CustomIcon";
+export { CustomIcon, customIconVariants, customIcons, type CustomIconProps, type CustomIconCategory } from "./CustomIcon";

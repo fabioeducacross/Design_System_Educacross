@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { CustomIcon, customIcons, type IconCategory } from "@educacross/ui";
+import { CustomIcon, customIcons, type CustomIconCategory } from "@educacross/ui";
 import { useState } from "react";
 
 const meta: Meta<typeof CustomIcon> = {
@@ -64,10 +64,10 @@ export const Default: Story = {
  */
 export const Gallery: Story = {
     render: () => {
-        const [selectedCategory, setSelectedCategory] = useState<IconCategory>("conhecimento");
+        const [selectedCategory, setSelectedCategory] = useState<CustomIconCategory>("conhecimento");
         const [selectedSize, setSelectedSize] = useState<"sm" | "default" | "md" | "lg">("md");
 
-        const categories: { key: IconCategory; label: string }[] = [
+        const categories: { key: CustomIconCategory; label: string }[] = [
             { key: "conhecimento", label: "Áreas de Conhecimento" },
             { key: "acao", label: "Ícones de Ação" },
             { key: "menu", label: "Ícones do Menu" },
@@ -97,7 +97,7 @@ export const Gallery: Story = {
                         <label className="font-medium text-sm">Categoria:</label>
                         <select
                             value={selectedCategory}
-                            onChange={(e) => setSelectedCategory(e.target.value as IconCategory)}
+                            onChange={(e) => setSelectedCategory(e.target.value as CustomIconCategory)}
                             className="border rounded px-2 py-1 text-sm"
                         >
                             {categories.map((cat) => (
