@@ -17,13 +17,94 @@
  */
 
 import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils";
+
+// ============================================================================
+// VARIANTS (CVA)
+// ============================================================================
+
+export const formFieldVariants = cva("space-y-2", {
+  variants: {
+    /**
+     * Tamanho do campo (afeta label, helper text e espaçamento)
+     */
+    size: {
+      sm: "space-y-1",
+      md: "space-y-2",
+      lg: "space-y-2.5",
+    },
+    /**
+     * Layout do campo
+     * - vertical: label acima do input (padrão)
+     * - horizontal: label ao lado do input (útil para checkboxes inline)
+     */
+    layout: {
+      vertical: "flex flex-col",
+      horizontal: "flex flex-row items-start gap-3",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+    layout: "vertical",
+  },
+});
+
+export const formFieldLabelVariants = cva(
+  [
+    "font-medium leading-none",
+    "text-foreground",
+    "transition-colors duration-200",
+  ],
+  {
+    variants: {
+      size: {
+        sm: "text-xs",
+        md: "text-sm",
+        lg: "text-base",
+      },
+      layout: {
+        vertical: "block",
+        horizontal: "inline-flex pt-2", // Alinha com input
+      },
+      disabled: {
+        true: "cursor-not-allowed opacity-70",
+        false: "",
+      },
+    },
+    defaultVariants: {
+      size: "md",
+      layout: "vertical",
+      disabled: false,
+    },
+  }
+);
+
+export const formFieldMessageVariants = cva("font-medium transition-colors duration-200", {
+  variants: {
+    size: {
+      sm: "text-xs",
+      md: "text-sm",
+      lg: "text-sm",
+    },
+    type: {
+      error: "text-destructive",
+      helper: "text-muted-foreground",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+    type: "helper",
+  },
+});
 
 // ============================================================================
 // TYPES
 // ============================================================================
 
-export interface FormFieldProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FormFieldProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof formFieldVariants> {
   /**
    * Texto do label (sempre visível, obrigatório para acessibilidade).
    * 
@@ -61,6 +142,11 @@ export interface FormFieldProps extends React.HTMLAttributes<HTMLDivElement> {
   helperText?: string;
 
   /**
+   * Se o campo está desabilitado (aplica estilos de disabled no label)
+   */
+  disabled?: boolean;
+
+  /**
    * Campo de entrada (Input, Textarea, Select, etc).
    * 
    * ✅ MUST: Apenas 1 elemento filho
@@ -81,6 +167,9 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
       required = false,
       error,
       helperText,
+      disabled = false,
+      size,
+      layout,
       children,
       className,
       ...props
@@ -115,6 +204,7 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
     
     const enhancedChild = React.cloneElement(children, {
       id: fieldId,
+      disabled: disabled || children.props.disabled,
       "aria-invalid": showError ? true : undefined,
       "aria-required": required ? true : undefined,
       "aria-describedby": ariaDescribedBy,
@@ -122,18 +212,21 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
       ...children.props,
     });
 
+    // Layout horizontal precisa de wrapper para input + mensagens
+    const isHorizontal = layout === "horizontal";
+
     return (
-      <div ref={ref} className={cn("space-y-2", className)} {...props}>
+      <div
+        ref={ref}
+        className={cn(formFieldVariants({ size, layout }), className)}
+        {...props}
+      >
         {/* ================================================================
             LABEL
             ================================================================ */}
         <label
           htmlFor={fieldId}
-          className={cn(
-            "block text-sm font-medium leading-none",
-            "text-foreground",
-            "peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          )}
+          className={formFieldLabelVariants({ size, layout, disabled })}
         >
           {label}
           {required && (
@@ -147,38 +240,60 @@ export const FormField = React.forwardRef<HTMLDivElement, FormFieldProps>(
         </label>
 
         {/* ================================================================
-            INPUT (COM PROPS INJETADAS)
+            INPUT + MENSAGENS (wrapper para layout horizontal)
             ================================================================ */}
-        {enhancedChild}
-
-        {/* ================================================================
-            MENSAGENS (ERRO OU HELPER)
-            ================================================================ */}
-        {/* Erro (prioridade) */}
-        {showError && (
-          <p
-            id={errorId}
-            role="alert"
-            aria-live="polite"
-            className={cn(
-              "text-sm font-medium text-destructive",
-              "animate-in fade-in-50 duration-200"
+        {isHorizontal ? (
+          <div className="flex-1 space-y-1">
+            {enhancedChild}
+            {/* Mensagens */}
+            {showError && (
+              <p
+                id={errorId}
+                role="alert"
+                aria-live="polite"
+                className={cn(
+                  formFieldMessageVariants({ size, type: "error" }),
+                  "animate-in fade-in-50 duration-200"
+                )}
+              >
+                {error}
+              </p>
             )}
-          >
-            {error}
-          </p>
-        )}
-
-        {/* Helper text (apenas se não houver erro) */}
-        {showHelper && (
-          <p
-            id={helperId}
-            className={cn(
-              "text-sm text-muted-foreground"
+            {showHelper && (
+              <p
+                id={helperId}
+                className={formFieldMessageVariants({ size, type: "helper" })}
+              >
+                {helperText}
+              </p>
             )}
-          >
-            {helperText}
-          </p>
+          </div>
+        ) : (
+          <>
+            {enhancedChild}
+            {/* Mensagens (layout vertical) */}
+            {showError && (
+              <p
+                id={errorId}
+                role="alert"
+                aria-live="polite"
+                className={cn(
+                  formFieldMessageVariants({ size, type: "error" }),
+                  "animate-in fade-in-50 duration-200"
+                )}
+              >
+                {error}
+              </p>
+            )}
+            {showHelper && (
+              <p
+                id={helperId}
+                className={formFieldMessageVariants({ size, type: "helper" })}
+              >
+                {helperText}
+              </p>
+            )}
+          </>
         )}
       </div>
     );

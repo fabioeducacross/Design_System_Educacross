@@ -282,4 +282,202 @@ describe("FormField", () => {
       expect(fieldWrapper).toHaveAttribute("data-track", "form-field");
     });
   });
+
+  describe("CVA Variants - Size", () => {
+    it("deve aplicar classes de size=sm", () => {
+      const { container } = render(
+        <FormField label="Small Field" size="sm">
+          <Input />
+        </FormField>
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass("space-y-1");
+      
+      const label = screen.getByText("Small Field");
+      expect(label).toHaveClass("text-xs");
+    });
+
+    it("deve aplicar classes de size=md (default)", () => {
+      const { container } = render(
+        <FormField label="Medium Field" size="md">
+          <Input />
+        </FormField>
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass("space-y-2");
+      
+      const label = screen.getByText("Medium Field");
+      expect(label).toHaveClass("text-sm");
+    });
+
+    it("deve aplicar classes de size=lg", () => {
+      const { container } = render(
+        <FormField label="Large Field" size="lg">
+          <Input />
+        </FormField>
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass("space-y-2.5");
+      
+      const label = screen.getByText("Large Field");
+      expect(label).toHaveClass("text-base");
+    });
+
+    it("deve usar size default quando omitido", () => {
+      const { container } = render(
+        <FormField label="Default Field">
+          <Input />
+        </FormField>
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass("space-y-2");
+    });
+  });
+
+  describe("CVA Variants - Layout", () => {
+    it("deve aplicar layout vertical por padrão", () => {
+      const { container } = render(
+        <FormField label="Vertical Field">
+          <Input />
+        </FormField>
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass("flex-col");
+    });
+
+    it("deve aplicar classes de layout horizontal", () => {
+      const { container } = render(
+        <FormField label="Horizontal Field" layout="horizontal">
+          <Input />
+        </FormField>
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass("flex-row", "items-start");
+      
+      const label = screen.getByText("Horizontal Field");
+      expect(label).toHaveClass("pt-2");
+      expect(label).toHaveClass("inline-flex");
+    });
+
+    it("deve renderizar input em wrapper no layout horizontal", () => {
+      const { container } = render(
+        <FormField label="Field" layout="horizontal" helperText="Helper">
+          <Input data-testid="input" />
+        </FormField>
+      );
+
+      const input = screen.getByTestId("input");
+      const inputWrapper = input.parentElement;
+      
+      expect(inputWrapper).toHaveClass("flex-1");
+      expect(inputWrapper).toHaveClass("space-y-1");
+    });
+
+    it("deve renderizar mensagens dentro do wrapper no layout horizontal", () => {
+      const { container } = render(
+        <FormField 
+          label="Field" 
+          layout="horizontal" 
+          error="Error message"
+          helperText="Helper text"
+        >
+          <Input data-testid="input" />
+        </FormField>
+      );
+
+      const input = screen.getByTestId("input");
+      const inputWrapper = input.parentElement;
+      
+      const errorMessage = screen.getByText("Error message");
+      expect(inputWrapper).toContainElement(errorMessage);
+    });
+  });
+
+  describe("CVA Variants - Disabled State", () => {
+    it("deve aplicar estilos disabled no label", () => {
+      render(
+        <FormField label="Disabled Field" disabled>
+          <Input />
+        </FormField>
+      );
+
+      const label = screen.getByText("Disabled Field");
+      expect(label).toHaveClass("cursor-not-allowed");
+      expect(label).toHaveClass("opacity-70");
+    });
+
+    it("deve injetar prop disabled no child", () => {
+      render(
+        <FormField label="Field" disabled>
+          <Input data-testid="input" />
+        </FormField>
+      );
+
+      const input = screen.getByTestId("input");
+      expect(input).toBeDisabled();
+    });
+
+    it("deve combinar disabled com layout horizontal", () => {
+      render(
+        <FormField label="Field" layout="horizontal" disabled>
+          <Input data-testid="input" />
+        </FormField>
+      );
+
+      const label = screen.getByText("Field");
+      expect(label).toHaveClass("cursor-not-allowed");
+      expect(label).toHaveClass("opacity-70");
+      
+      const input = screen.getByTestId("input");
+      expect(input).toBeDisabled();
+    });
+  });
+
+  describe("CVA Variants - Combinações", () => {
+    it("deve combinar size e layout", () => {
+      const { container } = render(
+        <FormField label="Field" size="lg" layout="horizontal">
+          <Input />
+        </FormField>
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass("space-y-2.5", "flex-row");
+      
+      const label = screen.getByText("Field");
+      expect(label).toHaveClass("text-base", "pt-2");
+    });
+
+    it("deve combinar todas variants com error", () => {
+      const { container } = render(
+        <FormField 
+          label="Field" 
+          size="sm" 
+          layout="horizontal" 
+          disabled
+          error="Error"
+        >
+          <Input data-testid="input" />
+        </FormField>
+      );
+
+      const wrapper = container.firstChild;
+      expect(wrapper).toHaveClass("space-y-1", "flex-row");
+      
+      const label = screen.getByText("Field");
+      expect(label).toHaveClass("text-xs", "cursor-not-allowed");
+      
+      const error = screen.getByText("Error");
+      expect(error).toHaveClass("text-xs", "text-destructive");
+      
+      const input = screen.getByTestId("input");
+      expect(input).toBeDisabled();
+    });
+  });
 });

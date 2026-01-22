@@ -118,6 +118,9 @@ __export(src_exports, {
   dialogContentVariants: () => dialogContentVariants,
   dialogOverlayVariants: () => dialogOverlayVariants,
   dropdownMenuContentVariants: () => dropdownMenuContentVariants,
+  formFieldLabelVariants: () => formFieldLabelVariants,
+  formFieldMessageVariants: () => formFieldMessageVariants,
+  formFieldVariants: () => formFieldVariants,
   iconCategories: () => iconCategories,
   iconIndex: () => iconIndex,
   iconNames: () => iconNames,
@@ -1266,7 +1269,80 @@ Label.displayName = "Label";
 
 // src/components/FormField/FormField.tsx
 import * as React11 from "react";
-import { jsx as jsx11, jsxs as jsxs6 } from "react/jsx-runtime";
+import { cva as cva8 } from "class-variance-authority";
+import { Fragment as Fragment2, jsx as jsx11, jsxs as jsxs6 } from "react/jsx-runtime";
+var formFieldVariants = cva8("space-y-2", {
+  variants: {
+    /**
+     * Tamanho do campo (afeta label, helper text e espaçamento)
+     */
+    size: {
+      sm: "space-y-1",
+      md: "space-y-2",
+      lg: "space-y-2.5"
+    },
+    /**
+     * Layout do campo
+     * - vertical: label acima do input (padrão)
+     * - horizontal: label ao lado do input (útil para checkboxes inline)
+     */
+    layout: {
+      vertical: "flex flex-col",
+      horizontal: "flex flex-row items-start gap-3"
+    }
+  },
+  defaultVariants: {
+    size: "md",
+    layout: "vertical"
+  }
+});
+var formFieldLabelVariants = cva8(
+  [
+    "font-medium leading-none",
+    "text-foreground",
+    "transition-colors duration-200"
+  ],
+  {
+    variants: {
+      size: {
+        sm: "text-xs",
+        md: "text-sm",
+        lg: "text-base"
+      },
+      layout: {
+        vertical: "block",
+        horizontal: "inline-flex pt-2"
+        // Alinha com input
+      },
+      disabled: {
+        true: "cursor-not-allowed opacity-70",
+        false: ""
+      }
+    },
+    defaultVariants: {
+      size: "md",
+      layout: "vertical",
+      disabled: false
+    }
+  }
+);
+var formFieldMessageVariants = cva8("font-medium transition-colors duration-200", {
+  variants: {
+    size: {
+      sm: "text-xs",
+      md: "text-sm",
+      lg: "text-sm"
+    },
+    type: {
+      error: "text-destructive",
+      helper: "text-muted-foreground"
+    }
+  },
+  defaultVariants: {
+    size: "md",
+    type: "helper"
+  }
+});
 var FormField = React11.forwardRef(
   ({
     label,
@@ -1274,6 +1350,9 @@ var FormField = React11.forwardRef(
     required = false,
     error,
     helperText,
+    disabled = false,
+    size,
+    layout,
     children,
     className,
     ...props
@@ -1287,67 +1366,96 @@ var FormField = React11.forwardRef(
     const ariaDescribedBy = showError ? errorId : showHelper ? helperId : void 0;
     const enhancedChild = React11.cloneElement(children, {
       id: fieldId,
+      disabled: disabled || children.props.disabled,
       "aria-invalid": showError ? true : void 0,
       "aria-required": required ? true : void 0,
       "aria-describedby": ariaDescribedBy,
       // Spread original props do child por último para permitir override se necessário
       ...children.props
     });
-    return /* @__PURE__ */ jsxs6("div", { ref, className: cn("space-y-2", className), ...props, children: [
-      /* @__PURE__ */ jsxs6(
-        "label",
-        {
-          htmlFor: fieldId,
-          className: cn(
-            "block text-sm font-medium leading-none",
-            "text-foreground",
-            "peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+    const isHorizontal = layout === "horizontal";
+    return /* @__PURE__ */ jsxs6(
+      "div",
+      {
+        ref,
+        className: cn(formFieldVariants({ size, layout }), className),
+        ...props,
+        children: [
+          /* @__PURE__ */ jsxs6(
+            "label",
+            {
+              htmlFor: fieldId,
+              className: formFieldLabelVariants({ size, layout, disabled }),
+              children: [
+                label,
+                required && /* @__PURE__ */ jsx11(
+                  "span",
+                  {
+                    className: "ml-1 text-destructive",
+                    "aria-label": "obrigat\xF3rio",
+                    children: "*"
+                  }
+                )
+              ]
+            }
           ),
-          children: [
-            label,
-            required && /* @__PURE__ */ jsx11(
-              "span",
+          isHorizontal ? /* @__PURE__ */ jsxs6("div", { className: "flex-1 space-y-1", children: [
+            enhancedChild,
+            showError && /* @__PURE__ */ jsx11(
+              "p",
               {
-                className: "ml-1 text-destructive",
-                "aria-label": "obrigat\xF3rio",
-                children: "*"
+                id: errorId,
+                role: "alert",
+                "aria-live": "polite",
+                className: cn(
+                  formFieldMessageVariants({ size, type: "error" }),
+                  "animate-in fade-in-50 duration-200"
+                ),
+                children: error
+              }
+            ),
+            showHelper && /* @__PURE__ */ jsx11(
+              "p",
+              {
+                id: helperId,
+                className: formFieldMessageVariants({ size, type: "helper" }),
+                children: helperText
               }
             )
-          ]
-        }
-      ),
-      enhancedChild,
-      showError && /* @__PURE__ */ jsx11(
-        "p",
-        {
-          id: errorId,
-          role: "alert",
-          "aria-live": "polite",
-          className: cn(
-            "text-sm font-medium text-destructive",
-            "animate-in fade-in-50 duration-200"
-          ),
-          children: error
-        }
-      ),
-      showHelper && /* @__PURE__ */ jsx11(
-        "p",
-        {
-          id: helperId,
-          className: cn(
-            "text-sm text-muted-foreground"
-          ),
-          children: helperText
-        }
-      )
-    ] });
+          ] }) : /* @__PURE__ */ jsxs6(Fragment2, { children: [
+            enhancedChild,
+            showError && /* @__PURE__ */ jsx11(
+              "p",
+              {
+                id: errorId,
+                role: "alert",
+                "aria-live": "polite",
+                className: cn(
+                  formFieldMessageVariants({ size, type: "error" }),
+                  "animate-in fade-in-50 duration-200"
+                ),
+                children: error
+              }
+            ),
+            showHelper && /* @__PURE__ */ jsx11(
+              "p",
+              {
+                id: helperId,
+                className: formFieldMessageVariants({ size, type: "helper" }),
+                children: helperText
+              }
+            )
+          ] })
+        ]
+      }
+    );
   }
 );
 FormField.displayName = "FormField";
 
 // src/components/ThemeSwitcher/ThemeSwitcher.tsx
 import * as React12 from "react";
-import { cva as cva8 } from "class-variance-authority";
+import { cva as cva9 } from "class-variance-authority";
 import { jsx as jsx12, jsxs as jsxs7 } from "react/jsx-runtime";
 var THEME_STORAGE_KEY = "educacross-theme";
 var ThemeContext = React12.createContext(void 0);
@@ -1512,7 +1620,7 @@ function MonitorIcon({ className }) {
     }
   );
 }
-var themeSwitcherVariants = cva8(
+var themeSwitcherVariants = cva9(
   [
     "inline-flex items-center justify-center",
     "rounded-[var(--radius-md)]",
@@ -1549,7 +1657,7 @@ var themeSwitcherVariants = cva8(
     }
   }
 );
-var themeToggleVariants = cva8(
+var themeToggleVariants = cva9(
   [
     "relative inline-flex items-center",
     "rounded-full border-2 border-transparent",
@@ -1742,9 +1850,9 @@ ThemeSwitcher.displayName = "ThemeSwitcher";
 
 // src/components/Card/Card.tsx
 import * as React13 from "react";
-import { cva as cva9 } from "class-variance-authority";
+import { cva as cva10 } from "class-variance-authority";
 import { jsx as jsx13 } from "react/jsx-runtime";
-var cardVariants = cva9(
+var cardVariants = cva10(
   [
     // Base styles usando tokens semânticos
     "rounded-[var(--radius-lg)] border border-[var(--divider)]",
@@ -1826,9 +1934,9 @@ var CardFooter = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE
 CardFooter.displayName = "CardFooter";
 
 // src/components/Badge/Badge.tsx
-import { cva as cva10 } from "class-variance-authority";
+import { cva as cva11 } from "class-variance-authority";
 import { jsx as jsx14 } from "react/jsx-runtime";
-var badgeVariants = cva10(
+var badgeVariants = cva11(
   [
     "inline-flex items-center rounded-full border px-2.5 py-0.5",
     "text-xs font-semibold",
@@ -1877,9 +1985,9 @@ function Badge({ className, variant, size, ...props }) {
 
 // src/components/Checkbox/Checkbox.tsx
 import * as React14 from "react";
-import { cva as cva11 } from "class-variance-authority";
+import { cva as cva12 } from "class-variance-authority";
 import { jsx as jsx15, jsxs as jsxs8 } from "react/jsx-runtime";
-var checkboxVariants = cva11(
+var checkboxVariants = cva12(
   [
     "peer h-4 w-4 shrink-0 rounded-sm border-2",
     "ring-offset-background",
@@ -2010,9 +2118,9 @@ Checkbox.displayName = "Checkbox";
 
 // src/components/Radio/Radio.tsx
 import * as React15 from "react";
-import { cva as cva12 } from "class-variance-authority";
+import { cva as cva13 } from "class-variance-authority";
 import { jsx as jsx16, jsxs as jsxs9 } from "react/jsx-runtime";
-var radioVariants = cva12(
+var radioVariants = cva13(
   [
     "peer h-4 w-4 shrink-0 rounded-full border-2",
     "ring-offset-background",
@@ -2174,9 +2282,9 @@ Radio.displayName = "Radio";
 
 // src/components/Select/Select.tsx
 import * as React16 from "react";
-import { cva as cva13 } from "class-variance-authority";
+import { cva as cva14 } from "class-variance-authority";
 import { jsx as jsx17, jsxs as jsxs10 } from "react/jsx-runtime";
-var selectVariants = cva13(
+var selectVariants = cva14(
   [
     "flex h-10 w-full items-center justify-between",
     "rounded-md border border-input bg-background px-3 py-2",
@@ -2284,14 +2392,14 @@ Select.displayName = "Select";
 
 // src/components/Dialog/Dialog.tsx
 import * as React17 from "react";
-import { cva as cva14 } from "class-variance-authority";
-import { Fragment as Fragment2, jsx as jsx18, jsxs as jsxs11 } from "react/jsx-runtime";
-var dialogOverlayVariants = cva14([
+import { cva as cva15 } from "class-variance-authority";
+import { Fragment as Fragment3, jsx as jsx18, jsxs as jsxs11 } from "react/jsx-runtime";
+var dialogOverlayVariants = cva15([
   "fixed inset-0 z-50 bg-black/80",
   "data-[state=open]:animate-in data-[state=closed]:animate-out",
   "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
 ]);
-var dialogContentVariants = cva14(
+var dialogContentVariants = cva15(
   [
     "fixed left-[50%] top-[50%] z-50",
     "grid w-[600px] translate-x-[-50%] translate-y-[-50%]",
@@ -2396,7 +2504,7 @@ function DialogPortal({ children }) {
   if (!context?.open) {
     return null;
   }
-  return /* @__PURE__ */ jsx18(Fragment2, { children });
+  return /* @__PURE__ */ jsx18(Fragment3, { children });
 }
 var DialogOverlay = React17.forwardRef(({ className, ...props }, ref) => {
   const context = React17.useContext(DialogContext);
@@ -2564,9 +2672,9 @@ DialogClose.displayName = "DialogClose";
 
 // src/components/Alert/Alert.tsx
 import * as React18 from "react";
-import { cva as cva15 } from "class-variance-authority";
+import { cva as cva16 } from "class-variance-authority";
 import { jsx as jsx19 } from "react/jsx-runtime";
-var alertVariants = cva15(
+var alertVariants = cva16(
   [
     "relative w-full rounded-lg border p-4",
     "[&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px]",
@@ -2620,9 +2728,9 @@ AlertDescription.displayName = "AlertDescription";
 
 // src/components/Toast/Toast.tsx
 import * as React19 from "react";
-import { cva as cva16 } from "class-variance-authority";
+import { cva as cva17 } from "class-variance-authority";
 import { jsx as jsx20, jsxs as jsxs12 } from "react/jsx-runtime";
-var toastVariants = cva16(
+var toastVariants = cva17(
   [
     "group pointer-events-auto relative flex w-full items-center justify-between",
     "space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg",
@@ -2774,9 +2882,9 @@ ToastViewport.displayName = "ToastViewport";
 
 // src/components/Tabs/Tabs.tsx
 import * as React20 from "react";
-import { cva as cva17 } from "class-variance-authority";
+import { cva as cva18 } from "class-variance-authority";
 import { jsx as jsx21 } from "react/jsx-runtime";
-var tabsListVariants = cva17(
+var tabsListVariants = cva18(
   [
     "inline-flex h-10 items-center rounded-md",
     "bg-muted p-1 text-muted-foreground"
@@ -2795,7 +2903,7 @@ var tabsListVariants = cva17(
     }
   }
 );
-var tabsTriggerVariants = cva17(
+var tabsTriggerVariants = cva18(
   [
     "inline-flex items-center justify-center whitespace-nowrap",
     "font-medium ring-offset-background",
@@ -2926,9 +3034,9 @@ TabsContent.displayName = "TabsContent";
 
 // src/components/Accordion/Accordion.tsx
 import * as React21 from "react";
-import { cva as cva18 } from "class-variance-authority";
+import { cva as cva19 } from "class-variance-authority";
 import { jsx as jsx22, jsxs as jsxs13 } from "react/jsx-runtime";
-var accordionItemVariants = cva18("border-b", {
+var accordionItemVariants = cva19("border-b", {
   variants: {
     variant: {
       default: "border-b",
@@ -3107,9 +3215,9 @@ AccordionContent.displayName = "AccordionContent";
 
 // src/components/Tooltip/Tooltip.tsx
 import * as React22 from "react";
-import { cva as cva19 } from "class-variance-authority";
-import { Fragment as Fragment3, jsx as jsx23 } from "react/jsx-runtime";
-var tooltipContentVariants = cva19(
+import { cva as cva20 } from "class-variance-authority";
+import { Fragment as Fragment4, jsx as jsx23 } from "react/jsx-runtime";
+var tooltipContentVariants = cva20(
   [
     "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5",
     "text-sm text-popover-foreground shadow-md",
@@ -3135,7 +3243,7 @@ function TooltipProvider({
   delayDuration: _delayDuration = 400,
   children
 }) {
-  return /* @__PURE__ */ jsx23(Fragment3, { children });
+  return /* @__PURE__ */ jsx23(Fragment4, { children });
 }
 function Tooltip({
   open,
@@ -3263,9 +3371,9 @@ TooltipContent.displayName = "TooltipContent";
 
 // src/components/DropdownMenu/DropdownMenu.tsx
 import * as React23 from "react";
-import { cva as cva20 } from "class-variance-authority";
+import { cva as cva21 } from "class-variance-authority";
 import { jsx as jsx24 } from "react/jsx-runtime";
-var dropdownMenuContentVariants = cva20(
+var dropdownMenuContentVariants = cva21(
   [
     "z-50 min-w-[8rem] overflow-hidden rounded-md border",
     "bg-popover p-1 text-popover-foreground shadow-md",
@@ -3445,9 +3553,9 @@ DropdownMenuLabel.displayName = "DropdownMenuLabel";
 
 // src/components/Popover/Popover.tsx
 import * as React24 from "react";
-import { cva as cva21 } from "class-variance-authority";
+import { cva as cva22 } from "class-variance-authority";
 import { jsx as jsx25 } from "react/jsx-runtime";
-var popoverContentVariants = cva21(
+var popoverContentVariants = cva22(
   [
     "z-50 w-72 rounded-md border bg-popover p-4",
     "text-popover-foreground shadow-md outline-none",
@@ -3986,9 +4094,9 @@ TablePagination.displayName = "TablePagination";
 
 // src/components/Pagination/Pagination.tsx
 import * as React30 from "react";
-import { cva as cva22 } from "class-variance-authority";
+import { cva as cva23 } from "class-variance-authority";
 import { jsx as jsx31, jsxs as jsxs17 } from "react/jsx-runtime";
-var paginationButtonVariants = cva22(
+var paginationButtonVariants = cva23(
   [
     "inline-flex items-center justify-center whitespace-nowrap rounded-md",
     "text-sm font-medium ring-offset-background transition-colors",
@@ -4188,9 +4296,9 @@ PaginationEllipsis.displayName = "PaginationEllipsis";
 
 // src/components/Skeleton/Skeleton.tsx
 import * as React31 from "react";
-import { cva as cva23 } from "class-variance-authority";
+import { cva as cva24 } from "class-variance-authority";
 import { jsx as jsx32, jsxs as jsxs18 } from "react/jsx-runtime";
-var skeletonVariants = cva23("animate-pulse rounded-md bg-muted", {
+var skeletonVariants = cva24("animate-pulse rounded-md bg-muted", {
   variants: {
     variant: {
       default: "bg-muted",
@@ -4946,6 +5054,9 @@ export {
   dialogContentVariants,
   dialogOverlayVariants,
   dropdownMenuContentVariants,
+  formFieldLabelVariants,
+  formFieldMessageVariants,
+  formFieldVariants,
   iconCategories,
   iconIndex,
   iconNames,

@@ -143,6 +143,9 @@ __export(src_exports, {
   dialogContentVariants: () => dialogContentVariants,
   dialogOverlayVariants: () => dialogOverlayVariants,
   dropdownMenuContentVariants: () => dropdownMenuContentVariants,
+  formFieldLabelVariants: () => formFieldLabelVariants,
+  formFieldMessageVariants: () => formFieldMessageVariants,
+  formFieldVariants: () => formFieldVariants,
   iconCategories: () => iconCategories,
   iconIndex: () => iconIndex,
   iconNames: () => iconNames,
@@ -1290,7 +1293,80 @@ Label.displayName = "Label";
 
 // src/components/FormField/FormField.tsx
 var React11 = __toESM(require("react"));
+var import_class_variance_authority8 = require("class-variance-authority");
 var import_jsx_runtime11 = require("react/jsx-runtime");
+var formFieldVariants = (0, import_class_variance_authority8.cva)("space-y-2", {
+  variants: {
+    /**
+     * Tamanho do campo (afeta label, helper text e espaçamento)
+     */
+    size: {
+      sm: "space-y-1",
+      md: "space-y-2",
+      lg: "space-y-2.5"
+    },
+    /**
+     * Layout do campo
+     * - vertical: label acima do input (padrão)
+     * - horizontal: label ao lado do input (útil para checkboxes inline)
+     */
+    layout: {
+      vertical: "flex flex-col",
+      horizontal: "flex flex-row items-start gap-3"
+    }
+  },
+  defaultVariants: {
+    size: "md",
+    layout: "vertical"
+  }
+});
+var formFieldLabelVariants = (0, import_class_variance_authority8.cva)(
+  [
+    "font-medium leading-none",
+    "text-foreground",
+    "transition-colors duration-200"
+  ],
+  {
+    variants: {
+      size: {
+        sm: "text-xs",
+        md: "text-sm",
+        lg: "text-base"
+      },
+      layout: {
+        vertical: "block",
+        horizontal: "inline-flex pt-2"
+        // Alinha com input
+      },
+      disabled: {
+        true: "cursor-not-allowed opacity-70",
+        false: ""
+      }
+    },
+    defaultVariants: {
+      size: "md",
+      layout: "vertical",
+      disabled: false
+    }
+  }
+);
+var formFieldMessageVariants = (0, import_class_variance_authority8.cva)("font-medium transition-colors duration-200", {
+  variants: {
+    size: {
+      sm: "text-xs",
+      md: "text-sm",
+      lg: "text-sm"
+    },
+    type: {
+      error: "text-destructive",
+      helper: "text-muted-foreground"
+    }
+  },
+  defaultVariants: {
+    size: "md",
+    type: "helper"
+  }
+});
 var FormField = React11.forwardRef(
   ({
     label,
@@ -1298,6 +1374,9 @@ var FormField = React11.forwardRef(
     required = false,
     error,
     helperText,
+    disabled = false,
+    size,
+    layout,
     children,
     className,
     ...props
@@ -1311,67 +1390,96 @@ var FormField = React11.forwardRef(
     const ariaDescribedBy = showError ? errorId : showHelper ? helperId : void 0;
     const enhancedChild = React11.cloneElement(children, {
       id: fieldId,
+      disabled: disabled || children.props.disabled,
       "aria-invalid": showError ? true : void 0,
       "aria-required": required ? true : void 0,
       "aria-describedby": ariaDescribedBy,
       // Spread original props do child por último para permitir override se necessário
       ...children.props
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { ref, className: cn("space-y-2", className), ...props, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
-        "label",
-        {
-          htmlFor: fieldId,
-          className: cn(
-            "block text-sm font-medium leading-none",
-            "text-foreground",
-            "peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+    const isHorizontal = layout === "horizontal";
+    return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
+      "div",
+      {
+        ref,
+        className: cn(formFieldVariants({ size, layout }), className),
+        ...props,
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(
+            "label",
+            {
+              htmlFor: fieldId,
+              className: formFieldLabelVariants({ size, layout, disabled }),
+              children: [
+                label,
+                required && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+                  "span",
+                  {
+                    className: "ml-1 text-destructive",
+                    "aria-label": "obrigat\xF3rio",
+                    children: "*"
+                  }
+                )
+              ]
+            }
           ),
-          children: [
-            label,
-            required && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-              "span",
+          isHorizontal ? /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: "flex-1 space-y-1", children: [
+            enhancedChild,
+            showError && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+              "p",
               {
-                className: "ml-1 text-destructive",
-                "aria-label": "obrigat\xF3rio",
-                children: "*"
+                id: errorId,
+                role: "alert",
+                "aria-live": "polite",
+                className: cn(
+                  formFieldMessageVariants({ size, type: "error" }),
+                  "animate-in fade-in-50 duration-200"
+                ),
+                children: error
+              }
+            ),
+            showHelper && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+              "p",
+              {
+                id: helperId,
+                className: formFieldMessageVariants({ size, type: "helper" }),
+                children: helperText
               }
             )
-          ]
-        }
-      ),
-      enhancedChild,
-      showError && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-        "p",
-        {
-          id: errorId,
-          role: "alert",
-          "aria-live": "polite",
-          className: cn(
-            "text-sm font-medium text-destructive",
-            "animate-in fade-in-50 duration-200"
-          ),
-          children: error
-        }
-      ),
-      showHelper && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-        "p",
-        {
-          id: helperId,
-          className: cn(
-            "text-sm text-muted-foreground"
-          ),
-          children: helperText
-        }
-      )
-    ] });
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(import_jsx_runtime11.Fragment, { children: [
+            enhancedChild,
+            showError && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+              "p",
+              {
+                id: errorId,
+                role: "alert",
+                "aria-live": "polite",
+                className: cn(
+                  formFieldMessageVariants({ size, type: "error" }),
+                  "animate-in fade-in-50 duration-200"
+                ),
+                children: error
+              }
+            ),
+            showHelper && /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
+              "p",
+              {
+                id: helperId,
+                className: formFieldMessageVariants({ size, type: "helper" }),
+                children: helperText
+              }
+            )
+          ] })
+        ]
+      }
+    );
   }
 );
 FormField.displayName = "FormField";
 
 // src/components/ThemeSwitcher/ThemeSwitcher.tsx
 var React12 = __toESM(require("react"));
-var import_class_variance_authority8 = require("class-variance-authority");
+var import_class_variance_authority9 = require("class-variance-authority");
 var import_jsx_runtime12 = require("react/jsx-runtime");
 var THEME_STORAGE_KEY = "educacross-theme";
 var ThemeContext = React12.createContext(void 0);
@@ -1536,7 +1644,7 @@ function MonitorIcon({ className }) {
     }
   );
 }
-var themeSwitcherVariants = (0, import_class_variance_authority8.cva)(
+var themeSwitcherVariants = (0, import_class_variance_authority9.cva)(
   [
     "inline-flex items-center justify-center",
     "rounded-[var(--radius-md)]",
@@ -1573,7 +1681,7 @@ var themeSwitcherVariants = (0, import_class_variance_authority8.cva)(
     }
   }
 );
-var themeToggleVariants = (0, import_class_variance_authority8.cva)(
+var themeToggleVariants = (0, import_class_variance_authority9.cva)(
   [
     "relative inline-flex items-center",
     "rounded-full border-2 border-transparent",
@@ -1766,9 +1874,9 @@ ThemeSwitcher.displayName = "ThemeSwitcher";
 
 // src/components/Card/Card.tsx
 var React13 = __toESM(require("react"));
-var import_class_variance_authority9 = require("class-variance-authority");
+var import_class_variance_authority10 = require("class-variance-authority");
 var import_jsx_runtime13 = require("react/jsx-runtime");
-var cardVariants = (0, import_class_variance_authority9.cva)(
+var cardVariants = (0, import_class_variance_authority10.cva)(
   [
     // Base styles usando tokens semânticos
     "rounded-[var(--radius-lg)] border border-[var(--divider)]",
@@ -1850,9 +1958,9 @@ var CardFooter = React13.forwardRef(({ className, ...props }, ref) => /* @__PURE
 CardFooter.displayName = "CardFooter";
 
 // src/components/Badge/Badge.tsx
-var import_class_variance_authority10 = require("class-variance-authority");
+var import_class_variance_authority11 = require("class-variance-authority");
 var import_jsx_runtime14 = require("react/jsx-runtime");
-var badgeVariants = (0, import_class_variance_authority10.cva)(
+var badgeVariants = (0, import_class_variance_authority11.cva)(
   [
     "inline-flex items-center rounded-full border px-2.5 py-0.5",
     "text-xs font-semibold",
@@ -1901,9 +2009,9 @@ function Badge({ className, variant, size, ...props }) {
 
 // src/components/Checkbox/Checkbox.tsx
 var React14 = __toESM(require("react"));
-var import_class_variance_authority11 = require("class-variance-authority");
+var import_class_variance_authority12 = require("class-variance-authority");
 var import_jsx_runtime15 = require("react/jsx-runtime");
-var checkboxVariants = (0, import_class_variance_authority11.cva)(
+var checkboxVariants = (0, import_class_variance_authority12.cva)(
   [
     "peer h-4 w-4 shrink-0 rounded-sm border-2",
     "ring-offset-background",
@@ -2034,9 +2142,9 @@ Checkbox.displayName = "Checkbox";
 
 // src/components/Radio/Radio.tsx
 var React15 = __toESM(require("react"));
-var import_class_variance_authority12 = require("class-variance-authority");
+var import_class_variance_authority13 = require("class-variance-authority");
 var import_jsx_runtime16 = require("react/jsx-runtime");
-var radioVariants = (0, import_class_variance_authority12.cva)(
+var radioVariants = (0, import_class_variance_authority13.cva)(
   [
     "peer h-4 w-4 shrink-0 rounded-full border-2",
     "ring-offset-background",
@@ -2198,9 +2306,9 @@ Radio.displayName = "Radio";
 
 // src/components/Select/Select.tsx
 var React16 = __toESM(require("react"));
-var import_class_variance_authority13 = require("class-variance-authority");
+var import_class_variance_authority14 = require("class-variance-authority");
 var import_jsx_runtime17 = require("react/jsx-runtime");
-var selectVariants = (0, import_class_variance_authority13.cva)(
+var selectVariants = (0, import_class_variance_authority14.cva)(
   [
     "flex h-10 w-full items-center justify-between",
     "rounded-md border border-input bg-background px-3 py-2",
@@ -2308,14 +2416,14 @@ Select.displayName = "Select";
 
 // src/components/Dialog/Dialog.tsx
 var React17 = __toESM(require("react"));
-var import_class_variance_authority14 = require("class-variance-authority");
+var import_class_variance_authority15 = require("class-variance-authority");
 var import_jsx_runtime18 = require("react/jsx-runtime");
-var dialogOverlayVariants = (0, import_class_variance_authority14.cva)([
+var dialogOverlayVariants = (0, import_class_variance_authority15.cva)([
   "fixed inset-0 z-50 bg-black/80",
   "data-[state=open]:animate-in data-[state=closed]:animate-out",
   "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
 ]);
-var dialogContentVariants = (0, import_class_variance_authority14.cva)(
+var dialogContentVariants = (0, import_class_variance_authority15.cva)(
   [
     "fixed left-[50%] top-[50%] z-50",
     "grid w-[600px] translate-x-[-50%] translate-y-[-50%]",
@@ -2588,9 +2696,9 @@ DialogClose.displayName = "DialogClose";
 
 // src/components/Alert/Alert.tsx
 var React18 = __toESM(require("react"));
-var import_class_variance_authority15 = require("class-variance-authority");
+var import_class_variance_authority16 = require("class-variance-authority");
 var import_jsx_runtime19 = require("react/jsx-runtime");
-var alertVariants = (0, import_class_variance_authority15.cva)(
+var alertVariants = (0, import_class_variance_authority16.cva)(
   [
     "relative w-full rounded-lg border p-4",
     "[&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px]",
@@ -2644,9 +2752,9 @@ AlertDescription.displayName = "AlertDescription";
 
 // src/components/Toast/Toast.tsx
 var React19 = __toESM(require("react"));
-var import_class_variance_authority16 = require("class-variance-authority");
+var import_class_variance_authority17 = require("class-variance-authority");
 var import_jsx_runtime20 = require("react/jsx-runtime");
-var toastVariants = (0, import_class_variance_authority16.cva)(
+var toastVariants = (0, import_class_variance_authority17.cva)(
   [
     "group pointer-events-auto relative flex w-full items-center justify-between",
     "space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg",
@@ -2798,9 +2906,9 @@ ToastViewport.displayName = "ToastViewport";
 
 // src/components/Tabs/Tabs.tsx
 var React20 = __toESM(require("react"));
-var import_class_variance_authority17 = require("class-variance-authority");
+var import_class_variance_authority18 = require("class-variance-authority");
 var import_jsx_runtime21 = require("react/jsx-runtime");
-var tabsListVariants = (0, import_class_variance_authority17.cva)(
+var tabsListVariants = (0, import_class_variance_authority18.cva)(
   [
     "inline-flex h-10 items-center rounded-md",
     "bg-muted p-1 text-muted-foreground"
@@ -2819,7 +2927,7 @@ var tabsListVariants = (0, import_class_variance_authority17.cva)(
     }
   }
 );
-var tabsTriggerVariants = (0, import_class_variance_authority17.cva)(
+var tabsTriggerVariants = (0, import_class_variance_authority18.cva)(
   [
     "inline-flex items-center justify-center whitespace-nowrap",
     "font-medium ring-offset-background",
@@ -2950,9 +3058,9 @@ TabsContent.displayName = "TabsContent";
 
 // src/components/Accordion/Accordion.tsx
 var React21 = __toESM(require("react"));
-var import_class_variance_authority18 = require("class-variance-authority");
+var import_class_variance_authority19 = require("class-variance-authority");
 var import_jsx_runtime22 = require("react/jsx-runtime");
-var accordionItemVariants = (0, import_class_variance_authority18.cva)("border-b", {
+var accordionItemVariants = (0, import_class_variance_authority19.cva)("border-b", {
   variants: {
     variant: {
       default: "border-b",
@@ -3131,9 +3239,9 @@ AccordionContent.displayName = "AccordionContent";
 
 // src/components/Tooltip/Tooltip.tsx
 var React22 = __toESM(require("react"));
-var import_class_variance_authority19 = require("class-variance-authority");
+var import_class_variance_authority20 = require("class-variance-authority");
 var import_jsx_runtime23 = require("react/jsx-runtime");
-var tooltipContentVariants = (0, import_class_variance_authority19.cva)(
+var tooltipContentVariants = (0, import_class_variance_authority20.cva)(
   [
     "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5",
     "text-sm text-popover-foreground shadow-md",
@@ -3287,9 +3395,9 @@ TooltipContent.displayName = "TooltipContent";
 
 // src/components/DropdownMenu/DropdownMenu.tsx
 var React23 = __toESM(require("react"));
-var import_class_variance_authority20 = require("class-variance-authority");
+var import_class_variance_authority21 = require("class-variance-authority");
 var import_jsx_runtime24 = require("react/jsx-runtime");
-var dropdownMenuContentVariants = (0, import_class_variance_authority20.cva)(
+var dropdownMenuContentVariants = (0, import_class_variance_authority21.cva)(
   [
     "z-50 min-w-[8rem] overflow-hidden rounded-md border",
     "bg-popover p-1 text-popover-foreground shadow-md",
@@ -3469,9 +3577,9 @@ DropdownMenuLabel.displayName = "DropdownMenuLabel";
 
 // src/components/Popover/Popover.tsx
 var React24 = __toESM(require("react"));
-var import_class_variance_authority21 = require("class-variance-authority");
+var import_class_variance_authority22 = require("class-variance-authority");
 var import_jsx_runtime25 = require("react/jsx-runtime");
-var popoverContentVariants = (0, import_class_variance_authority21.cva)(
+var popoverContentVariants = (0, import_class_variance_authority22.cva)(
   [
     "z-50 w-72 rounded-md border bg-popover p-4",
     "text-popover-foreground shadow-md outline-none",
@@ -4010,9 +4118,9 @@ TablePagination.displayName = "TablePagination";
 
 // src/components/Pagination/Pagination.tsx
 var React30 = __toESM(require("react"));
-var import_class_variance_authority22 = require("class-variance-authority");
+var import_class_variance_authority23 = require("class-variance-authority");
 var import_jsx_runtime31 = require("react/jsx-runtime");
-var paginationButtonVariants = (0, import_class_variance_authority22.cva)(
+var paginationButtonVariants = (0, import_class_variance_authority23.cva)(
   [
     "inline-flex items-center justify-center whitespace-nowrap rounded-md",
     "text-sm font-medium ring-offset-background transition-colors",
@@ -4212,9 +4320,9 @@ PaginationEllipsis.displayName = "PaginationEllipsis";
 
 // src/components/Skeleton/Skeleton.tsx
 var React31 = __toESM(require("react"));
-var import_class_variance_authority23 = require("class-variance-authority");
+var import_class_variance_authority24 = require("class-variance-authority");
 var import_jsx_runtime32 = require("react/jsx-runtime");
-var skeletonVariants = (0, import_class_variance_authority23.cva)("animate-pulse rounded-md bg-muted", {
+var skeletonVariants = (0, import_class_variance_authority24.cva)("animate-pulse rounded-md bg-muted", {
   variants: {
     variant: {
       default: "bg-muted",
@@ -4971,6 +5079,9 @@ var metadata = {
   dialogContentVariants,
   dialogOverlayVariants,
   dropdownMenuContentVariants,
+  formFieldLabelVariants,
+  formFieldMessageVariants,
+  formFieldVariants,
   iconCategories,
   iconIndex,
   iconNames,

@@ -50,7 +50,13 @@ export {
 export { Button, buttonVariants, type ButtonProps } from "./components/Button";
 export { Input, inputVariants, type InputProps } from "./components/Input";
 export { Label, labelVariants, type LabelProps } from "./components/Label";
-export { FormField, type FormFieldProps } from "./components/FormField";
+export {
+  FormField,
+  formFieldVariants,
+  formFieldLabelVariants,
+  formFieldMessageVariants,
+  type FormFieldProps,
+} from "./components/FormField";
 
 // Theme
 export {
