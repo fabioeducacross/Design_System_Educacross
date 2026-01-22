@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button, Input, Label } from "@fabioeducacross/ui";
+import { Button, Input, Label, FormField } from "@fabioeducacross/ui";
 import { useState } from "react";
+import { LoginFormExample, RegistrationFormExample } from "@fabioeducacross/ui/src/examples/FormField";
 
 const meta: Meta = {
     title: "Patterns/Form Field",
@@ -14,14 +15,35 @@ const meta: Meta = {
 O padrão Form Field combina **Label**, **Input** e mensagens de erro/ajuda
 para criar campos de formulário consistentes e acessíveis.
 
-## Estrutura
+## Componente FormField
+
+O componente \`FormField\` encapsula a lógica de labels, mensagens de erro/helper e acessibilidade:
 
 \`\`\`tsx
-<div className="flex flex-col gap-2">
-  <Label htmlFor="field-id" required>Label</Label>
-  <Input id="field-id" placeholder="Placeholder" />
-  <span className="text-sm text-muted-foreground">Hint text</span>
-</div>
+<FormField 
+  label="Email" 
+  required 
+  error={errors.email?.message}
+  helperText="Use seu email corporativo"
+>
+  <Input type="email" placeholder="seu@email.com" />
+</FormField>
+\`\`\`
+
+## Variantes
+
+- **size**: sm | md (padrão) | lg - Controla tamanho do texto e espaçamentos
+- **layout**: vertical (padrão) | horizontal - Label ao lado ou acima do input
+- **disabled**: Aplica estilos visuais de desabilitado
+
+## Integração com React Hook Form
+
+Use o spread operator \`{...register("fieldName")}\` para integração com RHF:
+
+\`\`\`tsx
+<FormField label="Email" error={errors.email?.message}>
+  <Input {...register("email")} type="email" />
+</FormField>
 \`\`\`
 
 ## Regras de Acessibilidade
@@ -218,6 +240,134 @@ Exemplo completo de formulário com:
 - Estados de erro
 - Campo opcional
 - Estado de loading no botão
+        `,
+            },
+        },
+    },
+};
+
+// ============================================================================
+// React Hook Form + Zod Integration Examples
+// ============================================================================
+
+export const ReactHookFormLogin: Story = {
+    render: () => <LoginFormExample />,
+    parameters: {
+        layout: "centered",
+        docs: {
+            description: {
+                story: `
+## Integração com React Hook Form + Zod
+
+Exemplo de formulário de login usando:
+- **FormField** component com variants
+- **React Hook Form** para gerenciamento de estado
+- **Zod** para validação de schema
+- **@hookform/resolvers** para integração
+
+### Features
+- Validação em tempo real (onBlur)
+- Mensagens de erro customizadas em português
+- Estados de loading durante submit
+- Integração completa com acessibilidade
+
+### Código
+
+\`\`\`tsx
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { FormField, Input, Button } from "@fabioeducacross/ui";
+
+const loginSchema = z.object({
+  email: z.string().email("Email inválido"),
+  password: z.string().min(8, "Mínimo 8 caracteres"),
+});
+
+type LoginFormData = z.infer<typeof loginSchema>;
+
+function LoginForm() {
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>({
+    resolver: zodResolver(loginSchema),
+  });
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <FormField label="Email" required error={errors.email?.message}>
+        <Input {...register("email")} type="email" />
+      </FormField>
+      
+      <FormField label="Senha" required error={errors.password?.message}>
+        <Input {...register("password")} type="password" />
+      </FormField>
+      
+      <Button type="submit">Entrar</Button>
+    </form>
+  );
+}
+\`\`\`
+        `,
+            },
+        },
+    },
+};
+
+export const ReactHookFormRegistration: Story = {
+    render: () => <RegistrationFormExample />,
+    parameters: {
+        layout: "padded",
+        docs: {
+            description: {
+                story: `
+## Exemplo Avançado: Cadastro Completo
+
+Formulário de cadastro demonstrando recursos avançados:
+
+### FormField Variants
+- **size="lg"**: Para campo de destaque (Nome Completo)
+- **size="md"**: Tamanho padrão (Email, Senha)
+- **size="sm"**: Para checkboxes e campos compactos
+- **layout="horizontal"**: Para checkboxes com label ao lado
+
+### Validação Avançada com Zod
+- Validação de formato de telefone brasileiro
+- Regex para senha forte (maiúscula, minúscula, número, especial)
+- Validação customizada: confirmação de senha
+- Campo booleano obrigatório (termos de uso)
+
+### Grid Layout Responsivo
+- Grid 1 coluna em mobile
+- Grid 2 colunas em desktop (md:grid-cols-2)
+- Campos Email e Telefone lado a lado
+
+### UX Patterns
+- Helper text explicativo em cada campo
+- Mensagens de erro contextuais
+- Estados de loading durante submit
+- Botões de ação primário e secundário
+
+### Código Destacado
+
+\`\`\`tsx
+// Validação com refine para senha matching
+const schema = z.object({
+  password: z.string().min(8),
+  confirmPassword: z.string(),
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "As senhas não coincidem",
+  path: ["confirmPassword"],
+});
+
+// Variant size para destaque
+<FormField label="Nome Completo" required size="lg">
+  <Input {...register("fullName")} />
+</FormField>
+
+// Layout horizontal para checkboxes
+<FormField layout="horizontal" size="sm">
+  <Checkbox {...register("terms")} />
+</FormField>
+\`\`\`
         `,
             },
         },
