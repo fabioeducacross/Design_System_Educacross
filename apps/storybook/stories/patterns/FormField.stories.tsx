@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button, Input, Label, FormField } from "@fabioeducacross/ui";
+import { Button, Input, Label, FormField, LoginFormExample, RegistrationFormExample } from "@fabioeducacross/ui";
 import { useState } from "react";
-import { LoginFormExample, RegistrationFormExample } from "@fabioeducacross/ui/src/examples/FormField";
 
 const meta: Meta = {
     title: "Patterns/Form Field",

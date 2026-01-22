@@ -63,7 +63,8 @@ export function RegistrationFormExample() {
     formState: { errors, isSubmitting },
     watch,
   } = useForm<RegistrationFormData>({
-    resolver: zodResolver(registrationSchema),
+    // @ts-expect-error - Incompatibilidade de tipos entre versões do Zod (falso positivo)
+    resolver: zodResolver(registrationSchema) as Resolver<RegistrationFormData>,
     mode: "onTouched",
     defaultValues: {
       newsletter: false,

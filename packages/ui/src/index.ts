@@ -58,6 +58,15 @@ export {
   type FormFieldProps,
 } from "./components/FormField";
 
+// Exemplos de FormField
+export {
+  LoginFormExample,
+  RegistrationFormExample,
+} from "./examples/FormField";
+
+// Data Display - Organisms
+export { DataTable, type DataTableProps } from "./components/DataTable";
+
 // Theme
 export {
     ThemeSwitcher,

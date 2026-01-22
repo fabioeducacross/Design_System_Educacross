@@ -1,0 +1,7 @@
+/**
+ * @file index.ts
+ * @description Barrel export para DataTable
+ */
+
+export { DataTable } from "./DataTable";
+export type { DataTableProps } from "./DataTable";
