@@ -21,6 +21,9 @@
  * ```
  */
 
+// Types
+export * from "./types";
+
 // Layout Components
 export { Header, type HeaderProps } from "./components/Header";
 export { Logo, type LogoProps } from "./components/Logo";

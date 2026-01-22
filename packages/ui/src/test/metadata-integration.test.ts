@@ -55,7 +55,7 @@ describe("Metadata Integration", () => {
         it("componentes do manifest devem estar em componentList", () => {
             const allComponentNames: string[] = [];
             for (const components of Object.values(componentList)) {
-                allComponentNames.push(...(components as string[]));
+                allComponentNames.push(...([...components] as string[]));
             }
 
             for (const component of manifest.components) {
