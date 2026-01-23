@@ -69,9 +69,18 @@ export {
   DataTable,
   DataTablePagination,
   DataTableToolbar,
+  DataTableRowActions,
+  createSelectColumn,
+  getSelectedRows,
+  getSelectedRowIds,
+  clearRowSelection,
+  toggleAllRowsSelection,
+  executeBulkAction,
   type DataTableProps,
   type DataTablePaginationProps,
   type DataTableToolbarProps,
+  type DataTableRowActionsProps,
+  type RowAction,
 } from "./components/DataTable";
 
 // Theme
