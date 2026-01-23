@@ -1,5 +1,8 @@
 # Educacross Design System
 
+[![Chromatic](https://img.shields.io/badge/chromatic-visual%20testing-orange?logo=storybook)](https://www.chromatic.com/builds?appId=69727df0ab06437ceb56a008)
+[![Storybook](https://img.shields.io/badge/storybook-published-ff4785?logo=storybook)](https://69727df0ab06437ceb56a008-gvenynqzgl.chromatic.com/)
+
 Sistema de design em código para reduzir inconsistências visuais, acelerar desenvolvimento e aumentar qualidade (a11y + estados).
 
 ## Stack
@@ -129,9 +132,10 @@ pnpm clean              # Remove dist e node_modules
 
 - 📚 **[Storybook Publicado](https://69727df0ab06437ceb56a008-gvenynqzgl.chromatic.com/)** - Visualize todos os componentes
 - 🎨 **[Chromatic](https://www.chromatic.com/setup?appId=69727df0ab06437ceb56a008)** - Visual testing e snapshots
+- ⚡ **[Guia Rápido Chromatic](./docs/CHROMATIC_QUICKSTART.md)** - Como usar visual testing no dia a dia
 - 📖 **[Guia de Uso](./USAGE.md)** - Como instalar e usar o Design System
 - 🤝 **[Como Contribuir](./CONTRIBUTING.md)** - Guidelines para contribuidores
-- 🚀 **[Configuração Chromatic](./docs/CHROMATIC.md)** - Setup de visual testing
+- 🚀 **[Configuração Chromatic](./docs/CHROMATIC.md)** - Setup técnico completo
 
 ## Componentes MVP
 
