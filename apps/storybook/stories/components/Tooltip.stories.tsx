@@ -47,6 +47,49 @@ export const Default: Story = {
             </Tooltip>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, Button } from "@fabioeducacross/ui";
+
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline">Hover me</Button>
+    </TooltipTrigger>
+    <TooltipContent>
+      <p>This is a tooltip</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <button 
+    class="btn btn-outline-secondary" 
+    data-bs-toggle="tooltip" 
+    title="This is a tooltip"
+  >
+    Hover me
+  </button>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTooltipProvider>
+    <EdTooltip>
+      <EdTooltipTrigger as-child>
+        <EdButton variant="outline">Hover me</EdButton>
+      </EdTooltipTrigger>
+      <EdTooltipContent>
+        <p>This is a tooltip</p>
+      </EdTooltipContent>
+    </EdTooltip>
+  </EdTooltipProvider>
+</template>
+
+<script setup lang="ts">
+import { EdTooltip, EdTooltipTrigger, EdTooltipContent, EdTooltipProvider, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -84,6 +127,48 @@ export const Sides: Story = {
             </Tooltip>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, Button } from "@fabioeducacross/ui";
+
+<TooltipProvider>
+  <Tooltip side="top">
+    <TooltipTrigger asChild><Button>Top</Button></TooltipTrigger>
+    <TooltipContent>Tooltip on top</TooltipContent>
+  </Tooltip>
+  <Tooltip side="bottom">
+    <TooltipTrigger asChild><Button>Bottom</Button></TooltipTrigger>
+    <TooltipContent>Tooltip on bottom</TooltipContent>
+  </Tooltip>
+</TooltipProvider>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <button class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Top">Top</button>
+    <button class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bottom">Bottom</button>
+    <button class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Left">Left</button>
+    <button class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Right">Right</button>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTooltipProvider>
+    <EdTooltip side="top">
+      <EdTooltipTrigger as-child><EdButton>Top</EdButton></EdTooltipTrigger>
+      <EdTooltipContent>Tooltip on top</EdTooltipContent>
+    </EdTooltip>
+    <EdTooltip side="bottom">
+      <EdTooltipTrigger as-child><EdButton>Bottom</EdButton></EdTooltipTrigger>
+      <EdTooltipContent>Tooltip on bottom</EdTooltipContent>
+    </EdTooltip>
+  </EdTooltipProvider>
+</template>
+
+<script setup lang="ts">
+import { EdTooltip, EdTooltipTrigger, EdTooltipContent, EdTooltipProvider, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -131,6 +216,52 @@ export const RichContent: Story = {
             </Tooltip>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, Button } from "@fabioeducacross/ui";
+
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild><Button>View Details</Button></TooltipTrigger>
+    <TooltipContent className="max-w-xs">
+      <div>
+        <p className="font-semibold">Keyboard Shortcuts</p>
+        <p>Press <kbd>Ctrl+K</kbd> to open command palette</p>
+      </div>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <button 
+    class="btn btn-primary" 
+    data-bs-toggle="tooltip" 
+    data-bs-html="true" 
+    title="<strong>Keyboard Shortcuts</strong><br>Press Ctrl+K"
+  >
+    View Details
+  </button>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTooltipProvider>
+    <EdTooltip>
+      <EdTooltipTrigger as-child><EdButton>View Details</EdButton></EdTooltipTrigger>
+      <EdTooltipContent class="max-w-xs">
+        <div>
+          <p class="font-semibold">Keyboard Shortcuts</p>
+          <p>Press <kbd>Ctrl+K</kbd> to open command palette</p>
+        </div>
+      </EdTooltipContent>
+    </EdTooltip>
+  </EdTooltipProvider>
+</template>
+
+<script setup lang="ts">
+import { EdTooltip, EdTooltipTrigger, EdTooltipContent, EdTooltipProvider, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

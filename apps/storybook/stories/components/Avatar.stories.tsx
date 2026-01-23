@@ -39,6 +39,38 @@ export const Default: Story = {
             <AvatarFallback>CN</AvatarFallback>
         </Avatar>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Avatar, AvatarImage, AvatarFallback } from "@fabioeducacross/ui";
+
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" alt="User avatar" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="avatar">
+    <img 
+      src="https://github.com/shadcn.png" 
+      alt="User avatar"
+      class="rounded-circle"
+      style="width: 40px; height: 40px; object-fit: cover;"
+    />
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAvatar>
+    <EdAvatarImage src="https://github.com/shadcn.png" alt="User avatar" />
+    <EdAvatarFallback>CN</EdAvatarFallback>
+  </EdAvatar>
+</template>
+
+<script setup lang="ts">
+import { EdAvatar, EdAvatarImage, EdAvatarFallback } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -51,6 +83,75 @@ export const Fallback: Story = {
             <AvatarFallback>JD</AvatarFallback>
         </Avatar>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Avatar, AvatarImage, AvatarFallback } from "@fabioeducacross/ui";
+
+<Avatar>
+  <AvatarImage src="invalid-url.jpg" alt="User avatar" />
+  <AvatarFallback>JD</AvatarFallback>
+</Avatar>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div 
+    class="avatar rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center"
+    style="width: 40px; height: 40px; font-size: 16px; font-weight: 500;"
+  >
+    JD
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAvatar>
+    <EdAvatarImage src="invalid-url.jpg" alt="User avatar" />
+    <EdAvatarFallback>JD</EdAvatarFallback>
+  </EdAvatar>
+</template>
+
+<script setup lang="ts">
+import { EdAvatar, EdAvatarImage, EdAvatarFallback } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Avatar with only fallback (no image).
+ */
+export const WithFallback: Story = {
+    render: () => (
+        <Avatar>
+            <AvatarFallback>AB</AvatarFallback>
+        </Avatar>
+    ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Avatar, AvatarFallback } from "@fabioeducacross/ui";
+
+<Avatar>
+  <AvatarFallback>AB</AvatarFallback>
+</Avatar>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div 
+    class="avatar rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+    style="width: 40px; height: 40px; font-size: 16px; font-weight: 500;"
+  >
+    AB
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAvatar>
+    <EdAvatarFallback>AB</EdAvatarFallback>
+  </EdAvatar>
+</template>
+
+<script setup lang="ts">
+import { EdAvatar, EdAvatarFallback } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

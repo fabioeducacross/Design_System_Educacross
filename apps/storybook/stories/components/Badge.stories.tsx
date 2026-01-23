@@ -56,6 +56,141 @@ export const Default: Story = {
     args: {
         children: "Badge",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Badge } from "@fabioeducacross/ui";
+
+<Badge>Badge</Badge>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <span class="badge bg-primary">Badge</span>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdBadge>Badge</EdBadge>
+</template>
+
+<script setup lang="ts">
+import { EdBadge } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Secondary badge variant.
+ */
+export const Secondary: Story = {
+    args: {
+        variant: "secondary",
+        children: "Secondary",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Badge } from "@fabioeducacross/ui";
+
+<Badge variant="secondary">Secondary</Badge>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <span class="badge bg-secondary">Secondary</span>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdBadge variant="secondary">Secondary</EdBadge>
+</template>
+
+<script setup lang="ts">
+import { EdBadge } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Destructive badge variant for errors.
+ */
+export const Destructive: Story = {
+    args: {
+        variant: "destructive",
+        children: "Error",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Badge } from "@fabioeducacross/ui";
+
+<Badge variant="destructive">Error</Badge>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <span class="badge bg-danger">Error</span>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdBadge variant="destructive">Error</EdBadge>
+</template>
+
+<script setup lang="ts">
+import { EdBadge } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Outline badge variant.
+ */
+export const Outline: Story = {
+    args: {
+        variant: "outline",
+        children: "Outline",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Badge } from "@fabioeducacross/ui";
+
+<Badge variant="outline">Outline</Badge>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <span class="badge border border-primary text-primary bg-transparent">Outline</span>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdBadge variant="outline">Outline</EdBadge>
+</template>
+
+<script setup lang="ts">
+import { EdBadge } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Success badge variant.
+ */
+export const Success: Story = {
+    args: {
+        variant: "success",
+        children: "Success",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Badge } from "@fabioeducacross/ui";
+
+<Badge variant="success">Success</Badge>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <span class="badge bg-success">Success</span>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdBadge variant="success">Success</EdBadge>
+</template>
+
+<script setup lang="ts">
+import { EdBadge } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

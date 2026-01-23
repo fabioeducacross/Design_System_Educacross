@@ -48,6 +48,49 @@ export const Default: Story = {
             </Popover>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Popover, PopoverTrigger, PopoverContent, Button } from "@fabioeducacross/ui";
+
+<Popover>
+  <PopoverTrigger asChild>
+    <Button variant="outline">Open Popover</Button>
+  </PopoverTrigger>
+  <PopoverContent>
+    <h4>Popover Title</h4>
+    <p>This is the popover content.</p>
+  </PopoverContent>
+</Popover>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <button 
+    class="btn btn-outline-secondary" 
+    type="button" 
+    data-bs-toggle="popover" 
+    title="Popover Title" 
+    data-bs-content="This is the popover content."
+  >
+    Open Popover
+  </button>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdPopover>
+    <EdPopoverTrigger as-child>
+      <EdButton variant="outline">Open Popover</EdButton>
+    </EdPopoverTrigger>
+    <EdPopoverContent>
+      <h4>Popover Title</h4>
+      <p>This is the popover content.</p>
+    </EdPopoverContent>
+  </EdPopover>
+</template>
+
+<script setup lang="ts">
+import { EdPopover, EdPopoverTrigger, EdPopoverContent, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -99,6 +142,42 @@ export const WithForm: Story = {
             </Popover>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Popover, PopoverTrigger, PopoverContent, Button, Input, Label } from "@fabioeducacross/ui";
+
+<Popover>
+  <PopoverTrigger asChild><Button>Edit Dimensions</Button></PopoverTrigger>
+  <PopoverContent className="w-80">
+    <h4>Dimensions</h4>
+    <div>
+      <Label htmlFor="width">Width</Label>
+      <Input id="width" defaultValue="100%" />
+    </div>
+  </PopoverContent>
+</Popover>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <button class="btn btn-primary" data-bs-toggle="popover" data-bs-html="true" data-bs-content="<input class='form-control' placeholder='Width' />">Edit Dimensions</button>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdPopover>
+    <EdPopoverTrigger as-child><EdButton>Edit Dimensions</EdButton></EdPopoverTrigger>
+    <EdPopoverContent class="w-80">
+      <h4>Dimensions</h4>
+      <div><EdLabel for="width">Width</EdLabel><EdInput id="width" default-value="100%" /></div>
+    </EdPopoverContent>
+  </EdPopover>
+</template>
+
+<script setup lang="ts">
+import { EdPopover, EdPopoverTrigger, EdPopoverContent, EdButton, EdInput, EdLabel } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -129,6 +208,56 @@ export const Controlled: Story = {
                 </Popover>
             </div>
         );
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Popover, PopoverTrigger, PopoverContent, PopoverClose, Button } from "@fabioeducacross/ui";
+import { useState } from "react";
+
+function ControlledPopover() {
+  const [open, setOpen] = useState(false);
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild><Button>Popover</Button></PopoverTrigger>
+      <PopoverContent>
+        <p>Controlled externally.</p>
+        <PopoverClose><Button>Close</Button></PopoverClose>
+      </PopoverContent>
+    </Popover>
+  );
+}`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap + JavaScript -->
+<template>
+  <button class="btn btn-primary" @click="togglePopover">Toggle Popover</button>
+</template>
+<script>
+export default {
+  methods: {
+    togglePopover() {
+      // Bootstrap popover toggle via JS
+      const popover = new bootstrap.Popover(this.$el);
+      popover.toggle();
+    }
+  }
+}
+</script>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdPopover :open="open" @open-change="open = $event">
+    <EdPopoverTrigger as-child><EdButton>Popover</EdButton></EdPopoverTrigger>
+    <EdPopoverContent>
+      <p>Controlled externally.</p>
+      <EdPopoverClose><EdButton>Close</EdButton></EdPopoverClose>
+    </EdPopoverContent>
+  </EdPopover>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { EdPopover, EdPopoverTrigger, EdPopoverContent, EdPopoverClose, EdButton } from "@fabioeducacross/ui-vue3";
+const open = ref(false);
+</script>`,
+        },
     },
 };
 

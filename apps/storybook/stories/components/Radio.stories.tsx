@@ -41,6 +41,111 @@ export const Default: Story = {
             <Radio value="enterprise" label="Enterprise" />
         </RadioGroup>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { RadioGroup, Radio } from "@fabioeducacross/ui";
+
+<RadioGroup name="plan" defaultValue="basic">
+  <Radio value="basic" label="Basic" />
+  <Radio value="pro" label="Pro" />
+  <Radio value="enterprise" label="Enterprise" />
+</RadioGroup>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="plan" id="basic" value="basic" checked />
+      <label class="form-check-label" for="basic">
+        Basic
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="plan" id="pro" value="pro" />
+      <label class="form-check-label" for="pro">
+        Pro
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="plan" id="enterprise" value="enterprise" />
+      <label class="form-check-label" for="enterprise">
+        Enterprise
+      </label>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdRadioGroup name="plan" default-value="basic">
+    <EdRadio value="basic" label="Basic" />
+    <EdRadio value="pro" label="Pro" />
+    <EdRadio value="enterprise" label="Enterprise" />
+  </EdRadioGroup>
+</template>
+
+<script setup lang="ts">
+import { EdRadioGroup, EdRadio } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Checked radio state example.
+ */
+export const Checked: Story = {
+    render: () => (
+        <RadioGroup name="plan-checked" defaultValue="pro">
+            <Radio value="basic" label="Basic" />
+            <Radio value="pro" label="Pro" />
+            <Radio value="enterprise" label="Enterprise" />
+        </RadioGroup>
+    ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { RadioGroup, Radio } from "@fabioeducacross/ui";
+
+<RadioGroup name="plan-checked" defaultValue="pro">
+  <Radio value="basic" label="Basic" />
+  <Radio value="pro" label="Pro" />
+  <Radio value="enterprise" label="Enterprise" />
+</RadioGroup>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="plan-checked" id="basic2" value="basic" />
+      <label class="form-check-label" for="basic2">
+        Basic
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="plan-checked" id="pro2" value="pro" checked />
+      <label class="form-check-label" for="pro2">
+        Pro
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="plan-checked" id="enterprise2" value="enterprise" />
+      <label class="form-check-label" for="enterprise2">
+        Enterprise
+      </label>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdRadioGroup name="plan-checked" default-value="pro">
+    <EdRadio value="basic" label="Basic" />
+    <EdRadio value="pro" label="Pro" />
+    <EdRadio value="enterprise" label="Enterprise" />
+  </EdRadioGroup>
+</template>
+
+<script setup lang="ts">
+import { EdRadioGroup, EdRadio } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

@@ -83,6 +83,79 @@ export const Default: Story = {
             </TableBody>
         </Table>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell, TableCaption } from "@fabioeducacross/ui";
+
+<Table>
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead>Method</TableHead>
+      <TableHead>Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell>$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <table class="table">
+    <caption>A list of your recent invoices.</caption>
+    <thead>
+      <tr>
+        <th>Invoice</th>
+        <th>Status</th>
+        <th>Method</th>
+        <th class="text-end">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>INV001</td>
+        <td>Paid</td>
+        <td>Credit Card</td>
+        <td class="text-end">$250.00</td>
+      </tr>
+    </tbody>
+  </table>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTable>
+    <EdTableCaption>A list of your recent invoices.</EdTableCaption>
+    <EdTableHeader>
+      <EdTableRow>
+        <EdTableHead>Invoice</EdTableHead>
+        <EdTableHead>Status</EdTableHead>
+        <EdTableHead>Method</EdTableHead>
+        <EdTableHead>Amount</EdTableHead>
+      </EdTableRow>
+    </EdTableHeader>
+    <EdTableBody>
+      <EdTableRow>
+        <EdTableCell>INV001</EdTableCell>
+        <EdTableCell>Paid</EdTableCell>
+        <EdTableCell>Credit Card</EdTableCell>
+        <EdTableCell>$250.00</EdTableCell>
+      </EdTableRow>
+    </EdTableBody>
+  </EdTable>
+</template>
+
+<script setup lang="ts">
+import { EdTable, EdTableHeader, EdTableBody, EdTableHead, EdTableRow, EdTableCell, EdTableCaption } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -117,6 +190,94 @@ export const WithFooter: Story = {
             </TableFooter>
         </Table>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell } from "@fabioeducacross/ui";
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead>Method</TableHead>
+      <TableHead>Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell>$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+  <TableFooter>
+    <TableRow>
+      <TableCell colSpan={3}>Total</TableCell>
+      <TableCell>$1,750.00</TableCell>
+    </TableRow>
+  </TableFooter>
+</Table>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Invoice</th>
+        <th>Status</th>
+        <th>Method</th>
+        <th class="text-end">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>INV001</td>
+        <td>Paid</td>
+        <td>Credit Card</td>
+        <td class="text-end">$250.00</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Total</td>
+        <td class="text-end fw-bold">$1,750.00</td>
+      </tr>
+    </tfoot>
+  </table>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTable>
+    <EdTableHeader>
+      <EdTableRow>
+        <EdTableHead>Invoice</EdTableHead>
+        <EdTableHead>Status</EdTableHead>
+        <EdTableHead>Method</EdTableHead>
+        <EdTableHead>Amount</EdTableHead>
+      </EdTableRow>
+    </EdTableHeader>
+    <EdTableBody>
+      <EdTableRow>
+        <EdTableCell>INV001</EdTableCell>
+        <EdTableCell>Paid</EdTableCell>
+        <EdTableCell>Credit Card</EdTableCell>
+        <EdTableCell>$250.00</EdTableCell>
+      </EdTableRow>
+    </EdTableBody>
+    <EdTableFooter>
+      <EdTableRow>
+        <EdTableCell :col-span="3">Total</EdTableCell>
+        <EdTableCell>$1,750.00</EdTableCell>
+      </EdTableRow>
+    </EdTableFooter>
+  </EdTable>
+</template>
+
+<script setup lang="ts">
+import { EdTable, EdTableHeader, EdTableBody, EdTableFooter, EdTableHead, EdTableRow, EdTableCell } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -157,6 +318,96 @@ export const WithBadges: Story = {
             </TableBody>
         </Table>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@fabioeducacross/ui";
+import { Badge } from "@fabioeducacross/ui";
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead>Method</TableHead>
+      <TableHead>Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>INV001</TableCell>
+      <TableCell><Badge variant="success">Paid</Badge></TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell>$250.00</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>INV002</TableCell>
+      <TableCell><Badge variant="warning">Pending</Badge></TableCell>
+      <TableCell>PayPal</TableCell>
+      <TableCell>$150.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Invoice</th>
+        <th>Status</th>
+        <th>Method</th>
+        <th class="text-end">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>INV001</td>
+        <td><span class="badge bg-success">Paid</span></td>
+        <td>Credit Card</td>
+        <td class="text-end">$250.00</td>
+      </tr>
+      <tr>
+        <td>INV002</td>
+        <td><span class="badge bg-warning">Pending</span></td>
+        <td>PayPal</td>
+        <td class="text-end">$150.00</td>
+      </tr>
+    </tbody>
+  </table>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTable>
+    <EdTableHeader>
+      <EdTableRow>
+        <EdTableHead>Invoice</EdTableHead>
+        <EdTableHead>Status</EdTableHead>
+        <EdTableHead>Method</EdTableHead>
+        <EdTableHead>Amount</EdTableHead>
+      </EdTableRow>
+    </EdTableHeader>
+    <EdTableBody>
+      <EdTableRow>
+        <EdTableCell>INV001</EdTableCell>
+        <EdTableCell><EdBadge variant="success">Paid</EdBadge></EdTableCell>
+        <EdTableCell>Credit Card</EdTableCell>
+        <EdTableCell>$250.00</EdTableCell>
+      </EdTableRow>
+      <EdTableRow>
+        <EdTableCell>INV002</EdTableCell>
+        <EdTableCell><EdBadge variant="warning">Pending</EdBadge></EdTableCell>
+        <EdTableCell>PayPal</EdTableCell>
+        <EdTableCell>$150.00</EdTableCell>
+      </EdTableRow>
+    </EdTableBody>
+  </EdTable>
+</template>
+
+<script setup lang="ts">
+import { EdTable, EdTableHeader, EdTableBody, EdTableHead, EdTableRow, EdTableCell } from "@fabioeducacross/ui-vue3";
+import { EdBadge } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

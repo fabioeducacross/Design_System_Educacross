@@ -38,6 +38,184 @@ export const Default: Story = {
             </AlertDescription>
         </Alert>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Alert, AlertTitle, AlertDescription } from "@fabioeducacross/ui";
+
+<Alert className="w-[450px]">
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can add components to your app using the CLI.
+  </AlertDescription>
+</Alert>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="alert alert-info" style="width: 450px">
+    <h5 class="alert-heading mb-2">Heads up!</h5>
+    <p class="mb-0">
+      You can add components to your app using the CLI.
+    </p>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAlert class="w-[450px]">
+    <EdAlertTitle>Heads up!</EdAlertTitle>
+    <EdAlertDescription>
+      You can add components to your app using the CLI.
+    </EdAlertDescription>
+  </EdAlert>
+</template>
+
+<script setup lang="ts">
+import { EdAlert, EdAlertTitle, EdAlertDescription } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Destructive alert for errors.
+ */
+export const Destructive: Story = {
+    render: () => (
+        <Alert variant="destructive" className="w-[450px]">
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>
+                Something went wrong. Please try again.
+            </AlertDescription>
+        </Alert>
+    ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Alert, AlertTitle, AlertDescription } from "@fabioeducacross/ui";
+
+<Alert variant="destructive" className="w-[450px]">
+  <AlertTitle>Error</AlertTitle>
+  <AlertDescription>
+    Something went wrong. Please try again.
+  </AlertDescription>
+</Alert>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="alert alert-danger" style="width: 450px">
+    <h5 class="alert-heading mb-2">Error</h5>
+    <p class="mb-0">
+      Something went wrong. Please try again.
+    </p>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAlert variant="destructive" class="w-[450px]">
+    <EdAlertTitle>Error</EdAlertTitle>
+    <EdAlertDescription>
+      Something went wrong. Please try again.
+    </EdAlertDescription>
+  </EdAlert>
+</template>
+
+<script setup lang="ts">
+import { EdAlert, EdAlertTitle, EdAlertDescription } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Success alert for positive feedback.
+ */
+export const Success: Story = {
+    render: () => (
+        <Alert variant="success" className="w-[450px]">
+            <AlertTitle>Success</AlertTitle>
+            <AlertDescription>
+                Your changes have been saved successfully.
+            </AlertDescription>
+        </Alert>
+    ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Alert, AlertTitle, AlertDescription } from "@fabioeducacross/ui";
+
+<Alert variant="success" className="w-[450px]">
+  <AlertTitle>Success</AlertTitle>
+  <AlertDescription>
+    Your changes have been saved successfully.
+  </AlertDescription>
+</Alert>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="alert alert-success" style="width: 450px">
+    <h5 class="alert-heading mb-2">Success</h5>
+    <p class="mb-0">
+      Your changes have been saved successfully.
+    </p>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAlert variant="success" class="w-[450px]">
+    <EdAlertTitle>Success</EdAlertTitle>
+    <EdAlertDescription>
+      Your changes have been saved successfully.
+    </EdAlertDescription>
+  </EdAlert>
+</template>
+
+<script setup lang="ts">
+import { EdAlert, EdAlertTitle, EdAlertDescription } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Warning alert for caution messages.
+ */
+export const Warning: Story = {
+    render: () => (
+        <Alert variant="warning" className="w-[450px]">
+            <AlertTitle>Warning</AlertTitle>
+            <AlertDescription>
+                Please review your input before continuing.
+            </AlertDescription>
+        </Alert>
+    ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Alert, AlertTitle, AlertDescription } from "@fabioeducacross/ui";
+
+<Alert variant="warning" className="w-[450px]">
+  <AlertTitle>Warning</AlertTitle>
+  <AlertDescription>
+    Please review your input before continuing.
+  </AlertDescription>
+</Alert>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="alert alert-warning" style="width: 450px">
+    <h5 class="alert-heading mb-2">Warning</h5>
+    <p class="mb-0">
+      Please review your input before continuing.
+    </p>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAlert variant="warning" class="w-[450px]">
+    <EdAlertTitle>Warning</EdAlertTitle>
+    <EdAlertDescription>
+      Please review your input before continuing.
+    </EdAlertDescription>
+  </EdAlert>
+</template>
+
+<script setup lang="ts">
+import { EdAlert, EdAlertTitle, EdAlertDescription } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

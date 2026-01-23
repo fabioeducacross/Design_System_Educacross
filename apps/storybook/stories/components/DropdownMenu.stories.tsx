@@ -48,6 +48,58 @@ export const Default: Story = {
             </DropdownMenu>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, Button } from "@fabioeducacross/ui";
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">Open Menu</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Settings</DropdownMenuItem>
+    <DropdownMenuItem>Help</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Logout</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="dropdown">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+      Open Menu
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">Settings</a></li>
+      <li><a class="dropdown-item" href="#">Help</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item" href="#">Logout</a></li>
+    </ul>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdDropdownMenu>
+    <EdDropdownMenuTrigger as-child>
+      <EdButton variant="outline">Open Menu</EdButton>
+    </EdDropdownMenuTrigger>
+    <EdDropdownMenuContent>
+      <EdDropdownMenuItem>Profile</EdDropdownMenuItem>
+      <EdDropdownMenuItem>Settings</EdDropdownMenuItem>
+      <EdDropdownMenuItem>Help</EdDropdownMenuItem>
+      <EdDropdownMenuSeparator />
+      <EdDropdownMenuItem>Logout</EdDropdownMenuItem>
+    </EdDropdownMenuContent>
+  </EdDropdownMenu>
+</template>
+
+<script setup lang="ts">
+import { EdDropdownMenu, EdDropdownMenuTrigger, EdDropdownMenuContent, EdDropdownMenuItem, EdDropdownMenuSeparator, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
 
@@ -92,6 +144,47 @@ export const WithLabels: Story = {
             </DropdownMenu>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuLabel, Button } from "@fabioeducacross/ui";
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild><Button>Account</Button></DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Account</button>
+    <ul class="dropdown-menu">
+      <li><h6 class="dropdown-header">My Account</h6></li>
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">Billing</a></li>
+    </ul>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdDropdownMenu>
+    <EdDropdownMenuTrigger as-child><EdButton>Account</EdButton></EdDropdownMenuTrigger>
+    <EdDropdownMenuContent>
+      <EdDropdownMenuLabel>My Account</EdDropdownMenuLabel>
+      <EdDropdownMenuSeparator />
+      <EdDropdownMenuItem>Profile</EdDropdownMenuItem>
+    </EdDropdownMenuContent>
+  </EdDropdownMenu>
+</template>
+
+<script setup lang="ts">
+import { EdDropdownMenu, EdDropdownMenuTrigger, EdDropdownMenuContent, EdDropdownMenuItem, EdDropdownMenuSeparator, EdDropdownMenuLabel, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -114,6 +207,48 @@ export const WithDestructive: Story = {
             </DropdownMenu>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, Button } from "@fabioeducacross/ui";
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild><Button variant="outline">Actions</Button></DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Edit</DropdownMenuItem>
+    <DropdownMenuItem>Duplicate</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem destructive>Delete</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="dropdown">
+    <button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Actions</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Edit</a></li>
+      <li><a class="dropdown-item" href="#">Duplicate</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+    </ul>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdDropdownMenu>
+    <EdDropdownMenuTrigger as-child><EdButton variant="outline">Actions</EdButton></EdDropdownMenuTrigger>
+    <EdDropdownMenuContent>
+      <EdDropdownMenuItem>Edit</EdDropdownMenuItem>
+      <EdDropdownMenuSeparator />
+      <EdDropdownMenuItem destructive>Delete</EdDropdownMenuItem>
+    </EdDropdownMenuContent>
+  </EdDropdownMenu>
+</template>
+
+<script setup lang="ts">
+import { EdDropdownMenu, EdDropdownMenuTrigger, EdDropdownMenuContent, EdDropdownMenuItem, EdDropdownMenuSeparator, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

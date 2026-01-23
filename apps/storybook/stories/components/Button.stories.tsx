@@ -127,6 +127,23 @@ export const Destructive: Story = {
                 story: "Use para ações destrutivas como deletar ou remover.",
             },
         },
+        multiFrameworkCode: {
+            react: `import { Button } from "@fabioeducacross/ui";
+
+<Button variant="destructive">Delete</Button>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <button class="btn btn-danger">Delete</button>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdButton variant="destructive">Delete</EdButton>
+</template>
+
+<script setup lang="ts">
+import { EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
     },
 };
 
@@ -141,6 +158,25 @@ export const Secondary: Story = {
     args: {
         children: "Secondary",
         variant: "secondary",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Button } from "@fabioeducacross/ui";
+
+<Button variant="secondary">Secondary</Button>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <button class="btn btn-outline-secondary">Secondary</button>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdButton variant="secondary">Secondary</EdButton>
+</template>
+
+<script setup lang="ts">
+import { EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
     },
 };
 

@@ -104,6 +104,49 @@ export const Default: Story = {
             </div>
         );
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Sidebar, SidebarItem, SidebarSubItem } from "@fabioeducacross/ui";
+
+<Sidebar>
+  <SidebarItem icon="Grid" label="Painel" variant="default" />
+  <SidebarItem icon="Flag" label="Missões" variant="selected" expandable />
+  <SidebarSubItem label="Missões" />
+  <SidebarSubItem label="Missões arquivadas" />
+  <SidebarItem icon="Activity" label="Relatórios" variant="default" />
+</Sidebar>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <nav class="bg-white border-end" style="width: 250px; height: 100vh;">
+    <ul class="nav flex-column p-2">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="bi bi-grid"></i> Painel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><i class="bi bi-flag"></i> Missões</a>
+        <ul class="nav flex-column ps-4">
+          <li><a class="nav-link small">Missões</a></li>
+          <li><a class="nav-link small">Missões arquivadas</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdSidebar>
+    <EdSidebarItem icon="Grid" label="Painel" variant="default" />
+    <EdSidebarItem icon="Flag" label="Missões" variant="selected" :expandable="true" />
+    <EdSidebarSubItem label="Missões" />
+    <EdSidebarSubItem label="Missões arquivadas" />
+  </EdSidebar>
+</template>
+
+<script setup lang="ts">
+import { EdSidebar, EdSidebarItem, EdSidebarSubItem } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

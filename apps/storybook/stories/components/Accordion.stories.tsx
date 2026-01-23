@@ -51,6 +51,76 @@ export const Default: Story = {
             </AccordionItem>
         </Accordion>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@fabioeducacross/ui";
+
+<Accordion type="single" defaultValue="item-1">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Is it styled?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It comes with default styles.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          Is it accessible?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          Yes. It adheres to the WAI-ARIA design pattern.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          Is it styled?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Yes. It comes with default styles.
+        </div>
+      </div>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAccordion type="single" default-value="item-1">
+    <EdAccordionItem value="item-1">
+      <EdAccordionTrigger>Is it accessible?</EdAccordionTrigger>
+      <EdAccordionContent>
+        Yes. It adheres to the WAI-ARIA design pattern.
+      </EdAccordionContent>
+    </EdAccordionItem>
+    <EdAccordionItem value="item-2">
+      <EdAccordionTrigger>Is it styled?</EdAccordionTrigger>
+      <EdAccordionContent>
+        Yes. It comes with default styles.
+      </EdAccordionContent>
+    </EdAccordionItem>
+  </EdAccordion>
+</template>
+
+<script setup lang="ts">
+import { EdAccordion, EdAccordionItem, EdAccordionTrigger, EdAccordionContent } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
 
@@ -92,6 +162,140 @@ export const Multiple: Story = {
             </AccordionItem>
         </Accordion>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@fabioeducacross/ui";
+
+<Accordion type="multiple">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Section 1</AccordionTrigger>
+    <AccordionContent>
+      Content for section 1.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Section 2</AccordionTrigger>
+    <AccordionContent>
+      Content for section 2.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<!-- NOTA: Bootstrap accordion por padrão permite apenas 1 aberto. -->
+<!-- Para múltiplos, remover data-bs-parent. -->
+<template>
+  <div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#section1">
+          Section 1
+        </button>
+      </h2>
+      <div id="section1" class="accordion-collapse collapse">
+        <div class="accordion-body">Content for section 1.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#section2">
+          Section 2
+        </button>
+      </h2>
+      <div id="section2" class="accordion-collapse collapse">
+        <div class="accordion-body">Content for section 2.</div>
+      </div>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAccordion type="multiple">
+    <EdAccordionItem value="item-1">
+      <EdAccordionTrigger>Section 1</EdAccordionTrigger>
+      <EdAccordionContent>Content for section 1.</EdAccordionContent>
+    </EdAccordionItem>
+    <EdAccordionItem value="item-2">
+      <EdAccordionTrigger>Section 2</EdAccordionTrigger>
+      <EdAccordionContent>Content for section 2.</EdAccordionContent>
+    </EdAccordionItem>
+  </EdAccordion>
+</template>
+
+<script setup lang="ts">
+import { EdAccordion, EdAccordionItem, EdAccordionTrigger, EdAccordionContent } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Collapsible accordion - can close all items.
+ */
+export const Collapsible: Story = {
+    render: () => (
+        <Accordion type="single" collapsible className="w-full max-w-md">
+            <AccordionItem value="item-1">
+                <AccordionTrigger>Collapsible Item 1</AccordionTrigger>
+                <AccordionContent>
+                    This accordion can close all items when you click the active item again.
+                </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+                <AccordionTrigger>Collapsible Item 2</AccordionTrigger>
+                <AccordionContent>
+                    Try clicking an active item to close it completely.
+                </AccordionContent>
+            </AccordionItem>
+        </Accordion>
+    ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@fabioeducacross/ui";
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Collapsible Item 1</AccordionTrigger>
+    <AccordionContent>
+      This accordion can close all items.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Collapsible Item 2</AccordionTrigger>
+    <AccordionContent>
+      Try clicking an active item to close it.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="accordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+          Collapsible Item 1
+        </button>
+      </h2>
+      <div id="collapse1" class="accordion-collapse collapse">
+        <div class="accordion-body">This accordion can close all items.</div>
+      </div>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAccordion type="single" collapsible>
+    <EdAccordionItem value="item-1">
+      <EdAccordionTrigger>Collapsible Item 1</EdAccordionTrigger>
+      <EdAccordionContent>This accordion can close all items.</EdAccordionContent>
+    </EdAccordionItem>
+  </EdAccordion>
+</template>
+
+<script setup lang="ts">
+import { EdAccordion, EdAccordionItem, EdAccordionTrigger, EdAccordionContent } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

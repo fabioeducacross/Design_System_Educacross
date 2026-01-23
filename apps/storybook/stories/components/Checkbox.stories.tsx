@@ -55,6 +55,145 @@ export const Default: Story = {
     args: {
         label: "Accept terms and conditions",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Checkbox } from "@fabioeducacross/ui";
+
+<Checkbox label="Accept terms and conditions" />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="terms" />
+    <label class="form-check-label" for="terms">
+      Accept terms and conditions
+    </label>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdCheckbox label="Accept terms and conditions" />
+</template>
+
+<script setup lang="ts">
+import { EdCheckbox } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Checked checkbox state.
+ */
+export const Checked: Story = {
+    args: {
+        label: "I agree to the terms",
+        defaultChecked: true,
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Checkbox } from "@fabioeducacross/ui";
+
+<Checkbox label="I agree to the terms" defaultChecked={true} />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="agree" checked />
+    <label class="form-check-label" for="agree">
+      I agree to the terms
+    </label>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdCheckbox label="I agree to the terms" :default-checked="true" />
+</template>
+
+<script setup lang="ts">
+import { EdCheckbox } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Indeterminate checkbox state (partial selection).
+ */
+export const Indeterminate: Story = {
+    render: () => {
+        const [checked, setChecked] = useState<boolean | "indeterminate">("indeterminate");
+        return (
+            <Checkbox
+                label="Select all items"
+                checked={checked === true}
+                indeterminate={checked === "indeterminate"}
+                onChange={(e) => setChecked(e.target.checked)}
+            />
+        );
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Checkbox } from "@fabioeducacross/ui";
+import { useState } from "react";
+
+function IndeterminateExample() {
+  const [checked, setChecked] = useState<boolean | "indeterminate">("indeterminate");
+  
+  return (
+    <Checkbox
+      label="Select all items"
+      checked={checked === true}
+      indeterminate={checked === "indeterminate"}
+      onChange={(e) => setChecked(e.target.checked)}
+    />
+  );
+}`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap + JavaScript -->
+<template>
+  <div class="form-check">
+    <input 
+      class="form-check-input" 
+      type="checkbox" 
+      id="selectAll"
+      ref="checkbox"
+      @change="handleChange"
+    />
+    <label class="form-check-label" for="selectAll">
+      Select all items
+    </label>
+  </div>
+</template>
+
+<script>
+export default {
+  mounted() {
+    // Set indeterminate state via DOM
+    this.$refs.checkbox.indeterminate = true;
+  },
+  methods: {
+    handleChange(e) {
+      e.target.indeterminate = false;
+    }
+  }
+}
+</script>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdCheckbox
+    label="Select all items"
+    :checked="checked === true"
+    :indeterminate="checked === 'indeterminate'"
+    @change="(e) => checked = e.target.checked"
+  />
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { EdCheckbox } from "@fabioeducacross/ui-vue3";
+
+const checked = ref<boolean | 'indeterminate'>('indeterminate');
+</script>`,
+        },
+    },
 };
 
 /**

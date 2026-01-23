@@ -61,6 +61,52 @@ export const Default: Story = {
             </PaginationContent>
         </Pagination>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis } from "@fabioeducacross/ui";
+
+<Pagination>
+  <PaginationContent>
+    <PaginationItem><PaginationPrevious href="#" /></PaginationItem>
+    <PaginationItem><PaginationLink href="#">1</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationLink href="#" isActive>2</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationLink href="#">3</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationEllipsis /></PaginationItem>
+    <PaginationItem><PaginationLink href="#">10</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationNext href="#" /></PaginationItem>
+  </PaginationContent>
+</Pagination>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <nav>
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item active"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item disabled"><span class="page-link">...</span></li>
+      <li class="page-item"><a class="page-link" href="#">10</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </nav>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdPagination>
+    <EdPaginationContent>
+      <EdPaginationItem><EdPaginationPrevious href="#" /></EdPaginationItem>
+      <EdPaginationItem><EdPaginationLink href="#">1</EdPaginationLink></EdPaginationItem>
+      <EdPaginationItem><EdPaginationLink href="#" :is-active="true">2</EdPaginationLink></EdPaginationItem>
+      <EdPaginationItem><EdPaginationNext href="#" /></EdPaginationItem>
+    </EdPaginationContent>
+  </EdPagination>
+</template>
+
+<script setup lang="ts">
+import { EdPagination, EdPaginationContent, EdPaginationItem, EdPaginationLink, EdPaginationPrevious, EdPaginationNext } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -193,6 +239,63 @@ export const Compact: Story = {
                 </button>
             </div>
         );
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { useState } from "react";
+
+const [currentPage, setCurrentPage] = useState(5);
+const totalPages = 20;
+
+<div className="flex items-center justify-between px-4 py-3 border rounded-lg">
+  <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>
+    ← Previous
+  </button>
+  <span>Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong></span>
+  <button onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>
+    Next →
+  </button>
+</div>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="d-flex justify-content-between align-items-center p-3 border rounded">
+    <button class="btn btn-sm" @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1">
+      ← Previous
+    </button>
+    <span class="text-muted">Page <strong>{{ currentPage }}</strong> of <strong>{{ totalPages }}</strong></span>
+    <button class="btn btn-sm" @click="currentPage = Math.min(totalPages, currentPage + 1)" :disabled="currentPage === totalPages">
+      Next →
+    </button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return { currentPage: 5, totalPages: 20 };
+  },
+};
+</script>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <div class="flex items-center justify-between px-4 py-3 border rounded-lg">
+    <button @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1">
+      ← Previous
+    </button>
+    <span>Page <strong>{{ currentPage }}</strong> of <strong>{{ totalPages }}</strong></span>
+    <button @click="currentPage = Math.min(totalPages, currentPage + 1)" :disabled="currentPage === totalPages">
+      Next →
+    </button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+
+const currentPage = ref(5);
+const totalPages = 20;
+</script>`,
+        },
     },
 };
 

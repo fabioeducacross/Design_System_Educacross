@@ -63,6 +63,83 @@ export const Default: Story = {
             </CardFooter>
         </Card>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { 
+  Card, 
+  CardHeader, 
+  CardTitle, 
+  CardDescription, 
+  CardContent, 
+  CardFooter,
+  Button 
+} from "@fabioeducacross/ui";
+
+<Card className="w-[350px]">
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>
+      Card description with additional context.
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>This is the main content area of the card.</p>
+  </CardContent>
+  <CardFooter className="flex justify-between">
+    <Button variant="outline">Cancel</Button>
+    <Button>Save</Button>
+  </CardFooter>
+</Card>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="card" style="width: 350px">
+    <div class="card-header">
+      <h5 class="card-title mb-1">Card Title</h5>
+      <p class="card-text text-muted mb-0">
+        Card description with additional context.
+      </p>
+    </div>
+    <div class="card-body">
+      <p>This is the main content area of the card.</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <button class="btn btn-outline-primary">Cancel</button>
+      <button class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdCard class="w-[350px]">
+    <EdCardHeader>
+      <EdCardTitle>Card Title</EdCardTitle>
+      <EdCardDescription>
+        Card description with additional context.
+      </EdCardDescription>
+    </EdCardHeader>
+    <EdCardContent>
+      <p>This is the main content area of the card.</p>
+    </EdCardContent>
+    <EdCardFooter class="flex justify-between">
+      <EdButton variant="outline">Cancel</EdButton>
+      <EdButton>Save</EdButton>
+    </EdCardFooter>
+  </EdCard>
+</template>
+
+<script setup lang="ts">
+import { 
+  EdCard, 
+  EdCardHeader, 
+  EdCardTitle, 
+  EdCardDescription, 
+  EdCardContent, 
+  EdCardFooter,
+  EdButton 
+} from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -82,6 +159,67 @@ export const Elevated: Story = {
             </CardContent>
         </Card>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { 
+  Card, 
+  CardHeader, 
+  CardTitle, 
+  CardDescription, 
+  CardContent 
+} from "@fabioeducacross/ui";
+
+<Card variant="elevated" className="w-[350px]">
+  <CardHeader>
+    <CardTitle>Elevated Card</CardTitle>
+    <CardDescription>
+      This card has a shadow that increases on hover.
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Hover over this card to see the shadow effect.</p>
+  </CardContent>
+</Card>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="card shadow-sm" style="width: 350px">
+    <div class="card-header">
+      <h5 class="card-title mb-1">Elevated Card</h5>
+      <p class="card-text text-muted mb-0">
+        This card has a shadow that increases on hover.
+      </p>
+    </div>
+    <div class="card-body">
+      <p>Hover over this card to see the shadow effect.</p>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdCard variant="elevated" class="w-[350px]">
+    <EdCardHeader>
+      <EdCardTitle>Elevated Card</EdCardTitle>
+      <EdCardDescription>
+        This card has a shadow that increases on hover.
+      </EdCardDescription>
+    </EdCardHeader>
+    <EdCardContent>
+      <p>Hover over this card to see the shadow effect.</p>
+    </EdCardContent>
+  </EdCard>
+</template>
+
+<script setup lang="ts">
+import { 
+  EdCard, 
+  EdCardHeader, 
+  EdCardTitle, 
+  EdCardDescription, 
+  EdCardContent 
+} from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -118,6 +256,65 @@ export const Outline: Story = {
             </CardContent>
         </Card>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { 
+  Card, 
+  CardHeader, 
+  CardTitle, 
+  CardDescription, 
+  CardContent 
+} from "@fabioeducacross/ui";
+
+<Card variant="outline" className="w-[350px]">
+  <CardHeader>
+    <CardTitle>Outline Card</CardTitle>
+    <CardDescription>A simple bordered card.</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>No shadow, just a clean border.</p>
+  </CardContent>
+</Card>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="card border" style="width: 350px">
+    <div class="card-header bg-transparent">
+      <h5 class="card-title mb-1">Outline Card</h5>
+      <p class="card-text text-muted mb-0">
+        A simple bordered card.
+      </p>
+    </div>
+    <div class="card-body">
+      <p>No shadow, just a clean border.</p>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdCard variant="outline" class="w-[350px]">
+    <EdCardHeader>
+      <EdCardTitle>Outline Card</EdCardTitle>
+      <EdCardDescription>
+        A simple bordered card.
+      </EdCardDescription>
+    </EdCardHeader>
+    <EdCardContent>
+      <p>No shadow, just a clean border.</p>
+    </EdCardContent>
+  </EdCard>
+</template>
+
+<script setup lang="ts">
+import { 
+  EdCard, 
+  EdCardHeader, 
+  EdCardTitle, 
+  EdCardDescription, 
+  EdCardContent 
+} from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

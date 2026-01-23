@@ -33,6 +33,25 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
     args: {},
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { AvatarIcon } from "@fabioeducacross/ui";
+
+<AvatarIcon />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <img src="/educacross-icon.svg" alt="Educacross" class="rounded-circle" style="width: 40px; height: 40px;" />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAvatarIcon />
+</template>
+
+<script setup lang="ts">
+import { EdAvatarIcon } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -42,6 +61,25 @@ export const Small: Story = {
     args: {
         size: "sm",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { AvatarIcon } from "@fabioeducacross/ui";
+
+<AvatarIcon size="sm" />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <img src="/educacross-icon.svg" alt="Educacross" class="rounded-circle" style="width: 24px; height: 24px;" />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAvatarIcon size="sm" />
+</template>
+
+<script setup lang="ts">
+import { EdAvatarIcon } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -50,6 +88,25 @@ export const Small: Story = {
 export const Large: Story = {
     args: {
         size: "lg",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { AvatarIcon } from "@fabioeducacross/ui";
+
+<AvatarIcon size="lg" />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <img src="/educacross-icon.svg" alt="Educacross" class="rounded-circle" style="width: 64px; height: 64px;" />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdAvatarIcon size="lg" />
+</template>
+
+<script setup lang="ts">
+import { EdAvatarIcon } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
     },
 };
 

@@ -56,6 +56,72 @@ export const Default: Story = {
             </DialogContent>
         </Dialog>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose, Button } from "@fabioeducacross/ui";
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open Dialog</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Dialog Title</DialogTitle>
+      <DialogDescription>Content</DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <DialogClose><Button variant="secondary">Close</Button></DialogClose>
+      <Button>Save changes</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Open Dialog
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Dialog Title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">Content</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdDialog>
+    <EdDialogTrigger as-child>
+      <EdButton>Open Dialog</EdButton>
+    </EdDialogTrigger>
+    <EdDialogContent>
+      <EdDialogHeader>
+        <EdDialogTitle>Dialog Title</EdDialogTitle>
+        <EdDialogDescription>Content</EdDialogDescription>
+      </EdDialogHeader>
+      <EdDialogFooter>
+        <EdDialogClose><EdButton variant="secondary">Close</EdButton></EdDialogClose>
+        <EdButton>Save changes</EdButton>
+      </EdDialogFooter>
+    </EdDialogContent>
+  </EdDialog>
+</template>
+
+<script setup lang="ts">
+import { EdDialog, EdDialogTrigger, EdDialogContent, EdDialogHeader, EdDialogTitle, EdDialogDescription, EdDialogFooter, EdDialogClose, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -198,6 +264,192 @@ export const WithForm: Story = {
             </DialogContent>
         </Dialog>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose, Button, Input, Label } from "@fabioeducacross/ui";
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Edit Profile</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Edit Profile</DialogTitle>
+      <DialogDescription>Make changes to your profile.</DialogDescription>
+    </DialogHeader>
+    <div className="space-y-4">
+      <div>
+        <Label htmlFor="name">Name</Label>
+        <Input id="name" defaultValue="John Doe" />
+      </div>
+    </div>
+    <DialogFooter>
+      <Button>Save Changes</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+      Edit Profile
+    </button>
+    <div class="modal fade" id="formModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" value="John Doe" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" value="john@example.com" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary">Save Changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdDialog>
+    <EdDialogTrigger as-child>
+      <EdButton>Edit Profile</EdButton>
+    </EdDialogTrigger>
+    <EdDialogContent>
+      <EdDialogHeader>
+        <EdDialogTitle>Edit Profile</EdDialogTitle>
+        <EdDialogDescription>Make changes to your profile.</EdDialogDescription>
+      </EdDialogHeader>
+      <div class="space-y-4">
+        <div>
+          <EdLabel for="name">Name</EdLabel>
+          <EdInput id="name" default-value="John Doe" />
+        </div>
+      </div>
+      <EdDialogFooter>
+        <EdButton>Save Changes</EdButton>
+      </EdDialogFooter>
+    </EdDialogContent>
+  </EdDialog>
+</template>
+
+<script setup lang="ts">
+import { EdDialog, EdDialogTrigger, EdDialogContent, EdDialogHeader, EdDialogTitle, EdDialogDescription, EdDialogFooter, EdButton, EdInput, EdLabel } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
+
+/**
+ * Fullscreen dialog for mobile or immersive content.
+ */
+export const Fullscreen: Story = {
+    render: () => (
+        <Dialog>
+            <DialogTrigger asChild>
+                <Button>Open Fullscreen</Button>
+            </DialogTrigger>
+            <DialogContent size="full">
+                <DialogHeader>
+                    <DialogTitle>Fullscreen Dialog</DialogTitle>
+                    <DialogDescription>
+                        This dialog takes up the entire screen.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="flex-1 p-6">
+                    <p>Content here can scroll and fill the viewport.</p>
+                </div>
+                <DialogFooter>
+                    <DialogClose>
+                        <Button variant="outline">Close</Button>
+                    </DialogClose>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose, Button } from "@fabioeducacross/ui";
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button>Open Fullscreen</Button>
+  </DialogTrigger>
+  <DialogContent size="full">
+    <DialogHeader>
+      <DialogTitle>Fullscreen Dialog</DialogTitle>
+      <DialogDescription>This dialog takes up the entire screen.</DialogDescription>
+    </DialogHeader>
+    <div className="flex-1 p-6">
+      <p>Content here can scroll and fill the viewport.</p>
+    </div>
+    <DialogFooter>
+      <DialogClose><Button variant="outline">Close</Button></DialogClose>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullscreenModal">
+      Open Fullscreen
+    </button>
+    <div class="modal fade" id="fullscreenModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Fullscreen Dialog</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p>This dialog takes up the entire screen.</p>
+            <p>Content here can scroll and fill the viewport.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdDialog>
+    <EdDialogTrigger as-child>
+      <EdButton>Open Fullscreen</EdButton>
+    </EdDialogTrigger>
+    <EdDialogContent size="full">
+      <EdDialogHeader>
+        <EdDialogTitle>Fullscreen Dialog</EdDialogTitle>
+        <EdDialogDescription>This dialog takes up the entire screen.</EdDialogDescription>
+      </EdDialogHeader>
+      <div class="flex-1 p-6">
+        <p>Content here can scroll and fill the viewport.</p>
+      </div>
+      <EdDialogFooter>
+        <EdDialogClose><EdButton variant="outline">Close</EdButton></EdDialogClose>
+      </EdDialogFooter>
+    </EdDialogContent>
+  </EdDialog>
+</template>
+
+<script setup lang="ts">
+import { EdDialog, EdDialogTrigger, EdDialogContent, EdDialogHeader, EdDialogTitle, EdDialogDescription, EdDialogFooter, EdDialogClose, EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

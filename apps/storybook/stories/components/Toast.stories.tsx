@@ -51,6 +51,36 @@ export const Default: Story = {
             </ToastDescription>
         </Toast>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Toast, ToastTitle, ToastDescription } from "@fabioeducacross/ui";
+
+<Toast open>
+  <ToastTitle>Notification</ToastTitle>
+  <ToastDescription>This is a toast notification message.</ToastDescription>
+</Toast>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="toast show" role="alert">
+    <div class="toast-header">
+      <strong class="me-auto">Notification</strong>
+    </div>
+    <div class="toast-body">This is a toast notification message.</div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdToast :open="true">
+    <EdToastTitle>Notification</EdToastTitle>
+    <EdToastDescription>This is a toast notification message.</EdToastDescription>
+  </EdToast>
+</template>
+
+<script setup lang="ts">
+import { EdToast, EdToastTitle, EdToastDescription } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
 
@@ -92,6 +122,36 @@ export const Variants: Story = {
             </Toast>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Toast, ToastTitle, ToastDescription } from "@fabioeducacross/ui";
+
+<Toast open variant="success">
+  <ToastTitle>Success</ToastTitle>
+  <ToastDescription>Your changes have been saved.</ToastDescription>
+</Toast>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="toast show bg-success text-white" role="alert">
+    <div class="toast-header bg-success text-white">
+      <strong class="me-auto">Success</strong>
+    </div>
+    <div class="toast-body">Your changes have been saved.</div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdToast :open="true" variant="success">
+    <EdToastTitle>Success</EdToastTitle>
+    <EdToastDescription>Your changes have been saved.</EdToastDescription>
+  </EdToast>
+</template>
+
+<script setup lang="ts">
+import { EdToast, EdToastTitle, EdToastDescription } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -109,6 +169,45 @@ export const WithAction: Story = {
             <ToastAction>Undo</ToastAction>
         </Toast>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Toast, ToastTitle, ToastDescription, ToastAction } from "@fabioeducacross/ui";
+
+<Toast open>
+  <div className="flex-1">
+    <ToastTitle>Undo action</ToastTitle>
+    <ToastDescription>Item has been moved to trash.</ToastDescription>
+  </div>
+  <ToastAction>Undo</ToastAction>
+</Toast>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="toast show" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">
+        <strong>Undo action</strong><br>
+        Item has been moved to trash.
+      </div>
+      <button type="button" class="btn btn-sm btn-primary me-2 m-auto">Undo</button>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdToast :open="true">
+    <div class="flex-1">
+      <EdToastTitle>Undo action</EdToastTitle>
+      <EdToastDescription>Item has been moved to trash.</EdToastDescription>
+    </div>
+    <EdToastAction>Undo</EdToastAction>
+  </EdToast>
+</template>
+
+<script setup lang="ts">
+import { EdToast, EdToastTitle, EdToastDescription, EdToastAction } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
 

@@ -57,6 +57,46 @@ export const Default: Story = {
             </TabsContent>
         </Tabs>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Tabs, TabsList, TabsTrigger, TabsContent } from "@fabioeducacross/ui";
+
+<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">Account content</TabsContent>
+  <TabsContent value="password">Password content</TabsContent>
+</Tabs>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#account">Account</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#password">Password</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="account">Account content</div>
+    <div class="tab-pane fade" id="password">Password content</div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTabs default-value="account">
+    <EdTabsList>
+      <EdTabsTrigger value="account">Account</EdTabsTrigger>
+      <EdTabsTrigger value="password">Password</EdTabsTrigger>
+    </EdTabsList>
+    <EdTabsContent value="account">Account content</EdTabsContent>
+    <EdTabsContent value="password">Password content</EdTabsContent>
+  </EdTabs>
+</template>
+
+<script setup lang="ts">
+import { EdTabs, EdTabsList, EdTabsTrigger, EdTabsContent } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
 
@@ -119,6 +159,60 @@ export const Controlled: Story = {
             </div>
         );
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@fabioeducacross/ui";
+
+const [value, setValue] = useState("tab1");
+
+<Tabs value={value} onValueChange={setValue}>
+  <TabsList>
+    <TabsTrigger value="tab1">First Tab</TabsTrigger>
+    <TabsTrigger value="tab2">Second Tab</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">Content 1</TabsContent>
+  <TabsContent value="tab2">Content 2</TabsContent>
+</Tabs>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 'tab1' }" @click="activeTab = 'tab1'">First Tab</a></li>
+    <li class="nav-item"><a class="nav-link" :class="{ active: activeTab === 'tab2' }" @click="activeTab = 'tab2'">Second Tab</a></li>
+  </ul>
+  <div class="tab-content">
+    <div v-if="activeTab === 'tab1'" class="tab-pane">Content 1</div>
+    <div v-if="activeTab === 'tab2'" class="tab-pane">Content 2</div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return { activeTab: 'tab1' };
+  },
+};
+</script>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTabs :value="activeTab" @value-change="activeTab = $event">
+    <EdTabsList>
+      <EdTabsTrigger value="tab1">First Tab</EdTabsTrigger>
+      <EdTabsTrigger value="tab2">Second Tab</EdTabsTrigger>
+    </EdTabsList>
+    <EdTabsContent value="tab1">Content 1</EdTabsContent>
+    <EdTabsContent value="tab2">Content 2</EdTabsContent>
+  </EdTabs>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import { EdTabs, EdTabsList, EdTabsTrigger, EdTabsContent } from "@fabioeducacross/ui-vue3";
+
+const activeTab = ref("tab1");
+</script>`,
+        },
+    },
 };
 
 /**
@@ -149,6 +243,46 @@ export const OutlineVariant: Story = {
             </TabsContent>
         </Tabs>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Tabs, TabsList, TabsTrigger, TabsContent } from "@fabioeducacross/ui";
+
+<Tabs defaultValue="overview" variant="outline">
+  <TabsList variant="outline">
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="analytics">Analytics</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview">Overview content</TabsContent>
+  <TabsContent value="analytics">Analytics content</TabsContent>
+</Tabs>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <ul class="nav nav-pills" role="tablist">
+    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#overview">Overview</a></li>
+    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#analytics">Analytics</a></li>
+  </ul>
+  <div class="tab-content border rounded p-3 mt-2">
+    <div class="tab-pane fade show active" id="overview">Overview content</div>
+    <div class="tab-pane fade" id="analytics">Analytics content</div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdTabs default-value="overview" variant="outline">
+    <EdTabsList variant="outline">
+      <EdTabsTrigger value="overview">Overview</EdTabsTrigger>
+      <EdTabsTrigger value="analytics">Analytics</EdTabsTrigger>
+    </EdTabsList>
+    <EdTabsContent value="overview">Overview content</EdTabsContent>
+    <EdTabsContent value="analytics">Analytics content</EdTabsContent>
+  </EdTabs>
+</template>
+
+<script setup lang="ts">
+import { EdTabs, EdTabsList, EdTabsTrigger, EdTabsContent } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

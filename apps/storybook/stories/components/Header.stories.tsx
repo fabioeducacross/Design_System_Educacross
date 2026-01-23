@@ -42,6 +42,37 @@ export const Default: Story = {
         userRole: "Gestor de Redes",
         shadow: true,
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Header } from "@fabioeducacross/ui";
+
+<Header userName="Afonso" userRole="Gestor de Redes" shadow />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <header class="d-flex justify-content-between align-items-center p-3 bg-white shadow">
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-link"><i class="bi bi-list"></i></button>
+      <img src="/logo.svg" alt="Logo" height="32" />
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <div class="text-end">
+        <div class="fw-semibold">Afonso</div>
+        <div class="text-muted small">Gestor de Redes</div>
+      </div>
+      <img src="/avatar.svg" class="rounded-circle" width="40" height="40" />
+    </div>
+  </header>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdHeader user-name="Afonso" user-role="Gestor de Redes" :shadow="true" />
+</template>
+
+<script setup lang="ts">
+import { EdHeader } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -53,6 +84,47 @@ export const WithAvatar: Story = {
         userRole: "Coordenadora Pedagógica",
         avatarSrc: "https://api.dicebear.com/7.x/avataaars/svg?seed=Maria",
         shadow: true,
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Header } from "@fabioeducacross/ui";
+
+<Header 
+  userName="Maria Silva" 
+  userRole="Coordenadora Pedagógica" 
+  avatarSrc="https://api.dicebear.com/7.x/avataaars/svg?seed=Maria"
+  shadow 
+/>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <header class="d-flex justify-content-between align-items-center p-3 bg-white shadow">
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-link"><i class="bi bi-list"></i></button>
+      <img src="/logo.svg" alt="Logo" height="32" />
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <div class="text-end">
+        <div class="fw-semibold">Maria Silva</div>
+        <div class="text-muted small">Coordenadora Pedagógica</div>
+      </div>
+      <img :src="avatarSrc" class="rounded-circle" width="40" height="40" />
+    </div>
+  </header>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdHeader 
+    user-name="Maria Silva" 
+    user-role="Coordenadora Pedagógica" 
+    avatar-src="https://api.dicebear.com/7.x/avataaars/svg?seed=Maria"
+    :shadow="true" 
+  />
+</template>
+
+<script setup lang="ts">
+import { EdHeader } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
     },
 };
 
@@ -75,6 +147,37 @@ export const NoShadow: Story = {
         userName: "Carlos",
         userRole: "Administrador",
         shadow: false,
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Header } from "@fabioeducacross/ui";
+
+<Header userName="Carlos" userRole="Administrador" shadow={false} />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <header class="d-flex justify-content-between align-items-center p-3 bg-white">
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-link"><i class="bi bi-list"></i></button>
+      <img src="/logo.svg" alt="Logo" height="32" />
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <div class="text-end">
+        <div class="fw-semibold">Carlos</div>
+        <div class="text-muted small">Administrador</div>
+      </div>
+      <img src="/avatar.svg" class="rounded-circle" width="40" height="40" />
+    </div>
+  </header>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdHeader user-name="Carlos" user-role="Administrador" :shadow="false" />
+</template>
+
+<script setup lang="ts">
+import { EdHeader } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
     },
 };
 

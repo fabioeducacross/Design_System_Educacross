@@ -33,6 +33,25 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
     args: {},
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Logo } from "@fabioeducacross/ui";
+
+<Logo />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <img src="/educacross-logo.svg" alt="Educacross" height="28" />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdLogo />
+</template>
+
+<script setup lang="ts">
+import { EdLogo } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -42,6 +61,25 @@ export const Small: Story = {
     args: {
         size: "sm",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Logo } from "@fabioeducacross/ui";
+
+<Logo size="sm" />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <img src="/educacross-logo.svg" alt="Educacross" height="20" />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdLogo size="sm" />
+</template>
+
+<script setup lang="ts">
+import { EdLogo } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -50,6 +88,25 @@ export const Small: Story = {
 export const Large: Story = {
     args: {
         size: "lg",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Logo } from "@fabioeducacross/ui";
+
+<Logo size="lg" />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <img src="/educacross-logo.svg" alt="Educacross" height="36" />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdLogo size="lg" />
+</template>
+
+<script setup lang="ts">
+import { EdLogo } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
     },
 };
 

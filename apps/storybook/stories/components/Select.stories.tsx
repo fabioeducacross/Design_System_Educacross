@@ -58,6 +58,50 @@ export const Default: Story = {
         options: fruitOptions,
         className: "w-[200px]",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Select } from "@fabioeducacross/ui";
+
+const options = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "orange", label: "Orange" },
+];
+
+<Select 
+  placeholder="Select a fruit" 
+  options={options}
+  className="w-[200px]"
+/>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <select class="form-select" style="width: 200px">
+    <option value="" disabled selected>Select a fruit</option>
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+    <option value="orange">Orange</option>
+  </select>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdSelect 
+    placeholder="Select a fruit" 
+    :options="options"
+    class="w-[200px]"
+  />
+</template>
+
+<script setup lang="ts">
+import { EdSelect } from "@fabioeducacross/ui-vue3";
+
+const options = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "orange", label: "Orange" },
+];
+</script>`,
+        },
+    },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
 
@@ -142,6 +186,49 @@ export const Disabled: Story = {
         placeholder: "Select a fruit",
         disabled: true,
         className: "w-[200px]",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Select } from "@fabioeducacross/ui";
+
+const options = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+];
+
+<Select 
+  placeholder="Select a fruit" 
+  options={options}
+  disabled={true}
+  className="w-[200px]"
+/>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <select class="form-select" disabled style="width: 200px">
+    <option value="" disabled selected>Select a fruit</option>
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+  </select>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdSelect 
+    placeholder="Select a fruit" 
+    :options="options"
+    :disabled="true"
+    class="w-[200px]"
+  />
+</template>
+
+<script setup lang="ts">
+import { EdSelect } from "@fabioeducacross/ui-vue3";
+
+const options = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+];
+</script>`,
+        },
     },
 };
 

@@ -36,6 +36,43 @@ export const Default: Story = {
             <Skeleton className="h-4 w-[300px]" />
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Skeleton } from "@fabioeducacross/ui";
+
+<div className="space-y-4">
+  <Skeleton className="h-4 w-[250px]" />
+  <Skeleton className="h-4 w-[200px]" />
+  <Skeleton className="h-4 w-[300px]" />
+</div>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <div class="placeholder-glow mb-3">
+      <span class="placeholder col-6"></span>
+    </div>
+    <div class="placeholder-glow mb-3">
+      <span class="placeholder col-4"></span>
+    </div>
+    <div class="placeholder-glow">
+      <span class="placeholder col-8"></span>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <div class="space-y-4">
+    <EdSkeleton class="h-4 w-[250px]" />
+    <EdSkeleton class="h-4 w-[200px]" />
+    <EdSkeleton class="h-4 w-[300px]" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { EdSkeleton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -81,6 +118,37 @@ export const Text: Story = {
             </div>
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { SkeletonText } from "@fabioeducacross/ui";
+
+<div className="space-y-4">
+  <SkeletonText />
+  <SkeletonText lines={5} lastLineWidth="80%" />
+  <SkeletonText lines={2} lastLineWidth="40%" />
+</div>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div>
+    <div class="placeholder-glow" v-for="i in 3" :key="i">
+      <span class="placeholder col-12"></span>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <div class="space-y-4">
+    <EdSkeletonText />
+    <EdSkeletonText :lines="5" last-line-width="80%" />
+    <EdSkeletonText :lines="2" last-line-width="40%" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { EdSkeletonText } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**
@@ -108,6 +176,42 @@ export const Card: Story = {
             <SkeletonCard />
         </div>
     ),
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { SkeletonCard } from "@fabioeducacross/ui";
+
+<div className="grid grid-cols-3 gap-4">
+  <SkeletonCard />
+  <SkeletonCard />
+  <SkeletonCard />
+</div>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <div class="row g-3">
+    <div class="col-4" v-for="i in 3" :key="i">
+      <div class="card">
+        <div class="card-body">
+          <div class="placeholder-glow">
+            <span class="placeholder col-12 mb-2"></span>
+            <span class="placeholder col-8"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <div class="grid grid-cols-3 gap-4">
+    <EdSkeletonCard v-for="i in 3" :key="i" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { EdSkeletonCard } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 /**

@@ -146,20 +146,34 @@ import { EdInput } from "@fabioeducacross/ui-vue3";
         },
     },
 };
-    },
-    decorators: [
-        (Story) => (
-            <div className="w-80">
-                <Story />
-            </div>
-        ),
-    ],
-};
 
 export const Password: Story = {
     args: {
         type: "password",
         placeholder: "Sua senha",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Input } from "@fabioeducacross/ui";
+
+<Input type="password" placeholder="Sua senha" />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <input 
+    type="password" 
+    class="form-control" 
+    placeholder="Sua senha"
+  />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdInput type="password" placeholder="Sua senha" />
+</template>
+
+<script setup lang="ts">
+import { EdInput } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
     },
     decorators: [
         (Story) => (
@@ -190,6 +204,41 @@ export const Number: Story = {
         placeholder: "0",
         min: 0,
         max: 100,
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Input } from "@fabioeducacross/ui";
+
+<Input 
+  type="number" 
+  placeholder="0"
+  min={0}
+  max={100}
+/>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <input 
+    type="number" 
+    class="form-control" 
+    placeholder="0"
+    min="0"
+    max="100"
+  />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdInput 
+    type="number" 
+    placeholder="0"
+    :min="0"
+    :max="100"
+  />
+</template>
+
+<script setup lang="ts">
+import { EdInput } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
     },
     decorators: [
         (Story) => (

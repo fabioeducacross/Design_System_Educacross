@@ -50,6 +50,25 @@ export const Default: Story = {
     args: {
         children: "Label",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Label } from "@fabioeducacross/ui";
+
+<Label>Label</Label>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <label class="form-label">Label</label>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdLabel>Label</EdLabel>
+</template>
+
+<script setup lang="ts">
+import { EdLabel } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 export const Playground: Story = {
@@ -102,6 +121,26 @@ export const Required: Story = {
         required: true,
     },
     parameters: {
+        multiFrameworkCode: {
+            react: `import { Label } from "@fabioeducacross/ui";
+
+<Label required={true}>Campo obrigatório</Label>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <label class="form-label">
+    Campo obrigatório
+    <span class="text-danger ms-1">*</span>
+  </label>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdLabel :required="true">Campo obrigatório</EdLabel>
+</template>
+
+<script setup lang="ts">
+import { EdLabel } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
         docs: {
             description: {
                 story: "Use `required={true}` para mostrar o indicador (*) em campos obrigatórios.",

@@ -105,6 +105,45 @@ export const Default: Story = {
     args: {
         mode: "icon",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { ThemeSwitcher, ThemeProvider } from "@fabioeducacross/ui";
+
+<ThemeProvider>
+  <ThemeSwitcher mode="icon" />
+</ThemeProvider>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <button class="btn btn-link" @click="toggleTheme">
+    <i :class="isDark ? 'bi bi-sun' : 'bi bi-moon'"></i>
+  </button>
+</template>
+
+<script>
+export default {
+  data() {
+    return { isDark: false };
+  },
+  methods: {
+    toggleTheme() {
+      this.isDark = !this.isDark;
+      document.documentElement.classList.toggle('dark');
+    },
+  },
+};
+</script>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdThemeProvider>
+    <EdThemeSwitcher mode="icon" />
+  </EdThemeProvider>
+</template>
+
+<script setup lang="ts">
+import { EdThemeSwitcher, EdThemeProvider } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 export const Playground: Story = {
