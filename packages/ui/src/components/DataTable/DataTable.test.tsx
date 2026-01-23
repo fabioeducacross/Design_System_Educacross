@@ -4,7 +4,8 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { DataTable } from "./DataTable";
 import type { ColumnDef } from "@tanstack/react-table";
 
@@ -101,24 +102,26 @@ describe("DataTable", () => {
   });
 
   describe("Paginação", () => {
-    it("deve renderizar botões de paginação", () => {
+    it("renderiza DataTablePagination", () => {
       render(<DataTable columns={mockColumns} data={mockUsers} />);
 
-      expect(screen.getByText("Anterior")).toBeInTheDocument();
-      expect(screen.getByText("Próximo")).toBeInTheDocument();
+      // Verifica que a paginação avançada está presente
+      expect(screen.getByLabelText("Página anterior")).toBeInTheDocument();
+      expect(screen.getByLabelText("Próxima página")).toBeInTheDocument();
     });
 
-    it("deve desabilitar botão Anterior na primeira página", () => {
+    it("desabilita botão Anterior na primeira página", () => {
       render(<DataTable columns={mockColumns} data={mockUsers} />);
 
-      const prevButton = screen.getByText("Anterior");
+      const prevButton = screen.getByLabelText("Página anterior");
       expect(prevButton).toBeDisabled();
     });
 
-    it("deve mostrar número da página atual", () => {
+    it("mostra número da página atual", () => {
       render(<DataTable columns={mockColumns} data={mockUsers} />);
 
-      expect(screen.getByText(/Página 1 de/)).toBeInTheDocument();
+      // Nova paginação mostra "1 / N" ao invés de "Página 1 de N"
+      expect(screen.getByText(/1 \/ 1/)).toBeInTheDocument();
     });
   });
 
@@ -172,6 +175,82 @@ describe("DataTable", () => {
 
       expect(screen.getByText("Notebook")).toBeInTheDocument();
       expect(screen.getByText("R$ 3000")).toBeInTheDocument();
+    });
+  });
+
+  describe("Sorting Interativo", () => {
+    it("renderiza ícones de sorting nos headers ordenáveis", () => {
+      render(<DataTable columns={mockColumns} data={mockUsers} enableSorting={true} />);
+
+      const nameHeader = screen.getByText("Nome").closest("th");
+      expect(nameHeader).toBeInTheDocument();
+
+      // Deve ter um ícone de sorting (ArrowUpDown quando não ordenado)
+      const sortIcon = nameHeader?.querySelector("svg");
+      expect(sortIcon).toBeInTheDocument();
+    });
+
+    it("altera ícone ao clicar para ordenar", async () => {
+      const user = userEvent.setup();
+      render(<DataTable columns={mockColumns} data={mockUsers} enableSorting={true} />);
+
+      const nameHeader = screen.getByText("Nome").closest("div[role='button']");
+      expect(nameHeader).toBeInTheDocument();
+
+      // Clica para ordenar ascendente
+      if (nameHeader) {
+        await user.click(nameHeader);
+        // Após clicar, deve mostrar ArrowUp
+        const sortIcon = nameHeader.querySelector("svg");
+        expect(sortIcon).toHaveAttribute("aria-label", "Ordenado crescente");
+      }
+    });
+
+    it("headers não ordenáveis não têm cursor pointer", () => {
+      const nonSortableColumns: ColumnDef<User>[] = [
+        {
+          accessorKey: "name",
+          header: "Nome",
+          enableSorting: false,
+        },
+      ];
+
+      render(<DataTable columns={nonSortableColumns} data={mockUsers} />);
+
+      const nameHeader = screen.getByText("Nome").closest("div");
+      expect(nameHeader).not.toHaveAttribute("role", "button");
+    });
+
+    it("desabilita sorting quando enableSorting=false", () => {
+      render(<DataTable columns={mockColumns} data={mockUsers} enableSorting={false} />);
+
+      const nameHeader = screen.getByText("Nome").closest("th");
+      const sortableDiv = nameHeader?.querySelector("div[role='button']");
+      
+      expect(sortableDiv).not.toBeInTheDocument();
+    });
+
+    it("suporta navegação por teclado nos headers", async () => {
+      const user = userEvent.setup();
+      render(<DataTable columns={mockColumns} data={mockUsers} enableSorting={true} />);
+
+      const nameHeader = screen.getByText("Nome").closest("div[role='button']");
+      
+      if (nameHeader) {
+        // Foca no header
+        nameHeader.focus();
+        expect(nameHeader).toHaveFocus();
+
+        // Deve ter tabIndex 0
+        expect(nameHeader).toHaveAttribute("tabIndex", "0");
+      }
+    });
+
+    it("aria-label descreve a ação de sorting", () => {
+      render(<DataTable columns={mockColumns} data={mockUsers} enableSorting={true} />);
+
+      const nameHeader = screen.getByText("Nome").closest("div[role='button']");
+      expect(nameHeader).toHaveAttribute("aria-label", "Ordenar por name");
     });
   });
 });

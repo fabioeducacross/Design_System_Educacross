@@ -1,0 +1,2645 @@
+{
+  "activity": {},
+  "announcedBuild": {
+    "id": "69728a598d005b8e78480e9d",
+    "number": 5,
+    "status": "PUBLISHED",
+    "autoAcceptChanges": false,
+    "features": {
+      "uiTests": true,
+      "uiReview": true,
+      "isReactNativeApp": null
+    },
+    "app": {
+      "id": "69727df0ab06437ceb56a008",
+      "turboSnapAvailability": "UNAVAILABLE"
+    },
+    "storybookUrl": "https://69727df0ab06437ceb56a008-iracaahrgm.chromatic.com/"
+  },
+  "configuration": {},
+  "environment": {},
+  "exitCode": 23,
+  "exitCodeKey": "STORYBOOK_BROKEN",
+  "fileInfo": {
+    "lengths": [
+      {
+        "pathname": "assets\\Accessibility-CFZ07eZ7.js",
+        "contentLength": 10553,
+        "knownAs": "assets/Accessibility-CFZ07eZ7.js"
+      },
+      {
+        "pathname": "assets\\Accordion.stories-CuLbQ3Z5.js",
+        "contentLength": 21659,
+        "knownAs": "assets/Accordion.stories-CuLbQ3Z5.js"
+      },
+      {
+        "pathname": "assets\\Alert.stories-BmwyC3sY.js",
+        "contentLength": 13514,
+        "knownAs": "assets/Alert.stories-BmwyC3sY.js"
+      },
+      {
+        "pathname": "assets\\API-CkIZcnEU.js",
+        "contentLength": 38387,
+        "knownAs": "assets/API-CkIZcnEU.js"
+      },
+      {
+        "pathname": "assets\\API-zonMaFeV.js",
+        "contentLength": 71184,
+        "knownAs": "assets/API-zonMaFeV.js"
+      },
+      {
+        "pathname": "assets\\arc-DydmX6uj.js",
+        "contentLength": 6944,
+        "knownAs": "assets/arc-DydmX6uj.js"
+      },
+      {
+        "pathname": "assets\\architectureDiagram-VXUJARFQ-wNQt6Gpg.js",
+        "contentLength": 418137,
+        "knownAs": "assets/architectureDiagram-VXUJARFQ-wNQt6Gpg.js"
+      },
+      {
+        "pathname": "assets\\Avatar.stories-D0T0IC_e.js",
+        "contentLength": 11802,
+        "knownAs": "assets/Avatar.stories-D0T0IC_e.js"
+      },
+      {
+        "pathname": "assets\\AvatarIcon.stories-D9ZW2F-u.js",
+        "contentLength": 9234,
+        "knownAs": "assets/AvatarIcon.stories-D9ZW2F-u.js"
+      },
+      {
+        "pathname": "assets\\Badge.stories-DNgY7Eia.js",
+        "contentLength": 13592,
+        "knownAs": "assets/Badge.stories-DNgY7Eia.js"
+      },
+      {
+        "pathname": "assets\\blockDiagram-VD42YOAC-DOtCtA6N.js",
+        "contentLength": 136603,
+        "knownAs": "assets/blockDiagram-VD42YOAC-DOtCtA6N.js"
+      },
+      {
+        "pathname": "assets\\blocks-CqosDA2b.js",
+        "contentLength": 1606190,
+        "knownAs": "assets/blocks-CqosDA2b.js"
+      },
+      {
+        "pathname": "assets\\Button.stories-BggZhw7R.js",
+        "contentLength": 31253,
+        "knownAs": "assets/Button.stories-BggZhw7R.js"
+      },
+      {
+        "pathname": "assets\\c4Diagram-YG6GDRKO-yAQhuqLF.js",
+        "contentLength": 118720,
+        "knownAs": "assets/c4Diagram-YG6GDRKO-yAQhuqLF.js"
+      },
+      {
+        "pathname": "assets\\Card.stories-XVtXUjNF.js",
+        "contentLength": 13753,
+        "knownAs": "assets/Card.stories-XVtXUjNF.js"
+      },
+      {
+        "pathname": "assets\\channel-7qPUcjGW.js",
+        "contentLength": 196,
+        "knownAs": "assets/channel-7qPUcjGW.js"
+      },
+      {
+        "pathname": "assets\\Checkbox.stories-DJGkEimy.js",
+        "contentLength": 10897,
+        "knownAs": "assets/Checkbox.stories-DJGkEimy.js"
+      },
+      {
+        "pathname": "assets\\chunk-4BX2VUAB-BEvTOpke.js",
+        "contentLength": 496,
+        "knownAs": "assets/chunk-4BX2VUAB-BEvTOpke.js"
+      },
+      {
+        "pathname": "assets\\chunk-55IACEB6-B_H27s0N.js",
+        "contentLength": 484,
+        "knownAs": "assets/chunk-55IACEB6-B_H27s0N.js"
+      },
+      {
+        "pathname": "assets\\chunk-B4BG7PRW-D43XnlOD.js",
+        "contentLength": 77670,
+        "knownAs": "assets/chunk-B4BG7PRW-D43XnlOD.js"
+      },
+      {
+        "pathname": "assets\\chunk-DI55MBZ5-CNpUUO3x.js",
+        "contentLength": 70811,
+        "knownAs": "assets/chunk-DI55MBZ5-CNpUUO3x.js"
+      },
+      {
+        "pathname": "assets\\chunk-FMBD7UC4-C37YFrtA.js",
+        "contentLength": 434,
+        "knownAs": "assets/chunk-FMBD7UC4-C37YFrtA.js"
+      },
+      {
+        "pathname": "assets\\chunk-QN33PNHL-DpzzW5Pt.js",
+        "contentLength": 1112,
+        "knownAs": "assets/chunk-QN33PNHL-DpzzW5Pt.js"
+      },
+      {
+        "pathname": "assets\\chunk-QZHKN3VN-CjwaxJhs.js",
+        "contentLength": 377,
+        "knownAs": "assets/chunk-QZHKN3VN-CjwaxJhs.js"
+      },
+      {
+        "pathname": "assets\\chunk-TZMSLE5B-D1BWJenT.js",
+        "contentLength": 3152,
+        "knownAs": "assets/chunk-TZMSLE5B-D1BWJenT.js"
+      },
+      {
+        "pathname": "assets\\classDiagram-2ON5EDUG-Cdv2_B6x.js",
+        "contentLength": 785,
+        "knownAs": "assets/classDiagram-2ON5EDUG-Cdv2_B6x.js"
+      },
+      {
+        "pathname": "assets\\classDiagram-v2-WZHVMYZB-Cdv2_B6x.js",
+        "contentLength": 785,
+        "knownAs": "assets/classDiagram-v2-WZHVMYZB-Cdv2_B6x.js"
+      },
+      {
+        "pathname": "assets\\clone-D4xKqGg5.js",
+        "contentLength": 180,
+        "knownAs": "assets/clone-D4xKqGg5.js"
+      },
+      {
+        "pathname": "assets\\Color-ASIRERSW-L3sEXTRS.js",
+        "contentLength": 50521,
+        "knownAs": "assets/Color-ASIRERSW-L3sEXTRS.js"
+      },
+      {
+        "pathname": "assets\\Colors.stories-BbeRDL9t.js",
+        "contentLength": 13154,
+        "knownAs": "assets/Colors.stories-BbeRDL9t.js"
+      },
+      {
+        "pathname": "assets\\cose-bilkent-S5V4N54A-DQznI4JY.js",
+        "contentLength": 214733,
+        "knownAs": "assets/cose-bilkent-S5V4N54A-DQznI4JY.js"
+      },
+      {
+        "pathname": "assets\\CustomIcons.stories-BRzep_ZE.js",
+        "contentLength": 30569,
+        "knownAs": "assets/CustomIcons.stories-BRzep_ZE.js"
+      },
+      {
+        "pathname": "assets\\cytoscape.esm-DGeaJFcL.js",
+        "contentLength": 956909,
+        "knownAs": "assets/cytoscape.esm-DGeaJFcL.js"
+      },
+      {
+        "pathname": "assets\\dagre-6UL2VRFP-DxsVxO12.js",
+        "contentLength": 23115,
+        "knownAs": "assets/dagre-6UL2VRFP-DxsVxO12.js"
+      },
+      {
+        "pathname": "assets\\defaultLocale-C9EdlGJx.js",
+        "contentLength": 9405,
+        "knownAs": "assets/defaultLocale-C9EdlGJx.js"
+      },
+      {
+        "pathname": "assets\\diagram-PSM6KHXK-BgDQe2wG.js",
+        "contentLength": 31935,
+        "knownAs": "assets/diagram-PSM6KHXK-BgDQe2wG.js"
+      },
+      {
+        "pathname": "assets\\diagram-QEK2KX5R-BQ4GAShY.js",
+        "contentLength": 11207,
+        "knownAs": "assets/diagram-QEK2KX5R-BQ4GAShY.js"
+      },
+      {
+        "pathname": "assets\\diagram-S2PKOQOG-D3-jflMl.js",
+        "contentLength": 7555,
+        "knownAs": "assets/diagram-S2PKOQOG-D3-jflMl.js"
+      },
+      {
+        "pathname": "assets\\Dialog.stories-AaBrI_Yu.js",
+        "contentLength": 43340,
+        "knownAs": "assets/Dialog.stories-AaBrI_Yu.js"
+      },
+      {
+        "pathname": "assets\\DocsRenderer-GHJI37HO-DKFkgHQ5.js",
+        "contentLength": 2223,
+        "knownAs": "assets/DocsRenderer-GHJI37HO-DKFkgHQ5.js"
+      },
+      {
+        "pathname": "assets\\DropdownMenu.stories-BNBf5Ucq.js",
+        "contentLength": 27170,
+        "knownAs": "assets/DropdownMenu.stories-BNBf5Ucq.js"
+      },
+      {
+        "pathname": "assets\\erDiagram-Q2GNP2WA-c5YLeD2p.js",
+        "contentLength": 46090,
+        "knownAs": "assets/erDiagram-Q2GNP2WA-c5YLeD2p.js"
+      },
+      {
+        "pathname": "assets\\Filters.stories-urIbfvdb.js",
+        "contentLength": 18533,
+        "knownAs": "assets/Filters.stories-urIbfvdb.js"
+      },
+      {
+        "pathname": "assets\\flowDiagram-NV44I4VS-8kseFXfX.js",
+        "contentLength": 103112,
+        "knownAs": "assets/flowDiagram-NV44I4VS-8kseFXfX.js"
+      },
+      {
+        "pathname": "assets\\ForAI-CImwhZod.js",
+        "contentLength": 30521,
+        "knownAs": "assets/ForAI-CImwhZod.js"
+      },
+      {
+        "pathname": "assets\\formatter-QJ4M4OGQ-DMdXPFMu.js",
+        "contentLength": 442,
+        "knownAs": "assets/formatter-QJ4M4OGQ-DMdXPFMu.js"
+      },
+      {
+        "pathname": "assets\\FormField.stories-CxW742cH.js",
+        "contentLength": 22594,
+        "knownAs": "assets/FormField.stories-CxW742cH.js"
+      },
+      {
+        "pathname": "assets\\ganttDiagram-JELNMOA3-DYkcRJcm.js",
+        "contentLength": 131603,
+        "knownAs": "assets/ganttDiagram-JELNMOA3-DYkcRJcm.js"
+      },
+      {
+        "pathname": "assets\\gitGraphDiagram-NY62KEGX-BI6qR-_Q.js",
+        "contentLength": 48871,
+        "knownAs": "assets/gitGraphDiagram-NY62KEGX-BI6qR-_Q.js"
+      },
+      {
+        "pathname": "assets\\graph-Dmu05rKk.js",
+        "contentLength": 18909,
+        "knownAs": "assets/graph-Dmu05rKk.js"
+      },
+      {
+        "pathname": "assets\\Header.stories-cdL_3d8T.js",
+        "contentLength": 7172,
+        "knownAs": "assets/Header.stories-cdL_3d8T.js"
+      },
+      {
+        "pathname": "assets\\IconMigration.stories-DCx0wgZJ.js",
+        "contentLength": 35385,
+        "knownAs": "assets/IconMigration.stories-DCx0wgZJ.js"
+      },
+      {
+        "pathname": "assets\\Icons.stories-iBhHjCSS.js",
+        "contentLength": 41383,
+        "knownAs": "assets/Icons.stories-iBhHjCSS.js"
+      },
+      {
+        "pathname": "assets\\iframe-1LCNMFkT.css",
+        "contentLength": 74107,
+        "knownAs": "assets/iframe-1LCNMFkT.css"
+      },
+      {
+        "pathname": "assets\\iframe-C-v-iQ80.js",
+        "contentLength": 2037915,
+        "knownAs": "assets/iframe-C-v-iQ80.js"
+      },
+      {
+        "pathname": "assets\\index-0_mpOJrf.js",
+        "contentLength": 1499808,
+        "knownAs": "assets/index-0_mpOJrf.js"
+      },
+      {
+        "pathname": "assets\\index-CD2f23lS.js",
+        "contentLength": 1002,
+        "knownAs": "assets/index-CD2f23lS.js"
+      },
+      {
+        "pathname": "assets\\index-DFmzbgCZ.js",
+        "contentLength": 215645,
+        "knownAs": "assets/index-DFmzbgCZ.js"
+      },
+      {
+        "pathname": "assets\\infoDiagram-WHAUD3N6-C8kWDTxL.js",
+        "contentLength": 1166,
+        "knownAs": "assets/infoDiagram-WHAUD3N6-C8kWDTxL.js"
+      },
+      {
+        "pathname": "assets\\init-ZxktEp_H.js",
+        "contentLength": 258,
+        "knownAs": "assets/init-ZxktEp_H.js"
+      },
+      {
+        "pathname": "assets\\Input.stories-5WE-y7oV.js",
+        "contentLength": 19959,
+        "knownAs": "assets/Input.stories-5WE-y7oV.js"
+      },
+      {
+        "pathname": "assets\\Introducao-DOvuxY31.js",
+        "contentLength": 6151,
+        "knownAs": "assets/Introducao-DOvuxY31.js"
+      },
+      {
+        "pathname": "assets\\Introduction-CH0s7zyD.js",
+        "contentLength": 12928,
+        "knownAs": "assets/Introduction-CH0s7zyD.js"
+      },
+      {
+        "pathname": "assets\\journeyDiagram-XKPGCS4Q-BENHwXhS.js",
+        "contentLength": 45267,
+        "knownAs": "assets/journeyDiagram-XKPGCS4Q-BENHwXhS.js"
+      },
+      {
+        "pathname": "assets\\jsx-runtime-DJF8WxIL.js",
+        "contentLength": 1818,
+        "knownAs": "assets/jsx-runtime-DJF8WxIL.js"
+      },
+      {
+        "pathname": "assets\\kanban-definition-3W4ZIXB7-DqV_Z8-n.js",
+        "contentLength": 38758,
+        "knownAs": "assets/kanban-definition-3W4ZIXB7-DqV_Z8-n.js"
+      },
+      {
+        "pathname": "assets\\katex-BCeciekE.js",
+        "contentLength": 488973,
+        "knownAs": "assets/katex-BCeciekE.js"
+      },
+      {
+        "pathname": "assets\\Label.stories-Cqm-XogL.js",
+        "contentLength": 16904,
+        "knownAs": "assets/Label.stories-Cqm-XogL.js"
+      },
+      {
+        "pathname": "assets\\layout-C7XB2jFe.js",
+        "contentLength": 63712,
+        "knownAs": "assets/layout-C7XB2jFe.js"
+      },
+      {
+        "pathname": "assets\\linear-BUShci_d.js",
+        "contentLength": 11251,
+        "knownAs": "assets/linear-BUShci_d.js"
+      },
+      {
+        "pathname": "assets\\Logo.stories-Cn8bJxXY.js",
+        "contentLength": 7382,
+        "knownAs": "assets/Logo.stories-Cn8bJxXY.js"
+      },
+      {
+        "pathname": "assets\\MenuAdministrador.stories-BMGDTK0C.js",
+        "contentLength": 8850,
+        "knownAs": "assets/MenuAdministrador.stories-BMGDTK0C.js"
+      },
+      {
+        "pathname": "assets\\MenuCoordenador.stories-B1vYWOve.js",
+        "contentLength": 7736,
+        "knownAs": "assets/MenuCoordenador.stories-B1vYWOve.js"
+      },
+      {
+        "pathname": "assets\\MenuProfessor.stories-ppbjiBPb.js",
+        "contentLength": 6732,
+        "knownAs": "assets/MenuProfessor.stories-ppbjiBPb.js"
+      },
+      {
+        "pathname": "assets\\min-CJLAKmMt.js",
+        "contentLength": 1400,
+        "knownAs": "assets/min-CJLAKmMt.js"
+      },
+      {
+        "pathname": "assets\\mindmap-definition-VGOIOE7T-BTWP3Oha.js",
+        "contentLength": 40501,
+        "knownAs": "assets/mindmap-definition-VGOIOE7T-BTWP3Oha.js"
+      },
+      {
+        "pathname": "assets\\ordinal-DSZU4PqD.js",
+        "contentLength": 2181,
+        "knownAs": "assets/ordinal-DSZU4PqD.js"
+      },
+      {
+        "pathname": "assets\\Pagination.stories-51ZkHCn6.js",
+        "contentLength": 22379,
+        "knownAs": "assets/Pagination.stories-51ZkHCn6.js"
+      },
+      {
+        "pathname": "assets\\pieDiagram-ADFJNKIX-CeSiuKgV.js",
+        "contentLength": 9611,
+        "knownAs": "assets/pieDiagram-ADFJNKIX-CeSiuKgV.js"
+      },
+      {
+        "pathname": "assets\\Popover.stories-B0ow4zeI.js",
+        "contentLength": 24610,
+        "knownAs": "assets/Popover.stories-B0ow4zeI.js"
+      },
+      {
+        "pathname": "assets\\preload-helper-z_4BYxHW.js",
+        "contentLength": 2317,
+        "knownAs": "assets/preload-helper-z_4BYxHW.js"
+      },
+      {
+        "pathname": "assets\\Primitives.stories-3E8bxXab.js",
+        "contentLength": 41788,
+        "knownAs": "assets/Primitives.stories-3E8bxXab.js"
+      },
+      {
+        "pathname": "assets\\quadrantDiagram-AYHSOK5B-BZ4Awh5c.js",
+        "contentLength": 62155,
+        "knownAs": "assets/quadrantDiagram-AYHSOK5B-BZ4Awh5c.js"
+      },
+      {
+        "pathname": "assets\\Quickstart-CGOZBG74.js",
+        "contentLength": 24734,
+        "knownAs": "assets/Quickstart-CGOZBG74.js"
+      },
+      {
+        "pathname": "assets\\Radio.stories-zFDyOx55.js",
+        "contentLength": 14704,
+        "knownAs": "assets/Radio.stories-zFDyOx55.js"
+      },
+      {
+        "pathname": "assets\\react-18-C2uwQHq-.js",
+        "contentLength": 1722,
+        "knownAs": "assets/react-18-C2uwQHq-.js"
+      },
+      {
+        "pathname": "assets\\requirementDiagram-UZGBJVZJ-B_LNiVYI.js",
+        "contentLength": 51531,
+        "knownAs": "assets/requirementDiagram-UZGBJVZJ-B_LNiVYI.js"
+      },
+      {
+        "pathname": "assets\\sankeyDiagram-TZEHDZUN-BL3fXwmt.js",
+        "contentLength": 44276,
+        "knownAs": "assets/sankeyDiagram-TZEHDZUN-BL3fXwmt.js"
+      },
+      {
+        "pathname": "assets\\Select.stories-EIqXnfBw.js",
+        "contentLength": 12272,
+        "knownAs": "assets/Select.stories-EIqXnfBw.js"
+      },
+      {
+        "pathname": "assets\\sequenceDiagram-WL72ISMW-BhnJ83Fc.js",
+        "contentLength": 169636,
+        "knownAs": "assets/sequenceDiagram-WL72ISMW-BhnJ83Fc.js"
+      },
+      {
+        "pathname": "assets\\Sidebar-DyehFuvm.js",
+        "contentLength": 21593,
+        "knownAs": "assets/Sidebar-DyehFuvm.js"
+      },
+      {
+        "pathname": "assets\\Sidebar.stories-D5D-BOWE.js",
+        "contentLength": 14835,
+        "knownAs": "assets/Sidebar.stories-D5D-BOWE.js"
+      },
+      {
+        "pathname": "assets\\Skeleton.stories-C8vkWyz0.js",
+        "contentLength": 21775,
+        "knownAs": "assets/Skeleton.stories-C8vkWyz0.js"
+      },
+      {
+        "pathname": "assets\\Spacing.stories-ct9Q-MzM.js",
+        "contentLength": 7852,
+        "knownAs": "assets/Spacing.stories-ct9Q-MzM.js"
+      },
+      {
+        "pathname": "assets\\stateDiagram-FKZM4ZOC-BtVNRBKo.js",
+        "contentLength": 19110,
+        "knownAs": "assets/stateDiagram-FKZM4ZOC-BtVNRBKo.js"
+      },
+      {
+        "pathname": "assets\\stateDiagram-v2-4FDKWEC3-CgbOJcUY.js",
+        "contentLength": 747,
+        "knownAs": "assets/stateDiagram-v2-4FDKWEC3-CgbOJcUY.js"
+      },
+      {
+        "pathname": "assets\\States-XaObgrrN.js",
+        "contentLength": 7334,
+        "knownAs": "assets/States-XaObgrrN.js"
+      },
+      {
+        "pathname": "assets\\syntaxhighlighter-IQDEPFLK-BHDyGoIY.js",
+        "contentLength": 171785,
+        "knownAs": "assets/syntaxhighlighter-IQDEPFLK-BHDyGoIY.js"
+      },
+      {
+        "pathname": "assets\\Table.stories-CB7o7UE6.js",
+        "contentLength": 57827,
+        "knownAs": "assets/Table.stories-CB7o7UE6.js"
+      },
+      {
+        "pathname": "assets\\Tabs.stories-Tu9rJuuX.js",
+        "contentLength": 33870,
+        "knownAs": "assets/Tabs.stories-Tu9rJuuX.js"
+      },
+      {
+        "pathname": "assets\\ThemeSwitcher.stories-DarpvY-D.js",
+        "contentLength": 21583,
+        "knownAs": "assets/ThemeSwitcher.stories-DarpvY-D.js"
+      },
+      {
+        "pathname": "assets\\timeline-definition-IT6M3QCI-CvuX6Xpg.js",
+        "contentLength": 46186,
+        "knownAs": "assets/timeline-definition-IT6M3QCI-CvuX6Xpg.js"
+      },
+      {
+        "pathname": "assets\\Toast.stories-8AxELAyw.js",
+        "contentLength": 15758,
+        "knownAs": "assets/Toast.stories-8AxELAyw.js"
+      },
+      {
+        "pathname": "assets\\TokenShowcase-Cz8ByPfc.js",
+        "contentLength": 1022357,
+        "knownAs": "assets/TokenShowcase-Cz8ByPfc.js"
+      },
+      {
+        "pathname": "assets\\Tooltip.stories-DLFL4ujh.js",
+        "contentLength": 16091,
+        "knownAs": "assets/Tooltip.stories-DLFL4ujh.js"
+      },
+      {
+        "pathname": "assets\\treemap-KMMF4GRG-C3SwR5Zx.js",
+        "contentLength": 703931,
+        "knownAs": "assets/treemap-KMMF4GRG-C3SwR5Zx.js"
+      },
+      {
+        "pathname": "assets\\Typography.stories-D7m9RkCo.js",
+        "contentLength": 16687,
+        "knownAs": "assets/Typography.stories-D7m9RkCo.js"
+      },
+      {
+        "pathname": "assets\\WithTooltip-IO6J4KBT-BR0FMPq6.js",
+        "contentLength": 73401,
+        "knownAs": "assets/WithTooltip-IO6J4KBT-BR0FMPq6.js"
+      },
+      {
+        "pathname": "assets\\xychartDiagram-PRI3JC2R-3cLNKfPK.js",
+        "contentLength": 74466,
+        "knownAs": "assets/xychartDiagram-PRI3JC2R-3cLNKfPK.js"
+      },
+      {
+        "pathname": "assets\\_baseUniq-BEwmcg2P.js",
+        "contentLength": 22055,
+        "knownAs": "assets/_baseUniq-BEwmcg2P.js"
+      },
+      {
+        "pathname": "favicon-wrapper.svg",
+        "contentLength": 5803,
+        "knownAs": "favicon-wrapper.svg"
+      },
+      {
+        "pathname": "favicon.svg",
+        "contentLength": 560,
+        "knownAs": "favicon.svg"
+      },
+      {
+        "pathname": "icons\\acao\\badge.svg",
+        "contentLength": 2003,
+        "knownAs": "icons/acao/badge.svg"
+      },
+      {
+        "pathname": "icons\\acao\\badge_FILL0_wght400_GRAD0_opsz48.svg",
+        "contentLength": 2003,
+        "knownAs": "icons/acao/badge_FILL0_wght400_GRAD0_opsz48.svg"
+      },
+      {
+        "pathname": "icons\\acao\\delete.svg",
+        "contentLength": 565,
+        "knownAs": "icons/acao/delete.svg"
+      },
+      {
+        "pathname": "icons\\acao\\delete_FILL0_wght400_GRAD0_opsz48.svg",
+        "contentLength": 565,
+        "knownAs": "icons/acao/delete_FILL0_wght400_GRAD0_opsz48.svg"
+      },
+      {
+        "pathname": "icons\\acao\\edit.svg",
+        "contentLength": 617,
+        "knownAs": "icons/acao/edit.svg"
+      },
+      {
+        "pathname": "icons\\acao\\edit_FILL0_wght400_GRAD0_opsz48.svg",
+        "contentLength": 617,
+        "knownAs": "icons/acao/edit_FILL0_wght400_GRAD0_opsz48.svg"
+      },
+      {
+        "pathname": "icons\\acao\\ios_share.svg",
+        "contentLength": 541,
+        "knownAs": "icons/acao/ios_share.svg"
+      },
+      {
+        "pathname": "icons\\acao\\ios_share_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 541,
+        "knownAs": "icons/acao/ios_share_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\link.svg",
+        "contentLength": 1062,
+        "knownAs": "icons/acao/link.svg"
+      },
+      {
+        "pathname": "icons\\acao\\link_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1062,
+        "knownAs": "icons/acao/link_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\mail_lock.svg",
+        "contentLength": 1578,
+        "knownAs": "icons/acao/mail_lock.svg"
+      },
+      {
+        "pathname": "icons\\acao\\mail_lock_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1578,
+        "knownAs": "icons/acao/mail_lock_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\person_search.svg",
+        "contentLength": 2457,
+        "knownAs": "icons/acao/person_search.svg"
+      },
+      {
+        "pathname": "icons\\acao\\person_search_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 2457,
+        "knownAs": "icons/acao/person_search_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\pie_chart.svg",
+        "contentLength": 1342,
+        "knownAs": "icons/acao/pie_chart.svg"
+      },
+      {
+        "pathname": "icons\\acao\\pie_chart_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1342,
+        "knownAs": "icons/acao/pie_chart_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\social_leaderboard.svg",
+        "contentLength": 2619,
+        "knownAs": "icons/acao/social_leaderboard.svg"
+      },
+      {
+        "pathname": "icons\\acao\\social_leaderboard_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 2619,
+        "knownAs": "icons/acao/social_leaderboard_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\trophy.svg",
+        "contentLength": 1269,
+        "knownAs": "icons/acao/trophy.svg"
+      },
+      {
+        "pathname": "icons\\acao\\trophy_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1269,
+        "knownAs": "icons/acao/trophy_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\upload_file.svg",
+        "contentLength": 681,
+        "knownAs": "icons/acao/upload_file.svg"
+      },
+      {
+        "pathname": "icons\\acao\\upload_file_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 681,
+        "knownAs": "icons/acao/upload_file_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\visibility.svg",
+        "contentLength": 1703,
+        "knownAs": "icons/acao/visibility.svg"
+      },
+      {
+        "pathname": "icons\\acao\\visibility_FILL0_wght400_GRAD0_opsz48 2.svg",
+        "contentLength": 1703,
+        "knownAs": "icons/acao/visibility_FILL0_wght400_GRAD0_opsz48 2.svg"
+      },
+      {
+        "pathname": "icons\\acao\\workspace_premium.svg",
+        "contentLength": 1329,
+        "knownAs": "icons/acao/workspace_premium.svg"
+      },
+      {
+        "pathname": "icons\\acao\\workspace_premium_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1329,
+        "knownAs": "icons/acao/workspace_premium_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\_4-1.svg",
+        "contentLength": 1312,
+        "knownAs": "icons/acao/_4-1.svg"
+      },
+      {
+        "pathname": "icons\\acao\\_4-2.svg",
+        "contentLength": 801,
+        "knownAs": "icons/acao/_4-2.svg"
+      },
+      {
+        "pathname": "icons\\acao\\_4.svg",
+        "contentLength": 1397,
+        "knownAs": "icons/acao/_4.svg"
+      },
+      {
+        "pathname": "icons\\agrupamentos\\Ano.svg",
+        "contentLength": 1053,
+        "knownAs": "icons/agrupamentos/Ano.svg"
+      },
+      {
+        "pathname": "icons\\agrupamentos\\Escola.svg",
+        "contentLength": 446,
+        "knownAs": "icons/agrupamentos/Escola.svg"
+      },
+      {
+        "pathname": "icons\\agrupamentos\\Rede.svg",
+        "contentLength": 809,
+        "knownAs": "icons/agrupamentos/Rede.svg"
+      },
+      {
+        "pathname": "icons\\agrupamentos\\Turmas.svg",
+        "contentLength": 3384,
+        "knownAs": "icons/agrupamentos/Turmas.svg"
+      },
+      {
+        "pathname": "icons\\avatar-base64.txt",
+        "contentLength": 250116,
+        "knownAs": "icons/avatar-base64.txt"
+      },
+      {
+        "pathname": "icons\\Avatar.svg",
+        "contentLength": 187576,
+        "knownAs": "icons/Avatar.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\Liga das Corujinhas.svg",
+        "contentLength": 13475,
+        "knownAs": "icons/conhecimento/Liga das Corujinhas.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\liga-corujinhas-alt.svg",
+        "contentLength": 13475,
+        "knownAs": "icons/conhecimento/liga-corujinhas-alt.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\liga-corujinhas-disabled.svg",
+        "contentLength": 13476,
+        "knownAs": "icons/conhecimento/liga-corujinhas-disabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\liga-corujinhas-enabled.svg",
+        "contentLength": 13475,
+        "knownAs": "icons/conhecimento/liga-corujinhas-enabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\liga-corujinhas.svg",
+        "contentLength": 13476,
+        "knownAs": "icons/conhecimento/liga-corujinhas.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\LIGA.svg",
+        "contentLength": 13476,
+        "knownAs": "icons/conhecimento/LIGA.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\lingua-portuguesa-alt.svg",
+        "contentLength": 5479,
+        "knownAs": "icons/conhecimento/lingua-portuguesa-alt.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\lingua-portuguesa-disabled.svg",
+        "contentLength": 5479,
+        "knownAs": "icons/conhecimento/lingua-portuguesa-disabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\lingua-portuguesa-enabled.svg",
+        "contentLength": 5479,
+        "knownAs": "icons/conhecimento/lingua-portuguesa-enabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\lingua-portuguesa.svg",
+        "contentLength": 5479,
+        "knownAs": "icons/conhecimento/lingua-portuguesa.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\LP.svg",
+        "contentLength": 5479,
+        "knownAs": "icons/conhecimento/LP.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\Língua Portuguesa.svg",
+        "contentLength": 5479,
+        "knownAs": "icons\\conhecimento\\Língua Portuguesa.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\matematica-alt.svg",
+        "contentLength": 1050,
+        "knownAs": "icons/conhecimento/matematica-alt.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\matematica-disabled.svg",
+        "contentLength": 1050,
+        "knownAs": "icons/conhecimento/matematica-disabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\matematica-enabled.svg",
+        "contentLength": 2045,
+        "knownAs": "icons/conhecimento/matematica-enabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\matematica-sigla-disabled.svg",
+        "contentLength": 1050,
+        "knownAs": "icons/conhecimento/matematica-sigla-disabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\matematica-sigla-enabled.svg",
+        "contentLength": 1050,
+        "knownAs": "icons/conhecimento/matematica-sigla-enabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\matematica-sigla.svg",
+        "contentLength": 1050,
+        "knownAs": "icons/conhecimento/matematica-sigla.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\matematica.svg",
+        "contentLength": 2045,
+        "knownAs": "icons/conhecimento/matematica.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\Matemática.svg",
+        "contentLength": 1050,
+        "knownAs": "icons\\conhecimento\\Matemática.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\math-disabled.svg",
+        "contentLength": 2045,
+        "knownAs": "icons/conhecimento/math-disabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\math-enabled.svg",
+        "contentLength": 2060,
+        "knownAs": "icons/conhecimento/math-enabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\Math.svg",
+        "contentLength": 2045,
+        "knownAs": "icons/conhecimento/Math.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\MT.svg",
+        "contentLength": 1050,
+        "knownAs": "icons/conhecimento/MT.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\Todas-1.svg",
+        "contentLength": 11419,
+        "knownAs": "icons/conhecimento/Todas-1.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\todas-disciplinas-alt.svg",
+        "contentLength": 11419,
+        "knownAs": "icons/conhecimento/todas-disciplinas-alt.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\todas-disciplinas-disabled.svg",
+        "contentLength": 11419,
+        "knownAs": "icons/conhecimento/todas-disciplinas-disabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\todas-disciplinas-enabled.svg",
+        "contentLength": 11419,
+        "knownAs": "icons/conhecimento/todas-disciplinas-enabled.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\todas-disciplinas.svg",
+        "contentLength": 11419,
+        "knownAs": "icons/conhecimento/todas-disciplinas.svg"
+      },
+      {
+        "pathname": "icons\\conhecimento\\Todas.svg",
+        "contentLength": 11419,
+        "knownAs": "icons/conhecimento/Todas.svg"
+      },
+      {
+        "pathname": "icons\\educacao-infantil\\Bncc-CorpoGestosMovimentos.svg",
+        "contentLength": 2498,
+        "knownAs": "icons/educacao-infantil/Bncc-CorpoGestosMovimentos.svg"
+      },
+      {
+        "pathname": "icons\\educacao-infantil\\Bncc-EscutaFalaPensamentoImaginacao.svg",
+        "contentLength": 3056,
+        "knownAs": "icons/educacao-infantil/Bncc-EscutaFalaPensamentoImaginacao.svg"
+      },
+      {
+        "pathname": "icons\\educacao-infantil\\Bncc-EspacosTemposQuantidadesRelacoesTransformacoes.svg",
+        "contentLength": 2557,
+        "knownAs": "icons/educacao-infantil/Bncc-EspacosTemposQuantidadesRelacoesTransformacoes.svg"
+      },
+      {
+        "pathname": "icons\\educacao-infantil\\Bncc-OEuOOutroONos.svg",
+        "contentLength": 2596,
+        "knownAs": "icons/educacao-infantil/Bncc-OEuOOutroONos.svg"
+      },
+      {
+        "pathname": "icons\\educacao-infantil\\Bncc-TracosSonsCoresFormas.svg",
+        "contentLength": 609,
+        "knownAs": "icons/educacao-infantil/Bncc-TracosSonsCoresFormas.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Estrelas.svg",
+        "contentLength": 7058,
+        "knownAs": "icons/gamificacao/Estrelas.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Insignia-Bronze.svg",
+        "contentLength": 31335,
+        "knownAs": "icons/gamificacao/Insignia-Bronze.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Insignia-Ouro.svg",
+        "contentLength": 31239,
+        "knownAs": "icons/gamificacao/Insignia-Ouro.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Insignia-Prata.svg",
+        "contentLength": 31286,
+        "knownAs": "icons/gamificacao/Insignia-Prata.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Moedas.svg",
+        "contentLength": 15282,
+        "knownAs": "icons/gamificacao/Moedas.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Pontos-Eventos.svg",
+        "contentLength": 3265,
+        "knownAs": "icons/gamificacao/Pontos-Eventos.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Pontos-XP.svg",
+        "contentLength": 1480,
+        "knownAs": "icons/gamificacao/Pontos-XP.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Trofeu-bronze.svg",
+        "contentLength": 11150,
+        "knownAs": "icons/gamificacao/Trofeu-bronze.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Trofeu-Prata.svg",
+        "contentLength": 11150,
+        "knownAs": "icons/gamificacao/Trofeu-Prata.svg"
+      },
+      {
+        "pathname": "icons\\gamificacao\\Troféu-Ouro.svg",
+        "contentLength": 11136,
+        "knownAs": "icons\\gamificacao\\Troféu-Ouro.svg"
+      },
+      {
+        "pathname": "icons\\idioma\\brasil.svg",
+        "contentLength": 1397,
+        "knownAs": "icons/idioma/brasil.svg"
+      },
+      {
+        "pathname": "icons\\idioma\\espanha.svg",
+        "contentLength": 801,
+        "knownAs": "icons/idioma/espanha.svg"
+      },
+      {
+        "pathname": "icons\\idioma\\eua.svg",
+        "contentLength": 1312,
+        "knownAs": "icons/idioma/eua.svg"
+      },
+      {
+        "pathname": "icons\\idioma\\Language-1.svg",
+        "contentLength": 1623,
+        "knownAs": "icons/idioma/Language-1.svg"
+      },
+      {
+        "pathname": "icons\\idioma\\Language-2.svg",
+        "contentLength": 2385,
+        "knownAs": "icons/idioma/Language-2.svg"
+      },
+      {
+        "pathname": "icons\\idioma\\Language.svg",
+        "contentLength": 2112,
+        "knownAs": "icons/idioma/Language.svg"
+      },
+      {
+        "pathname": "icons\\interface\\Acesso.svg",
+        "contentLength": 488,
+        "knownAs": "icons/interface/Acesso.svg"
+      },
+      {
+        "pathname": "icons\\interface\\Group 9555.svg",
+        "contentLength": 1348,
+        "knownAs": "icons/interface/Group 9555.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-bncc\\Bncc-CampoArtisticoLiterario.svg",
+        "contentLength": 3780,
+        "knownAs": "icons/lingua-portuguesa-bncc/Bncc-CampoArtisticoLiterario.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-bncc\\Bncc-CampodaVidaCotidiana.svg",
+        "contentLength": 630,
+        "knownAs": "icons/lingua-portuguesa-bncc/Bncc-CampodaVidaCotidiana.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-bncc\\Bncc-Campojornalisticomidiatico.svg",
+        "contentLength": 821,
+        "knownAs": "icons/lingua-portuguesa-bncc/Bncc-Campojornalisticomidiatico.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-bncc\\Bncc-CampoPraticasEstudoPesquisa.svg",
+        "contentLength": 2730,
+        "knownAs": "icons/lingua-portuguesa-bncc/Bncc-CampoPraticasEstudoPesquisa.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-bncc\\Bncc-CampoVidaPublica.svg",
+        "contentLength": 1171,
+        "knownAs": "icons/lingua-portuguesa-bncc/Bncc-CampoVidaPublica.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-bncc\\bncc-todososcampos.svg",
+        "contentLength": 1011,
+        "knownAs": "icons/lingua-portuguesa-bncc/bncc-todososcampos.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saeb\\Saeb-CoerenciasCoesaoProcessamentoTexto.svg",
+        "contentLength": 881,
+        "knownAs": "icons/lingua-portuguesa-saeb/Saeb-CoerenciasCoesaoProcessamentoTexto.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saeb\\Saeb-ImplicacoesSuporteGeneroEnunciadorCompreensaoTexto.svg",
+        "contentLength": 1107,
+        "knownAs": "icons/lingua-portuguesa-saeb/Saeb-ImplicacoesSuporteGeneroEnunciadorCompreensaoTexto.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saeb\\Saeb-ProcedimentosLeitura.svg",
+        "contentLength": 1775,
+        "knownAs": "icons/lingua-portuguesa-saeb/Saeb-ProcedimentosLeitura.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saeb\\Saeb-RelacaoEntreRecursosExpressivosEfeitosSentido.svg",
+        "contentLength": 1862,
+        "knownAs": "icons/lingua-portuguesa-saeb/Saeb-RelacaoEntreRecursosExpressivosEfeitosSentido.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saeb\\Saeb-RelacaoEntreTextos.svg",
+        "contentLength": 733,
+        "knownAs": "icons/lingua-portuguesa-saeb/Saeb-RelacaoEntreTextos.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saeb\\Saeb-VariacaoLinguistica.svg",
+        "contentLength": 432,
+        "knownAs": "icons/lingua-portuguesa-saeb/Saeb-VariacaoLinguistica.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saresp\\Saresp-CompreensaoTextosLiterarios.svg",
+        "contentLength": 1714,
+        "knownAs": "icons/lingua-portuguesa-saresp/Saresp-CompreensaoTextosLiterarios.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saresp\\Saresp-ReconstrucaoIntertextualiudadeRelacaoEntreTextos.svg",
+        "contentLength": 733,
+        "knownAs": "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoIntertextualiudadeRelacaoEntreTextos.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saresp\\Saresp-ReconstrucaoSentidosTexto.svg",
+        "contentLength": 1862,
+        "knownAs": "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoSentidosTexto.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saresp\\Saresp-ReconstrucaoTextualidade.svg",
+        "contentLength": 1107,
+        "knownAs": "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoTextualidade.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saresp\\Saresp-ReconstruçãoCondicoesProducaoPercepcaoTextos.svg",
+        "contentLength": 673,
+        "knownAs": "icons\\lingua-portuguesa-saresp\\Saresp-ReconstruçãoCondicoesProducaoPercepcaoTextos.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-saresp\\Saresp-ReflexaoUsosLinguaFaladaEscrita.svg",
+        "contentLength": 1333,
+        "knownAs": "icons/lingua-portuguesa-saresp/Saresp-ReflexaoUsosLinguaFaladaEscrita.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-topicos\\Tópico-analise-linguistica.svg",
+        "contentLength": 5189,
+        "knownAs": "icons\\lingua-portuguesa-topicos\\Tópico-analise-linguistica.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-topicos\\Tópico-escrita.svg",
+        "contentLength": 2760,
+        "knownAs": "icons\\lingua-portuguesa-topicos\\Tópico-escrita.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-topicos\\Tópico-leitura-escuta.svg",
+        "contentLength": 2726,
+        "knownAs": "icons\\lingua-portuguesa-topicos\\Tópico-leitura-escuta.svg"
+      },
+      {
+        "pathname": "icons\\lingua-portuguesa-topicos\\Tópico-oralidade.svg",
+        "contentLength": 2830,
+        "knownAs": "icons\\lingua-portuguesa-topicos\\Tópico-oralidade.svg"
+      },
+      {
+        "pathname": "icons\\matematica-avalia\\Avalia-AlgebrizacaoRelacao.svg",
+        "contentLength": 1518,
+        "knownAs": "icons/matematica-avalia/Avalia-AlgebrizacaoRelacao.svg"
+      },
+      {
+        "pathname": "icons\\matematica-avalia\\Avalia-EspacoForma.svg",
+        "contentLength": 1181,
+        "knownAs": "icons/matematica-avalia/Avalia-EspacoForma.svg"
+      },
+      {
+        "pathname": "icons\\matematica-avalia\\Avalia-Incerteza.svg",
+        "contentLength": 1745,
+        "knownAs": "icons/matematica-avalia/Avalia-Incerteza.svg"
+      },
+      {
+        "pathname": "icons\\matematica-avalia\\Avalia-QuantidadeMedida.svg",
+        "contentLength": 3242,
+        "knownAs": "icons/matematica-avalia/Avalia-QuantidadeMedida.svg"
+      },
+      {
+        "pathname": "icons\\matematica-bncc\\bncc-geometria.svg",
+        "contentLength": 7329,
+        "knownAs": "icons/matematica-bncc/bncc-geometria.svg"
+      },
+      {
+        "pathname": "icons\\matematica-bncc\\bncc-grandezas e medidas.svg",
+        "contentLength": 3240,
+        "knownAs": "icons/matematica-bncc/bncc-grandezas e medidas.svg"
+      },
+      {
+        "pathname": "icons\\matematica-bncc\\bncc-números.svg",
+        "contentLength": 3317,
+        "knownAs": "icons\\matematica-bncc\\bncc-números.svg"
+      },
+      {
+        "pathname": "icons\\matematica-bncc\\bncc-probabilidade e estatística.svg",
+        "contentLength": 2474,
+        "knownAs": "icons\\matematica-bncc\\bncc-probabilidade e estatística.svg"
+      },
+      {
+        "pathname": "icons\\matematica-bncc\\bncc-álgebra.svg",
+        "contentLength": 1518,
+        "knownAs": "icons\\matematica-bncc\\bncc-álgebra.svg"
+      },
+      {
+        "pathname": "icons\\matematica-saeb-saresp\\Saeb-EspacoForma.svg",
+        "contentLength": 1181,
+        "knownAs": "icons/matematica-saeb-saresp/Saeb-EspacoForma.svg"
+      },
+      {
+        "pathname": "icons\\matematica-saeb-saresp\\Saeb-grandezas e medidas.svg",
+        "contentLength": 3238,
+        "knownAs": "icons/matematica-saeb-saresp/Saeb-grandezas e medidas.svg"
+      },
+      {
+        "pathname": "icons\\matematica-saeb-saresp\\Saeb-NumerosOperacoesAlgebraFuncoes.svg",
+        "contentLength": 1518,
+        "knownAs": "icons/matematica-saeb-saresp/Saeb-NumerosOperacoesAlgebraFuncoes.svg"
+      },
+      {
+        "pathname": "icons\\matematica-saeb-saresp\\Saeb-TratamentoInformacao.svg",
+        "contentLength": 572,
+        "knownAs": "icons/matematica-saeb-saresp/Saeb-TratamentoInformacao.svg"
+      },
+      {
+        "pathname": "icons\\menu\\auto_stories.svg",
+        "contentLength": 1828,
+        "knownAs": "icons/menu/auto_stories.svg"
+      },
+      {
+        "pathname": "icons\\menu\\auto_stories_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1828,
+        "knownAs": "icons/menu/auto_stories_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\Avaliação.svg",
+        "contentLength": 1952,
+        "knownAs": "icons\\menu\\Avaliação.svg"
+      },
+      {
+        "pathname": "icons\\menu\\camera.svg",
+        "contentLength": 2096,
+        "knownAs": "icons/menu/camera.svg"
+      },
+      {
+        "pathname": "icons\\menu\\camera_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 2096,
+        "knownAs": "icons/menu/camera_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\download.svg",
+        "contentLength": 526,
+        "knownAs": "icons/menu/download.svg"
+      },
+      {
+        "pathname": "icons\\menu\\download_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 526,
+        "knownAs": "icons/menu/download_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\Eventos.svg",
+        "contentLength": 661,
+        "knownAs": "icons/menu/Eventos.svg"
+      },
+      {
+        "pathname": "icons\\menu\\fiber_manual_record.svg",
+        "contentLength": 920,
+        "knownAs": "icons/menu/fiber_manual_record.svg"
+      },
+      {
+        "pathname": "icons\\menu\\fiber_manual_record_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 920,
+        "knownAs": "icons/menu/fiber_manual_record_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\flag.svg",
+        "contentLength": 331,
+        "knownAs": "icons/menu/flag.svg"
+      },
+      {
+        "pathname": "icons\\menu\\flag_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 331,
+        "knownAs": "icons/menu/flag_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\grid_view.svg",
+        "contentLength": 418,
+        "knownAs": "icons/menu/grid_view.svg"
+      },
+      {
+        "pathname": "icons\\menu\\grid_view_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 418,
+        "knownAs": "icons/menu/grid_view_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\group.svg",
+        "contentLength": 2666,
+        "knownAs": "icons/menu/group.svg"
+      },
+      {
+        "pathname": "icons\\menu\\groups.svg",
+        "contentLength": 2762,
+        "knownAs": "icons/menu/groups.svg"
+      },
+      {
+        "pathname": "icons\\menu\\groups_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 2762,
+        "knownAs": "icons/menu/groups_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\group_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 2666,
+        "knownAs": "icons/menu/group_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\how_to_reg.svg",
+        "contentLength": 1649,
+        "knownAs": "icons/menu/how_to_reg.svg"
+      },
+      {
+        "pathname": "icons\\menu\\how_to_reg_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1649,
+        "knownAs": "icons/menu/how_to_reg_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\map.svg",
+        "contentLength": 788,
+        "knownAs": "icons/menu/map.svg"
+      },
+      {
+        "pathname": "icons\\menu\\map_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 788,
+        "knownAs": "icons/menu/map_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\person_play.svg",
+        "contentLength": 2115,
+        "knownAs": "icons/menu/person_play.svg"
+      },
+      {
+        "pathname": "icons\\menu\\person_play_FILL0_wght400_GRAD0_opsz48.svg",
+        "contentLength": 2115,
+        "knownAs": "icons/menu/person_play_FILL0_wght400_GRAD0_opsz48.svg"
+      },
+      {
+        "pathname": "icons\\menu\\pie_chart.svg",
+        "contentLength": 1363,
+        "knownAs": "icons/menu/pie_chart.svg"
+      },
+      {
+        "pathname": "icons\\menu\\pie_chart_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1363,
+        "knownAs": "icons/menu/pie_chart_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\search.svg",
+        "contentLength": 1039,
+        "knownAs": "icons/menu/search.svg"
+      },
+      {
+        "pathname": "icons\\menu\\search_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 1039,
+        "knownAs": "icons/menu/search_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\menu\\work.svg",
+        "contentLength": 863,
+        "knownAs": "icons/menu/work.svg"
+      },
+      {
+        "pathname": "icons\\menu\\work_FILL0_wght400_GRAD0_opsz48 1.svg",
+        "contentLength": 863,
+        "knownAs": "icons/menu/work_FILL0_wght400_GRAD0_opsz48 1.svg"
+      },
+      {
+        "pathname": "icons\\metricas\\Desafios.svg",
+        "contentLength": 2005,
+        "knownAs": "icons/metricas/Desafios.svg"
+      },
+      {
+        "pathname": "icons\\metricas\\Dificuldade.svg",
+        "contentLength": 3223,
+        "knownAs": "icons/metricas/Dificuldade.svg"
+      },
+      {
+        "pathname": "icons\\metricas\\Jogos.svg",
+        "contentLength": 4321,
+        "knownAs": "icons/metricas/Jogos.svg"
+      },
+      {
+        "pathname": "icons\\metricas\\Percentual de acertos.svg",
+        "contentLength": 672,
+        "knownAs": "icons/metricas/Percentual de acertos.svg"
+      },
+      {
+        "pathname": "icons\\metricas\\Pontos.svg",
+        "contentLength": 958,
+        "knownAs": "icons/metricas/Pontos.svg"
+      },
+      {
+        "pathname": "icons\\metricas\\Progresso.svg",
+        "contentLength": 2292,
+        "knownAs": "icons/metricas/Progresso.svg"
+      },
+      {
+        "pathname": "icons\\metricas\\Tempo de Aprendizagem.svg",
+        "contentLength": 1480,
+        "knownAs": "icons/metricas/Tempo de Aprendizagem.svg"
+      },
+      {
+        "pathname": "icons\\metricas\\Top.svg",
+        "contentLength": 1544,
+        "knownAs": "icons/metricas/Top.svg"
+      },
+      {
+        "pathname": "icons\\proficiencia\\abaixo do básico.svg",
+        "contentLength": 1527,
+        "knownAs": "icons\\proficiencia\\abaixo do básico.svg"
+      },
+      {
+        "pathname": "icons\\proficiencia\\avançado.svg",
+        "contentLength": 1182,
+        "knownAs": "icons\\proficiencia\\avançado.svg"
+      },
+      {
+        "pathname": "icons\\proficiencia\\básico.svg",
+        "contentLength": 1171,
+        "knownAs": "icons\\proficiencia\\básico.svg"
+      },
+      {
+        "pathname": "icons\\proficiencia\\não fizeram.svg",
+        "contentLength": 2136,
+        "knownAs": "icons\\proficiencia\\não fizeram.svg"
+      },
+      {
+        "pathname": "icons\\proficiencia\\proficiente.svg",
+        "contentLength": 1302,
+        "knownAs": "icons/proficiencia/proficiente.svg"
+      },
+      {
+        "pathname": "icons\\social\\facebook-round-svgrepo-com 1.svg",
+        "contentLength": 762,
+        "knownAs": "icons/social/facebook-round-svgrepo-com 1.svg"
+      },
+      {
+        "pathname": "icons\\social\\facebook.svg",
+        "contentLength": 762,
+        "knownAs": "icons/social/facebook.svg"
+      },
+      {
+        "pathname": "icons\\social\\instagram-f-svgrepo-com.svg",
+        "contentLength": 2378,
+        "knownAs": "icons/social/instagram-f-svgrepo-com.svg"
+      },
+      {
+        "pathname": "icons\\social\\instagram.svg",
+        "contentLength": 2378,
+        "knownAs": "icons/social/instagram.svg"
+      },
+      {
+        "pathname": "icons\\social\\whatsapp.svg",
+        "contentLength": 2109,
+        "knownAs": "icons/social/whatsapp.svg"
+      },
+      {
+        "pathname": "icons\\social\\whatsapp_svgrepo.com.svg",
+        "contentLength": 2109,
+        "knownAs": "icons/social/whatsapp_svgrepo.com.svg"
+      },
+      {
+        "pathname": "icons\\social\\youtube-round-svgrepo-com.svg",
+        "contentLength": 705,
+        "knownAs": "icons/social/youtube-round-svgrepo-com.svg"
+      },
+      {
+        "pathname": "icons\\social\\youtube.svg",
+        "contentLength": 705,
+        "knownAs": "icons/social/youtube.svg"
+      },
+      {
+        "pathname": "icons\\usuarios\\Administrador.svg",
+        "contentLength": 2871,
+        "knownAs": "icons/usuarios/Administrador.svg"
+      },
+      {
+        "pathname": "icons\\usuarios\\Aluno.svg",
+        "contentLength": 1332,
+        "knownAs": "icons/usuarios/Aluno.svg"
+      },
+      {
+        "pathname": "icons\\usuarios\\Coordenadores.svg",
+        "contentLength": 2215,
+        "knownAs": "icons/usuarios/Coordenadores.svg"
+      },
+      {
+        "pathname": "icons\\usuarios\\Diretor.svg",
+        "contentLength": 1378,
+        "knownAs": "icons/usuarios/Diretor.svg"
+      },
+      {
+        "pathname": "icons\\usuarios\\Gestor de rede.svg",
+        "contentLength": 4988,
+        "knownAs": "icons/usuarios/Gestor de rede.svg"
+      },
+      {
+        "pathname": "icons\\usuarios\\Professor.svg",
+        "contentLength": 1836,
+        "knownAs": "icons/usuarios/Professor.svg"
+      },
+      {
+        "pathname": "iframe.html",
+        "contentLength": 18292,
+        "knownAs": "iframe.html"
+      },
+      {
+        "pathname": "images\\missoes\\arquivadas-1.png",
+        "contentLength": 44485,
+        "knownAs": "images/missoes/arquivadas-1.png"
+      },
+      {
+        "pathname": "images\\missoes\\arquivadas-2.png",
+        "contentLength": 103283,
+        "knownAs": "images/missoes/arquivadas-2.png"
+      },
+      {
+        "pathname": "images\\missoes\\compartilhar-1.png",
+        "contentLength": 113390,
+        "knownAs": "images/missoes/compartilhar-1.png"
+      },
+      {
+        "pathname": "images\\missoes\\compartilhar-2.png",
+        "contentLength": 133538,
+        "knownAs": "images/missoes/compartilhar-2.png"
+      },
+      {
+        "pathname": "images\\missoes\\criar-missao-1.png",
+        "contentLength": 106695,
+        "knownAs": "images/missoes/criar-missao-1.png"
+      },
+      {
+        "pathname": "images\\missoes\\criar-missao-2.png",
+        "contentLength": 147894,
+        "knownAs": "images/missoes/criar-missao-2.png"
+      },
+      {
+        "pathname": "images\\missoes\\criar-missao-3.png",
+        "contentLength": 120168,
+        "knownAs": "images/missoes/criar-missao-3.png"
+      },
+      {
+        "pathname": "images\\missoes\\criar-missao-4.png",
+        "contentLength": 184704,
+        "knownAs": "images/missoes/criar-missao-4.png"
+      },
+      {
+        "pathname": "images\\missoes\\criar-missao-5.png",
+        "contentLength": 298073,
+        "knownAs": "images/missoes/criar-missao-5.png"
+      },
+      {
+        "pathname": "images\\missoes\\criar-missao-6.png",
+        "contentLength": 100735,
+        "knownAs": "images/missoes/criar-missao-6.png"
+      },
+      {
+        "pathname": "images\\missoes\\criar-missao-7.png",
+        "contentLength": 137034,
+        "knownAs": "images/missoes/criar-missao-7.png"
+      },
+      {
+        "pathname": "images\\missoes\\gerenciar-1.png",
+        "contentLength": 105504,
+        "knownAs": "images/missoes/gerenciar-1.png"
+      },
+      {
+        "pathname": "images\\missoes\\gerenciar-2.png",
+        "contentLength": 13570,
+        "knownAs": "images/missoes/gerenciar-2.png"
+      },
+      {
+        "pathname": "images\\missoes\\gerenciar-3.png",
+        "contentLength": 134817,
+        "knownAs": "images/missoes/gerenciar-3.png"
+      },
+      {
+        "pathname": "images\\missoes\\gerenciar-4.png",
+        "contentLength": 131419,
+        "knownAs": "images/missoes/gerenciar-4.png"
+      },
+      {
+        "pathname": "images\\missoes\\gerenciar-5.png",
+        "contentLength": 132099,
+        "knownAs": "images/missoes/gerenciar-5.png"
+      },
+      {
+        "pathname": "images\\missoes\\gerenciar-6.png",
+        "contentLength": 131891,
+        "knownAs": "images/missoes/gerenciar-6.png"
+      },
+      {
+        "pathname": "images\\missoes\\individuais-coletivas-1.png",
+        "contentLength": 22219,
+        "knownAs": "images/missoes/individuais-coletivas-1.png"
+      },
+      {
+        "pathname": "images\\missoes\\link-1.png",
+        "contentLength": 112799,
+        "knownAs": "images/missoes/link-1.png"
+      },
+      {
+        "pathname": "images\\missoes\\link-2.png",
+        "contentLength": 119819,
+        "knownAs": "images/missoes/link-2.png"
+      },
+      {
+        "pathname": "images\\missoes\\reenviar-1.png",
+        "contentLength": 119166,
+        "knownAs": "images/missoes/reenviar-1.png"
+      },
+      {
+        "pathname": "images\\missoes\\reenviar-2.png",
+        "contentLength": 144128,
+        "knownAs": "images/missoes/reenviar-2.png"
+      },
+      {
+        "pathname": "images\\missoes\\reenviar-3.png",
+        "contentLength": 151599,
+        "knownAs": "images/missoes/reenviar-3.png"
+      },
+      {
+        "pathname": "images\\missoes\\reenviar-4.png",
+        "contentLength": 110012,
+        "knownAs": "images/missoes/reenviar-4.png"
+      },
+      {
+        "pathname": "images\\missoes\\reenviar-5.png",
+        "contentLength": 118610,
+        "knownAs": "images/missoes/reenviar-5.png"
+      },
+      {
+        "pathname": "images\\missoes\\tipos-missao-1.png",
+        "contentLength": 105574,
+        "knownAs": "images/missoes/tipos-missao-1.png"
+      },
+      {
+        "pathname": "images\\missoes\\tipos-missao-2.png",
+        "contentLength": 107099,
+        "knownAs": "images/missoes/tipos-missao-2.png"
+      },
+      {
+        "pathname": "images\\missoes\\tipos-missao-3.png",
+        "contentLength": 134900,
+        "knownAs": "images/missoes/tipos-missao-3.png"
+      },
+      {
+        "pathname": "images\\missoes\\tipos-missao-4.png",
+        "contentLength": 134862,
+        "knownAs": "images/missoes/tipos-missao-4.png"
+      },
+      {
+        "pathname": "images\\missoes\\tipos-missao-5.png",
+        "contentLength": 134075,
+        "knownAs": "images/missoes/tipos-missao-5.png"
+      },
+      {
+        "pathname": "images\\missoes\\tipos-missao-6.png",
+        "contentLength": 135858,
+        "knownAs": "images/missoes/tipos-missao-6.png"
+      },
+      {
+        "pathname": "images\\missoes\\tipos-missao-7.png",
+        "contentLength": 139268,
+        "knownAs": "images/missoes/tipos-missao-7.png"
+      },
+      {
+        "pathname": "index.html",
+        "contentLength": 5171,
+        "knownAs": "index.html"
+      },
+      {
+        "pathname": "index.json",
+        "contentLength": 100543,
+        "knownAs": "index.json"
+      },
+      {
+        "pathname": "logo-educacross-dark.svg",
+        "contentLength": 884,
+        "knownAs": "logo-educacross-dark.svg"
+      },
+      {
+        "pathname": "logo-educacross-light.svg",
+        "contentLength": 887,
+        "knownAs": "logo-educacross-light.svg"
+      },
+      {
+        "pathname": "logo-educacross.svg",
+        "contentLength": 19594,
+        "knownAs": "logo-educacross.svg"
+      },
+      {
+        "pathname": "nunito-sans-bold-italic.woff2",
+        "contentLength": 49460,
+        "knownAs": "nunito-sans-bold-italic.woff2"
+      },
+      {
+        "pathname": "nunito-sans-bold.woff2",
+        "contentLength": 47144,
+        "knownAs": "nunito-sans-bold.woff2"
+      },
+      {
+        "pathname": "nunito-sans-italic.woff2",
+        "contentLength": 49620,
+        "knownAs": "nunito-sans-italic.woff2"
+      },
+      {
+        "pathname": "nunito-sans-regular.woff2",
+        "contentLength": 47072,
+        "knownAs": "nunito-sans-regular.woff2"
+      },
+      {
+        "pathname": "og-image.png",
+        "contentLength": 66005,
+        "knownAs": "og-image.png"
+      },
+      {
+        "pathname": "og-image.svg",
+        "contentLength": 2268,
+        "knownAs": "og-image.svg"
+      },
+      {
+        "pathname": "project.json",
+        "contentLength": 1716,
+        "knownAs": "project.json"
+      },
+      {
+        "pathname": "README.md",
+        "contentLength": 4238,
+        "knownAs": "README.md"
+      },
+      {
+        "pathname": "sb-addons\\docs-3\\manager-bundle.js",
+        "contentLength": 19014,
+        "knownAs": "sb-addons/docs-3/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons\\links-1\\manager-bundle.js",
+        "contentLength": 1356,
+        "knownAs": "sb-addons/links-1/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons\\storybook-4\\manager-bundle.js",
+        "contentLength": 22704,
+        "knownAs": "sb-addons/storybook-4/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons\\storybook-core-server-presets-0\\common-manager-bundle.js",
+        "contentLength": 429283,
+        "knownAs": "sb-addons/storybook-core-server-presets-0/common-manager-bundle.js"
+      },
+      {
+        "pathname": "sb-addons\\themes-2\\manager-bundle.js",
+        "contentLength": 8157,
+        "knownAs": "sb-addons/themes-2/manager-bundle.js"
+      },
+      {
+        "pathname": "sb-common-assets\\favicon-wrapper.svg",
+        "contentLength": 5803,
+        "knownAs": "sb-common-assets/favicon-wrapper.svg"
+      },
+      {
+        "pathname": "sb-common-assets\\favicon.svg",
+        "contentLength": 2163,
+        "knownAs": "sb-common-assets/favicon.svg"
+      },
+      {
+        "pathname": "sb-common-assets\\nunito-sans-bold-italic.woff2",
+        "contentLength": 49460,
+        "knownAs": "sb-common-assets/nunito-sans-bold-italic.woff2"
+      },
+      {
+        "pathname": "sb-common-assets\\nunito-sans-bold.woff2",
+        "contentLength": 47144,
+        "knownAs": "sb-common-assets/nunito-sans-bold.woff2"
+      },
+      {
+        "pathname": "sb-common-assets\\nunito-sans-italic.woff2",
+        "contentLength": 49620,
+        "knownAs": "sb-common-assets/nunito-sans-italic.woff2"
+      },
+      {
+        "pathname": "sb-common-assets\\nunito-sans-regular.woff2",
+        "contentLength": 47072,
+        "knownAs": "sb-common-assets/nunito-sans-regular.woff2"
+      },
+      {
+        "pathname": "sb-manager\\globals-runtime.js",
+        "contentLength": 3152157,
+        "knownAs": "sb-manager/globals-runtime.js"
+      },
+      {
+        "pathname": "sb-manager\\globals.js",
+        "contentLength": 1019,
+        "knownAs": "sb-manager/globals.js"
+      },
+      {
+        "pathname": "sb-manager\\manager-stores.js",
+        "contentLength": 654,
+        "knownAs": "sb-manager/manager-stores.js"
+      },
+      {
+        "pathname": "sb-manager\\runtime.js",
+        "contentLength": 892011,
+        "knownAs": "sb-manager/runtime.js"
+      },
+      {
+        "pathname": "vite-inject-mocker-entry.js",
+        "contentLength": 62715,
+        "knownAs": "vite-inject-mocker-entry.js"
+      }
+    ],
+    "paths": [
+      "assets/Accessibility-CFZ07eZ7.js",
+      "assets/Accordion.stories-CuLbQ3Z5.js",
+      "assets/Alert.stories-BmwyC3sY.js",
+      "assets/API-CkIZcnEU.js",
+      "assets/API-zonMaFeV.js",
+      "assets/arc-DydmX6uj.js",
+      "assets/architectureDiagram-VXUJARFQ-wNQt6Gpg.js",
+      "assets/Avatar.stories-D0T0IC_e.js",
+      "assets/AvatarIcon.stories-D9ZW2F-u.js",
+      "assets/Badge.stories-DNgY7Eia.js",
+      "assets/blockDiagram-VD42YOAC-DOtCtA6N.js",
+      "assets/blocks-CqosDA2b.js",
+      "assets/Button.stories-BggZhw7R.js",
+      "assets/c4Diagram-YG6GDRKO-yAQhuqLF.js",
+      "assets/Card.stories-XVtXUjNF.js",
+      "assets/channel-7qPUcjGW.js",
+      "assets/Checkbox.stories-DJGkEimy.js",
+      "assets/chunk-4BX2VUAB-BEvTOpke.js",
+      "assets/chunk-55IACEB6-B_H27s0N.js",
+      "assets/chunk-B4BG7PRW-D43XnlOD.js",
+      "assets/chunk-DI55MBZ5-CNpUUO3x.js",
+      "assets/chunk-FMBD7UC4-C37YFrtA.js",
+      "assets/chunk-QN33PNHL-DpzzW5Pt.js",
+      "assets/chunk-QZHKN3VN-CjwaxJhs.js",
+      "assets/chunk-TZMSLE5B-D1BWJenT.js",
+      "assets/classDiagram-2ON5EDUG-Cdv2_B6x.js",
+      "assets/classDiagram-v2-WZHVMYZB-Cdv2_B6x.js",
+      "assets/clone-D4xKqGg5.js",
+      "assets/Color-ASIRERSW-L3sEXTRS.js",
+      "assets/Colors.stories-BbeRDL9t.js",
+      "assets/cose-bilkent-S5V4N54A-DQznI4JY.js",
+      "assets/CustomIcons.stories-BRzep_ZE.js",
+      "assets/cytoscape.esm-DGeaJFcL.js",
+      "assets/dagre-6UL2VRFP-DxsVxO12.js",
+      "assets/defaultLocale-C9EdlGJx.js",
+      "assets/diagram-PSM6KHXK-BgDQe2wG.js",
+      "assets/diagram-QEK2KX5R-BQ4GAShY.js",
+      "assets/diagram-S2PKOQOG-D3-jflMl.js",
+      "assets/Dialog.stories-AaBrI_Yu.js",
+      "assets/DocsRenderer-GHJI37HO-DKFkgHQ5.js",
+      "assets/DropdownMenu.stories-BNBf5Ucq.js",
+      "assets/erDiagram-Q2GNP2WA-c5YLeD2p.js",
+      "assets/Filters.stories-urIbfvdb.js",
+      "assets/flowDiagram-NV44I4VS-8kseFXfX.js",
+      "assets/ForAI-CImwhZod.js",
+      "assets/formatter-QJ4M4OGQ-DMdXPFMu.js",
+      "assets/FormField.stories-CxW742cH.js",
+      "assets/ganttDiagram-JELNMOA3-DYkcRJcm.js",
+      "assets/gitGraphDiagram-NY62KEGX-BI6qR-_Q.js",
+      "assets/graph-Dmu05rKk.js",
+      "assets/Header.stories-cdL_3d8T.js",
+      "assets/IconMigration.stories-DCx0wgZJ.js",
+      "assets/Icons.stories-iBhHjCSS.js",
+      "assets/iframe-1LCNMFkT.css",
+      "assets/iframe-C-v-iQ80.js",
+      "assets/index-0_mpOJrf.js",
+      "assets/index-CD2f23lS.js",
+      "assets/index-DFmzbgCZ.js",
+      "assets/infoDiagram-WHAUD3N6-C8kWDTxL.js",
+      "assets/init-ZxktEp_H.js",
+      "assets/Input.stories-5WE-y7oV.js",
+      "assets/Introducao-DOvuxY31.js",
+      "assets/Introduction-CH0s7zyD.js",
+      "assets/journeyDiagram-XKPGCS4Q-BENHwXhS.js",
+      "assets/jsx-runtime-DJF8WxIL.js",
+      "assets/kanban-definition-3W4ZIXB7-DqV_Z8-n.js",
+      "assets/katex-BCeciekE.js",
+      "assets/Label.stories-Cqm-XogL.js",
+      "assets/layout-C7XB2jFe.js",
+      "assets/linear-BUShci_d.js",
+      "assets/Logo.stories-Cn8bJxXY.js",
+      "assets/MenuAdministrador.stories-BMGDTK0C.js",
+      "assets/MenuCoordenador.stories-B1vYWOve.js",
+      "assets/MenuProfessor.stories-ppbjiBPb.js",
+      "assets/min-CJLAKmMt.js",
+      "assets/mindmap-definition-VGOIOE7T-BTWP3Oha.js",
+      "assets/ordinal-DSZU4PqD.js",
+      "assets/Pagination.stories-51ZkHCn6.js",
+      "assets/pieDiagram-ADFJNKIX-CeSiuKgV.js",
+      "assets/Popover.stories-B0ow4zeI.js",
+      "assets/preload-helper-z_4BYxHW.js",
+      "assets/Primitives.stories-3E8bxXab.js",
+      "assets/quadrantDiagram-AYHSOK5B-BZ4Awh5c.js",
+      "assets/Quickstart-CGOZBG74.js",
+      "assets/Radio.stories-zFDyOx55.js",
+      "assets/react-18-C2uwQHq-.js",
+      "assets/requirementDiagram-UZGBJVZJ-B_LNiVYI.js",
+      "assets/sankeyDiagram-TZEHDZUN-BL3fXwmt.js",
+      "assets/Select.stories-EIqXnfBw.js",
+      "assets/sequenceDiagram-WL72ISMW-BhnJ83Fc.js",
+      "assets/Sidebar-DyehFuvm.js",
+      "assets/Sidebar.stories-D5D-BOWE.js",
+      "assets/Skeleton.stories-C8vkWyz0.js",
+      "assets/Spacing.stories-ct9Q-MzM.js",
+      "assets/stateDiagram-FKZM4ZOC-BtVNRBKo.js",
+      "assets/stateDiagram-v2-4FDKWEC3-CgbOJcUY.js",
+      "assets/States-XaObgrrN.js",
+      "assets/syntaxhighlighter-IQDEPFLK-BHDyGoIY.js",
+      "assets/Table.stories-CB7o7UE6.js",
+      "assets/Tabs.stories-Tu9rJuuX.js",
+      "assets/ThemeSwitcher.stories-DarpvY-D.js",
+      "assets/timeline-definition-IT6M3QCI-CvuX6Xpg.js",
+      "assets/Toast.stories-8AxELAyw.js",
+      "assets/TokenShowcase-Cz8ByPfc.js",
+      "assets/Tooltip.stories-DLFL4ujh.js",
+      "assets/treemap-KMMF4GRG-C3SwR5Zx.js",
+      "assets/Typography.stories-D7m9RkCo.js",
+      "assets/WithTooltip-IO6J4KBT-BR0FMPq6.js",
+      "assets/xychartDiagram-PRI3JC2R-3cLNKfPK.js",
+      "assets/_baseUniq-BEwmcg2P.js",
+      "favicon-wrapper.svg",
+      "favicon.svg",
+      "icons/acao/badge.svg",
+      "icons/acao/badge_FILL0_wght400_GRAD0_opsz48.svg",
+      "icons/acao/delete.svg",
+      "icons/acao/delete_FILL0_wght400_GRAD0_opsz48.svg",
+      "icons/acao/edit.svg",
+      "icons/acao/edit_FILL0_wght400_GRAD0_opsz48.svg",
+      "icons/acao/ios_share.svg",
+      "icons/acao/ios_share_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/link.svg",
+      "icons/acao/link_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/mail_lock.svg",
+      "icons/acao/mail_lock_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/person_search.svg",
+      "icons/acao/person_search_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/pie_chart.svg",
+      "icons/acao/pie_chart_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/social_leaderboard.svg",
+      "icons/acao/social_leaderboard_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/trophy.svg",
+      "icons/acao/trophy_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/upload_file.svg",
+      "icons/acao/upload_file_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/visibility.svg",
+      "icons/acao/visibility_FILL0_wght400_GRAD0_opsz48 2.svg",
+      "icons/acao/workspace_premium.svg",
+      "icons/acao/workspace_premium_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/acao/_4-1.svg",
+      "icons/acao/_4-2.svg",
+      "icons/acao/_4.svg",
+      "icons/agrupamentos/Ano.svg",
+      "icons/agrupamentos/Escola.svg",
+      "icons/agrupamentos/Rede.svg",
+      "icons/agrupamentos/Turmas.svg",
+      "icons/avatar-base64.txt",
+      "icons/Avatar.svg",
+      "icons/conhecimento/Liga das Corujinhas.svg",
+      "icons/conhecimento/liga-corujinhas-alt.svg",
+      "icons/conhecimento/liga-corujinhas-disabled.svg",
+      "icons/conhecimento/liga-corujinhas-enabled.svg",
+      "icons/conhecimento/liga-corujinhas.svg",
+      "icons/conhecimento/LIGA.svg",
+      "icons/conhecimento/lingua-portuguesa-alt.svg",
+      "icons/conhecimento/lingua-portuguesa-disabled.svg",
+      "icons/conhecimento/lingua-portuguesa-enabled.svg",
+      "icons/conhecimento/lingua-portuguesa.svg",
+      "icons/conhecimento/LP.svg",
+      "icons\\conhecimento\\Língua Portuguesa.svg",
+      "icons/conhecimento/matematica-alt.svg",
+      "icons/conhecimento/matematica-disabled.svg",
+      "icons/conhecimento/matematica-enabled.svg",
+      "icons/conhecimento/matematica-sigla-disabled.svg",
+      "icons/conhecimento/matematica-sigla-enabled.svg",
+      "icons/conhecimento/matematica-sigla.svg",
+      "icons/conhecimento/matematica.svg",
+      "icons\\conhecimento\\Matemática.svg",
+      "icons/conhecimento/math-disabled.svg",
+      "icons/conhecimento/math-enabled.svg",
+      "icons/conhecimento/Math.svg",
+      "icons/conhecimento/MT.svg",
+      "icons/conhecimento/Todas-1.svg",
+      "icons/conhecimento/todas-disciplinas-alt.svg",
+      "icons/conhecimento/todas-disciplinas-disabled.svg",
+      "icons/conhecimento/todas-disciplinas-enabled.svg",
+      "icons/conhecimento/todas-disciplinas.svg",
+      "icons/conhecimento/Todas.svg",
+      "icons/educacao-infantil/Bncc-CorpoGestosMovimentos.svg",
+      "icons/educacao-infantil/Bncc-EscutaFalaPensamentoImaginacao.svg",
+      "icons/educacao-infantil/Bncc-EspacosTemposQuantidadesRelacoesTransformacoes.svg",
+      "icons/educacao-infantil/Bncc-OEuOOutroONos.svg",
+      "icons/educacao-infantil/Bncc-TracosSonsCoresFormas.svg",
+      "icons/gamificacao/Estrelas.svg",
+      "icons/gamificacao/Insignia-Bronze.svg",
+      "icons/gamificacao/Insignia-Ouro.svg",
+      "icons/gamificacao/Insignia-Prata.svg",
+      "icons/gamificacao/Moedas.svg",
+      "icons/gamificacao/Pontos-Eventos.svg",
+      "icons/gamificacao/Pontos-XP.svg",
+      "icons/gamificacao/Trofeu-bronze.svg",
+      "icons/gamificacao/Trofeu-Prata.svg",
+      "icons\\gamificacao\\Troféu-Ouro.svg",
+      "icons/idioma/brasil.svg",
+      "icons/idioma/espanha.svg",
+      "icons/idioma/eua.svg",
+      "icons/idioma/Language-1.svg",
+      "icons/idioma/Language-2.svg",
+      "icons/idioma/Language.svg",
+      "icons/interface/Acesso.svg",
+      "icons/interface/Group 9555.svg",
+      "icons/lingua-portuguesa-bncc/Bncc-CampoArtisticoLiterario.svg",
+      "icons/lingua-portuguesa-bncc/Bncc-CampodaVidaCotidiana.svg",
+      "icons/lingua-portuguesa-bncc/Bncc-Campojornalisticomidiatico.svg",
+      "icons/lingua-portuguesa-bncc/Bncc-CampoPraticasEstudoPesquisa.svg",
+      "icons/lingua-portuguesa-bncc/Bncc-CampoVidaPublica.svg",
+      "icons/lingua-portuguesa-bncc/bncc-todososcampos.svg",
+      "icons/lingua-portuguesa-saeb/Saeb-CoerenciasCoesaoProcessamentoTexto.svg",
+      "icons/lingua-portuguesa-saeb/Saeb-ImplicacoesSuporteGeneroEnunciadorCompreensaoTexto.svg",
+      "icons/lingua-portuguesa-saeb/Saeb-ProcedimentosLeitura.svg",
+      "icons/lingua-portuguesa-saeb/Saeb-RelacaoEntreRecursosExpressivosEfeitosSentido.svg",
+      "icons/lingua-portuguesa-saeb/Saeb-RelacaoEntreTextos.svg",
+      "icons/lingua-portuguesa-saeb/Saeb-VariacaoLinguistica.svg",
+      "icons/lingua-portuguesa-saresp/Saresp-CompreensaoTextosLiterarios.svg",
+      "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoIntertextualiudadeRelacaoEntreTextos.svg",
+      "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoSentidosTexto.svg",
+      "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoTextualidade.svg",
+      "icons\\lingua-portuguesa-saresp\\Saresp-ReconstruçãoCondicoesProducaoPercepcaoTextos.svg",
+      "icons/lingua-portuguesa-saresp/Saresp-ReflexaoUsosLinguaFaladaEscrita.svg",
+      "icons\\lingua-portuguesa-topicos\\Tópico-analise-linguistica.svg",
+      "icons\\lingua-portuguesa-topicos\\Tópico-escrita.svg",
+      "icons\\lingua-portuguesa-topicos\\Tópico-leitura-escuta.svg",
+      "icons\\lingua-portuguesa-topicos\\Tópico-oralidade.svg",
+      "icons/matematica-avalia/Avalia-AlgebrizacaoRelacao.svg",
+      "icons/matematica-avalia/Avalia-EspacoForma.svg",
+      "icons/matematica-avalia/Avalia-Incerteza.svg",
+      "icons/matematica-avalia/Avalia-QuantidadeMedida.svg",
+      "icons/matematica-bncc/bncc-geometria.svg",
+      "icons/matematica-bncc/bncc-grandezas e medidas.svg",
+      "icons\\matematica-bncc\\bncc-números.svg",
+      "icons\\matematica-bncc\\bncc-probabilidade e estatística.svg",
+      "icons\\matematica-bncc\\bncc-álgebra.svg",
+      "icons/matematica-saeb-saresp/Saeb-EspacoForma.svg",
+      "icons/matematica-saeb-saresp/Saeb-grandezas e medidas.svg",
+      "icons/matematica-saeb-saresp/Saeb-NumerosOperacoesAlgebraFuncoes.svg",
+      "icons/matematica-saeb-saresp/Saeb-TratamentoInformacao.svg",
+      "icons/menu/auto_stories.svg",
+      "icons/menu/auto_stories_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons\\menu\\Avaliação.svg",
+      "icons/menu/camera.svg",
+      "icons/menu/camera_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/download.svg",
+      "icons/menu/download_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/Eventos.svg",
+      "icons/menu/fiber_manual_record.svg",
+      "icons/menu/fiber_manual_record_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/flag.svg",
+      "icons/menu/flag_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/grid_view.svg",
+      "icons/menu/grid_view_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/group.svg",
+      "icons/menu/groups.svg",
+      "icons/menu/groups_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/group_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/how_to_reg.svg",
+      "icons/menu/how_to_reg_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/map.svg",
+      "icons/menu/map_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/person_play.svg",
+      "icons/menu/person_play_FILL0_wght400_GRAD0_opsz48.svg",
+      "icons/menu/pie_chart.svg",
+      "icons/menu/pie_chart_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/search.svg",
+      "icons/menu/search_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/menu/work.svg",
+      "icons/menu/work_FILL0_wght400_GRAD0_opsz48 1.svg",
+      "icons/metricas/Desafios.svg",
+      "icons/metricas/Dificuldade.svg",
+      "icons/metricas/Jogos.svg",
+      "icons/metricas/Percentual de acertos.svg",
+      "icons/metricas/Pontos.svg",
+      "icons/metricas/Progresso.svg",
+      "icons/metricas/Tempo de Aprendizagem.svg",
+      "icons/metricas/Top.svg",
+      "icons\\proficiencia\\abaixo do básico.svg",
+      "icons\\proficiencia\\avançado.svg",
+      "icons\\proficiencia\\básico.svg",
+      "icons\\proficiencia\\não fizeram.svg",
+      "icons/proficiencia/proficiente.svg",
+      "icons/social/facebook-round-svgrepo-com 1.svg",
+      "icons/social/facebook.svg",
+      "icons/social/instagram-f-svgrepo-com.svg",
+      "icons/social/instagram.svg",
+      "icons/social/whatsapp.svg",
+      "icons/social/whatsapp_svgrepo.com.svg",
+      "icons/social/youtube-round-svgrepo-com.svg",
+      "icons/social/youtube.svg",
+      "icons/usuarios/Administrador.svg",
+      "icons/usuarios/Aluno.svg",
+      "icons/usuarios/Coordenadores.svg",
+      "icons/usuarios/Diretor.svg",
+      "icons/usuarios/Gestor de rede.svg",
+      "icons/usuarios/Professor.svg",
+      "iframe.html",
+      "images/missoes/arquivadas-1.png",
+      "images/missoes/arquivadas-2.png",
+      "images/missoes/compartilhar-1.png",
+      "images/missoes/compartilhar-2.png",
+      "images/missoes/criar-missao-1.png",
+      "images/missoes/criar-missao-2.png",
+      "images/missoes/criar-missao-3.png",
+      "images/missoes/criar-missao-4.png",
+      "images/missoes/criar-missao-5.png",
+      "images/missoes/criar-missao-6.png",
+      "images/missoes/criar-missao-7.png",
+      "images/missoes/gerenciar-1.png",
+      "images/missoes/gerenciar-2.png",
+      "images/missoes/gerenciar-3.png",
+      "images/missoes/gerenciar-4.png",
+      "images/missoes/gerenciar-5.png",
+      "images/missoes/gerenciar-6.png",
+      "images/missoes/individuais-coletivas-1.png",
+      "images/missoes/link-1.png",
+      "images/missoes/link-2.png",
+      "images/missoes/reenviar-1.png",
+      "images/missoes/reenviar-2.png",
+      "images/missoes/reenviar-3.png",
+      "images/missoes/reenviar-4.png",
+      "images/missoes/reenviar-5.png",
+      "images/missoes/tipos-missao-1.png",
+      "images/missoes/tipos-missao-2.png",
+      "images/missoes/tipos-missao-3.png",
+      "images/missoes/tipos-missao-4.png",
+      "images/missoes/tipos-missao-5.png",
+      "images/missoes/tipos-missao-6.png",
+      "images/missoes/tipos-missao-7.png",
+      "index.html",
+      "index.json",
+      "logo-educacross-dark.svg",
+      "logo-educacross-light.svg",
+      "logo-educacross.svg",
+      "nunito-sans-bold-italic.woff2",
+      "nunito-sans-bold.woff2",
+      "nunito-sans-italic.woff2",
+      "nunito-sans-regular.woff2",
+      "og-image.png",
+      "og-image.svg",
+      "project.json",
+      "README.md",
+      "sb-addons/docs-3/manager-bundle.js",
+      "sb-addons/links-1/manager-bundle.js",
+      "sb-addons/storybook-4/manager-bundle.js",
+      "sb-addons/storybook-core-server-presets-0/common-manager-bundle.js",
+      "sb-addons/themes-2/manager-bundle.js",
+      "sb-common-assets/favicon-wrapper.svg",
+      "sb-common-assets/favicon.svg",
+      "sb-common-assets/nunito-sans-bold-italic.woff2",
+      "sb-common-assets/nunito-sans-bold.woff2",
+      "sb-common-assets/nunito-sans-italic.woff2",
+      "sb-common-assets/nunito-sans-regular.woff2",
+      "sb-manager/globals-runtime.js",
+      "sb-manager/globals.js",
+      "sb-manager/manager-stores.js",
+      "sb-manager/runtime.js",
+      "vite-inject-mocker-entry.js"
+    ],
+    "statsPath": "",
+    "total": 22236648,
+    "hashes": {
+      "assets/Accessibility-CFZ07eZ7.js": "03787b3d6e8bb473",
+      "assets/Accordion.stories-CuLbQ3Z5.js": "9ead945d299a6ac6",
+      "assets/Alert.stories-BmwyC3sY.js": "74dd22d3061608a4",
+      "assets/API-CkIZcnEU.js": "ece556030a21457c",
+      "assets/API-zonMaFeV.js": "d70d703096d780ce",
+      "assets/arc-DydmX6uj.js": "e8bca32ad1aacbe1",
+      "assets/architectureDiagram-VXUJARFQ-wNQt6Gpg.js": "45df3f75b55a0860",
+      "assets/Avatar.stories-D0T0IC_e.js": "c7b251386f322434",
+      "assets/AvatarIcon.stories-D9ZW2F-u.js": "788e5d8c5bfb6e10",
+      "assets/Badge.stories-DNgY7Eia.js": "1db66fcf9cbe7b08",
+      "assets/blockDiagram-VD42YOAC-DOtCtA6N.js": "b617ec3a3a753ba4",
+      "assets/blocks-CqosDA2b.js": "7f8b1f74d53a5832",
+      "assets/Button.stories-BggZhw7R.js": "c98da9d9e985777b",
+      "assets/c4Diagram-YG6GDRKO-yAQhuqLF.js": "2c894f939fa7ea22",
+      "assets/Card.stories-XVtXUjNF.js": "4eb27156bff7e689",
+      "assets/channel-7qPUcjGW.js": "3eb3ab1742e71410",
+      "assets/Checkbox.stories-DJGkEimy.js": "dae5cbb453cc7dc9",
+      "assets/chunk-4BX2VUAB-BEvTOpke.js": "1856e57488308c6a",
+      "assets/chunk-55IACEB6-B_H27s0N.js": "c8d8e4ef3123befc",
+      "assets/chunk-B4BG7PRW-D43XnlOD.js": "47cf1551ed6aa0db",
+      "assets/chunk-DI55MBZ5-CNpUUO3x.js": "3b719d8c2e2ed3ba",
+      "assets/chunk-FMBD7UC4-C37YFrtA.js": "b4b0d001b000daa8",
+      "assets/chunk-QN33PNHL-DpzzW5Pt.js": "68f2421bfebda7a0",
+      "assets/chunk-QZHKN3VN-CjwaxJhs.js": "7d27ec9080753593",
+      "assets/chunk-TZMSLE5B-D1BWJenT.js": "f4cb549e2e160a2c",
+      "assets/classDiagram-2ON5EDUG-Cdv2_B6x.js": "b2798534e8a15afa",
+      "assets/classDiagram-v2-WZHVMYZB-Cdv2_B6x.js": "b2798534e8a15afa",
+      "assets/clone-D4xKqGg5.js": "bd2ae753e75c2163",
+      "assets/Color-ASIRERSW-L3sEXTRS.js": "864284abd0e47f31",
+      "assets/Colors.stories-BbeRDL9t.js": "6aa58cc1cf3e51f0",
+      "assets/cose-bilkent-S5V4N54A-DQznI4JY.js": "4f270dd52677684e",
+      "assets/CustomIcons.stories-BRzep_ZE.js": "75c86266e326dbf0",
+      "assets/cytoscape.esm-DGeaJFcL.js": "0495f341fe5ddfa3",
+      "assets/dagre-6UL2VRFP-DxsVxO12.js": "79055ac4e2331db1",
+      "assets/defaultLocale-C9EdlGJx.js": "50676fb84cb83767",
+      "assets/diagram-PSM6KHXK-BgDQe2wG.js": "d5136c03281ab1cb",
+      "assets/diagram-QEK2KX5R-BQ4GAShY.js": "868cab2963050670",
+      "assets/diagram-S2PKOQOG-D3-jflMl.js": "18887ccda6dec6c6",
+      "assets/Dialog.stories-AaBrI_Yu.js": "9b1ec2973d17463d",
+      "assets/DocsRenderer-GHJI37HO-DKFkgHQ5.js": "39939093c681c29b",
+      "assets/DropdownMenu.stories-BNBf5Ucq.js": "186620c01c6132a2",
+      "assets/erDiagram-Q2GNP2WA-c5YLeD2p.js": "a1f8c18eeae03bbe",
+      "assets/Filters.stories-urIbfvdb.js": "bbf3a39292bca3cd",
+      "assets/flowDiagram-NV44I4VS-8kseFXfX.js": "d1af0063b40e052f",
+      "assets/ForAI-CImwhZod.js": "83a065dc8c6f3ef9",
+      "assets/formatter-QJ4M4OGQ-DMdXPFMu.js": "4107fd6e9af2613c",
+      "assets/FormField.stories-CxW742cH.js": "81206f030fb17a6c",
+      "assets/ganttDiagram-JELNMOA3-DYkcRJcm.js": "7d040e392fa17dc3",
+      "assets/gitGraphDiagram-NY62KEGX-BI6qR-_Q.js": "434b922514bbc82a",
+      "assets/graph-Dmu05rKk.js": "7a9ab1ad2b3641a6",
+      "assets/Header.stories-cdL_3d8T.js": "19c4c1d83dcb1af4",
+      "assets/IconMigration.stories-DCx0wgZJ.js": "5ac209181aa12a8c",
+      "assets/Icons.stories-iBhHjCSS.js": "6d8c6e922cec1ee0",
+      "assets/iframe-1LCNMFkT.css": "7c87690c667984e6",
+      "assets/iframe-C-v-iQ80.js": "e1f28819181ee2bd",
+      "assets/index-0_mpOJrf.js": "5f06852741a018e2",
+      "assets/index-CD2f23lS.js": "46426ef2091c0ded",
+      "assets/index-DFmzbgCZ.js": "5edd477c905d51db",
+      "assets/infoDiagram-WHAUD3N6-C8kWDTxL.js": "4f2bbe9ddbdc1b33",
+      "assets/init-ZxktEp_H.js": "0a32c96e51088fb6",
+      "assets/Input.stories-5WE-y7oV.js": "0b2abd7b92f68867",
+      "assets/Introducao-DOvuxY31.js": "c721e43d8b04e562",
+      "assets/Introduction-CH0s7zyD.js": "fd9b0467584acf90",
+      "assets/journeyDiagram-XKPGCS4Q-BENHwXhS.js": "8ef15dfedf16e415",
+      "assets/jsx-runtime-DJF8WxIL.js": "2f32561ef6addf6c",
+      "assets/kanban-definition-3W4ZIXB7-DqV_Z8-n.js": "a13e43f57eac434c",
+      "assets/katex-BCeciekE.js": "1a8cbe6653a5f3d5",
+      "assets/Label.stories-Cqm-XogL.js": "fae9fa6c4d101876",
+      "assets/layout-C7XB2jFe.js": "ed9fbcae674ade37",
+      "assets/linear-BUShci_d.js": "367fc1044e3b4831",
+      "assets/Logo.stories-Cn8bJxXY.js": "6ef5683de81b13f0",
+      "assets/MenuAdministrador.stories-BMGDTK0C.js": "4e02620066faa6c5",
+      "assets/MenuCoordenador.stories-B1vYWOve.js": "52b889a145c729d6",
+      "assets/MenuProfessor.stories-ppbjiBPb.js": "1d80e345e0b3ab31",
+      "assets/min-CJLAKmMt.js": "830fb5bd1a9eb83f",
+      "assets/mindmap-definition-VGOIOE7T-BTWP3Oha.js": "1c6761d5f4a49048",
+      "assets/ordinal-DSZU4PqD.js": "2f4e03767a4edddd",
+      "assets/Pagination.stories-51ZkHCn6.js": "5cf1e082a3025ef8",
+      "assets/pieDiagram-ADFJNKIX-CeSiuKgV.js": "14206278724df6cd",
+      "assets/Popover.stories-B0ow4zeI.js": "1495b1a0908d2d05",
+      "assets/preload-helper-z_4BYxHW.js": "cdad73a87eb6091d",
+      "assets/Primitives.stories-3E8bxXab.js": "ff4bcc2dd62e75fa",
+      "assets/quadrantDiagram-AYHSOK5B-BZ4Awh5c.js": "1cf65f4409600365",
+      "assets/Quickstart-CGOZBG74.js": "e34b09dff8c7d7c9",
+      "assets/Radio.stories-zFDyOx55.js": "71e29aaa06dbbc4c",
+      "assets/react-18-C2uwQHq-.js": "72f4eb623ef69bac",
+      "assets/requirementDiagram-UZGBJVZJ-B_LNiVYI.js": "954a7c7cd2c51e24",
+      "assets/sankeyDiagram-TZEHDZUN-BL3fXwmt.js": "34b1063939f3e244",
+      "assets/Select.stories-EIqXnfBw.js": "6a6e5125654e889d",
+      "assets/sequenceDiagram-WL72ISMW-BhnJ83Fc.js": "9083a6cfacf0cc48",
+      "assets/Sidebar-DyehFuvm.js": "662370b58dc56d4d",
+      "assets/Sidebar.stories-D5D-BOWE.js": "3f63218a5db6f2cb",
+      "assets/Skeleton.stories-C8vkWyz0.js": "01e32114391d93c0",
+      "assets/Spacing.stories-ct9Q-MzM.js": "521e17b14e8e4c04",
+      "assets/stateDiagram-FKZM4ZOC-BtVNRBKo.js": "6ab825e3381e50ab",
+      "assets/stateDiagram-v2-4FDKWEC3-CgbOJcUY.js": "6ee7858827e5c6f2",
+      "assets/States-XaObgrrN.js": "f69edfc2d9dea331",
+      "assets/syntaxhighlighter-IQDEPFLK-BHDyGoIY.js": "7ebc4b233fe9c947",
+      "assets/Table.stories-CB7o7UE6.js": "911ca7b6700a378b",
+      "assets/Tabs.stories-Tu9rJuuX.js": "abeb9b53d77b93ae",
+      "assets/ThemeSwitcher.stories-DarpvY-D.js": "fde78dbd380a42de",
+      "assets/timeline-definition-IT6M3QCI-CvuX6Xpg.js": "e0a1da89fc4bb36d",
+      "assets/Toast.stories-8AxELAyw.js": "8a34bbe75026d373",
+      "assets/TokenShowcase-Cz8ByPfc.js": "6baf739b1bb8d08d",
+      "assets/Tooltip.stories-DLFL4ujh.js": "78b7136bfc17d865",
+      "assets/treemap-KMMF4GRG-C3SwR5Zx.js": "053af821c245ee75",
+      "assets/Typography.stories-D7m9RkCo.js": "5dbd3a6c140ed6ed",
+      "assets/WithTooltip-IO6J4KBT-BR0FMPq6.js": "1c7945a6eff6c7c6",
+      "assets/xychartDiagram-PRI3JC2R-3cLNKfPK.js": "3ed0faea1df88ceb",
+      "assets/_baseUniq-BEwmcg2P.js": "6c2db744c06d0ee6",
+      "favicon-wrapper.svg": "ac2f5da4f59a4ab7",
+      "favicon.svg": "2df541c2672dac29",
+      "icons/acao/badge.svg": "6fbc55b215450e91",
+      "icons/acao/badge_FILL0_wght400_GRAD0_opsz48.svg": "6fbc55b215450e91",
+      "icons/acao/delete.svg": "08e45668aa1efa88",
+      "icons/acao/delete_FILL0_wght400_GRAD0_opsz48.svg": "08e45668aa1efa88",
+      "icons/acao/edit.svg": "53c05b5305e87537",
+      "icons/acao/edit_FILL0_wght400_GRAD0_opsz48.svg": "53c05b5305e87537",
+      "icons/acao/ios_share.svg": "b0414fcfc915ffb0",
+      "icons/acao/ios_share_FILL0_wght400_GRAD0_opsz48 1.svg": "b0414fcfc915ffb0",
+      "icons/acao/link.svg": "c6419c0d452cd450",
+      "icons/acao/link_FILL0_wght400_GRAD0_opsz48 1.svg": "c6419c0d452cd450",
+      "icons/acao/mail_lock.svg": "b159a84005ef7a4a",
+      "icons/acao/mail_lock_FILL0_wght400_GRAD0_opsz48 1.svg": "b159a84005ef7a4a",
+      "icons/acao/person_search.svg": "a7d3942c0512e1f8",
+      "icons/acao/person_search_FILL0_wght400_GRAD0_opsz48 1.svg": "a7d3942c0512e1f8",
+      "icons/acao/pie_chart.svg": "2a8217e08d13ab60",
+      "icons/acao/pie_chart_FILL0_wght400_GRAD0_opsz48 1.svg": "2a8217e08d13ab60",
+      "icons/acao/social_leaderboard.svg": "37a871ebf36ab63d",
+      "icons/acao/social_leaderboard_FILL0_wght400_GRAD0_opsz48 1.svg": "37a871ebf36ab63d",
+      "icons/acao/trophy.svg": "9367eef089a9540e",
+      "icons/acao/trophy_FILL0_wght400_GRAD0_opsz48 1.svg": "9367eef089a9540e",
+      "icons/acao/upload_file.svg": "16103e4d9bc8c7f3",
+      "icons/acao/upload_file_FILL0_wght400_GRAD0_opsz48 1.svg": "16103e4d9bc8c7f3",
+      "icons/acao/visibility.svg": "205c4561d9899961",
+      "icons/acao/visibility_FILL0_wght400_GRAD0_opsz48 2.svg": "205c4561d9899961",
+      "icons/acao/workspace_premium.svg": "003ea151c0238c1d",
+      "icons/acao/workspace_premium_FILL0_wght400_GRAD0_opsz48 1.svg": "003ea151c0238c1d",
+      "icons/acao/_4-1.svg": "cfa7aa782b3dd6d7",
+      "icons/acao/_4-2.svg": "69653e5076490b59",
+      "icons/acao/_4.svg": "42b609afaee73f59",
+      "icons/agrupamentos/Ano.svg": "b8a4c06eb7229c3b",
+      "icons/agrupamentos/Escola.svg": "85ef93304184c7de",
+      "icons/agrupamentos/Rede.svg": "4846352afc4149fd",
+      "icons/agrupamentos/Turmas.svg": "e56d82886dc4d4aa",
+      "icons/avatar-base64.txt": "df2735ceae137daa",
+      "icons/Avatar.svg": "0f38298ad7e83cda",
+      "icons/conhecimento/Liga das Corujinhas.svg": "c668b473f386bb1d",
+      "icons/conhecimento/liga-corujinhas-alt.svg": "c668b473f386bb1d",
+      "icons/conhecimento/liga-corujinhas-disabled.svg": "cbc9c47bd255fd72",
+      "icons/conhecimento/liga-corujinhas-enabled.svg": "c668b473f386bb1d",
+      "icons/conhecimento/liga-corujinhas.svg": "cbc9c47bd255fd72",
+      "icons/conhecimento/LIGA.svg": "cbc9c47bd255fd72",
+      "icons/conhecimento/lingua-portuguesa-alt.svg": "6dc950a173c5937c",
+      "icons/conhecimento/lingua-portuguesa-disabled.svg": "28e3c6d69157a8e8",
+      "icons/conhecimento/lingua-portuguesa-enabled.svg": "6dc950a173c5937c",
+      "icons/conhecimento/lingua-portuguesa.svg": "28e3c6d69157a8e8",
+      "icons/conhecimento/LP.svg": "28e3c6d69157a8e8",
+      "icons\\conhecimento\\Língua Portuguesa.svg": "6dc950a173c5937c",
+      "icons/conhecimento/matematica-alt.svg": "1098c2e4e729e216",
+      "icons/conhecimento/matematica-disabled.svg": "1098c2e4e729e216",
+      "icons/conhecimento/matematica-enabled.svg": "ff9d485227dab593",
+      "icons/conhecimento/matematica-sigla-disabled.svg": "9c6049bb9759e280",
+      "icons/conhecimento/matematica-sigla-enabled.svg": "1098c2e4e729e216",
+      "icons/conhecimento/matematica-sigla.svg": "9c6049bb9759e280",
+      "icons/conhecimento/matematica.svg": "ff9d485227dab593",
+      "icons\\conhecimento\\Matemática.svg": "1098c2e4e729e216",
+      "icons/conhecimento/math-disabled.svg": "ff9d485227dab593",
+      "icons/conhecimento/math-enabled.svg": "36f7d2de928d8748",
+      "icons/conhecimento/Math.svg": "ff9d485227dab593",
+      "icons/conhecimento/MT.svg": "9c6049bb9759e280",
+      "icons/conhecimento/Todas-1.svg": "573063ce5de18c8a",
+      "icons/conhecimento/todas-disciplinas-alt.svg": "5cc96d207f0b3af7",
+      "icons/conhecimento/todas-disciplinas-disabled.svg": "573063ce5de18c8a",
+      "icons/conhecimento/todas-disciplinas-enabled.svg": "5cc96d207f0b3af7",
+      "icons/conhecimento/todas-disciplinas.svg": "573063ce5de18c8a",
+      "icons/conhecimento/Todas.svg": "5cc96d207f0b3af7",
+      "icons/educacao-infantil/Bncc-CorpoGestosMovimentos.svg": "386f6802e6f48c05",
+      "icons/educacao-infantil/Bncc-EscutaFalaPensamentoImaginacao.svg": "57fd7217dce189ea",
+      "icons/educacao-infantil/Bncc-EspacosTemposQuantidadesRelacoesTransformacoes.svg": "f36fa8f2252c4282",
+      "icons/educacao-infantil/Bncc-OEuOOutroONos.svg": "8289fb93232a125b",
+      "icons/educacao-infantil/Bncc-TracosSonsCoresFormas.svg": "0de5fd6f20cb7486",
+      "icons/gamificacao/Estrelas.svg": "9de479a1542a46a5",
+      "icons/gamificacao/Insignia-Bronze.svg": "2ebd1903c60d8bac",
+      "icons/gamificacao/Insignia-Ouro.svg": "cb45e81cea23a6ab",
+      "icons/gamificacao/Insignia-Prata.svg": "e134685dc076a567",
+      "icons/gamificacao/Moedas.svg": "0adf5a359db80b62",
+      "icons/gamificacao/Pontos-Eventos.svg": "b537bc5f89ca6f8a",
+      "icons/gamificacao/Pontos-XP.svg": "fe8a4dc8ece441b5",
+      "icons/gamificacao/Trofeu-bronze.svg": "04879964a923f60f",
+      "icons/gamificacao/Trofeu-Prata.svg": "18e3eb7d0abbda4e",
+      "icons\\gamificacao\\Troféu-Ouro.svg": "283f5a9dd34a11c9",
+      "icons/idioma/brasil.svg": "42b609afaee73f59",
+      "icons/idioma/espanha.svg": "69653e5076490b59",
+      "icons/idioma/eua.svg": "cfa7aa782b3dd6d7",
+      "icons/idioma/Language-1.svg": "74c644a5fcc31ef9",
+      "icons/idioma/Language-2.svg": "b74a5c57e8992376",
+      "icons/idioma/Language.svg": "2d46c3a217ee178f",
+      "icons/interface/Acesso.svg": "c35e58eaab6ca112",
+      "icons/interface/Group 9555.svg": "85fb0b4b06565c79",
+      "icons/lingua-portuguesa-bncc/Bncc-CampoArtisticoLiterario.svg": "1d037f40830a8369",
+      "icons/lingua-portuguesa-bncc/Bncc-CampodaVidaCotidiana.svg": "695fdc364583df50",
+      "icons/lingua-portuguesa-bncc/Bncc-Campojornalisticomidiatico.svg": "26156c334799ecce",
+      "icons/lingua-portuguesa-bncc/Bncc-CampoPraticasEstudoPesquisa.svg": "15680c38a5642f64",
+      "icons/lingua-portuguesa-bncc/Bncc-CampoVidaPublica.svg": "afa7fede9a46ea98",
+      "icons/lingua-portuguesa-bncc/bncc-todososcampos.svg": "09a05a78aa99f2ce",
+      "icons/lingua-portuguesa-saeb/Saeb-CoerenciasCoesaoProcessamentoTexto.svg": "efa04d07f3152326",
+      "icons/lingua-portuguesa-saeb/Saeb-ImplicacoesSuporteGeneroEnunciadorCompreensaoTexto.svg": "c7c37de677126f26",
+      "icons/lingua-portuguesa-saeb/Saeb-ProcedimentosLeitura.svg": "fd2466d8ee086e25",
+      "icons/lingua-portuguesa-saeb/Saeb-RelacaoEntreRecursosExpressivosEfeitosSentido.svg": "7fa71fdb8b6ebd7c",
+      "icons/lingua-portuguesa-saeb/Saeb-RelacaoEntreTextos.svg": "17a276367c2d84ee",
+      "icons/lingua-portuguesa-saeb/Saeb-VariacaoLinguistica.svg": "9a9702a041090b07",
+      "icons/lingua-portuguesa-saresp/Saresp-CompreensaoTextosLiterarios.svg": "1480744acb1586ea",
+      "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoIntertextualiudadeRelacaoEntreTextos.svg": "17a276367c2d84ee",
+      "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoSentidosTexto.svg": "7fa71fdb8b6ebd7c",
+      "icons/lingua-portuguesa-saresp/Saresp-ReconstrucaoTextualidade.svg": "c7c37de677126f26",
+      "icons\\lingua-portuguesa-saresp\\Saresp-ReconstruçãoCondicoesProducaoPercepcaoTextos.svg": "dd3377ae3ba003ad",
+      "icons/lingua-portuguesa-saresp/Saresp-ReflexaoUsosLinguaFaladaEscrita.svg": "f775539ab5664ab5",
+      "icons\\lingua-portuguesa-topicos\\Tópico-analise-linguistica.svg": "e62f0cd05e3b20cf",
+      "icons\\lingua-portuguesa-topicos\\Tópico-escrita.svg": "1153191ae59d7683",
+      "icons\\lingua-portuguesa-topicos\\Tópico-leitura-escuta.svg": "6df0b72d4c6f40f4",
+      "icons\\lingua-portuguesa-topicos\\Tópico-oralidade.svg": "80270d1e2ff75dcb",
+      "icons/matematica-avalia/Avalia-AlgebrizacaoRelacao.svg": "231e5f4d4cc58040",
+      "icons/matematica-avalia/Avalia-EspacoForma.svg": "0b103fdd244ee799",
+      "icons/matematica-avalia/Avalia-Incerteza.svg": "b2df1607c13d81e6",
+      "icons/matematica-avalia/Avalia-QuantidadeMedida.svg": "f2a59df256c4dfdb",
+      "icons/matematica-bncc/bncc-geometria.svg": "fc43001df4fba66c",
+      "icons/matematica-bncc/bncc-grandezas e medidas.svg": "39ff06c5ee00f4d5",
+      "icons\\matematica-bncc\\bncc-números.svg": "7b46f36a73469404",
+      "icons\\matematica-bncc\\bncc-probabilidade e estatística.svg": "a60dc14959545269",
+      "icons\\matematica-bncc\\bncc-álgebra.svg": "1137046a691b01b2",
+      "icons/matematica-saeb-saresp/Saeb-EspacoForma.svg": "0b103fdd244ee799",
+      "icons/matematica-saeb-saresp/Saeb-grandezas e medidas.svg": "d18cb876b4cf7a4d",
+      "icons/matematica-saeb-saresp/Saeb-NumerosOperacoesAlgebraFuncoes.svg": "fb76005e6e76e498",
+      "icons/matematica-saeb-saresp/Saeb-TratamentoInformacao.svg": "5aeb17221534b311",
+      "icons/menu/auto_stories.svg": "09560693d3d6442f",
+      "icons/menu/auto_stories_FILL0_wght400_GRAD0_opsz48 1.svg": "09560693d3d6442f",
+      "icons\\menu\\Avaliação.svg": "2818be92290d3f32",
+      "icons/menu/camera.svg": "e8457e70f6366084",
+      "icons/menu/camera_FILL0_wght400_GRAD0_opsz48 1.svg": "e8457e70f6366084",
+      "icons/menu/download.svg": "4a3e8a852f55eda2",
+      "icons/menu/download_FILL0_wght400_GRAD0_opsz48 1.svg": "4a3e8a852f55eda2",
+      "icons/menu/Eventos.svg": "62414847a8972a22",
+      "icons/menu/fiber_manual_record.svg": "c5966e5c0eda27b1",
+      "icons/menu/fiber_manual_record_FILL0_wght400_GRAD0_opsz48 1.svg": "c5966e5c0eda27b1",
+      "icons/menu/flag.svg": "883efcb4e9e6c5fd",
+      "icons/menu/flag_FILL0_wght400_GRAD0_opsz48 1.svg": "883efcb4e9e6c5fd",
+      "icons/menu/grid_view.svg": "aa01426757f83c64",
+      "icons/menu/grid_view_FILL0_wght400_GRAD0_opsz48 1.svg": "aa01426757f83c64",
+      "icons/menu/group.svg": "91478a6db0df7fe9",
+      "icons/menu/groups.svg": "2aebf1b0a77d9190",
+      "icons/menu/groups_FILL0_wght400_GRAD0_opsz48 1.svg": "2aebf1b0a77d9190",
+      "icons/menu/group_FILL0_wght400_GRAD0_opsz48 1.svg": "91478a6db0df7fe9",
+      "icons/menu/how_to_reg.svg": "9c250215c50f7e4b",
+      "icons/menu/how_to_reg_FILL0_wght400_GRAD0_opsz48 1.svg": "9c250215c50f7e4b",
+      "icons/menu/map.svg": "8ee21b29f8384994",
+      "icons/menu/map_FILL0_wght400_GRAD0_opsz48 1.svg": "8ee21b29f8384994",
+      "icons/menu/person_play.svg": "cf793116cc40cc24",
+      "icons/menu/person_play_FILL0_wght400_GRAD0_opsz48.svg": "cf793116cc40cc24",
+      "icons/menu/pie_chart.svg": "a40784e804412e15",
+      "icons/menu/pie_chart_FILL0_wght400_GRAD0_opsz48 1.svg": "a40784e804412e15",
+      "icons/menu/search.svg": "6697f47540b5ef67",
+      "icons/menu/search_FILL0_wght400_GRAD0_opsz48 1.svg": "6697f47540b5ef67",
+      "icons/menu/work.svg": "3b3ddf0cab579428",
+      "icons/menu/work_FILL0_wght400_GRAD0_opsz48 1.svg": "3b3ddf0cab579428",
+      "icons/metricas/Desafios.svg": "940569e2c48fa604",
+      "icons/metricas/Dificuldade.svg": "0610cb6155544e33",
+      "icons/metricas/Jogos.svg": "14dcafe9cf56b480",
+      "icons/metricas/Percentual de acertos.svg": "41e35902dafd5a43",
+      "icons/metricas/Pontos.svg": "8abad9fb0728410f",
+      "icons/metricas/Progresso.svg": "8ca8ddcf9ae2aca5",
+      "icons/metricas/Tempo de Aprendizagem.svg": "05baf3d7df0d21ed",
+      "icons/metricas/Top.svg": "5a42ffe41a3a75f0",
+      "icons\\proficiencia\\abaixo do básico.svg": "cb2b391a86785d95",
+      "icons\\proficiencia\\avançado.svg": "f3fe4ad93b35a652",
+      "icons\\proficiencia\\básico.svg": "b1e930c1458716c3",
+      "icons\\proficiencia\\não fizeram.svg": "6973ab0e151b39a9",
+      "icons/proficiencia/proficiente.svg": "c59cb08fc69111c3",
+      "icons/social/facebook-round-svgrepo-com 1.svg": "a1a6c00aa7b5e647",
+      "icons/social/facebook.svg": "a1a6c00aa7b5e647",
+      "icons/social/instagram-f-svgrepo-com.svg": "492a7ce2b7294f1e",
+      "icons/social/instagram.svg": "492a7ce2b7294f1e",
+      "icons/social/whatsapp.svg": "2b2868f0b64e60a9",
+      "icons/social/whatsapp_svgrepo.com.svg": "2b2868f0b64e60a9",
+      "icons/social/youtube-round-svgrepo-com.svg": "cffc484dad80fd6f",
+      "icons/social/youtube.svg": "cffc484dad80fd6f",
+      "icons/usuarios/Administrador.svg": "7038fe0873c9bef5",
+      "icons/usuarios/Aluno.svg": "87aaaba4fca710e4",
+      "icons/usuarios/Coordenadores.svg": "1049ac628c3d3366",
+      "icons/usuarios/Diretor.svg": "5991d599a9b63cb4",
+      "icons/usuarios/Gestor de rede.svg": "4a2a71a7fcbf8003",
+      "icons/usuarios/Professor.svg": "7f2304448f79dc06",
+      "iframe.html": "9f8994a3d491c286",
+      "images/missoes/arquivadas-1.png": "b585136b6d246536",
+      "images/missoes/arquivadas-2.png": "d3de622fe039ded8",
+      "images/missoes/compartilhar-1.png": "e9dc5a302ec5a7f7",
+      "images/missoes/compartilhar-2.png": "fdb359db3228bf84",
+      "images/missoes/criar-missao-1.png": "78b20bd0601a8060",
+      "images/missoes/criar-missao-2.png": "7edd79c3b22ea771",
+      "images/missoes/criar-missao-3.png": "07421f93b547a7a9",
+      "images/missoes/criar-missao-4.png": "b5b3a5f593b27c74",
+      "images/missoes/criar-missao-5.png": "acc1304ab41b26bc",
+      "images/missoes/criar-missao-6.png": "073dcb3d255f8414",
+      "images/missoes/criar-missao-7.png": "0d8860c742e23deb",
+      "images/missoes/gerenciar-1.png": "3c9961b310dedf8d",
+      "images/missoes/gerenciar-2.png": "e26bb0d08e1933ba",
+      "images/missoes/gerenciar-3.png": "f6a799203a60da91",
+      "images/missoes/gerenciar-4.png": "340530de7ed4c414",
+      "images/missoes/gerenciar-5.png": "f851aa29a07bd57e",
+      "images/missoes/gerenciar-6.png": "0c690afdad964601",
+      "images/missoes/individuais-coletivas-1.png": "5dee2311a4a24d7d",
+      "images/missoes/link-1.png": "92a24a8c1a019903",
+      "images/missoes/link-2.png": "75be6274174263b6",
+      "images/missoes/reenviar-1.png": "b7c0036188624c7b",
+      "images/missoes/reenviar-2.png": "5e74d2784c997b50",
+      "images/missoes/reenviar-3.png": "fcaccb14e87195ab",
+      "images/missoes/reenviar-4.png": "d3850e5400e3aab1",
+      "images/missoes/reenviar-5.png": "8f83ae62c9ab0117",
+      "images/missoes/tipos-missao-1.png": "ce8be89c499b982c",
+      "images/missoes/tipos-missao-2.png": "45ff4092715c0de5",
+      "images/missoes/tipos-missao-3.png": "55b1ca425c3cb5b9",
+      "images/missoes/tipos-missao-4.png": "8e0bc18af8f672bc",
+      "images/missoes/tipos-missao-5.png": "8bdffed1ae0d6289",
+      "images/missoes/tipos-missao-6.png": "a5007e3bd6b656f2",
+      "images/missoes/tipos-missao-7.png": "09a35a389787e1d6",
+      "index.html": "e792cd0a2c1add33",
+      "index.json": "f2dcd8504721eb12",
+      "logo-educacross-dark.svg": "98cbb202f65bbdee",
+      "logo-educacross-light.svg": "ca4ab3c551e9b39c",
+      "logo-educacross.svg": "85fdb294793a6f17",
+      "nunito-sans-bold-italic.woff2": "d64464b3594b3fb9",
+      "nunito-sans-bold.woff2": "0bd5b61b7fb7f7d5",
+      "nunito-sans-italic.woff2": "b7807d9de055e9a0",
+      "nunito-sans-regular.woff2": "6687b7be04c2debe",
+      "og-image.png": "f13ad37c0938d972",
+      "og-image.svg": "d1d5a239e6f1abde",
+      "project.json": "77c0bb1911b1885b",
+      "README.md": "247fca209733c73b",
+      "sb-addons/docs-3/manager-bundle.js": "84a4d39b3691319c",
+      "sb-addons/links-1/manager-bundle.js": "f1ee7f195fc5642b",
+      "sb-addons/storybook-4/manager-bundle.js": "d47c4c53dd1aa13d",
+      "sb-addons/storybook-core-server-presets-0/common-manager-bundle.js": "d654960e6515a8b0",
+      "sb-addons/themes-2/manager-bundle.js": "625f5c94177859df",
+      "sb-common-assets/favicon-wrapper.svg": "ac2f5da4f59a4ab7",
+      "sb-common-assets/favicon.svg": "d3380c3fb63a8430",
+      "sb-common-assets/nunito-sans-bold-italic.woff2": "d64464b3594b3fb9",
+      "sb-common-assets/nunito-sans-bold.woff2": "0bd5b61b7fb7f7d5",
+      "sb-common-assets/nunito-sans-italic.woff2": "b7807d9de055e9a0",
+      "sb-common-assets/nunito-sans-regular.woff2": "6687b7be04c2debe",
+      "sb-manager/globals-runtime.js": "16a74988ebbc713f",
+      "sb-manager/globals.js": "2c4cf7380e550517",
+      "sb-manager/manager-stores.js": "9201ef0cd1069e23",
+      "sb-manager/runtime.js": "66b9cebf715eeadc",
+      "vite-inject-mocker-entry.js": "da6249bde673c2c2"
+    }
+  },
+  "flags": {
+    "storybookBuildDir": [
+      "apps/storybook/storybook-static"
+    ],
+    "debug": true,
+    "outputDir": [],
+    "externals": [],
+    "onlyStoryFiles": [],
+    "onlyStoryNames": [],
+    "untraced": [],
+    "fileHashing": true,
+    "interactive": true
+  },
+  "git": {
+    "version": "2.52.0.windows.1",
+    "gitUserEmail": "fabiovisualmidia@gmail.com",
+    "uncommittedHash": "fatal: ambiguous argument 'diff': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'\ne69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "rootPath": "C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross",
+    "commit": "f55c8986712320549750aed845838f1373b54b42",
+    "committedAt": 1769113914000,
+    "committerEmail": "fabiovisualmidia@gmail.com",
+    "committerName": "Fabio Alves",
+    "branch": "master",
+    "slug": "fabioeducacross/design_system_educacross",
+    "fromCI": false,
+    "parentCommits": []
+  },
+  "input": [],
+  "isOnboarding": true,
+  "isReactNativeApp": false,
+  "options": {
+    "fromCI": false,
+    "inAction": false,
+    "dryRun": false,
+    "debug": true,
+    "autoAcceptChanges": false,
+    "exitZeroOnChanges": false,
+    "exitOnceUploaded": false,
+    "diagnosticsFile": "chromatic-diagnostics.json",
+    "fileHashing": true,
+    "interactive": false,
+    "isLocalBuild": false,
+    "originalArgv": [
+      "--project-token=chpt_84de3749269a39d",
+      "--storybook-build-dir=apps/storybook/storybook-static",
+      "--debug"
+    ],
+    "logFile": "chromatic.log",
+    "forceRebuild": true,
+    "storybookBuildDir": "apps/storybook/storybook-static",
+    "storybookLogFile": "build-storybook.log",
+    "branchName": ""
+  },
+  "packageJson": {
+    "name": "educacross-design-system",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "packageManager": "pnpm@9.15.0",
+    "scripts": {
+      "build": "turbo run build",
+      "dev": "turbo run dev",
+      "lint": "turbo run lint",
+      "typecheck": "turbo run typecheck",
+      "test": "turbo run test",
+      "test:watch": "pnpm --filter @educacross/ui test:watch",
+      "test:coverage": "pnpm --filter @educacross/ui test:coverage",
+      "storybook": "pnpm --filter @educacross/storybook dev",
+      "build:storybook": "pnpm --filter @educacross/storybook build",
+      "clean": "turbo run clean && rimraf node_modules",
+      "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+      "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
+      "sync:figma": "tsx scripts/sync-figma.ts",
+      "sync:figma:watch": "tsx scripts/sync-figma.ts --watch",
+      "figma:server": "tsx scripts/figma-local-server.ts",
+      "figma:test": "tsx scripts/test-figma-local.ts",
+      "figma:selection": "tsx scripts/get-figma-selection.ts"
+    },
+    "devDependencies": {
+      "@eslint/js": "^9.17.0",
+      "@modelcontextprotocol/sdk": "^1.0.4",
+      "@playwright/test": "^1.57.0",
+      "@types/node": "^22.10.0",
+      "chromatic": "^13.3.5",
+      "dotenv": "^17.2.3",
+      "eslint": "^9.17.0",
+      "eslint-plugin-react-hooks": "^5.1.0",
+      "eslint-plugin-react-refresh": "^0.4.16",
+      "globals": "^17.0.0",
+      "playwright": "^1.57.0",
+      "prettier": "^3.4.2",
+      "prettier-plugin-tailwindcss": "^0.7.2",
+      "rimraf": "^6.0.1",
+      "tsx": "^4.19.2",
+      "turbo": "^2.3.3",
+      "typescript": "^5.7.2",
+      "typescript-eslint": "^8.19.0"
+    },
+    "engines": {
+      "node": ">=20.0.0",
+      "pnpm": ">=9.0.0"
+    }
+  },
+  "packagePath": "C:\\Users\\Educacross\\Documents\\Educacross\\Design_System_Educacross\\Design_System_Educacross\\package.json",
+  "projectMetadata": {
+    "hasRouter": false,
+    "creationDate": {},
+    "numberOfCommitters": 3,
+    "numberOfAppFiles": 2
+  },
+  "runtimeMetadata": {
+    "nodePlatform": "win32",
+    "nodeVersion": "22.20.0",
+    "packageManager": "pnpm",
+    "packageManagerVersion": "9.14.4"
+  },
+  "sentinelUrls": [
+    "https://chromatic-builds.s3.us-west-2.amazonaws.com/69727df0ab06437ceb56a008-iracaahrgm/.chromatic/files-copied.3271336718.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAJVVEQEOBEEPXSNNQ%2F20260122%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260122T203642Z&X-Amz-Expires=1800&X-Amz-Signature=3958c97412c4abaea4a776c1278d2464c2f313938130cdf673c7dca8803a85a7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+  ],
+  "sessionId": "0cf99ebf-a105-4dbb-ae8a-e35e464d19db",
+  "sourceDir": "apps/storybook/storybook-static",
+  "startedAt": 1769114227885,
+  "storybook": {
+    "version": "10.1.11",
+    "builder": {
+      "name": "@storybook/builder-vite"
+    },
+    "baseDir": "."
+  },
+  "storybookUrl": "https://69727df0ab06437ceb56a008-iracaahrgm.chromatic.com/",
+  "task": "verify",
+  "uploadedBytes": 0,
+  "uploadedFiles": 0,
+  "userError": true
+}

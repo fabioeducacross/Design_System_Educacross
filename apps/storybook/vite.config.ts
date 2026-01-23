@@ -4,6 +4,7 @@ import { resolve } from "path";
 
 export default defineConfig({
     plugins: [react()],
+    base: "./", // Usa caminhos relativos para assets
     resolve: {
         alias: {
             "@educacross/ui": resolve(__dirname, "../../packages/ui/src"),

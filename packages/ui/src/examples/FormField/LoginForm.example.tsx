@@ -41,7 +41,6 @@ export function LoginFormExample() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<LoginFormData>({
-    // @ts-expect-error - Incompatibilidade de tipos entre versões do Zod (falso positivo)
     resolver: zodResolver(loginSchema) as Resolver<LoginFormData>,
     mode: "onBlur", // Valida ao perder foco
   });

@@ -65,7 +65,12 @@ export {
 } from "./examples/FormField";
 
 // Data Display - Organisms
-export { DataTable, type DataTableProps } from "./components/DataTable";
+export {
+  DataTable,
+  DataTablePagination,
+  type DataTableProps,
+  type DataTablePaginationProps,
+} from "./components/DataTable";
 
 // Theme
 export {

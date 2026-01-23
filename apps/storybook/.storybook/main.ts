@@ -29,11 +29,6 @@ const config: StorybookConfig = {
             ...config.resolve.alias,
             "@educacross/ui": resolve(__dirname, "../../../packages/ui/src"),
         };
-        
-        // Configurar base path para GitHub Pages
-        if (process.env.NODE_ENV === 'production') {
-            config.base = '/Design_System_Educacross/';
-        }
 
         // Desabilitar minificação que está causando erro
         config.build = config.build || {};

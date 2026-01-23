@@ -18,7 +18,9 @@ import {
   type VisibilityState,
   type PaginationState,
 } from "@tanstack/react-table";
+import { ArrowUpDown, ArrowUp, ArrowDown } from "lucide-react";
 import { cn } from "../../utils";
+import { DataTablePagination } from "./DataTablePagination";
 
 // ============================================================================
 // TYPES
@@ -248,19 +250,52 @@ export function DataTable<TData, TValue = unknown>({
                 key={headerGroup.id}
                 className="border-b transition-colors hover:bg-muted/50"
               >
-                {headerGroup.headers.map((header) => (
-                  <th
-                    key={header.id}
-                    className="h-12 px-4 text-left align-middle font-medium text-muted-foreground"
-                  >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </th>
-                ))}
+                {headerGroup.headers.map((header) => {
+                  const canSort = header.column.getCanSort() && enableSorting;
+                  const isSorted = header.column.getIsSorted();
+
+                  return (
+                    <th
+                      key={header.id}
+                      className="h-12 px-4 text-left align-middle font-medium text-muted-foreground"
+                    >
+                      {header.isPlaceholder ? null : (
+                        <div
+                          className={cn(
+                            "flex items-center gap-2",
+                            canSort && "cursor-pointer select-none hover:text-foreground"
+                          )}
+                          onClick={canSort ? header.column.getToggleSortingHandler() : undefined}
+                          onKeyDown={canSort ? (e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              header.column.getToggleSortingHandler()?.(e);
+                            }
+                          } : undefined}
+                          role={canSort ? "button" : undefined}
+                          tabIndex={canSort ? 0 : undefined}
+                          aria-label={canSort ? `Ordenar por ${header.column.id}` : undefined}
+                        >
+                          {flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                          {canSort && (
+                            <span className="ml-auto">
+                              {isSorted === "asc" ? (
+                                <ArrowUp className="h-4 w-4" aria-label="Ordenado crescente" />
+                              ) : isSorted === "desc" ? (
+                                <ArrowDown className="h-4 w-4" aria-label="Ordenado decrescente" />
+                              ) : (
+                                <ArrowUpDown className="h-4 w-4 opacity-50" aria-label="Ordenável" />
+                              )}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </th>
+                  );
+                })}
               </tr>
             ))}
           </thead>
@@ -307,27 +342,8 @@ export function DataTable<TData, TValue = unknown>({
         </table>
       </div>
 
-      {/* Paginação simples (será expandida no T7) */}
-      <div className="flex items-center justify-end space-x-2">
-        <button
-          className="rounded border px-4 py-2 text-sm disabled:opacity-50"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Anterior
-        </button>
-        <span className="text-sm text-muted-foreground">
-          Página {table.getState().pagination.pageIndex + 1} de{" "}
-          {table.getPageCount()}
-        </span>
-        <button
-          className="rounded border px-4 py-2 text-sm disabled:opacity-50"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Próximo
-        </button>
-      </div>
+      {/* Paginação avançada */}
+      <DataTablePagination table={table} />
     </div>
   );
 }
