@@ -25,6 +25,7 @@ Guia completo de toda documentação disponível no projeto.
 | **[CHROMATIC_QUICKSTART.md](./CHROMATIC_QUICKSTART.md)** | Guia rápido Chromatic | Uso diário, PRs |
 | **[CHROMATIC.md](./CHROMATIC.md)** | Setup técnico completo | Troubleshooting, CI/CD |
 | **[CHROMATIC_SUMMARY.md](./CHROMATIC_SUMMARY.md)** | Resumo executivo | Overview rápido |
+| **[MIGRATION.md](./MIGRATION.md)** | Migração entre repositórios | Mover DS para novo repo |
 
 ## 🏗️ Arquitetura & Setup
 
@@ -106,7 +107,12 @@ Guia completo de toda documentação disponível no projeto.
 1. [.github/SECRETS.md](../.github/SECRETS.md) - Setup secrets
 2. [CHROMATIC.md](./CHROMATIC.md) - Workflow completo
 
-#### 📦 Fazer Release
+#### � Migrar Repositório
+1. [MIGRATION.md](./MIGRATION.md) - Guia completo de migração
+2. [.github/SECRETS.md](../.github/SECRETS.md) - Reconfigurar secrets
+3. [CHROMATIC.md](./CHROMATIC.md) - Validação pós-migração
+
+#### �📦 Fazer Release
 1. [CONTRIBUTING.md](../CONTRIBUTING.md) - Versionamento
 2. [CHANGELOG.md](../CHANGELOG.md) - Atualizar histórico
 
