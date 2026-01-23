@@ -5,6 +5,8 @@
 
 Sistema de design em código para reduzir inconsistências visuais, acelerar desenvolvimento e aumentar qualidade (a11y + estados).
 
+> **📌 Nota**: Atualmente apenas **React** é oficialmente suportado. Exemplos de Vue 2/Bootstrap e Vue 3 no Storybook são conceituais.
+
 ## Stack
 
 - **React 18+** - Framework de UI

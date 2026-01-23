@@ -71,6 +71,29 @@ export const Default: Story = {
     args: {
         placeholder: "Digite aqui...",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Input } from "@fabioeducacross/ui";
+
+<Input placeholder="Digite aqui..." />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Digite aqui..."
+  />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdInput placeholder="Digite aqui..." />
+</template>
+
+<script setup lang="ts">
+import { EdInput } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 export const Playground: Story = {
@@ -98,6 +121,31 @@ export const Email: Story = {
     args: {
         type: "email",
         placeholder: "email@exemplo.com",
+    },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Input } from "@fabioeducacross/ui";
+
+<Input type="email" placeholder="email@exemplo.com" />`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <input 
+    type="email" 
+    class="form-control" 
+    placeholder="email@exemplo.com"
+  />
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdInput type="email" placeholder="email@exemplo.com" />
+</template>
+
+<script setup lang="ts">
+import { EdInput } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
+};
     },
     decorators: [
         (Story) => (

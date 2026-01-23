@@ -4,7 +4,32 @@ Guia completo para instalar e usar o **@fabioeducacross/ui** em seus projetos.
 
 ---
 
-## 🎯 Instalação Rápida
+## � Frameworks Suportados
+
+O Educacross Design System fornece código para diferentes contextos:
+
+### ✅ React (Oficial)
+- **Pacote**: `@fabioeducacross/ui`
+- **Status**: Publicado e pronto para uso
+- **Requisitos**: React 18+, Tailwind CSS 3.4+
+- **Instalação**: Via GitHub Packages (veja abaixo)
+
+### 📋 Vue 2 + Bootstrap (Exemplo Conceitual)
+- **Status**: Código de exemplo usando Bootstrap classes
+- **Requisitos**: Bootstrap 4/5 instalado no projeto
+- **Uso**: Copie os exemplos do Storybook e adapte ao seu projeto
+- **Nota**: Não depende de pacote NPM - use Bootstrap puro
+
+### 🚧 Vue 3 (Em Desenvolvimento)
+- **Pacote Planejado**: `@fabioeducacross/ui-vue3`
+- **Status**: API em planejamento
+- **Nota**: Os exemplos no Storybook mostram a API futura pretendida
+
+> **💡 Recomendação**: Para novos projetos, use a versão **React** que é a única totalmente suportada no momento.
+
+---
+
+## 🎯 Instalação Rápida (React)
 
 ### Via GitHub Packages (Recomendado)
 

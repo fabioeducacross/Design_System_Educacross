@@ -15,7 +15,11 @@ const config: StorybookConfig = {
     addons: [
         getAbsolutePath("@storybook/addon-links"),
         getAbsolutePath("@storybook/addon-themes"),
-        getAbsolutePath("@storybook/addon-docs")
+        getAbsolutePath("@storybook/addon-docs"),
+    ],
+
+    managerEntries: [
+        resolve(__dirname, "./addons/multi-framework-code/register.tsx"),
     ],
 
     framework: {

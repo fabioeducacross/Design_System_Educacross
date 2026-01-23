@@ -95,6 +95,25 @@ export const Primary: Story = {
         children: "Primary",
         variant: "default",
     },
+    parameters: {
+        multiFrameworkCode: {
+            react: `import { Button } from "@fabioeducacross/ui";
+
+<Button variant="default">Primary</Button>`,
+            vue2: `<!-- Exemplo conceitual com Bootstrap -->
+<template>
+  <button class="btn btn-primary">Primary</button>
+</template>`,
+            vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
+<template>
+  <EdButton variant="primary">Primary</EdButton>
+</template>
+
+<script setup lang="ts">
+import { EdButton } from "@fabioeducacross/ui-vue3";
+</script>`,
+        },
+    },
 };
 
 export const Destructive: Story = {
