@@ -5,6 +5,26 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [Unreleased]
+
+### Added
+- **Multi-Framework Code Examples**: Todas as 241 stories agora incluem exemplos de código para:
+  - React 18+ com TypeScript e hooks (useState, useEffect, controlled components)
+  - Vue 2 + Bootstrap 5 (data-bs-* attributes, v-if/v-for, methods, data() return)
+  - Vue 3 Composition API com EdComponents (ref(), computed(), @update patterns)
+- `DataTableStates` - 10 stories para empty states e loading skeletons
+  - NoData, NoResults, Error, CustomContent, WithSecondaryAction
+  - LoadingDefault, LoadingComplete, LoadingCompact, LoadingTall, StateTransition
+
+### Changed
+- Storybook atualizado para v10.1.11 com suporte a `multiFrameworkCode` no parameters
+- Todas stories agora exibem 3 abas de código (React/Vue 2/Vue 3) na documentação
+- Componentes LOW priority completos: Card (3), Alert (4), Toast (3), Tooltip (3), Header (3), Logo (3)
+
+### Fixed
+- Correções de sintaxe em AvatarIcon, Badge e DataTableStates stories
+- Resolução de erros de parse em hot reload do Storybook
+
 ## [0.1.0] - 2026-01-06
 
 ### Added
