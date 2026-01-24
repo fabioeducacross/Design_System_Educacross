@@ -195,7 +195,7 @@ const TabRouter = React.forwardRef<HTMLDivElement, TabRouterProps>(
       if (urlRoute !== activeRoute) {
         setActiveRoute(urlRoute);
       }
-    }, [getRouteFromUrl]);
+    }, [getRouteFromUrl, activeRoute]);
 
     return (
       <div

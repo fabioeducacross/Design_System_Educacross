@@ -40,7 +40,6 @@ export function LoginFormExample() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<LoginFormData>({
-    // @ts-expect-error - zodResolver type mismatch between zod and react-hook-form versions
     resolver: zodResolver(loginSchema),
     mode: "onBlur", // Valida ao perder foco
   });

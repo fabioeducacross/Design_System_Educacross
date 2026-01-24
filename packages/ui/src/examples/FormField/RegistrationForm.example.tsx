@@ -71,7 +71,7 @@ export function RegistrationFormExample() {
     },
   });
 
-  const password = watch("password");
+  watch("password");
 
   const onSubmit = async (data: RegistrationFormData) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));

@@ -8,7 +8,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { DataTableRowActions } from "./DataTableRowActions";
 import type { RowAction } from "./helpers";
-import { Edit, Trash } from "lucide-react";
+import { Edit } from "lucide-react";
 
 // ============================================================================
 // MOCK DATA

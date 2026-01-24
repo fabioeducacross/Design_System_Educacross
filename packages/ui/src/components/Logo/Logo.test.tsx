@@ -180,7 +180,7 @@ describe("Logo", () => {
         });
 
         it("deve funcionar com múltiplos tamanhos no mesmo container", () => {
-            const { container } = render(
+            render(
                 <div>
                     <Logo size="sm" data-testid="logo-sm" />
                     <Logo size="default" data-testid="logo-default" />

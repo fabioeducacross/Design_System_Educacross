@@ -366,7 +366,7 @@ describe("FormField", () => {
     });
 
     it("deve renderizar input em wrapper no layout horizontal", () => {
-      const { container } = render(
+      render(
         <FormField label="Field" layout="horizontal" helperText="Helper">
           <Input data-testid="input" />
         </FormField>
@@ -380,7 +380,7 @@ describe("FormField", () => {
     });
 
     it("deve renderizar mensagens dentro do wrapper no layout horizontal", () => {
-      const { container } = render(
+      render(
         <FormField 
           label="Field" 
           layout="horizontal" 

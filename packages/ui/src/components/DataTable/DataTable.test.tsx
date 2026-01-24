@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { DataTable } from "./DataTable";
 import type { ColumnDef } from "@tanstack/react-table";
@@ -231,7 +231,7 @@ describe("DataTable", () => {
     });
 
     it("suporta navegação por teclado nos headers", async () => {
-      const user = userEvent.setup();
+      userEvent.setup();
       render(<DataTable columns={mockColumns} data={mockUsers} enableSorting={true} />);
 
       const nameHeader = screen.getByText("Nome").closest("div[role='button']");

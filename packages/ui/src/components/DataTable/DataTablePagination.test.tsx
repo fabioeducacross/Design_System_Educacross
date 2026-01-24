@@ -92,7 +92,7 @@ describe("DataTablePagination", () => {
     });
 
     it("atualiza page size quando selecionado", async () => {
-      const user = userEvent.setup();
+      userEvent.setup();
       render(<TestWrapper />);
 
       // A contagem inicial deve ser 1-10 de 100
