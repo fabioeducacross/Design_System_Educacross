@@ -19,6 +19,22 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
   - Controles nativos, título ReactNode, download, autoplay, loop
 - **9 Componentes Frontoffice** - ChartDefault, ChartBar, ChartPie, ChartRadialBar, RangeProgressBar, ProgressStat, RainbowProgressBar, LegendCard, LegendEnum
   - Integração com ApexCharts 4.0 e react-apexcharts 1.9
+- **Storybook UI Improvements** - Interface visual completamente renovada
+  - Tema light modernizado com palette #FAFAFA, contraste otimizado (#111827)
+  - Tema dark elegante com background #0B0F19 e primary lighter #9388F7
+  - custom-styles.css com 250+ linhas de melhorias visuais
+    - Sidebar com hover/selected states suaves (transform, gradient, border-left)
+    - Docs page com títulos gradient, H2 com border-bottom, spacing hierárquico
+    - Code blocks estilizados (border-radius 12px, background dark, box-shadow)
+    - Inline code com background primary alpha 8% e cor #7367F0
+    - Scrollbar customizada (8px width, hover interativo, cores light/dark)
+    - Search input com focus state primary, border-radius 8px
+    - Tables, badges, controls panel com visual clean e moderno
+    - Animations fadeIn (0.3s ease-out) em elementos .sbdocs
+  - Loading screen com gradient primary (#7367F0 → #9388F7)
+  - Critical CSS inline para evitar flash of unstyled content
+  - Microinterações com cubic-bezier transitions
+  - Documentação completa em docs/STORYBOOK_UI_IMPROVEMENTS.md
 
 ### Changed
 - Storybook atualizado para v10.1.11 com suporte a `multiFrameworkCode` no parameters
@@ -30,6 +46,11 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
   - CustomIcon: Tipado `React.ForwardedRef<HTMLImageElement>` e props específicas
   - ChartBar: Tipado formatter com `opts?: { dataPointIndex?: number }`
   - Testes: Interfaces completas `Manifest`, `Tokens`, `ManifestComponent` com todas as propriedades
+- **Storybook Themes**: theme.ts e educacross-theme-dark.ts redesenhados com palette moderna
+  - Primary vibrante (#7367F0 light, #9388F7 dark)
+  - Success green (#10B981 light, #34D399 dark)
+  - Border-radius consistente (8px inputs, 12px containers)
+  - Contraste AAA mantido em ambos os modos
 
 ### Fixed
 - Correções de sintaxe em AvatarIcon, Badge e DataTableStates stories

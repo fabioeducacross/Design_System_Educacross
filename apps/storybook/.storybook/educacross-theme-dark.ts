@@ -7,44 +7,47 @@ export default create({
     // Branding
     brandTitle: "Educacross Design System",
     brandUrl: "https://educacross.com.br",
-    brandImage: logoEducacross, // TODO: Criar logo-educacross-dark.svg
+    brandImage: logoEducacross,
     brandTarget: "_blank",
 
-    // UI Colors (Dark Mode)
-    appBg: "#0F172A",                      // Slate 900
-    appContentBg: "#1E293B",               // Slate 800
-    appBorderColor: "#334155",             // Slate 700
-    appPreviewBg: "#1E293B",
+    // UI Colors - Dark mode elegante
+    appBg: "#0B0F19",                      // Fundo escuro profundo
+    appContentBg: "#1A1F2E",               // Conteúdo com contraste
+    appBorderColor: "#2D3548",             // Bordas sutis
+    appPreviewBg: "#1A1F2E",
     appBorderRadius: 12,
 
     // Typography
     fontBase: '"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     fontCode: '"JetBrains Mono", "Fira Code", Consolas, monospace',
 
-    // Text colors (High contrast)
-    textColor: "#F1F5F9",                  // Slate 100
-    textInverseColor: "#0F172A",           // Slate 900
-    textMutedColor: "#94A3B8",             // Slate 400
+    // Text colors - Contraste otimizado
+    textColor: "#F3F4F6",                  // Branco suave
+    textInverseColor: "#0B0F19",           
+    textMutedColor: "#9CA3AF",             // Cinza legível
 
-    // Toolbar colors
-    barTextColor: "#CBD5E1",               // Slate 300
-    barHoverColor: "#8F85F3",              // --color-primary-400 (lighter)
-    barSelectedColor: "#8F85F3",           // --color-primary-400
-    barBg: "#1E293B",                      // Slate 800
+    // Toolbar - Modern dark
+    barTextColor: "#D1D5DB",               
+    barHoverColor: "#9388F7",              // Primary light hover
+    barSelectedColor: "#9388F7",           
+    barBg: "#1A1F2E",                      
 
-    // Buttons
-    buttonBg: "#8F85F3",                   // --color-primary-400
+    // Buttons - Primary vibrante
+    buttonBg: "#8F85F3",                   
     buttonBorder: "#8F85F3",
-    booleanBg: "#334155",
+    booleanBg: "#2D3548",
     booleanSelectedBg: "#8F85F3",
 
-    // Colors
-    colorPrimary: "#8F85F3",               // --color-primary-400
-    colorSecondary: "#33C8DA",             // --color-info-400
+    // Colors - Palette vibrante para dark
+    colorPrimary: "#9388F7",               // Primary lighter
+    colorSecondary: "#34D399",             // Success green
 
     // Form colors
-    inputBg: "#1E293B",                    // Slate 800
-    inputBorder: "#475569",                // Slate 600
-    inputTextColor: "#F1F5F9",             // Slate 100
+    inputBg: "#1A1F2E",                    
+    inputBorder: "#3D4556",                
+    inputTextColor: "#F3F4F6",             
     inputBorderRadius: 8,
+
+    // Grid
+    gridCellSize: 12,
 });

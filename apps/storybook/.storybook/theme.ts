@@ -10,41 +10,44 @@ export default create({
     brandImage: logoEducacross,
     brandTarget: "_blank",
 
-    // UI Colors (Educacross tokens)
-    appBg: "#FFFFFF",
-    appContentBg: "#F5F5F7",              // --color-gray-100
-    appBorderColor: "#E1E1E8",            // --color-gray-300
+    // UI Colors - Palette moderna e clean
+    appBg: "#FAFAFA",                      // Fundo suave
+    appContentBg: "#FFFFFF",               // Conteúdo limpo
+    appBorderColor: "#E5E7EB",             // Bordas discretas
     appPreviewBg: "#FFFFFF",
     appBorderRadius: 12,
 
-    // Typography
+    // Typography - Hierarquia visual forte
     fontBase: '"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     fontCode: '"JetBrains Mono", "Fira Code", Consolas, monospace',
 
-    // Text colors
-    textColor: "#1F2937",                  // Texto principal (gray-900)
+    // Text colors - Contraste otimizado
+    textColor: "#111827",                  // Texto principal (quase preto)
     textInverseColor: "#FFFFFF",
-    textMutedColor: "#6B7280",             // Texto secundário (gray-600)
+    textMutedColor: "#6B7280",             // Texto secundário
 
-    // Toolbar colors (Educacross Primary)
-    barTextColor: "#4B5563",               // gray-700
-    barHoverColor: "#7367F0",              // --color-primary-500
-    barSelectedColor: "#7367F0",           // --color-primary-500
+    // Toolbar - Minimalista e elegante
+    barTextColor: "#374151",               
+    barHoverColor: "#7367F0",              // Primary hover
+    barSelectedColor: "#7367F0",           // Primary selected
     barBg: "#FFFFFF",
 
-    // Buttons (Primary Educacross)
-    buttonBg: "#7367F0",                   // --color-primary-500
+    // Buttons - Primary Educacross com destaque
+    buttonBg: "#7367F0",                   
     buttonBorder: "#7367F0",
-    booleanBg: "#E1E1E8",
+    booleanBg: "#F3F4F6",
     booleanSelectedBg: "#7367F0",
 
-    // Colors
-    colorPrimary: "#7367F0",               // --color-primary-500
-    colorSecondary: "#00BAD1",             // --color-info-500
+    // Colors - Palette vibrante
+    colorPrimary: "#7367F0",               // Primary (roxo vibrante)
+    colorSecondary: "#10B981",             // Success green
 
-    // Form colors
+    // Form colors - Clean e acessível
     inputBg: "#FFFFFF",
-    inputBorder: "#D7D7E0",                // --color-gray-400
-    inputTextColor: "#1F2937",
+    inputBorder: "#D1D5DB",                
+    inputTextColor: "#111827",
     inputBorderRadius: 8,
+
+    // Grid
+    gridCellSize: 12,
 });

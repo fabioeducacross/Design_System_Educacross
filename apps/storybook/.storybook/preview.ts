@@ -4,6 +4,9 @@ import { withThemeByClassName } from "@storybook/addon-themes";
 // Import Tailwind CSS and design tokens
 import "../src/styles.css";
 
+// Import custom Storybook styles
+import "./custom-styles.css";
+
 const preview: Preview = {
     parameters: {
         controls: {

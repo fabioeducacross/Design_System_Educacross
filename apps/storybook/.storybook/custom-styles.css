@@ -1,0 +1,247 @@
+/* ===============================================
+   EDUCACROSS DESIGN SYSTEM - STORYBOOK CUSTOM STYLES
+   Melhorias visuais para UI moderna e profissional
+   =============================================== */
+
+/* ========== SIDEBAR IMPROVEMENTS ========== */
+.sidebar-container {
+    padding: 12px 8px !important;
+}
+
+/* Sidebar header com melhor spacing */
+.sidebar-header {
+    padding: 16px 12px !important;
+    margin-bottom: 12px;
+}
+
+/* Links de navegação mais elegantes */
+[data-parent-id] a,
+[data-nodetype="story"] a,
+[data-nodetype="component"] a {
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    margin: 2px 0 !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hover states suaves */
+[data-parent-id] a:hover,
+[data-nodetype="story"] a:hover {
+    background: rgba(115, 103, 240, 0.08) !important;
+    transform: translateX(2px);
+}
+
+/* Selected state vibrante */
+[data-selected="true"] a {
+    background: linear-gradient(135deg, rgba(115, 103, 240, 0.12) 0%, rgba(115, 103, 240, 0.06) 100%) !important;
+    border-left: 3px solid #7367F0 !important;
+    font-weight: 600 !important;
+}
+
+/* ========== DOCS PAGE IMPROVEMENTS ========== */
+.sbdocs {
+    max-width: 1200px !important;
+    padding: 32px 48px !important;
+}
+
+/* Títulos com hierarquia visual forte */
+.sbdocs h1 {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 24px !important;
+    background: linear-gradient(135deg, #7367F0 0%, #9388F7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sbdocs h2 {
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    margin-top: 48px !important;
+    margin-bottom: 16px !important;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E5E7EB;
+}
+
+.sbdocs h3 {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    margin-top: 32px !important;
+    margin-bottom: 12px !important;
+}
+
+/* ========== CODE BLOCKS ========== */
+.sbdocs pre {
+    border-radius: 12px !important;
+    padding: 20px !important;
+    background: #1A1F2E !important;
+    border: 1px solid #2D3548 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.sbdocs code {
+    font-family: "JetBrains Mono", "Fira Code", Consolas, monospace !important;
+    font-size: 0.9em !important;
+}
+
+/* Inline code com destaque sutil */
+.sbdocs p code,
+.sbdocs li code {
+    background: rgba(115, 103, 240, 0.08) !important;
+    color: #7367F0 !important;
+    padding: 2px 8px !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+}
+
+/* ========== CONTROLS PANEL ========== */
+#panel-tab-content {
+    padding: 20px !important;
+}
+
+/* Tabs com visual clean */
+.css-1kkd5at button {
+    border-radius: 8px 8px 0 0 !important;
+    padding: 10px 16px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Active tab com destaque */
+.css-1kkd5at button[aria-selected="true"] {
+    background: #7367F0 !important;
+    color: white !important;
+}
+
+/* ========== TOOLBAR IMPROVEMENTS ========== */
+#storybook-explorer-tree {
+    padding: 8px !important;
+}
+
+/* Search input elegante */
+input[type="text"][placeholder*="Find"] {
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    border: 1px solid #E5E7EB !important;
+    transition: all 0.2s ease !important;
+}
+
+input[type="text"][placeholder*="Find"]:focus {
+    border-color: #7367F0 !important;
+    box-shadow: 0 0 0 3px rgba(115, 103, 240, 0.1) !important;
+    outline: none !important;
+}
+
+/* ========== COMPONENT PREVIEW ========== */
+.docs-story {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid #E5E7EB !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    margin: 24px 0 !important;
+}
+
+/* Canvas toolbar com visual moderno */
+.os-host-overflow {
+    border-radius: 12px !important;
+}
+
+/* ========== TABLES ========== */
+.sbdocs table {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    border: 1px solid #E5E7EB !important;
+}
+
+.sbdocs th {
+    background: #FAFAFA !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+}
+
+.sbdocs td {
+    padding: 12px 16px !important;
+}
+
+/* ========== BADGES E TAGS ========== */
+.css-knql72 {
+    border-radius: 6px !important;
+    padding: 4px 10px !important;
+    font-weight: 500 !important;
+    font-size: 0.85em !important;
+}
+
+/* ========== DARK MODE ADJUSTMENTS ========== */
+.dark .sbdocs h2 {
+    border-bottom-color: #2D3548 !important;
+}
+
+.dark .sbdocs pre {
+    background: #0B0F19 !important;
+    border-color: #2D3548 !important;
+}
+
+.dark input[type="text"][placeholder*="Find"] {
+    background: #1A1F2E !important;
+    border-color: #2D3548 !important;
+    color: #F3F4F6 !important;
+}
+
+.dark .docs-story {
+    border-color: #2D3548 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark .sbdocs table {
+    border-color: #2D3548 !important;
+}
+
+.dark .sbdocs th {
+    background: #1A1F2E !important;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sbdocs > * {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ========== SCROLL IMPROVEMENTS ========== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9CA3AF;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #3D4556;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #4B5563;
+}
