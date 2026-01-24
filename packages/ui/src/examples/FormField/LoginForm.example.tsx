@@ -6,7 +6,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Resolver } from "react-hook-form";
 import { z } from "zod";
 import { FormField } from "../../components/FormField";
 import { Input } from "../../components/Input";
@@ -41,7 +40,8 @@ export function LoginFormExample() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema) as Resolver<LoginFormData>,
+    // @ts-expect-error - zodResolver type mismatch between zod and react-hook-form versions
+    resolver: zodResolver(loginSchema),
     mode: "onBlur", // Valida ao perder foco
   });
 
