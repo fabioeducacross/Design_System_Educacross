@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006 --no-open --ci",
     "build": "storybook build",
     "lint": "eslint stories --ext .ts,.tsx",
     "typecheck": "tsc --noEmit",
