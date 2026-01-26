@@ -51,7 +51,6 @@ const preview: Preview = {
         withThemeByClassName({
             themes: {
                 light: "",
-                dark: "dark",
             },
             defaultTheme: "light",
         }),
