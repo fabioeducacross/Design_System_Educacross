@@ -8,54 +8,68 @@ import "../src/styles.css";
 import "./custom-styles.css";
 
 const preview: Preview = {
-    parameters: {
-        controls: {
-            matchers: {
-                color: /(background|color)$/i,
-                date: /Date$/i,
-            },
-        },
-        docs: {
-            toc: true,
-        },
-        a11y: {
-            // Axe-core configuration
-            config: {
-                rules: [
-                    {
-                        // Ensure color contrast checks are enabled
-                        id: "color-contrast",
-                        enabled: true,
-                    },
-                ],
-            },
-        },
-        viewport: {
-            options: {
-                mobile: {
-                    name: "Mobile",
-                    styles: { width: "375px", height: "667px" },
-                },
-                tablet: {
-                    name: "Tablet",
-                    styles: { width: "768px", height: "1024px" },
-                },
-                desktop: {
-                    name: "Desktop",
-                    styles: { width: "1280px", height: "800px" },
-                },
-            },
-        },
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
     },
-    decorators: [
-        withThemeByClassName({
-            themes: {
-                light: "",
-            },
-            defaultTheme: "light",
-        }),
-    ],
-    tags: ["autodocs"],
+    docs: {
+      toc: true,
+    },
+    a11y: {
+      // Axe-core configuration
+      config: {
+        rules: [
+          {
+            // Ensure color contrast checks are enabled
+            id: "color-contrast",
+            enabled: true,
+          },
+        ],
+      },
+
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: "todo",
+    },
+    viewport: {
+      viewports: {
+        mobile: {
+          name: "Mobile (375px)",
+          styles: { width: "375px", height: "667px" },
+          type: "mobile",
+        },
+        tablet: {
+          name: "Tablet (768px)",
+          styles: { width: "768px", height: "1024px" },
+          type: "tablet",
+        },
+        desktop: {
+          name: "Desktop (1440px)",
+          styles: { width: "1440px", height: "900px" },
+          type: "desktop",
+        },
+        wide: {
+          name: "Wide (1920px)",
+          styles: { width: "1920px", height: "1080px" },
+          type: "desktop",
+        },
+      },
+      defaultViewport: "desktop",
+    },
+  },
+  decorators: [
+    withThemeByClassName({
+      themes: {
+        light: "",
+      },
+      defaultTheme: "light",
+    }),
+  ],
+  tags: ["autodocs"],
 };
 
 export default preview;

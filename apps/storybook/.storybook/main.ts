@@ -17,6 +17,7 @@ const config: StorybookConfig = {
         getAbsolutePath("@storybook/addon-themes"),
         getAbsolutePath("@storybook/addon-docs"),
         getAbsolutePath("@storybook/addon-a11y"),
+        getAbsolutePath("@storybook/addon-coverage")
     ],
 
     managerEntries: [
@@ -26,6 +27,12 @@ const config: StorybookConfig = {
     framework: {
         name: getAbsolutePath("@storybook/react-vite"),
         options: {},
+    },
+
+    // Desabilitar documentação default do Storybook
+    docs: {
+        defaultName: 'Docs',
+        autodocs: false, // Desabilita guias automáticos do Storybook
     },
 
     viteFinal: async (config) => {
@@ -38,6 +45,9 @@ const config: StorybookConfig = {
         // Desabilitar minificação que está causando erro
         config.build = config.build || {};
         config.build.minify = false;
+
+        // Configurar pasta public para assets
+        config.publicDir = resolve(__dirname, "../public");
         
         return config;
     },

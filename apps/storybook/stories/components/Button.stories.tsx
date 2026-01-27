@@ -74,6 +74,24 @@ export const Default: Story = {
         variant: "default",
         size: "default",
     },
+    play: async ({ canvasElement, args }) => {
+        const canvas = within(canvasElement);
+        
+        // 1. Verificar que o botão foi renderizado
+        const button = canvas.getByRole('button', { name: /button/i });
+        await expect(button).toBeInTheDocument();
+        
+        // 2. Verificar classes CSS do variant default
+        await expect(button).toHaveClass('bg-primary');
+        
+        // 3. Testar interação de clique
+        await userEvent.click(button);
+        await expect(args.onClick).toHaveBeenCalledOnce();
+        
+        // 4. Verificar estado de foco
+        await userEvent.tab();
+        await expect(button).toHaveFocus();
+    },
     parameters: {
         multiFrameworkCode: {
             react: `import { Button } from "@fabioeducacross/ui";
@@ -164,6 +182,17 @@ export const Destructive: Story = {
     args: {
         children: "Delete",
         variant: "destructive",
+    },
+    play: async ({ canvasElement, args }) => {
+        const canvas = within(canvasElement);
+        
+        // Verificar variante destrutiva
+        const button = canvas.getByRole('button', { name: /delete/i });
+        await expect(button).toHaveClass('bg-destructive');
+        
+        // Testar clique
+        await userEvent.click(button);
+        await expect(args.onClick).toHaveBeenCalled();
     },
     parameters: {
         docs: {
@@ -655,6 +684,17 @@ export const Disabled: Story = {
         children: "Disabled",
         disabled: true,
     },
+    play: async ({ canvasElement, args }) => {
+        const canvas = within(canvasElement);
+        
+        // Verificar que o botão está desabilitado
+        const button = canvas.getByRole('button', { name: /disabled/i });
+        await expect(button).toBeDisabled();
+        
+        // Tentar clicar (não deve chamar onClick)
+        await userEvent.click(button);
+        await expect(args.onClick).not.toHaveBeenCalled();
+    },
     parameters: {
         multiFrameworkCode: {
             react: `import { Button } from "@fabioeducacross/ui";
@@ -680,6 +720,16 @@ export const Loading: Story = {
     args: {
         children: "Loading...",
         loading: true,
+    },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+        
+        // Verificar que o botão está desabilitado durante loading
+        const button = canvas.getByRole('button');
+        await expect(button).toBeDisabled();
+        
+        // Verificar presença do spinner (via aria-label ou data-testid)
+        await expect(button).toHaveAttribute('aria-busy', 'true');
     },
     parameters: {
         docs: {

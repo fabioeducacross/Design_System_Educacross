@@ -8,4 +8,10 @@ addons.setConfig({
         showRoots: true,
         collapsedRoots: [],
     },
+    // Configuração de idioma para Português (Brasil)
+    options: {
+        locale: "pt-BR",
+    },
+    // Desabilitar abas padrão (About, Guide, etc)
+    enableShortcuts: false,
 });

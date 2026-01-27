@@ -71,6 +71,27 @@ export const Default: Story = {
     args: {
         placeholder: "Digite aqui...",
     },
+    play: async ({ canvasElement, args }) => {
+        const canvas = within(canvasElement);
+        // 1. Verificar renderização
+        const input = canvas.getByPlaceholderText(/digite aqui/i);
+        await expect(input).toBeInTheDocument();
+        // 2. Foco
+        await userEvent.click(input);
+        await expect(input).toHaveFocus();
+        await expect(args.onFocus).toHaveBeenCalled();
+        // 3. Digitação
+        await userEvent.type(input, "educacross");
+        await expect(input).toHaveValue("educacross");
+        await expect(args.onChange).toHaveBeenCalled();
+        // 4. Blur
+        await userEvent.tab();
+        await expect(input).not.toHaveFocus();
+        await expect(args.onBlur).toHaveBeenCalled();
+        // 5. Limpar
+        await userEvent.clear(input);
+        await expect(input).toHaveValue("");
+    },
     parameters: {
         multiFrameworkCode: {
             react: `import { Input } from "@fabioeducacross/ui";

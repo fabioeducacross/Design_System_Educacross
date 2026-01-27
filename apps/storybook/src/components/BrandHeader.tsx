@@ -29,11 +29,15 @@ export const BrandHeader: React.FC<BrandHeaderProps> = ({
     >
       {/* Logo */}
       <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-        <img 
-          src="./logo-educacross-dark.svg" 
-          alt="Educacross Design System"
-          style={{ height: '48px', display: 'inline-block' }}
-        />
+        {/* Exibe logo diferente conforme tema (light/dark) */}
+        <picture>
+          <source srcSet="/logo-educacross-dark.svg" media="(prefers-color-scheme: dark)" />
+          <img 
+            src="/logo-educacross-light.svg"
+            alt="Educacross Design System"
+            style={{ height: '48px', display: 'inline-block' }}
+          />
+        </picture>
       </div>
 
       {/* Decorative circles */}

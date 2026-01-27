@@ -40,7 +40,7 @@ export const Default: Story = {
 <AvatarIcon />`,
             vue2: `<!-- Exemplo conceitual com Bootstrap -->
 <template>
-  <img src="/educacross-icon.svg" alt="Educacross" class="rounded-circle" style="width: 40px; height: 40px;" />
+  <img src="/logo-educacross.svg" alt="Educacross" class="rounded-circle" style="width: 40px; height: 40px;" />
 </template>`,
             vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
 <template>
@@ -68,7 +68,7 @@ export const Small: Story = {
 <AvatarIcon size="sm" />`,
             vue2: `<!-- Exemplo conceitual com Bootstrap -->
 <template>
-  <img src="/educacross-icon.svg" alt="Educacross" class="rounded-circle" style="width: 24px; height: 24px;" />
+  <img src="/logo-educacross.svg" alt="Educacross" class="rounded-circle" style="width: 24px; height: 24px;" />
 </template>`,
             vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
 <template>
@@ -96,7 +96,7 @@ export const Large: Story = {
 <AvatarIcon size="lg" />`,
             vue2: `<!-- Exemplo conceitual com Bootstrap -->
 <template>
-  <img src="/educacross-icon.svg" alt="Educacross" class="rounded-circle" style="width: 64px; height: 64px;" />
+  <img src="/logo-educacross.svg" alt="Educacross" class="rounded-circle" style="width: 64px; height: 64px;" />
 </template>`,
             vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
 <template>

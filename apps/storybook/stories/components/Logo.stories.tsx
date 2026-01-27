@@ -40,7 +40,7 @@ export const Default: Story = {
 <Logo />`,
             vue2: `<!-- Exemplo conceitual com Bootstrap -->
 <template>
-  <img src="/educacross-logo.svg" alt="Educacross" height="28" />
+  <img src="/logo-educacross.svg" alt="Educacross" height="28" />
 </template>`,
             vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
 <template>
@@ -68,7 +68,7 @@ export const Small: Story = {
 <Logo size="sm" />`,
             vue2: `<!-- Exemplo conceitual com Bootstrap -->
 <template>
-  <img src="/educacross-logo.svg" alt="Educacross" height="20" />
+  <img src="/logo-educacross.svg" alt="Educacross" height="20" />
 </template>`,
             vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
 <template>
@@ -96,7 +96,7 @@ export const Large: Story = {
 <Logo size="lg" />`,
             vue2: `<!-- Exemplo conceitual com Bootstrap -->
 <template>
-  <img src="/educacross-logo.svg" alt="Educacross" height="36" />
+  <img src="/logo-educacross.svg" alt="Educacross" height="36" />
 </template>`,
             vue3: `<!-- Exemplo conceitual - pacote em desenvolvimento -->
 <template>
@@ -154,17 +154,17 @@ export const SizeComparison: Story = {
 <template>
   <div class="d-flex align-items-center gap-4">
     <div class="d-flex flex-column align-items-center gap-2">
-      <img src="/logo.svg" alt="Logo" height="24" />
+      <img src="/logo-educacross.svg" alt="Logo" height="24" />
       <p class="small text-muted">Small</p>
     </div>
     
     <div class="d-flex flex-column align-items-center gap-2">
-      <img src="/logo.svg" alt="Logo" height="32" />
+      <img src="/logo-educacross.svg" alt="Logo" height="32" />
       <p class="small text-muted">Default</p>
     </div>
     
     <div class="d-flex flex-column align-items-center gap-2">
-      <img src="/logo.svg" alt="Logo" height="48" />
+      <img src="/logo-educacross.svg" alt="Logo" height="48" />
       <p class="small text-muted">Large</p>
     </div>
   </div>
@@ -234,15 +234,15 @@ export const OnDifferentBackgrounds: Story = {
 <template>
   <div class="d-flex flex-column gap-3" style="max-width: 28rem">
     <div class="bg-white p-4 rounded border">
-      <img src="/logo.svg" alt="Logo" height="32" />
+      <img src="/logo-educacross.svg" alt="Logo" height="32" />
     </div>
     
     <div class="bg-light p-4 rounded">
-      <img src="/logo.svg" alt="Logo" height="32" />
+      <img src="/logo-educacross.svg" alt="Logo" height="32" />
     </div>
     
     <div class="p-4 rounded" style="background-color: #e9ecef">
-      <img src="/logo.svg" alt="Logo" height="32" />
+      <img src="/logo-educacross.svg" alt="Logo" height="32" />
     </div>
   </div>
 </template>`,
@@ -285,7 +285,7 @@ export const CustomClassName: Story = {
             vue2: `<!-- Exemplo conceitual com Bootstrap -->
 <template>
   <img 
-    src="/logo.svg" 
+    src="/logo-educacross.svg" 
     alt="Logo" 
     height="32" 
     class="logo-hover"

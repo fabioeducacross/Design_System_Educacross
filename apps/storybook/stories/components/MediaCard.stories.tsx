@@ -435,7 +435,7 @@ export const Dynamic: Story = {
 import { useState } from "react";
 
 function DynamicMediaPlayer() {
-  const [selectedMedia, setSelectedMedia] = useState("image.jpg");
+  const [selectedMedia, setSelectedMedia] = useState("/logo-educacross.svg");
 
   return (
     <MediaCard
@@ -451,7 +451,7 @@ function DynamicMediaPlayer() {
 <template>
   <div>
     <select v-model="selectedMedia" class="form-select mb-3">
-      <option value="image.jpg">Imagem (JPEG)</option>
+      <option value="/logo-educacross.svg">Imagem (SVG)</option>
       <option value="video.mp4">Vídeo (MP4)</option>
       <option value="audio.mp3">Áudio (MP3)</option>
     </select>
@@ -471,7 +471,7 @@ function DynamicMediaPlayer() {
 export default {
   data() {
     return {
-      selectedMedia: 'image.jpg'
+      selectedMedia: '/logo-educacross.svg'
     };
   },
   computed: {
@@ -528,19 +528,19 @@ export const AspectRatios: Story = {
     multiFrameworkCode: {
       react: `<MediaCard
   variant="image"
-  src="image.jpg"
+  src="/logo-educacross.svg"
   aspectRatio="video"  // video | square | portrait | wide | auto
 />`,
       vue2: `<img 
-  src="image.jpg" 
+  src="/logo-educacross.svg" 
   style="aspect-ratio: 16/9; object-fit: cover;"
   class="card-img-top"
-/>`,
+  />`,
       vue3: `<EdMediaCard
   variant="image"
-  src="image.jpg"
+  src="/logo-educacross.svg"
   aspect-ratio="video"
-/>`,
+  />`,
     },
   },
 };
@@ -637,7 +637,7 @@ function SocialPost() {
 
       <MediaCard
         variant="image"
-        src="image.jpg"
+        src="/logo-educacross.svg"
         aspectRatio="square"
         description="Montanhas ao pôr do sol 🏔️✨"
         actions={actions}
@@ -659,7 +659,7 @@ function SocialPost() {
     </div>
 
     <div class="card">
-      <img src="image.jpg" class="card-img-top" style="aspect-ratio: 1/1; object-fit: cover;" />
+      <img src="/logo-educacross.svg" class="card-img-top" style="aspect-ratio: 1/1; object-fit: cover;" />
       <div class="card-body">
         <p class="card-text">Montanhas ao pôr do sol 🏔️✨</p>
       </div>
@@ -716,7 +716,7 @@ const actions = [
 
     <EdMediaCard
       variant="image"
-      src="image.jpg"
+      src="/logo-educacross.svg"
       aspect-ratio="square"
       description="Montanhas ao pôr do sol 🏔️✨"
       :actions="actions"

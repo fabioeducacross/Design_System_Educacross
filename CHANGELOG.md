@@ -7,6 +7,11 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+### Fixed
+- **Storybook Dependencies**: Alinhadas todas as versões do Storybook para 10.2.0, removido @storybook/addon-interactions conflitante para resolver erros de inicialização.
+- **Avatar Images**: Corrigidas referências a imagens inexistentes (user1.jpg, user2.jpg, user.jpg) em Avatar.stories.tsx, substituídas por /logo-educacross.svg para evitar imagens quebradas.
+- **MediaCard Images**: Corrigidas referências a "image.jpg" inexistente em MediaCard.stories.tsx, substituídas por /logo-educacross.svg.
+
 ### Added
 - **Multi-Framework Code Examples**: Todas as 241 stories agora incluem exemplos de código para:
   - React 18+ com TypeScript e hooks (useState, useEffect, controlled components)
