@@ -53,7 +53,7 @@ const config: StorybookConfig = {
 
         // Otimizações de build e performance
         config.build = config.build || {};
-        config.build.minify = false;
+        config.build.minify = false; // Temporariamente desabilitado (bug ESM ts-dedent)
         config.build.sourcemap = false; // Desabilita sourcemaps para acelerar
         config.build.chunkSizeWarningLimit = 1000;
 
