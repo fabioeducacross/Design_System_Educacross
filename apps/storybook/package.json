@@ -46,7 +46,7 @@
     "@vitest/coverage-v8": "^4.0.18",
     "autoprefixer": "^10.4.20",
     "chromatic": "^13.3.5",
-    "eslint-plugin-storybook": "10.2.0",
+    "eslint-plugin-storybook": "10.2.1",
     "mermaid": "^11.12.2",
     "postcss": "^8.4.49",
     "react-syntax-highlighter": "^16.1.0",
