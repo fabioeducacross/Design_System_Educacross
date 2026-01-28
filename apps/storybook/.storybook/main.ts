@@ -17,7 +17,6 @@ const config: StorybookConfig = {
         getAbsolutePath("@storybook/addon-themes"),
         getAbsolutePath("@storybook/addon-docs"),
         getAbsolutePath("@storybook/addon-a11y"),
-        getAbsolutePath("@storybook/addon-coverage")
     ],
 
     managerEntries: [
@@ -26,7 +25,17 @@ const config: StorybookConfig = {
 
     framework: {
         name: getAbsolutePath("@storybook/react-vite"),
-        options: {},
+        options: {
+            builder: {
+                viteConfigPath: resolve(__dirname, "../vite.config.ts"),
+            },
+        },
+    },
+
+    // Otimizações de performance
+    core: {
+        disableTelemetry: true,
+        enableCrashReports: false,
     },
 
     // Desabilitar documentação default do Storybook
@@ -42,9 +51,46 @@ const config: StorybookConfig = {
             "@educacross/ui": resolve(__dirname, "../../../packages/ui/src"),
         };
 
-        // Desabilitar minificação que está causando erro
+        // Otimizações de build e performance
         config.build = config.build || {};
         config.build.minify = false;
+        config.build.sourcemap = false; // Desabilita sourcemaps para acelerar
+        config.build.chunkSizeWarningLimit = 1000;
+
+        // Otimizações de cache e dependencies
+        config.optimizeDeps = config.optimizeDeps || {};
+        config.optimizeDeps.include = [
+            "react",
+            "react-dom",
+            "lucide-react",
+        ];
+        
+        // Cache de servidor mais agressivo
+        config.server = config.server || {};
+        config.server.fs = {
+            strict: false,
+            allow: ["../.."],
+        };
+        
+        // Otimizações de watcher para Windows
+        config.server.watch = {
+            usePolling: true, // Necessário no Windows para detectar mudanças
+            interval: 100,    // Polling a cada 100ms
+            ignored: [
+                '**/node_modules/**',
+                '**/.git/**',
+                '**/dist/**',
+                '**/storybook-static/**',
+                '**/.vite/**',
+            ],
+        };
+        
+        // HMR otimizado
+        config.server.hmr = {
+            timeout: 60000,      // 60s timeout (aumentado para ambientes lentos)
+            overlay: true,       // Mostrar errors no browser
+            clientPort: 6006,    // Porta do cliente (mesma do dev server)
+        };
 
         // Configurar pasta public para assets
         config.publicDir = resolve(__dirname, "../public");

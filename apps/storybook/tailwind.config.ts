@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { educacrossPreset } from "@educacross/ui/tailwind-preset";
+import { educacrossPreset } from "@fabioeducacross/ui/tailwind-preset";
 
 const config: Config = {
     content: [

@@ -2,6 +2,9 @@
   "name": "@educacross/storybook",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "^20.0.0"
+  },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "dev:debug": "storybook dev -p 6006 --loglevel silly",

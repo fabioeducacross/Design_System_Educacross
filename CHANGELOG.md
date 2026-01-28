@@ -7,7 +7,22 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+### Changed
+- **Node.js Requirement**: Padronizado Node 20 LTS (20.18.0) em todo o projeto
+  - Criado `.nvmrc` para auto-switch com nvm
+  - Adicionado `engines.node: "^20.0.0"` em todos package.json (root, packages/ui, apps/storybook)
+  - CI/CD já estava usando Node 20 (chromatic.yml, ci.yml)
+- **Storybook Performance**: Otimizações de watcher e HMR para Windows
+  - Habilitado polling (usePolling: true, interval: 100ms) para melhor detecção de mudanças
+  - HMR timeout aumentado para 60s (ambientes lentos)
+  - Ignoradas pastas desnecessárias (node_modules, .git, dist, .vite) no watcher
+  - Error overlay habilitado para melhor debugging
+- **Storybook Localization**: Interface em português do Brasil (locale: "pt-BR")
+
 ### Fixed
+- **Build Critical**: Corrigido import incorreto no tailwind.config.ts
+  - Mudado de `@educacross/ui/tailwind-preset` para `@fabioeducacross/ui/tailwind-preset`
+  - Fix bloqueador que impedia todos os builds de produção
 - **Storybook Dependencies**: Alinhadas todas as versões do Storybook para 10.2.0, removido @storybook/addon-interactions conflitante para resolver erros de inicialização.
 - **Avatar Images**: Corrigidas referências a imagens inexistentes (user1.jpg, user2.jpg, user.jpg) em Avatar.stories.tsx, substituídas por /logo-educacross.svg para evitar imagens quebradas.
 - **MediaCard Images**: Corrigidas referências a "image.jpg" inexistente em MediaCard.stories.tsx, substituídas por /logo-educacross.svg.

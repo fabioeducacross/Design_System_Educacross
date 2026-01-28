@@ -12,11 +12,51 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 export default defineConfig({
   plugins: [react()],
   base: "./",
+  
+  // Otimizações de performance
+  server: {
+    hmr: {
+      overlay: false, // Desabilita overlay de erros
+    },
+  },
+  
+  // Cache mais agressivo
+  cacheDir: "../../node_modules/.vite-storybook",
+  
   // Usa caminhos relativos para assets
   resolve: {
     alias: {
       "@educacross/ui": resolve(__dirname, "../../packages/ui/src")
     }
+  },
+  
+  // Otimizações de build
+  build: {
+    target: "esnext",
+    sourcemap: false,
+    minify: "esbuild",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom"],
+          "radix-vendor": [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-alert-dialog",
+            "@radix-ui/react-avatar",
+            "@radix-ui/react-checkbox",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-label",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-radio-group",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-toast",
+            "@radix-ui/react-tooltip",
+          ],
+        },
+      },
+    },
   },
   test: {
     projects: [{

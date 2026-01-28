@@ -17,6 +17,18 @@ Sistema de design em código para reduzir inconsistências visuais, acelerar des
 - **pnpm** - Package manager
 - **Turborepo** - Monorepo build system
 
+## Requisitos
+
+- **Node.js**: `^20.0.0` (LTS recomendado: 20.18.0)
+- **pnpm**: `>=9.0.0`
+
+💡 **Dica**: Use [nvm](https://github.com/nvm-sh/nvm) ou [nvm-windows](https://github.com/coreybutler/nvm-windows) para gerenciar versões do Node. O projeto possui `.nvmrc` configurado.
+
+```bash
+# Com nvm instalado:
+nvm use
+```
+
 ## Estrutura
 
 ```
