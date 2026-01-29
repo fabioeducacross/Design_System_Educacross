@@ -80,12 +80,12 @@
     "devDependencies": {
         "@tanstack/react-virtual": "^3.10.0",
         "@testing-library/jest-dom": "^6.9.1",
-        "@testing-library/react": "^16.3.1",
+        "@testing-library/react": "^16.3.2",
         "@testing-library/user-event": "^14.6.1",
         "@types/react": "^18.3.18",
         "@types/react-dom": "^18.3.5",
         "@vitejs/plugin-react": "^4.3.4",
-        "@vitest/coverage-v8": "^4.0.16",
+        "@vitest/coverage-v8": "^4.0.18",
         "autoprefixer": "^10.4.20",
         "jsdom": "^27.4.0",
         "postcss": "^8.4.49",
@@ -97,7 +97,7 @@
         "tsup": "^8.3.5",
         "tsx": "^4.19.2",
         "typescript": "^5.7.2",
-        "vitest": "^4.0.16"
+        "vitest": "^4.0.18"
     },
     "repository": {
         "type": "git",
