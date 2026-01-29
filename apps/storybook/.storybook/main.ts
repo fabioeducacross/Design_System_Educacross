@@ -17,9 +17,7 @@ const config: StorybookConfig = {
         getAbsolutePath("@storybook/addon-themes"),
         getAbsolutePath("@storybook/addon-docs"),
         getAbsolutePath("@storybook/addon-a11y"),
-    ],
-
-    managerEntries: [
+        // Addon customizado para code snippets multi-framework
         resolve(__dirname, "./addons/multi-framework-code/register.tsx"),
     ],
 
@@ -41,7 +39,7 @@ const config: StorybookConfig = {
     // Desabilitar documentação default do Storybook
     docs: {
         defaultName: 'Docs',
-        autodocs: false, // Desabilita guias automáticos do Storybook
+        // Note: autodocs é configurado por story via tags: ['autodocs']
     },
 
     viteFinal: async (config) => {

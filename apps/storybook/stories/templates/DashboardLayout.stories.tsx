@@ -119,20 +119,21 @@ export const Default: Story = {
         {/* Sidebar */}
         <Sidebar className="w-64 border-r">
           <div className="p-4">
-            <Logo variant="default" size="md" />
+            <Logo size="default" />
           </div>
           
           <nav className="flex-1 p-2 space-y-1">
             <SidebarItem
-              icon={<Home size={20} />}
+              icon="Home"
               label="Dashboard"
-              active={activeItem === "dashboard"}
+              variant={activeItem === "dashboard" ? "active" : "default"}
               onClick={() => setActiveItem("dashboard")}
             />
             <SidebarItem
-              icon={<Users size={20} />}
+              icon="Users"
               label="Usuários"
-              active={activeItem === "usuarios"}
+              variant={activeItem === "usuarios" ? "active" : "default"}
+              expandable
               onClick={() => setActiveItem("usuarios")}
             >
               <SidebarSubItem
@@ -152,36 +153,36 @@ export const Default: Story = {
               />
             </SidebarItem>
             <SidebarItem
-              icon={<BookOpen size={20} />}
+              icon="BookOpen"
               label="Conteúdos"
-              active={activeItem === "conteudos"}
+              variant={activeItem === "conteudos" ? "active" : "default"}
               onClick={() => setActiveItem("conteudos")}
             />
             <SidebarItem
-              icon={<BarChart2 size={20} />}
+              icon="BarChart2"
               label="Relatórios"
-              active={activeItem === "relatorios"}
+              variant={activeItem === "relatorios" ? "active" : "default"}
               onClick={() => setActiveItem("relatorios")}
             />
             <SidebarItem
-              icon={<Calendar size={20} />}
+              icon="Calendar"
               label="Agenda"
-              active={activeItem === "agenda"}
+              variant={activeItem === "agenda" ? "active" : "default"}
               onClick={() => setActiveItem("agenda")}
             />
           </nav>
           
           <div className="p-2 border-t">
             <SidebarItem
-              icon={<Settings size={20} />}
+              icon="Settings"
               label="Configurações"
-              active={activeItem === "config"}
+              variant={activeItem === "config" ? "active" : "default"}
               onClick={() => setActiveItem("config")}
             />
             <SidebarItem
-              icon={<HelpCircle size={20} />}
+              icon="HelpCircle"
               label="Ajuda"
-              active={activeItem === "ajuda"}
+              variant={activeItem === "ajuda" ? "active" : "default"}
               onClick={() => setActiveItem("ajuda")}
             />
           </div>
@@ -266,7 +267,7 @@ export const CollapsedSidebar: Story = {
       <div className="flex h-screen bg-background">
         {/* Sidebar Colapsada */}
         <div className="w-16 border-r bg-card flex flex-col items-center py-4">
-          <Logo variant="icon" size="sm" className="mb-6" />
+          <Logo size="sm" className="mb-6" />
           
           <nav className="flex-1 flex flex-col gap-2">
             {[
@@ -335,7 +336,7 @@ export const MobileLayout: Story = {
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
           
-          <Logo variant="default" size="sm" />
+          <Logo size="sm" />
           
           <Avatar size="sm">
             <AvatarFallback>AD</AvatarFallback>
@@ -395,19 +396,19 @@ export const TeacherDashboard: Story = {
     <div className="flex h-screen bg-background">
       <Sidebar className="w-64 border-r">
         <div className="p-4">
-          <Logo variant="default" size="md" />
+          <Logo size="default" />
         </div>
         
         <nav className="flex-1 p-2 space-y-1">
-          <SidebarItem icon={<Home size={20} />} label="Início" active />
-          <SidebarItem icon={<BookOpen size={20} />} label="Minhas Turmas">
+          <SidebarItem icon="Home" label="Início" variant="active" />
+          <SidebarItem icon="BookOpen" label="Minhas Turmas" expandable>
             <SidebarSubItem label="5º Ano A" />
             <SidebarSubItem label="5º Ano B" />
             <SidebarSubItem label="4º Ano A" />
           </SidebarItem>
-          <SidebarItem icon={<FileText size={20} />} label="Atividades" />
-          <SidebarItem icon={<BarChart2 size={20} />} label="Desempenho" />
-          <SidebarItem icon={<Calendar size={20} />} label="Calendário" />
+          <SidebarItem icon="FileText" label="Atividades" />
+          <SidebarItem icon="BarChart2" label="Desempenho" />
+          <SidebarItem icon="Calendar" label="Calendário" />
         </nav>
       </Sidebar>
 

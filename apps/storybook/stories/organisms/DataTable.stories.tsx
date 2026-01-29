@@ -123,14 +123,14 @@ const colunasUsuarios: ColumnDef<Usuario>[] = [
     header: ({ table }) => (
       <Checkbox
         checked={table.getIsAllPageRowsSelected()}
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        onChange={() => table.toggleAllPageRowsSelected(!table.getIsAllPageRowsSelected())}
         aria-label="Selecionar todos"
       />
     ),
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        onChange={() => row.toggleSelected(!row.getIsSelected())}
         aria-label="Selecionar linha"
       />
     ),
@@ -460,29 +460,15 @@ export const StudentPerformance: Story = {
 export const WithSelection: Story = {
   name: "Com Seleção",
   render: () => {
-    const [selectedRows, setSelectedRows] = React.useState<string[]>([]);
-    
     return (
       <div className="space-y-4">
-        {selectedRows.length > 0 && (
-          <div className="flex items-center gap-4 p-3 bg-muted rounded-lg">
-            <span className="text-sm font-medium">
-              {selectedRows.length} item(s) selecionado(s)
-            </span>
-            <div className="flex gap-2">
-              <Button variant="outline" size="sm">
-                Editar em Massa
-              </Button>
-              <Button variant="destructive" size="sm">
-                Excluir Selecionados
-              </Button>
-            </div>
-          </div>
-        )}
+        <p className="text-sm text-muted-foreground">
+          Use as colunas com checkboxes para seleção de linhas.
+          A lógica de seleção é gerenciada internamente pelo TanStack Table.
+        </p>
         <DataTable
           columns={colunasUsuarios}
           data={usuarios}
-          onRowSelectionChange={(rows) => setSelectedRows(rows.map(r => r.id))}
         />
       </div>
     );

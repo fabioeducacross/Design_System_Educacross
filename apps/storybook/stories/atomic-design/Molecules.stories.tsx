@@ -253,7 +253,7 @@ export const FormFieldVariants: Story = {
       </FormField>
 
       <FormField label="Gênero" layout="vertical">
-        <RadioGroup defaultValue="nao-informar">
+        <RadioGroup name="genero" defaultValue="nao-informar">
           <div className="flex gap-4">
             <label className="flex items-center gap-2">
               <Radio value="masculino" /> Masculino
@@ -440,11 +440,13 @@ export const CompleteForm: Story = {
           <Input type="password" placeholder="••••••••" />
         </FormField>
 
-        <FormField label="" layout="horizontal">
-          <Checkbox id="terms" />
-          <label htmlFor="terms" className="text-sm">
-            Li e aceito os <a href="#" className="text-primary underline">Termos de Uso</a>
-          </label>
+        <FormField label="Termos" layout="horizontal">
+          <div className="flex items-center gap-2">
+            <Checkbox id="terms" />
+            <label htmlFor="terms" className="text-sm">
+              Li e aceito os <a href="#" className="text-primary underline">Termos de Uso</a>
+            </label>
+          </div>
         </FormField>
       </CardContent>
       <CardFooter className="flex justify-end gap-2">
