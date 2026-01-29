@@ -49,6 +49,9 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add packages/ui/dist/ || true
+          git add packages/ui-education/dist/ || true
+          git add packages/ui-charts/dist/ || true
+          git add packages/ui-pdf/dist/ || true
           git diff --staged --quiet || git commit -m "build: atualizar dist/ para ${GITHUB_REF#refs/tags/}"
           git push origin HEAD:master || echo "Nenhuma mudança para commitar"
       
@@ -72,7 +75,11 @@ jobs:
             
             ### ✨ Conteúdo
             
-            - ✅ 21+ componentes React com TypeScript
+            - ✅ 47+ componentes React com TypeScript
+            - ✅ @fabioeducacross/ui - Componentes base
+            - ✅ @fabioeducacross/ui-education - Questões e Missões (em desenvolvimento)
+            - ✅ @fabioeducacross/ui-charts - Charts e visualizações (em desenvolvimento)
+            - ✅ @fabioeducacross/ui-pdf - Geração de PDFs (em desenvolvimento)
             - ✅ Tailwind CSS preset (educacrossPreset)
             - ✅ Design tokens (CSS variables)
             - ✅ Dark mode nativo
@@ -85,6 +92,10 @@ jobs:
       
       - name: Publish to NPM (se NPM_TOKEN configurado)
         if: ${{ secrets.NPM_TOKEN != '' }}
-        run: pnpm --filter @educacross/ui publish --access public --no-git-checks
+        run: |
+          pnpm --filter @fabioeducacross/ui publish --access public --no-git-checks
+          pnpm --filter @fabioeducacross/ui-education publish --access public --no-git-checks
+          pnpm --filter @fabioeducacross/ui-charts publish --access public --no-git-checks
+          pnpm --filter @fabioeducacross/ui-pdf publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
