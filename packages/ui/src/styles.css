@@ -63,27 +63,27 @@
        COLORS - Escala de cores do Figma
        ======================================== */
 
-        /* Primary - Roxo Educacross */
-        --color-primary-100: #E3E1FC;
-        --color-primary-200: #C7C2F9;
-        --color-primary-300: #ABA4F6;
-        --color-primary-400: #8F85F3;
-        --color-primary-500: #7367F0;
-        --color-primary-600: #675DD8;
-        --color-primary-700: #6258CC;
-        --color-primary-800: #5C52C0;
-        --color-primary-900: #564DB4;
+        /* Primary - Roxo Educacross (sincronizado com Frontoffice) */
+        --color-primary-100: #E0DEF9;
+        --color-primary-200: #C1BDF4;
+        --color-primary-300: #A29CEE;
+        --color-primary-400: #8E88EB;
+        --color-primary-500: #6E63E8;
+        --color-primary-600: #635AD1;
+        --color-primary-700: #5850BA;
+        --color-primary-800: #4D47A3;
+        --color-primary-900: #423D8C;
 
-        /* Secondary - Cinza neutro */
-        --color-secondary-100: #E6E6E9;
-        --color-secondary-200: #CCCDD3;
-        --color-secondary-300: #B3B5BC;
-        --color-secondary-400: #999CA6;
-        --color-secondary-500: #808390;
-        --color-secondary-600: #737682;
-        --color-secondary-700: #6D6F7A;
-        --color-secondary-800: #666973;
-        --color-secondary-900: #60626C;
+        /* Secondary - Cinza neutro (sincronizado com Frontoffice) */
+        --color-secondary-100: #F0F1F2;
+        --color-secondary-200: #E1E2E5;
+        --color-secondary-300: #D2D4D8;
+        --color-secondary-400: #C3C5CA;
+        --color-secondary-500: #B4B7BD;
+        --color-secondary-600: #A2A5AA;
+        --color-secondary-700: #909398;
+        --color-secondary-800: #7E8185;
+        --color-secondary-900: #6C6F73;
 
         /* Info - Ciano informativo */
         --color-info-100: #CCF1F6;
@@ -107,27 +107,27 @@
         --color-success-800: #209F59;
         --color-success-900: #1E9553;
 
-        /* Warning - Laranja alerta */
-        --color-warning-100: #FFECD9;
-        --color-warning-200: #FFD9B4;
-        --color-warning-300: #FFC58E;
-        --color-warning-400: #FFB269;
-        --color-warning-500: #FF9F43;
-        --color-warning-600: #E68F3C;
-        --color-warning-700: #D98739;
-        --color-warning-800: #CC7F36;
-        --color-warning-900: #BF7732;
+        /* Warning - Amarelo alerta (sincronizado com Frontoffice) */
+        --color-warning-100: #FFF8DC;
+        --color-warning-200: #FFF1B9;
+        --color-warning-300: #FFEA96;
+        --color-warning-400: #FFE36D;
+        --color-warning-500: #FFD643;
+        --color-warning-600: #E6C13C;
+        --color-warning-700: #CCAB35;
+        --color-warning-800: #B3962E;
+        --color-warning-900: #998027;
 
-        /* Error - Vermelho erro */
-        --color-error-100: #FFDBDC;
-        --color-error-200: #FFB7B9;
-        --color-error-300: #FF9396;
-        --color-error-400: #FF6F73;
-        --color-error-500: #FF4B50;
-        --color-error-600: #E64448;
-        --color-error-700: #D94044;
-        --color-error-800: #CC3C40;
-        --color-error-900: #BF383C;
+        /* Error - Vermelho erro (sincronizado com Frontoffice) */
+        --color-error-100: #FBDDDD;
+        --color-error-200: #F7BABB;
+        --color-error-300: #F39899;
+        --color-error-400: #EF7677;
+        --color-error-500: #EA5455;
+        --color-error-600: #D34C4D;
+        --color-error-700: #BC4344;
+        --color-error-800: #A53B3C;
+        --color-error-900: #8E3233;
 
         /* Gray - Escala de cinza */
         --color-gray-100: #F5F5F7;
@@ -145,18 +145,18 @@
        ======================================== */
 
         /* Primary Opacity */
-        --color-primary-8: rgba(115, 103, 240, 0.08);
-        --color-primary-16: rgba(115, 103, 240, 0.16);
-        --color-primary-24: rgba(115, 103, 240, 0.24);
-        --color-primary-32: rgba(115, 103, 240, 0.32);
-        --color-primary-38: rgba(115, 103, 240, 0.38);
+        --color-primary-8: rgba(110, 99, 232, 0.08);
+        --color-primary-16: rgba(110, 99, 232, 0.16);
+        --color-primary-24: rgba(110, 99, 232, 0.24);
+        --color-primary-32: rgba(110, 99, 232, 0.32);
+        --color-primary-38: rgba(110, 99, 232, 0.38);
 
         /* Secondary Opacity */
-        --color-secondary-8: rgba(128, 131, 144, 0.08);
-        --color-secondary-16: rgba(128, 131, 144, 0.16);
-        --color-secondary-24: rgba(128, 131, 144, 0.24);
-        --color-secondary-32: rgba(128, 131, 144, 0.32);
-        --color-secondary-38: rgba(128, 131, 144, 0.38);
+        --color-secondary-8: rgba(180, 183, 189, 0.08);
+        --color-secondary-16: rgba(180, 183, 189, 0.16);
+        --color-secondary-24: rgba(180, 183, 189, 0.24);
+        --color-secondary-32: rgba(180, 183, 189, 0.32);
+        --color-secondary-38: rgba(180, 183, 189, 0.38);
 
         /* Info Opacity */
         --color-info-8: rgba(0, 186, 209, 0.08);
@@ -173,18 +173,18 @@
         --color-success-38: rgba(40, 199, 111, 0.38);
 
         /* Warning Opacity */
-        --color-warning-8: rgba(255, 159, 67, 0.08);
-        --color-warning-16: rgba(255, 159, 67, 0.16);
-        --color-warning-24: rgba(255, 159, 67, 0.24);
-        --color-warning-32: rgba(255, 159, 67, 0.32);
-        --color-warning-38: rgba(255, 159, 67, 0.38);
+        --color-warning-8: rgba(255, 214, 67, 0.08);
+        --color-warning-16: rgba(255, 214, 67, 0.16);
+        --color-warning-24: rgba(255, 214, 67, 0.24);
+        --color-warning-32: rgba(255, 214, 67, 0.32);
+        --color-warning-38: rgba(255, 214, 67, 0.38);
 
         /* Error Opacity */
-        --color-error-8: rgba(255, 75, 80, 0.08);
-        --color-error-16: rgba(255, 75, 80, 0.16);
-        --color-error-24: rgba(255, 75, 80, 0.24);
-        --color-error-32: rgba(255, 75, 80, 0.32);
-        --color-error-38: rgba(255, 75, 80, 0.38);
+        --color-error-8: rgba(234, 84, 85, 0.08);
+        --color-error-16: rgba(234, 84, 85, 0.16);
+        --color-error-24: rgba(234, 84, 85, 0.24);
+        --color-error-32: rgba(234, 84, 85, 0.32);
+        --color-error-38: rgba(234, 84, 85, 0.38);
 
         /* Gray Opacity */
         --color-gray-8: rgba(205, 205, 216, 0.08);
@@ -262,12 +262,12 @@
         --popover-foreground: 222.2 84% 4.9%;
 
         /* Primary - Mapeado para primitivas */
-        --primary: 246 85% 67%;
+        --primary: 246 76% 65%;
         --primary-foreground: 0 0% 100%;
 
         /* Secondary - Mapeado para primitivas */
-        --secondary: 233 6% 53%;
-        --secondary-foreground: 0 0% 100%;
+        --secondary: 220 6% 72%;
+        --secondary-foreground: 222.2 84% 4.9%;
 
         /* Muted */
         --muted: 240 5% 96%;
@@ -278,7 +278,7 @@
         --accent-foreground: 0 0% 100%;
 
         /* Destructive - Mapeado para error */
-        --destructive: 358 100% 65%;
+        --destructive: 0 79% 62%;
         --destructive-foreground: 0 0% 100%;
 
         /* Success */
@@ -296,7 +296,7 @@
         /* Border, Input, Ring */
         --border: 240 6% 90%;
         --input: 240 6% 90%;
-        --ring: 246 85% 67%;
+        --ring: 246 76% 65%;
 
         /* Radius - usando primitivas */
         --radius: var(--radius-md);
@@ -367,23 +367,23 @@
         --popover-foreground: 210 40% 98%;
 
         /* Primary */
-        --primary: 246 85% 67%;
+        --primary: 246 76% 65%;
         --primary-foreground: 0 0% 100%;
 
         /* Secondary */
-        --secondary: 233 6% 53%;
-        --secondary-foreground: 0 0% 100%;
+        --secondary: 220 6% 72%;
+        --secondary-foreground: 222.2 84% 4.9%;
 
         /* Muted */
         --muted: 217.2 32.6% 17.5%;
         --muted-foreground: 215 20.2% 65.1%;
 
         /* Accent */
-        --accent: 246 85% 67%;
+        --accent: 246 76% 65%;
         --accent-foreground: 0 0% 100%;
 
         /* Destructive */
-        --destructive: 358 100% 65%;
+        --destructive: 0 79% 62%;
         --destructive-foreground: 0 0% 100%;
 
         /* Success */
@@ -391,7 +391,7 @@
         --success-foreground: 0 0% 100%;
 
         /* Warning */
-        --warning: 28 100% 63%;
+        --warning: 47 100% 63%;
         --warning-foreground: 222.2 84% 4.9%;
 
         /* Info */
@@ -401,7 +401,7 @@
         /* Border, Input, Ring */
         --border: 217.2 32.6% 17.5%;
         --input: 217.2 32.6% 17.5%;
-        --ring: 246 85% 67%;
+        --ring: 246 76% 65%;
 
         /* Shadows (mais escuras para dark mode) */
         --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
