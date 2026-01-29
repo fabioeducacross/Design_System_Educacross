@@ -1,5 +1,9 @@
 import * as React from "react";
 import { cn } from "@fabioeducacross/ui";
+import DOMPurify from "dompurify";
+import katex from "katex";
+import { marked } from "marked";
+import "katex/dist/katex.min.css";
 
 export interface QuestionContentProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -62,31 +66,59 @@ export const QuestionContent = React.forwardRef<HTMLDivElement, QuestionContentP
         try {
           // 1. Processar Markdown (se habilitado)
           if (enableMarkdown) {
-            // TODO: Implementar com 'marked' library
-            // const { marked } = await import("marked");
-            // result = marked.parse(result);
+            // Configurar marked para permitir HTML inline
+            marked.setOptions({
+              breaks: true,
+              gfm: true,
+            });
+            result = await marked.parse(result);
           }
 
           // 2. Processar LaTeX (se habilitado)
           if (enableLatex) {
-            // TODO: Implementar com 'katex' library
-            // Substituir expressões LaTeX inline ($...$) e display ($$...$$)
-            // const renderLatex = (match: string) => {
-            //   const math = match.slice(1, -1); // Remove $ delimiters
-            //   return katex.renderToString(math, { throwOnError: false });
-            // };
-            // result = result.replace(/\$\$([^$]+)\$\$/g, renderLatex);
-            // result = result.replace(/\$([^$]+)\$/g, renderLatex);
+            // Substituir expressões LaTeX display ($$...$$)
+            result = result.replace(/\$\$([^$]+)\$\$/g, (_, math) => {
+              try {
+                return katex.renderToString(math.trim(), { 
+                  throwOnError: false,
+                  displayMode: true 
+                });
+              } catch {
+                return `$$${math}$$`;
+              }
+            });
+            
+            // Substituir expressões LaTeX inline ($...$)
+            result = result.replace(/\$([^$]+)\$/g, (_, math) => {
+              try {
+                return katex.renderToString(math.trim(), { 
+                  throwOnError: false,
+                  displayMode: false 
+                });
+              } catch {
+                return `$${math}$`;
+              }
+            });
           }
 
-          // 3. Sanitizar HTML (se habilitado)
+          // 3. Sanitizar HTML (sempre no final para garantir segurança)
           if (sanitize) {
-            // TODO: Implementar com 'dompurify' library
-            // const DOMPurify = await import("dompurify");
-            // result = DOMPurify.sanitize(result, {
-            //   ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br', 'ul', 'ol', 'li', 'span', 'div'],
-            //   ALLOWED_ATTR: ['href', 'class', 'style']
-            // });
+            result = DOMPurify.sanitize(result, {
+              ALLOWED_TAGS: [
+                'b', 'i', 'em', 'strong', 'a', 'p', 'br', 'ul', 'ol', 'li', 
+                'span', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+                'table', 'thead', 'tbody', 'tr', 'th', 'td',
+                'img', 'code', 'pre', 'blockquote', 'hr', 'sup', 'sub',
+                // Tags do KaTeX
+                'math', 'mrow', 'mi', 'mo', 'mn', 'msup', 'msub', 'mfrac',
+                'annotation', 'semantics'
+              ],
+              ALLOWED_ATTR: [
+                'href', 'class', 'style', 'src', 'alt', 'title', 'target',
+                'rel', 'aria-hidden', 'mathvariant', 'encoding'
+              ],
+              ALLOW_DATA_ATTR: false,
+            });
           }
 
           setProcessedContent(result);

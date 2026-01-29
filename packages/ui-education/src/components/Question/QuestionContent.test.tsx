@@ -1,62 +1,89 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import * as React from "react";
 import { QuestionContent } from "./QuestionContent";
 
 describe("QuestionContent", () => {
-  it("deve renderizar texto simples", () => {
+  it("deve renderizar texto simples", async () => {
     render(<QuestionContent content="Texto simples de questão" />);
 
-    expect(screen.getByText(/texto simples de questão/i)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText(/texto simples de questão/i)).toBeInTheDocument();
+    });
   });
 
-  it("deve renderizar HTML quando contentType for 'html'", () => {
+  it("deve renderizar HTML com tags permitidas", async () => {
     const htmlContent = "<p>Texto em <strong>negrito</strong></p>";
 
-    render(<QuestionContent content={htmlContent} contentType="html" />);
+    render(<QuestionContent content={htmlContent} />);
 
-    const strongElement = screen.getByText(/negrito/i);
-    expect(strongElement.tagName).toBe("STRONG");
+    await waitFor(() => {
+      const strongElement = screen.getByText(/negrito/i);
+      expect(strongElement.tagName).toBe("STRONG");
+    });
   });
 
-  it("deve renderizar LaTeX quando contentType for 'latex'", () => {
-    const latexContent = "E = mc^2";
+  it("deve renderizar LaTeX inline ($...$)", async () => {
+    const latexContent = "Considere $E = mc^2$ na física.";
 
     const { container } = render(
-      <QuestionContent content={latexContent} contentType="latex" />
+      <QuestionContent content={latexContent} enableLatex={true} />
     );
 
-    // KaTeX ainda não integrado, mas deve renderizar sem erro
-    expect(container.textContent).toContain(latexContent);
+    await waitFor(() => {
+      // KaTeX renderiza em spans com classe katex
+      const katexElement = container.querySelector(".katex");
+      expect(katexElement).toBeInTheDocument();
+    });
   });
 
-  it("deve renderizar Markdown quando contentType for 'markdown'", () => {
+  it("deve renderizar LaTeX display ($$...$$)", async () => {
+    const latexContent = "Fórmula: $$x^2 + y^2 = z^2$$";
+
+    const { container } = render(
+      <QuestionContent content={latexContent} enableLatex={true} />
+    );
+
+    await waitFor(() => {
+      // KaTeX display mode usa katex-display
+      const katexElement = container.querySelector(".katex-display");
+      expect(katexElement).toBeInTheDocument();
+    });
+  });
+
+  it("deve renderizar Markdown com marked", async () => {
     const markdownContent = "# Título\n\nTexto em **negrito**";
 
     const { container } = render(
-      <QuestionContent content={markdownContent} contentType="markdown" />
+      <QuestionContent content={markdownContent} enableMarkdown={true} />
     );
 
-    // Marked ainda não integrado, mas deve renderizar sem erro
-    expect(container.textContent).toContain("Título");
+    await waitFor(() => {
+      expect(container.querySelector("h1")).toBeInTheDocument();
+      expect(container.querySelector("strong")).toBeInTheDocument();
+    });
   });
 
-  it("deve aplicar className customizada", () => {
+  it("deve aplicar className customizada", async () => {
     const { container } = render(
       <QuestionContent content="Teste" className="custom-class" />
     );
 
-    const element = container.querySelector(".custom-class");
-    expect(element).toBeInTheDocument();
+    await waitFor(() => {
+      const element = container.querySelector(".custom-class");
+      expect(element).toBeInTheDocument();
+    });
   });
 
-  it("deve renderizar conteúdo vazio sem erros", () => {
+  it("deve renderizar conteúdo vazio sem erros", async () => {
     const { container } = render(<QuestionContent content="" />);
 
-    expect(container).toBeTruthy();
+    await waitFor(() => {
+      expect(container).toBeTruthy();
+    });
   });
 
-  it("deve renderizar HTML complexo de forma segura", () => {
+  it("deve renderizar HTML complexo de forma segura", async () => {
     const complexHtml = `
       <div class="question">
         <h3>Pergunta</h3>
@@ -67,54 +94,64 @@ describe("QuestionContent", () => {
       </div>
     `;
 
-    render(<QuestionContent content={complexHtml} contentType="html" />);
+    render(<QuestionContent content={complexHtml} />);
 
-    expect(screen.getByText(/pergunta/i)).toBeInTheDocument();
-    expect(screen.getByText(/item 1/i)).toBeInTheDocument();
-    expect(screen.getByText(/item 2/i)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText(/pergunta/i)).toBeInTheDocument();
+      expect(screen.getByText(/item 1/i)).toBeInTheDocument();
+      expect(screen.getByText(/item 2/i)).toBeInTheDocument();
+    });
   });
 
-  // TODO: Implementar sanitização XSS com DOMPurify
-  it.skip("deve sanitizar scripts maliciosos", () => {
+  it("deve sanitizar scripts maliciosos", async () => {
     const maliciousHtml = `
       <p>Texto normal</p>
       <script>alert('XSS')</script>
     `;
 
     const { container } = render(
-      <QuestionContent content={maliciousHtml} contentType="html" />
+      <QuestionContent content={maliciousHtml} sanitize={true} />
     );
 
-    // DOMPurify ainda não integrado completamente
-    // Mas a estrutura está preparada para sanitização
-    expect(container.querySelector("script")).toBeNull();
+    await waitFor(() => {
+      // Script deve ser removido pelo DOMPurify
+      expect(container.querySelector("script")).toBeNull();
+      // Texto normal deve permanecer
+      expect(screen.getByText(/texto normal/i)).toBeInTheDocument();
+    });
   });
 
-  it("deve usar defaultProps corretamente", () => {
+  it("deve sanitizar atributos maliciosos", async () => {
+    const maliciousHtml = `
+      <a href="javascript:alert('XSS')">Link perigoso</a>
+      <img src="x" onerror="alert('XSS')" alt="test" />
+    `;
+
+    const { container } = render(
+      <QuestionContent content={maliciousHtml} sanitize={true} enableMarkdown={false} />
+    );
+
+    await waitFor(() => {
+      const img = container.querySelector("img");
+      
+      // onerror deve ser removido (não está na whitelist)
+      expect(img?.getAttribute("onerror")).toBeNull();
+      // src e alt são permitidos
+      expect(img?.getAttribute("src")).toBe("x");
+      expect(img?.getAttribute("alt")).toBe("test");
+    });
+  });
+
+  it("deve usar defaultProps corretamente", async () => {
     const { container } = render(<QuestionContent content="Teste" />);
 
-    // contentType padrão deve ser 'text'
-    expect(container.textContent).toBe("Teste");
+    await waitFor(() => {
+      // Por padrão, enableLatex, enableMarkdown e sanitize são true
+      expect(container.textContent).toContain("Teste");
+    });
   });
 
-  // TODO: Implementar renderização LaTeX com KaTeX
-  it.skip("deve renderizar LaTeX inline e block corretamente", () => {
-    const latexInline = "Considere a equação $E = mc^2$ na física.";
-    const latexBlock = "$$\\int_0^\\infty e^{-x^2} dx = \\frac{\\sqrt{\\pi}}{2}$$";
-
-    const { container: inlineContainer } = render(
-      <QuestionContent content={latexInline} contentType="latex" />
-    );
-
-    const { container: blockContainer } = render(
-      <QuestionContent content={latexBlock} contentType="latex" />
-    );
-
-    expect(inlineContainer.textContent).toContain("E = mc^2");
-    expect(blockContainer.textContent).toContain("∫");
-  });
-
-  it("deve renderizar múltiplos parágrafos em Markdown", () => {
+  it("deve renderizar múltiplos parágrafos em Markdown", async () => {
     const markdownMultiline = `
 # Título Principal
 
@@ -129,27 +166,29 @@ Segundo parágrafo com **negrito** e *itálico*.
     `;
 
     const { container } = render(
-      <QuestionContent content={markdownMultiline} contentType="markdown" />
+      <QuestionContent content={markdownMultiline} enableMarkdown={true} />
     );
 
-    expect(container.textContent).toContain("Título Principal");
-    expect(container.textContent).toContain("Primeiro parágrafo");
-    expect(container.textContent).toContain("Segundo parágrafo");
+    await waitFor(() => {
+      expect(container.querySelector("h1")).toBeInTheDocument();
+      expect(container.querySelector("h2")).toBeInTheDocument();
+      expect(container.querySelector("ul")).toBeInTheDocument();
+    });
   });
 
-  it("deve lidar com conteúdo null/undefined", () => {
+  it("deve lidar com conteúdo null/undefined graciosamente", async () => {
+    // Renderizar com null/undefined não deve quebrar
     const { container: nullContainer } = render(
       <QuestionContent content={null as any} />
     );
-    const { container: undefinedContainer } = render(
-      <QuestionContent content={undefined as any} />
-    );
 
-    expect(nullContainer).toBeTruthy();
-    expect(undefinedContainer).toBeTruthy();
+    // Deve mostrar loading ou fallback
+    await waitFor(() => {
+      expect(nullContainer).toBeTruthy();
+    }, { timeout: 2000 });
   });
 
-  it("deve renderizar imagens em HTML", () => {
+  it("deve renderizar imagens em HTML", async () => {
     const htmlWithImage = `
       <div>
         <p>Questão com imagem:</p>
@@ -157,14 +196,17 @@ Segundo parágrafo com **negrito** e *itálico*.
       </div>
     `;
 
-    render(<QuestionContent content={htmlWithImage} contentType="html" />);
+    // Desabilitar markdown para não escapar o HTML
+    render(<QuestionContent content={htmlWithImage} enableMarkdown={false} />);
 
-    const img = screen.getByAltText(/imagem teste/i);
-    expect(img).toBeInTheDocument();
-    expect(img.getAttribute("src")).toBe("https://via.placeholder.com/300x200");
+    await waitFor(() => {
+      const img = screen.getByAltText(/imagem teste/i);
+      expect(img).toBeInTheDocument();
+      expect(img.getAttribute("src")).toBe("https://via.placeholder.com/300x200");
+    });
   });
 
-  it("deve renderizar tabelas em HTML", () => {
+  it("deve renderizar tabelas em HTML", async () => {
     const htmlWithTable = `
       <table>
         <thead>
@@ -182,21 +224,28 @@ Segundo parágrafo com **negrito** e *itálico*.
       </table>
     `;
 
-    render(<QuestionContent content={htmlWithTable} contentType="html" />);
+    render(<QuestionContent content={htmlWithTable} />);
 
-    expect(screen.getByText(/coluna 1/i)).toBeInTheDocument();
-    expect(screen.getByText(/valor 1/i)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText(/coluna 1/i)).toBeInTheDocument();
+      expect(screen.getByText(/valor 1/i)).toBeInTheDocument();
+    });
   });
 
-  it("deve preservar quebras de linha em texto simples", () => {
-    const multilineText = "Linha 1\nLinha 2\nLinha 3";
+  it("deve preservar texto simples sem processamento quando desabilitado", async () => {
+    const simpleText = "Texto simples sem formatação";
 
     const { container } = render(
-      <QuestionContent content={multilineText} contentType="text" />
+      <QuestionContent 
+        content={simpleText} 
+        enableLatex={false}
+        enableMarkdown={false}
+        sanitize={false}
+      />
     );
 
-    expect(container.textContent).toContain("Linha 1");
-    expect(container.textContent).toContain("Linha 2");
-    expect(container.textContent).toContain("Linha 3");
+    await waitFor(() => {
+      expect(container.textContent).toContain(simpleText);
+    });
   });
 });

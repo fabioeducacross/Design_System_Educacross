@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import * as React from "react";
 import { MultipleChoice } from "./MultipleChoice";
@@ -23,7 +23,7 @@ describe("MultipleChoice", () => {
     multipleSelection: true,
   };
 
-  it("deve renderizar questão múltipla escolha com radio buttons", () => {
+  it("deve renderizar questão múltipla escolha com radio buttons", async () => {
     render(
       <MultipleChoice
         content="Selecione a alternativa correta:"
@@ -33,9 +33,12 @@ describe("MultipleChoice", () => {
       />
     );
 
-    expect(
-      screen.getByText(/selecione a alternativa correta/i)
-    ).toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.getByText(/selecione a alternativa correta/i)
+      ).toBeInTheDocument();
+    });
+    
     expect(screen.getAllByText(/alternativa a/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/alternativa b/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/alternativa c/i).length).toBeGreaterThan(0);
