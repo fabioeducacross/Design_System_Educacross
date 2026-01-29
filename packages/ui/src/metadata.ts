@@ -217,7 +217,7 @@ export const metadata = {
     /**
      * Total de componentes principais (componentes raiz/top-level)
      */
-    totalRootComponents: 28,
+    totalRootComponents: 27,
 
     /**
      * Tecnologias principais

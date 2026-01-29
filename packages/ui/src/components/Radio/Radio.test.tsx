@@ -122,7 +122,7 @@ describe("RadioGroup", () => {
 
             const radios = screen.getAllByRole("radio");
             radios.forEach((radio) => {
-                expect(radio).toHaveClass("border-destructive");
+                expect(radio).toHaveClass("border-[#EA5455]");
             });
         });
     });

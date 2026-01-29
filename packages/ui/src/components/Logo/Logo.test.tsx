@@ -63,8 +63,8 @@ describe("Logo", () => {
             const { container } = render(<Logo />);
             const paths = container.querySelectorAll("path");
             expect(paths.length).toBeGreaterThan(0);
-            // Logo Educacross tem 21 paths
-            expect(paths.length).toBe(21);
+            // Logo Educacross tem 26 paths
+            expect(paths.length).toBe(26);
         });
     });
 

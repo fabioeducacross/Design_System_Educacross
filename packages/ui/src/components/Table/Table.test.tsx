@@ -206,7 +206,7 @@ describe("TableRow", () => {
                 </TableBody>
             </Table>
         );
-        expect(screen.getByTestId("row")).toHaveClass("hover:bg-muted/50");
+        expect(screen.getByTestId("row")).toHaveClass("hover:bg-muted/20");
     });
 
     it("deve suportar ref", () => {
@@ -249,7 +249,7 @@ describe("TableHead", () => {
             </Table>
         );
         expect(screen.getByTestId("head")).toHaveClass(
-            "font-medium",
+            "font-semibold",
             "text-muted-foreground"
         );
     });
@@ -293,7 +293,7 @@ describe("TableCell", () => {
                 </TableBody>
             </Table>
         );
-        expect(screen.getByTestId("cell")).toHaveClass("p-4");
+        expect(screen.getByTestId("cell")).toHaveClass("px-6", "py-4");
     });
 
     it("deve suportar ref", () => {

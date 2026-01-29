@@ -94,9 +94,10 @@ describe("Metadata Integration", () => {
     describe("Sincronização index.ts ↔ manifest.json", () => {
         it("componentes no manifest devem ser exportados em index.ts", () => {
             for (const component of manifest.components) {
+                // Suporta exports inline (export { X }) e multi-linha (export {\n  X,\n})
                 const exportPattern = new RegExp(
-                    `export.*\\b${component.name}\\b`,
-                    "g"
+                    `export\\s*\\{[^}]*\\b${component.name}\\b[^}]*\\}`,
+                    "gs"
                 );
                 expect(indexContent).toMatch(exportPattern);
             }
@@ -108,9 +109,10 @@ describe("Metadata Integration", () => {
                     // Pula types
                     if (exportName.endsWith("Props") || exportName.includes("Type")) continue;
 
+                    // Suporta exports inline e multi-linha
                     const exportPattern = new RegExp(
-                        `export.*\\b${exportName}\\b`,
-                        "g"
+                        `export\\s*\\{[^}]*\\b${exportName}\\b[^}]*\\}`,
+                        "gs"
                     );
                     expect(indexContent).toMatch(exportPattern);
                 }

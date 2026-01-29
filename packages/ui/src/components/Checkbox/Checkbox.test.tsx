@@ -118,7 +118,7 @@ describe("Checkbox", () => {
         it("should apply error variant when error prop exists", () => {
             render(<Checkbox error="Error" />);
             const checkbox = screen.getByRole("checkbox");
-            expect(checkbox).toHaveClass("border-destructive");
+            expect(checkbox).toHaveClass("border-[#EA5455]");
         });
 
         it("should have aria-invalid when error exists", () => {

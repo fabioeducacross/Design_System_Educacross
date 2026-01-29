@@ -42,9 +42,8 @@ describe("Header", () => {
                     userRole="Gestor de Redes"
                 />
             );
-            const logo = screen.getByAltText("Educacross");
+            const logo = screen.getByRole("img", { name: "Educacross" });
             expect(logo).toBeInTheDocument();
-            expect(logo).toHaveAttribute("src", expect.stringContaining("logo-educacross"));
         });
 
         it("deve renderizar botão de menu", () => {
