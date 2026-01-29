@@ -1,0 +1,197 @@
+{
+  "timestamp": "2026-01-29T19:08:47.327Z",
+  "colors": [
+    {
+      "name": "primary-500",
+      "frontoffice": "#6e63e8",
+      "designSystem": "#7367F0",
+      "status": "mismatch",
+      "impact": "critical"
+    },
+    {
+      "name": "secondary-500",
+      "frontoffice": "#b4b7bd",
+      "designSystem": "#808390",
+      "status": "mismatch",
+      "impact": "high"
+    },
+    {
+      "name": "success-500",
+      "frontoffice": "#28c76f",
+      "designSystem": "#28C76F",
+      "status": "match",
+      "impact": "high"
+    },
+    {
+      "name": "error-500 (danger)",
+      "frontoffice": "#ea5455",
+      "designSystem": "#FF4B50",
+      "status": "mismatch",
+      "impact": "critical"
+    },
+    {
+      "name": "warning-500",
+      "frontoffice": "#ffd643",
+      "designSystem": "#FF9F43",
+      "status": "mismatch",
+      "impact": "critical"
+    },
+    {
+      "name": "legend-advanced",
+      "frontoffice": "#6e63e8",
+      "designSystem": "#7367F0",
+      "status": "mismatch",
+      "impact": "high"
+    },
+    {
+      "name": "legend-basic",
+      "frontoffice": "#ff9f43",
+      "designSystem": "#FF9F43",
+      "status": "match",
+      "impact": "high"
+    }
+  ],
+  "components": [
+    {
+      "name": "Badge",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "background-color",
+        "color",
+        "border-radius",
+        "padding",
+        "font-size"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Button",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "background-color",
+        "color",
+        "border",
+        "border-radius",
+        "padding",
+        "height",
+        "font-weight"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Card",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "background-color",
+        "border",
+        "border-radius",
+        "box-shadow",
+        "padding"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Input",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "border-color",
+        "border-radius",
+        "height",
+        "padding",
+        "background-color"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Select",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "border-color",
+        "border-radius",
+        "background-color",
+        "padding"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Table",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "border-color",
+        "background-color",
+        "padding",
+        "font-size"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Modal/Dialog",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "background-color",
+        "border-radius",
+        "box-shadow",
+        "overlay-color"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Progress",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "background-color",
+        "fill-color",
+        "height",
+        "border-radius"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Tabs",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "border-color",
+        "active-color",
+        "background-color"
+      ],
+      "status": "pending",
+      "issues": []
+    },
+    {
+      "name": "Legend",
+      "frontofficeExists": true,
+      "storyExists": true,
+      "cssPropertiesToCheck": [
+        "background-color",
+        "border-radius",
+        "padding"
+      ],
+      "status": "pending",
+      "issues": []
+    }
+  ],
+  "recommendations": [
+    "Atualizar $primary: #6e63e8 → #7367F0",
+    "Atualizar $danger: #ea5455 → #FF4B50",
+    "Atualizar $warning: #ffd643 → #FF9F43",
+    "Criar mapeamento CSS vars → SCSS vars",
+    "Validação visual de componentes"
+  ]
+}
