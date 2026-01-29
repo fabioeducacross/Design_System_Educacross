@@ -1,0 +1,86 @@
+{
+    "name": "@fabioeducacross/ui-charts",
+    "version": "0.1.0",
+    "description": "Educacross Design System - Charts & Data Visualization Components",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://npm.pkg.github.com"
+    },
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.mjs"
+            },
+            "require": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            }
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "lint": "eslint src --ext .ts,.tsx",
+        "typecheck": "tsc --noEmit",
+        "clean": "rimraf dist",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:coverage": "vitest run --coverage"
+    },
+    "peerDependencies": {
+        "@fabioeducacross/ui": "workspace:*",
+        "react": "^18.3.0",
+        "react-dom": "^18.3.0",
+        "apexcharts": "^3.54.0 || ^4.0.0",
+        "echarts": "^5.5.0"
+    },
+    "devDependencies": {
+        "@fabioeducacross/ui": "workspace:*",
+        "@types/react": "^18.3.17",
+        "@types/react-dom": "^18.3.5",
+        "@typescript-eslint/eslint-plugin": "^8.19.1",
+        "@typescript-eslint/parser": "^8.19.1",
+        "@vitest/coverage-v8": "^2.1.8",
+        "apexcharts": "^3.54.0",
+        "echarts": "^5.5.0",
+        "eslint": "^9.18.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "rimraf": "^6.0.1",
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.2",
+        "vitest": "^2.1.8"
+    },
+    "dependencies": {
+        "react-apexcharts": "^1.4.1",
+        "echarts-for-react": "^3.0.2"
+    },
+    "keywords": [
+        "educacross",
+        "design-system",
+        "react",
+        "components",
+        "charts",
+        "data-visualization",
+        "apexcharts",
+        "echarts"
+    ],
+    "author": "Educacross",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fabioeducacross/Design_System_Educacross",
+        "directory": "packages/ui-charts"
+    }
+}
