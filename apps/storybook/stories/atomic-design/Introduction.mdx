@@ -1,0 +1,167 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Atomic Design/Introdução" />
+
+# 🧬 Atomic Design no Educacross
+
+O **Atomic Design** é uma metodologia criada por Brad Frost para criar sistemas de design de forma modular e escalável. No Design System Educacross, seguimos essa abordagem para garantir consistência, reutilização e manutenibilidade.
+
+---
+
+## 📊 Hierarquia de Componentes
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  05. PÁGINAS                                                │
+│  Instâncias específicas com conteúdo real                   │
+│  Ex: Dashboard Admin, Lista de Alunos, Detalhes do Aluno    │
+├─────────────────────────────────────────────────────────────┤
+│  04. TEMPLATES                                              │
+│  Estruturas de página (layout sem conteúdo)                 │
+│  Ex: Dashboard Layout, Auth Layout, List Layout             │
+├─────────────────────────────────────────────────────────────┤
+│  03. ORGANISMOS                                             │
+│  Grupos de moléculas formando seções distintas              │
+│  Ex: Header, Sidebar, DataTable, FilterPanel                │
+├─────────────────────────────────────────────────────────────┤
+│  02. MOLÉCULAS                                              │
+│  Grupos de átomos funcionando juntos                        │
+│  Ex: FormField, Card, Alert, Tooltip                        │
+├─────────────────────────────────────────────────────────────┤
+│  01. ÁTOMOS                                                 │
+│  Blocos fundamentais indivisíveis                           │
+│  Ex: Button, Input, Label, Badge, Icon                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🧪 01. Átomos
+
+Os **átomos** são os menores componentes do sistema. Eles não podem ser quebrados em partes menores sem perder sua função.
+
+### Exemplos:
+- **Button** - Botões de ação
+- **Input** - Campos de entrada
+- **Label** - Rótulos de campos
+- **Checkbox** - Caixas de seleção
+- **Radio** - Botões de seleção única
+- **Badge** - Etiquetas de status
+- **Icon** - Ícones Feather e customizados
+- **Avatar** - Imagens de perfil
+- **Divider** - Separadores visuais
+- **Skeleton** - Placeholders de loading
+
+### Características:
+- ✅ Não possuem dependências de outros componentes
+- ✅ Altamente reutilizáveis
+- ✅ Controlados por tokens CSS
+- ✅ Base para componentes maiores
+
+---
+
+## 🔬 02. Moléculas
+
+As **moléculas** são grupos de átomos que funcionam juntos como uma unidade funcional.
+
+### Exemplos:
+- **FormField** - Label + Input + HelperText
+- **Card** - Container + Header + Content + Footer
+- **Alert** - Icon + Title + Description
+- **Tooltip** - Trigger + Content
+- **Select** - Input + Dropdown + Options
+
+### Características:
+- ✅ Combinam 2 ou mais átomos
+- ✅ Formam unidades funcionais
+- ✅ Possuem propósito definido
+- ✅ Reutilizáveis em contextos diferentes
+
+---
+
+## 🦠 03. Organismos
+
+Os **organismos** são grupos de moléculas formando seções distintas de interface.
+
+### Exemplos:
+- **Header** - Logo + Navigation + Search + UserMenu
+- **Sidebar** - Logo + NavItems + Footer
+- **DataTable** - Toolbar + Table + Pagination
+- **FilterPanel** - FormFields + Buttons
+- **Accordion** - Multiple AccordionItems
+- **TabPanel** - TabList + TabContent
+
+### Características:
+- ✅ Combinam múltiplas moléculas e átomos
+- ✅ Formam seções de interface completas
+- ✅ Podem ter estado próprio
+- ✅ Representam partes distintas de uma página
+
+---
+
+## 📄 04. Templates
+
+Os **templates** definem a estrutura de uma página, posicionando os organismos.
+
+### Exemplos:
+- **Dashboard** - Sidebar + Header + Content Area
+- **Auth** - Login/Registro centrado
+- **List** - Header + Filtros + Tabela
+- **Detail** - Header + Tabs + Conteúdo
+- **Settings** - Sidebar secundária + Formulário
+
+### Características:
+- ✅ Definem estrutura de página
+- ✅ Posicionam organismos
+- ✅ Articulam layout responsivo
+- ✅ Abstraem conteúdo específico
+
+---
+
+## 📱 05. Páginas
+
+As **páginas** são instâncias específicas de templates com conteúdo real.
+
+### Exemplos:
+- **Dashboard Admin** - Métricas e atividades do administrador
+- **Dashboard Professor** - Visão do professor
+- **Lista de Alunos** - Gestão de estudantes
+- **Detalhes do Aluno** - Perfil e desempenho
+
+### Características:
+- ✅ Templates preenchidos com dados reais
+- ✅ Representam funcionalidades completas
+- ✅ Validam a experiência do usuário
+- ✅ Testam fluxos completos
+
+---
+
+## 🎯 Benefícios
+
+| Benefício | Descrição |
+|-----------|-----------|
+| **Consistência** | Componentes reutilizáveis garantem UX uniforme |
+| **Manutenibilidade** | Alterações propagam automaticamente |
+| **Escalabilidade** | Novos componentes são combinações dos existentes |
+| **Documentação** | Storybook como fonte de verdade |
+| **Colaboração** | Linguagem comum entre design e desenvolvimento |
+
+---
+
+## 📚 Navegação
+
+Explore cada nível do Atomic Design no menu lateral:
+
+1. [01. Átomos](?path=/docs/atomic-design-01-átomos--docs)
+2. [02. Moléculas](?path=/docs/atomic-design-02-moléculas--docs)
+3. [03. Organismos](?path=/docs/atomic-design-03-organismos--docs)
+4. [04. Templates](?path=/docs/atomic-design-04-templates--docs)
+5. [05. Páginas](?path=/docs/atomic-design-05-páginas--docs)
+
+---
+
+## 🔗 Referências
+
+- [Atomic Design por Brad Frost](https://atomicdesign.bradfrost.com/)
+- [Design Tokens](/?path=/docs/foundations-colors--docs)
+- [Componentes Base](/?path=/docs/components-button--docs)
