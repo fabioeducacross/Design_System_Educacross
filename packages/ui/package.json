@@ -75,7 +75,7 @@
         "react-apexcharts": "^1.9.0",
         "react-zoom-pan-pinch": "^3.7.0",
         "tailwind-merge": "^3.4.0",
-        "zod": "^3.23.0"
+        "zod": "^4.3.6"
     },
     "devDependencies": {
         "@tanstack/react-virtual": "^3.10.0",
