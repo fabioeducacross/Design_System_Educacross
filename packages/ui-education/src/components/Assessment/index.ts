@@ -1,0 +1,2 @@
+// Assessment components placeholder
+export {};
