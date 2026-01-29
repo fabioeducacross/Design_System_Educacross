@@ -35,62 +35,62 @@ interface ComponentAudit {
     issues: string[];
 }
 
-// Cores do Design System (styles.css)
+// Cores do Design System (styles.css) - ATUALIZADO para Frontoffice
 const DS_COLORS = {
     primary: {
-        100: '#E3E1FC',
-        200: '#C7C2F9',
-        300: '#ABA4F6',
-        400: '#8F85F3',
-        500: '#7367F0',
-        600: '#675DD8',
-        700: '#6258CC',
-        800: '#5C52C0',
-        900: '#564DB4',
+        100: '#E0DEF9',
+        200: '#C1BDF4',
+        300: '#A29CEE',
+        400: '#8E88EB',
+        500: '#6E63E8', // Sincronizado com Frontoffice
+        600: '#635AD1',
+        700: '#5850BA',
+        800: '#4D47A3',
+        900: '#423D8C',
     },
     secondary: {
-        100: '#E6E6E9',
-        200: '#CCCDD3',
-        300: '#B3B5BC',
-        400: '#999CA6',
-        500: '#808390',
-        600: '#737682',
-        700: '#6D6F7A',
-        800: '#666973',
-        900: '#60626C',
+        100: '#F0F1F2',
+        200: '#E1E2E5',
+        300: '#D2D4D8',
+        400: '#C3C5CA',
+        500: '#B4B7BD', // Sincronizado com Frontoffice
+        600: '#A2A5AA',
+        700: '#909398',
+        800: '#7E8185',
+        900: '#6C6F73',
     },
     success: {
         100: '#D4F4E2',
         200: '#A9E9C5',
         300: '#7EDDA9',
         400: '#53D28C',
-        500: '#28C76F',
+        500: '#28C76F', // Já sincronizado
         600: '#24B364',
         700: '#22A95E',
         800: '#209F59',
         900: '#1E9553',
     },
     warning: {
-        100: '#FFECD9',
-        200: '#FFD9B4',
-        300: '#FFC58E',
-        400: '#FFB269',
-        500: '#FF9F43',
-        600: '#E68F3C',
-        700: '#D98739',
-        800: '#CC7F36',
-        900: '#BF7732',
+        100: '#FFF8DC',
+        200: '#FFF1B9',
+        300: '#FFEA96',
+        400: '#FFE36D',
+        500: '#FFD643', // Sincronizado com Frontoffice
+        600: '#E6C13C',
+        700: '#CCAB35',
+        800: '#B3962E',
+        900: '#998027',
     },
     error: {
-        100: '#FFDBDC',
-        200: '#FFB7B9',
-        300: '#FF9396',
-        400: '#FF6F73',
-        500: '#FF4B50',
-        600: '#E64448',
-        700: '#D94044',
-        800: '#CC3C40',
-        900: '#BF383C',
+        100: '#FBDDDD',
+        200: '#F7BABB',
+        300: '#F39899',
+        400: '#EF7677',
+        500: '#EA5455', // Sincronizado com Frontoffice
+        600: '#D34C4D',
+        700: '#BC4344',
+        800: '#A53B3C',
+        900: '#8E3233',
     },
     info: {
         100: '#CCF1F6',
@@ -243,7 +243,11 @@ function auditColors(): ColorToken[] {
         impact: 'high',
     });
 
-    return results;
+    // Nota: legend-basic no Frontoffice usa #ff9f43 (laranja antigo)
+    // enquanto warning agora é #ffd643 (amarelo). Esta é uma divergência
+    // intencional que pode precisar ser resolvida no Frontoffice.
+
+    return results;;
 }
 
 // ============================================

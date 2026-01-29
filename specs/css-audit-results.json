@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-01-29T19:08:47.327Z",
+  "timestamp": "2026-01-29T19:18:41.995Z",
   "colors": [
     {
       "name": "primary-500",
       "frontoffice": "#6e63e8",
-      "designSystem": "#7367F0",
-      "status": "mismatch",
+      "designSystem": "#6E63E8",
+      "status": "match",
       "impact": "critical"
     },
     {
       "name": "secondary-500",
       "frontoffice": "#b4b7bd",
-      "designSystem": "#808390",
-      "status": "mismatch",
+      "designSystem": "#B4B7BD",
+      "status": "match",
       "impact": "high"
     },
     {
@@ -25,29 +25,29 @@
     {
       "name": "error-500 (danger)",
       "frontoffice": "#ea5455",
-      "designSystem": "#FF4B50",
-      "status": "mismatch",
+      "designSystem": "#EA5455",
+      "status": "match",
       "impact": "critical"
     },
     {
       "name": "warning-500",
       "frontoffice": "#ffd643",
-      "designSystem": "#FF9F43",
-      "status": "mismatch",
+      "designSystem": "#FFD643",
+      "status": "match",
       "impact": "critical"
     },
     {
       "name": "legend-advanced",
       "frontoffice": "#6e63e8",
-      "designSystem": "#7367F0",
-      "status": "mismatch",
+      "designSystem": "#6E63E8",
+      "status": "match",
       "impact": "high"
     },
     {
       "name": "legend-basic",
       "frontoffice": "#ff9f43",
-      "designSystem": "#FF9F43",
-      "status": "match",
+      "designSystem": "#FFD643",
+      "status": "mismatch",
       "impact": "high"
     }
   ],
