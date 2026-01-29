@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 // @ts-expect-error - Temporário até .d.ts ser gerado
 import {
   QuestionRenderer,

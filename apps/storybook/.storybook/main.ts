@@ -17,8 +17,7 @@ const config: StorybookConfig = {
         getAbsolutePath("@storybook/addon-themes"),
         getAbsolutePath("@storybook/addon-docs"),
         getAbsolutePath("@storybook/addon-a11y"),
-        // Addon customizado para code snippets multi-framework
-        resolve(__dirname, "./addons/multi-framework-code/register.tsx"),
+        // Note: multi-framework-code addon requer configuração específica para Storybook v10
     ],
 
     framework: {
