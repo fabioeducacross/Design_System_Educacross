@@ -1,14 +1,48 @@
-import type { Preview } from "@storybook/react-vite";
+import type { Preview, Decorator } from "@storybook/react-vite";
 import { withThemeByClassName } from "@storybook/addon-themes";
+import React from "react";
 
-// Import Tailwind CSS and design tokens
-import "../src/styles.css";
+/**
+ * CSS Loading Order (Pixel Perfect Mode):
+ * 1. storybook-globals.css → importa @fabioeducacross/ui/styles.css (tokens + Tailwind)
+ * 2. custom-styles.css → estilos específicos do Storybook UI (não conflita com tokens)
+ * 
+ * ⚠️ bootstrap-vue-compat.css é opt-in via decorator, não global
+ */
 
-// Import Bootstrap-Vue compatibility layer (for Frontoffice visual fidelity)
-import "../src/bootstrap-vue-compat.css";
+// 1. CSS oficial do DS via export público do pacote
+import "../src/storybook-globals.css";
 
-// Import custom Storybook styles
+// 2. Estilos específicos do Storybook UI (sidebar, docs, etc.)
 import "./custom-styles.css";
+
+/**
+ * Decorator para aplicar Bootstrap-Vue compat em stories específicas.
+ * Uso: adicionar `parameters: { bootstrapCompat: true }` na story
+ */
+const withBootstrapCompat: Decorator = (Story, context) => {
+    const useBootstrapCompat = context.parameters.bootstrapCompat === true;
+    
+    if (useBootstrapCompat) {
+        // Carrega CSS de compatibilidade dinamicamente via link
+        React.useEffect(() => {
+            const linkId = "bootstrap-vue-compat-css";
+            if (!document.getElementById(linkId)) {
+                const link = document.createElement("link");
+                link.id = linkId;
+                link.rel = "stylesheet";
+                link.href = "/bootstrap-vue-compat.css";
+                document.head.appendChild(link);
+            }
+            return () => {
+                const link = document.getElementById(linkId);
+                if (link) link.remove();
+            };
+        }, []);
+    }
+    
+    return React.createElement(Story);
+};
 
 const preview: Preview = {
   parameters: {
@@ -65,9 +99,11 @@ const preview: Preview = {
     },
   },
   decorators: [
+    withBootstrapCompat, // Decorator opt-in para Bootstrap-Vue compat
     withThemeByClassName({
       themes: {
         light: "",
+        dark: "dark",
       },
       defaultTheme: "light",
     }),

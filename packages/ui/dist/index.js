@@ -139,6 +139,7 @@ __export(src_exports, {
   TableToolbar: () => TableToolbar,
   Tabs: () => Tabs,
   TabsContent: () => TabsContent,
+  TabsLine: () => TabsLine,
   TabsList: () => TabsList,
   TabsTrigger: () => TabsTrigger,
   ThemeProvider: () => ThemeProvider,
@@ -3488,7 +3489,13 @@ var tabsListVariants = (0, import_class_variance_authority13.cva)(
         default: "bg-muted justify-center",
         outline: "bg-transparent border justify-center",
         pills: "bg-transparent gap-1 justify-center",
-        rounded: "bg-transparent p-0 h-auto relative justify-start"
+        // Replica .tabs-row do Frontoffice
+        rounded: [
+          "bg-transparent p-0 h-auto relative justify-start",
+          "flex-nowrap overflow-x-auto",
+          // Scrollbar estilizada
+          "[scrollbar-width:thin]"
+        ].join(" ")
       }
     },
     defaultVariants: {
@@ -3510,7 +3517,27 @@ var tabsTriggerVariants = (0, import_class_variance_authority13.cva)(
         default: "rounded-sm px-3 py-1.5 text-sm data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
         outline: "px-3 py-1.5 text-sm data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:text-foreground rounded-none",
         pills: "px-3 py-1.5 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full",
-        rounded: "bg-white text-[#6e6b7b] rounded-t-[15px] shadow-[0_0_8px_rgba(0,0,0,0.14)] text-sm leading-[20.3px] tracking-[0.14px] px-6 pt-[14px] pb-[10px] gap-[3.5px] data-[state=active]:bg-[#6E63E8] data-[state=active]:text-white data-[state=active]:shadow-[0_0_8px_rgba(0,0,0,0.14)] data-[state=active]:z-[3]"
+        // Replica exatamente .tab-link do TabRouter.vue do Frontoffice
+        rounded: [
+          // Layout base
+          "inline-flex items-center gap-1",
+          // Padding exato: 14px 24px 10px 24px
+          "pt-[14px] pr-[24px] pb-[10px] pl-[24px]",
+          // Border radius: 15px 15px 0 0
+          "rounded-t-[15px] rounded-b-none",
+          // Box shadow
+          "shadow-[0_0_8px_rgba(0,0,0,0.14)]",
+          // Cor de texto padrão (gray)
+          "text-[#6e6b7b]",
+          // Background branco por padrão
+          "bg-white",
+          // Sem decoração de texto
+          "no-underline",
+          // Hover: fundo primário, texto branco
+          "hover:bg-primary hover:text-white",
+          // Estado ativo: fundo primário (#6E63E8), texto branco
+          "data-[state=active]:bg-[#6E63E8] data-[state=active]:text-white"
+        ].join(" ")
       }
     },
     defaultVariants: {
@@ -3533,6 +3560,11 @@ var Tabs = React26.forwardRef(
       defaultValue ?? ""
     );
     const activeValue = value !== void 0 ? value : internalValue;
+    const tabCounterRef = React26.useRef(0);
+    const [totalTabs, setTotalTabs] = React26.useState(0);
+    React26.useLayoutEffect(() => {
+      tabCounterRef.current = 0;
+    });
     const handleValueChange = React26.useCallback(
       (newValue) => {
         if (value === void 0) {
@@ -3542,13 +3574,23 @@ var Tabs = React26.forwardRef(
       },
       [value, onValueChange]
     );
+    const registerTab = React26.useCallback(() => {
+      const index = tabCounterRef.current;
+      tabCounterRef.current += 1;
+      if (tabCounterRef.current > totalTabs) {
+        setTotalTabs(tabCounterRef.current);
+      }
+      return index;
+    }, [totalTabs]);
     return /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(
       TabsContext.Provider,
       {
         value: {
           value: activeValue,
           onValueChange: handleValueChange,
-          variant: variant ?? "default"
+          variant: variant ?? "default",
+          totalTabs,
+          registerTab
         },
         children: /* @__PURE__ */ (0, import_jsx_runtime26.jsx)("div", { ref, className: cn("w-full", className), ...props, children })
       }
@@ -3575,9 +3617,20 @@ var TabsList = React26.forwardRef(
 );
 TabsList.displayName = "TabsList";
 var TabsTrigger = React26.forwardRef(
-  ({ className, value, variant, ...props }, ref) => {
+  ({ className, value, variant, index: indexProp, style, ...props }, ref) => {
     const context = React26.useContext(TabsContext);
     const isActive = context?.value === value;
+    const effectiveVariant = variant ?? context?.variant;
+    const indexRef = React26.useRef(null);
+    if (indexRef.current === null && context?.registerTab) {
+      indexRef.current = indexProp ?? context.registerTab();
+    }
+    const tabIndex = indexRef.current ?? 0;
+    const roundedStyles = effectiveVariant === "rounded" ? {
+      transform: `translateX(${tabIndex * -10}px)`,
+      zIndex: isActive ? context?.totalTabs ?? 1 : (context?.totalTabs ?? 1) - tabIndex,
+      ...style
+    } : style ?? {};
     return /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(
       "button",
       {
@@ -3589,10 +3642,11 @@ var TabsTrigger = React26.forwardRef(
         onClick: () => context?.onValueChange(value),
         className: cn(
           tabsTriggerVariants({
-            variant: variant ?? context?.variant
+            variant: effectiveVariant
           }),
           className
         ),
+        style: roundedStyles,
         ...props
       }
     );
@@ -3624,6 +3678,22 @@ var TabsContent = React26.forwardRef(
   }
 );
 TabsContent.displayName = "TabsContent";
+var TabsLine = React26.forwardRef(
+  ({ className, ...props }, ref) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(
+      "div",
+      {
+        ref,
+        className: cn(
+          "h-px w-full bg-primary mb-4",
+          className
+        ),
+        ...props
+      }
+    );
+  }
+);
+TabsLine.displayName = "TabsLine";
 
 // src/components/TabRouter/TabRouter.tsx
 var import_jsx_runtime27 = require("react/jsx-runtime");
@@ -8368,6 +8438,7 @@ var metadata = {
   TableToolbar,
   Tabs,
   TabsContent,
+  TabsLine,
   TabsList,
   TabsTrigger,
   ThemeProvider,

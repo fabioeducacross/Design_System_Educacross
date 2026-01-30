@@ -1,0 +1,37 @@
+/**
+ * Storybook Globals - Pixel Perfect Mode
+ * 
+ * Este arquivo centraliza o carregamento de CSS para o Storybook,
+ * garantindo que consuma o pacote @fabioeducacross/ui exatamente
+ * como um consumidor real faria.
+ * 
+ * ⚠️ IMPORTANTE:
+ * - NÃO adicionar @tailwind base/components/utilities aqui
+ * - O styles.css do pacote já inclui as diretivas Tailwind
+ * - Apenas estender com utilities específicas do Storybook se necessário
+ */
+
+/* 
+ * 1. CSS Oficial do Design System (via export do pacote)
+ * Inclui: tokens CSS (:root, .dark), Tailwind base/components/utilities
+ */
+@import "@fabioeducacross/ui/styles.css";
+
+/*
+ * 2. Utilities extras específicas do Storybook (não duplicar Tailwind)
+ * Use @layer utilities para não conflitar com o DS
+ */
+@layer utilities {
+    /* Utility para debug de tokens - mostrar grid */
+    .debug-grid {
+        background-image: 
+            linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+        background-size: 4px 4px;
+    }
+    
+    /* Utility para mostrar bordas de componentes em debug */
+    .debug-outline * {
+        outline: 1px solid rgba(99, 102, 241, 0.2);
+    }
+}

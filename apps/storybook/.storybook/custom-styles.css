@@ -1,93 +1,61 @@
 /* ===============================================
-   EDUCACROSS DESIGN SYSTEM - STORYBOOK CUSTOM STYLES
-   Tema Light Vibrante e Moderno
+   EDUCACROSS DESIGN SYSTEM - STORYBOOK UI STYLES
+   Pixel Perfect Mode - Não conflita com tokens do DS
    Versão Storybook 10+ Compatible
    =============================================== */
 
-/* ========== MODERN UI DESIGN SYSTEM ========== */
+/**
+ * ⚠️ IMPORTANTE - Pixel Perfect Mode:
+ * - Este arquivo estiliza APENAS o Storybook UI (sidebar, docs, toolbar)
+ * - NÃO define variáveis CSS que conflitam com o Design System
+ * - O canvas de preview herda os tokens oficiais do DS
+ * - Use prefixo --sb- para variáveis específicas do Storybook
+ */
+
+/* ========== STORYBOOK UI VARIABLES (namespace isolado) ========== */
 :root {
-    /* Colors - Refined palette */
-    --educacross-primary: #6366F1;
-    --educacross-primary-light: #818CF8;
-    --educacross-primary-dark: #4F46E5;
-    --educacross-accent: #EC4899;
-    --educacross-success: #10B981;
-    --educacross-warning: #F59E0B;
+    /* Storybook UI - cores específicas da interface (não do DS) */
+    --sb-bg-page: #FAFBFC;
+    --sb-bg-card: #FFFFFF;
+    --sb-bg-sidebar: #FFFFFF;
+    --sb-bg-hover: #F8F9FB;
     
-    /* Backgrounds - Subtle gradients */
-    --educacross-bg-page: #FAFBFC;
-    --educacross-bg-card: #FFFFFF;
-    --educacross-bg-sidebar: #FFFFFF;
-    --educacross-bg-hover: #F8F9FB;
+    /* Storybook UI - texto */
+    --sb-text-primary: #111827;
+    --sb-text-secondary: #6B7280;
+    --sb-text-tertiary: #9CA3AF;
     
-    /* Text - Clear hierarchy */
-    --educacross-text-primary: #111827;
-    --educacross-text-secondary: #6B7280;
-    --educacross-text-tertiary: #9CA3AF;
+    /* Storybook UI - bordas */
+    --sb-border-light: #F3F4F6;
+    --sb-border: #E5E7EB;
+    --sb-border-medium: #D1D5DB;
     
-    /* Borders - Minimal and refined */
-    --educacross-border-light: #F3F4F6;
-    --educacross-border: #E5E7EB;
-    --educacross-border-medium: #D1D5DB;
+    /* Storybook UI - sombras */
+    --sb-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --sb-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --sb-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --sb-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
     
-    /* Shadows - Layered depth */
-    --educacross-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --educacross-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
-    --educacross-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
-    --educacross-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-    --educacross-shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
-    
-    /* Spacing - 4px base grid */
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 12px;
-    --space-4: 16px;
-    --space-5: 20px;
-    --space-6: 24px;
-    --space-8: 32px;
-    --space-10: 40px;
-    --space-12: 48px;
-    --space-16: 64px;
-    
-    /* Border radius - Consistent rounded corners */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 14px;
-    --radius-xl: 18px;
-    
-    /* Typography scale */
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
+    /* Acento do Storybook - usa cor primária do DS */
+    --sb-accent: var(--color-primary-500, #6E63E8);
+    --sb-accent-light: var(--color-primary-400, #8E88EB);
+    --sb-accent-dark: var(--color-primary-600, #635AD1);
 }
 
-/* ========== CLEAN LIGHT THEME ========== */
-body,
-html,
-#storybook-root,
-#storybook-docs {
-    background: var(--educacross-bg-page) !important;
-    color: var(--educacross-text-primary) !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-    font-size: var(--font-size-base) !important;
-    line-height: 1.6 !important;
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
+/* ========== STORYBOOK LAYOUT ========== */
+body.sb-main-padded,
+#storybook-root {
+    background: var(--sb-bg-page) !important;
 }
 
 /* ========== SIDEBAR LIGHT THEME ========== */
 aside[role="navigation"],
 nav[aria-label*="sidebar" i],
-div[class*="sidebar" i],
+div[class*="sidebar" i]:not([class*="story"]),
 div[id*="sidebar" i] {
-    background: var(--educacross-bg-sidebar) !important;
-    border-right: 1px solid var(--educacross-border) !important;
-    box-shadow: 2px 0 8px rgba(115, 103, 240, 0.04) !important;
+    background: var(--sb-bg-sidebar) !important;
+    border-right: 1px solid var(--sb-border) !important;
+    box-shadow: 2px 0 8px rgba(110, 99, 232, 0.04) !important;
 }
 
 /* Links de navegação elegantes */
@@ -102,23 +70,23 @@ div[class*="LeafNode" i] a {
     margin: 3px 8px !important;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
     font-weight: 500 !important;
-    color: var(--educacross-text-secondary) !important;
+    color: var(--sb-text-secondary) !important;
     font-size: 0.95rem !important;
 }
 
-/* Hover vibrante */
+/* Hover vibrante - usa cor primária do DS */
 nav a:hover,
 aside a:hover,
 [role="treeitem"]:hover a,
 div[class*="TreeNode" i]:hover a,
 div[class*="LeafNode" i]:hover a {
-    background: linear-gradient(135deg, rgba(115, 103, 240, 0.12) 0%, rgba(156, 143, 254, 0.08) 100%) !important;
+    background: linear-gradient(135deg, rgba(110, 99, 232, 0.12) 0%, rgba(142, 136, 235, 0.08) 100%) !important;
     transform: translateX(4px);
-    box-shadow: inset 4px 0 0 var(--educacross-primary), var(--educacross-shadow-sm) !important;
-    color: var(--educacross-primary) !important;
+    box-shadow: inset 4px 0 0 var(--sb-accent), var(--sb-shadow-sm) !important;
+    color: var(--sb-accent) !important;
 }
 
-/* Selected state com gradiente vibrante */
+/* Selected state com gradiente - usa cor primária do DS */
 nav a[aria-current],
 aside a[aria-current],
 [role="treeitem"][aria-selected="true"] a,
@@ -126,14 +94,14 @@ aside a[aria-current],
 [aria-selected="true"],
 div[class*="TreeNode" i][class*="selected" i] a,
 div[class*="LeafNode" i][class*="selected" i] a {
-    background: linear-gradient(135deg, rgba(115, 103, 240, 0.18) 0%, rgba(156, 143, 254, 0.12) 100%) !important;
-    border-left: 5px solid var(--educacross-primary) !important;
+    background: linear-gradient(135deg, rgba(110, 99, 232, 0.18) 0%, rgba(142, 136, 235, 0.12) 100%) !important;
+    border-left: 5px solid var(--sb-accent) !important;
     font-weight: 700 !important;
-    color: var(--educacross-primary-dark) !important;
-    box-shadow: var(--educacross-shadow-md) !important;
+    color: var(--sb-accent-dark) !important;
+    box-shadow: var(--sb-shadow-md) !important;
 }
 
-/* ========== DOCS PAGE LIGHT THEME ========== */
+/* ========== DOCS PAGE ========== */
 main[id*="storybook" i],
 div[class*="DocsContent" i],
 div[class*="sbdocs" i],
@@ -141,11 +109,11 @@ article {
     max-width: 1200px !important;
     padding: 48px 64px !important;
     margin: 0 auto !important;
-    background: var(--educacross-bg-card) !important;
+    background: var(--sb-bg-card) !important;
     min-height: 100vh !important;
 }
 
-/* Títulos com gradiente vibrante */
+/* Títulos com gradiente - usa paleta primária do DS */
 main h1,
 article h1,
 div[class*="sbdocs" i] h1 {
@@ -154,55 +122,47 @@ div[class*="sbdocs" i] h1 {
     letter-spacing: -0.04em !important;
     margin-bottom: 36px !important;
     margin-top: 0 !important;
-    background: linear-gradient(135deg, #7367F0 0%, #9C8FFE 50%, #C7D2FE 100%);
+    background: linear-gradient(135deg, 
+        var(--color-primary-500, #6E63E8) 0%, 
+        var(--color-primary-400, #8E88EB) 50%, 
+        var(--color-primary-200, #C1BDF4) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1.15 !important;
-    text-shadow: 0 2px 4px rgba(115, 103, 240, 0.1);
 }
 
 main h2,
 article h2,
 div[class*="sbdocs" i] h2 {
-    font-size: var(--font-size-2xl) !important;
+    font-size: 1.5rem !important;
     font-weight: 600 !important;
-    margin-top: var(--space-12) !important;
-    margin-bottom: var(--space-4) !important;
-    padding-bottom: var(--space-3);
-    border-bottom: 1px solid var(--educacross-border-light);
-    color: var(--educacross-text-primary) !important;
+    margin-top: 48px !important;
+    margin-bottom: 16px !important;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--sb-border-light);
+    color: var(--sb-text-primary) !important;
     letter-spacing: -0.02em !important;
 }
 
 main h3,
 article h3,
 div[class*="sbdocs" i] h3 {
-    font-size: var(--font-size-xl) !important;
+    font-size: 1.25rem !important;
     font-weight: 600 !important;
-    margin-top: var(--space-8) !important;
-    margin-bottom: var(--space-3) !important;
-    color: var(--educacross-text-primary) !important;
-    letter-spacing: -0.015em !important;
+    margin-top: 32px !important;
+    margin-bottom: 12px !important;
+    color: var(--sb-text-primary) !important;
 }
 
-main h4,
-article h4 {
-    font-size: var(--font-size-lg) !important;
-    font-weight: 600 !important;
-    margin-top: var(--space-6) !important;
-    margin-bottom: var(--space-2) !important;
-    color: var(--educacross-text-secondary) !important;
-}
-
-/* Clean paragraphs */
+/* Paragraphs */
 main p,
 article p,
 div[class*="sbdocs" i] p {
     line-height: 1.7 !important;
-    margin-bottom: var(--space-4) !important;
-    color: var(--educacross-text-secondary) !important;
-    font-size: var(--font-size-base) !important;
+    margin-bottom: 16px !important;
+    color: var(--sb-text-secondary) !important;
+    font-size: 1rem !important;
     max-width: 68ch !important;
 }
 
@@ -211,26 +171,26 @@ main ul,
 main ol,
 article ul,
 article ol {
-    margin: var(--space-4) 0 !important;
-    padding-left: var(--space-6) !important;
+    margin: 16px 0 !important;
+    padding-left: 24px !important;
 }
 
 main li,
 article li {
     line-height: 1.7 !important;
-    margin-bottom: var(--space-2) !important;
-    color: var(--educacross-text-secondary) !important;
+    margin-bottom: 8px !important;
+    color: var(--sb-text-secondary) !important;
 }
 
-/* ========== CODE BLOCKS LIGHT THEME ========== */
+/* ========== CODE BLOCKS ========== */
 pre,
 div[class*="prismjs" i],
 code[class*="prism" i] {
     border-radius: 14px !important;
     padding: 28px !important;
     background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%) !important;
-    border: 2px solid var(--educacross-border) !important;
-    box-shadow: var(--educacross-shadow-md) !important;
+    border: 2px solid var(--sb-border) !important;
+    box-shadow: var(--sb-shadow-md) !important;
     margin: 28px 0 !important;
 }
 
@@ -239,50 +199,49 @@ pre code {
     font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace !important;
     font-size: 0.92em !important;
     line-height: 1.7 !important;
-    color: var(--educacross-text-primary) !important;
+    color: var(--sb-text-primary) !important;
 }
 
-/* Inline code com destaque roxo vibrante */
+/* Inline code - usa cor primária do DS */
 p code:not([class*="prism" i]),
 li code:not([class*="prism" i]),
 td code:not([class*="prism" i]) {
-    background: linear-gradient(135deg, rgba(115, 103, 240, 0.15) 0%, rgba(199, 210, 254, 0.12) 100%) !important;
-    color: var(--educacross-primary-dark) !important;
+    background: linear-gradient(135deg, rgba(110, 99, 232, 0.15) 0%, rgba(193, 189, 244, 0.12) 100%) !important;
+    color: var(--sb-accent-dark) !important;
     padding: 4px 10px !important;
     border-radius: 7px !important;
     font-weight: 700 !important;
     font-size: 0.92em !important;
-    border: 1px solid var(--educacross-border) !important;
-    box-shadow: 0 1px 2px rgba(115, 103, 240, 0.08) !important;
+    border: 1px solid var(--sb-border) !important;
 }
 
-/* ========== CLEAN COMPONENT PREVIEW ========== */
+/* ========== COMPONENT PREVIEW ========== */
 div[class*="Canvas" i],
-div[id*="story" i],
+div[id*="story" i]:not(#storybook-root),
 div[class*="DocsStory" i] {
-    border-radius: var(--radius-lg) !important;
+    border-radius: 14px !important;
     overflow: hidden !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    box-shadow: var(--educacross-shadow-sm) !important;
-    margin: var(--space-8) 0 !important;
-    background: var(--educacross-bg-card) !important;
+    border: 1px solid var(--sb-border-light) !important;
+    box-shadow: var(--sb-shadow-sm) !important;
+    margin: 32px 0 !important;
+    background: var(--sb-bg-card) !important;
 }
 
-/* Minimal toolbar */
+/* Toolbar */
 div[class*="toolbar" i],
 div[id*="toolbar" i] {
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
-    background: var(--educacross-bg-page) !important;
-    border-bottom: 1px solid var(--educacross-border-light) !important;
-    padding: var(--space-2) var(--space-3) !important;
+    border-radius: 14px 14px 0 0 !important;
+    background: var(--sb-bg-page) !important;
+    border-bottom: 1px solid var(--sb-border-light) !important;
+    padding: 8px 12px !important;
 }
 
-/* ========== MINIMAL TABLES ========== */
+/* ========== TABLES ========== */
 table {
-    border-radius: var(--radius-md) !important;
+    border-radius: 10px !important;
     overflow: hidden !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    margin: var(--space-6) 0 !important;
+    border: 1px solid var(--sb-border-light) !important;
+    margin: 24px 0 !important;
     width: 100% !important;
     border-collapse: separate !important;
     border-spacing: 0 !important;
@@ -290,22 +249,21 @@ table {
 
 thead th,
 th {
-    background: var(--educacross-bg-page) !important;
+    background: var(--sb-bg-page) !important;
     font-weight: 600 !important;
-    padding: var(--space-3) var(--space-4) !important;
+    padding: 12px 16px !important;
     text-align: left !important;
-    color: var(--educacross-text-primary) !important;
-    border-bottom: 1px solid var(--educacross-border) !important;
-    font-size: var(--font-size-sm) !important;
-    letter-spacing: 0.01em !important;
+    color: var(--sb-text-primary) !important;
+    border-bottom: 1px solid var(--sb-border) !important;
+    font-size: 0.875rem !important;
 }
 
 tbody td,
 td {
-    padding: var(--space-3) var(--space-4) !important;
-    border-bottom: 1px solid var(--educacross-border-light) !important;
-    color: var(--educacross-text-secondary) !important;
-    font-size: var(--font-size-sm) !important;
+    padding: 12px 16px !important;
+    border-bottom: 1px solid var(--sb-border-light) !important;
+    color: var(--sb-text-secondary) !important;
+    font-size: 0.875rem !important;
 }
 
 tbody tr:last-child td {
@@ -313,114 +271,107 @@ tbody tr:last-child td {
 }
 
 tbody tr:hover {
-    background: var(--educacross-bg-hover) !important;
+    background: var(--sb-bg-hover) !important;
 }
 
-/* ========== CLEAN CONTROLS ========== */
+/* ========== FORM CONTROLS ========== */
 div[id*="panel" i],
 div[id*="control" i],
 div[role="tabpanel"] {
-    padding: var(--space-6) !important;
+    padding: 24px !important;
 }
 
-/* Minimal form controls */
 input[type="text"],
 input[type="number"],
 textarea,
 select {
-    border-radius: var(--radius-md) !important;
-    padding: var(--space-2) var(--space-3) !important;
-    border: 1px solid var(--educacross-border) !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+    border: 1px solid var(--sb-border) !important;
     transition: all 0.15s ease !important;
-    font-size: var(--font-size-sm) !important;
-    background: var(--educacross-bg-card) !important;
-    color: var(--educacross-text-primary) !important;
+    font-size: 0.875rem !important;
+    background: var(--sb-bg-card) !important;
+    color: var(--sb-text-primary) !important;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-    border-color: var(--educacross-primary) !important;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+    border-color: var(--sb-accent) !important;
+    box-shadow: 0 0 0 3px rgba(110, 99, 232, 0.1) !important;
     outline: none !important;
 }
 
-/* Clean buttons */
+/* Buttons */
 button:not([class*="Icon" i]) {
-    border-radius: var(--radius-md) !important;
-    padding: var(--space-2) var(--space-4) !important;
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
     font-weight: 500 !important;
     transition: all 0.15s ease !important;
-    font-size: var(--font-size-sm) !important;
+    font-size: 0.875rem !important;
 }
 
 button[class*="primary" i] {
-    background: var(--educacross-primary) !important;
+    background: var(--sb-accent) !important;
     color: white !important;
     border: none !important;
 }
 
 button[class*="primary" i]:hover {
-    background: var(--educacross-primary-dark) !important;
-    box-shadow: var(--educacross-shadow-md) !important;
+    background: var(--sb-accent-dark) !important;
+    box-shadow: var(--sb-shadow-md) !important;
 }
 
-/* ========== MINIMAL SEARCH ========== */
+/* Search */
 input[type="search"],
 input[placeholder*="Find" i],
 input[placeholder*="Search" i] {
-    border-radius: var(--radius-md) !important;
-    padding: var(--space-2) var(--space-3) !important;
-    padding-left: var(--space-8) !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    background: var(--educacross-bg-card) !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+    padding-left: 32px !important;
+    border: 1px solid var(--sb-border-light) !important;
+    background: var(--sb-bg-card) !important;
     transition: all 0.15s ease !important;
-    font-size: var(--font-size-sm) !important;
+    font-size: 0.875rem !important;
 }
 
 input[type="search"]:focus,
 input[placeholder*="Find" i]:focus,
 input[placeholder*="Search" i]:focus {
-    border-color: var(--educacross-primary) !important;
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12) !important;
+    border-color: var(--sb-accent) !important;
+    box-shadow: 0 0 0 4px rgba(110, 99, 232, 0.12) !important;
     outline: none !important;
 }
 
-/* ========== MINIMAL BADGES ========== */
+/* ========== BADGES ========== */
 span[class*="badge" i],
 span[class*="tag" i],
 div[class*="badge" i] {
-    border-radius: var(--radius-sm) !important;
-    padding: 2px var(--space-2) !important;
+    border-radius: 6px !important;
+    padding: 2px 8px !important;
     font-weight: 500 !important;
-    font-size: var(--font-size-xs) !important;
-    letter-spacing: 0.01em !important;
-    background: var(--educacross-bg-hover) !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    color: var(--educacross-text-secondary) !important;
+    font-size: 0.75rem !important;
+    background: var(--sb-bg-hover) !important;
+    border: 1px solid var(--sb-border-light) !important;
+    color: var(--sb-text-secondary) !important;
 }
 
-/* ========== SUBTLE ANIMATIONS ========== */
+/* ========== ANIMATIONS ========== */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Minimal page transitions */
 main > *,
 article > *,
 div[class*="sbdocs" i] > * {
     animation: fadeIn 0.3s ease-out;
 }
 
-/* ========== MINIMAL SCROLLBAR ========== */
+/* ========== SCROLLBAR ========== */
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--educacross-border-medium) transparent;
+    scrollbar-color: var(--sb-border-medium) transparent;
 }
 
 ::-webkit-scrollbar {
@@ -433,24 +384,20 @@ div[class*="sbdocs" i] > * {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--educacross-border-medium);
+    background: var(--sb-border-medium);
     border-radius: 4px;
     border: 2px solid transparent;
     background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--educacross-text-tertiary);
+    background: var(--sb-text-tertiary);
     background-clip: padding-box;
 }
 
-::-webkit-scrollbar-corner {
-    background: transparent;
-}
-
-/* ========== ACCESSIBILITY & FOCUS ========== */
+/* ========== ACCESSIBILITY ========== */
 *:focus-visible {
-    outline: 2px solid var(--educacross-primary) !important;
+    outline: 2px solid var(--sb-accent) !important;
     outline-offset: 2px !important;
 }
 
@@ -458,61 +405,63 @@ div[class*="sbdocs" i] > * {
     outline: none !important;
 }
 
-a {
-    color: var(--educacross-primary) !important;
+/* Links na docs */
+article a,
+div[class*="sbdocs" i] a {
+    color: var(--sb-accent) !important;
     text-decoration: none !important;
 }
 
-a:hover {
+article a:hover,
+div[class*="sbdocs" i] a:hover {
     text-decoration: underline !important;
 }
 
-/* ========== LIGHT THEME ENHANCEMENTS ========== */
+/* ========== PANELS ========== */
 main,
 article,
 aside,
 nav,
 div[id*="panel" i],
 div[class*="Panel" i] {
-    background: var(--educacross-bg-card) !important;
+    background: var(--sb-bg-card) !important;
 }
 
-/* Toolbar e header claros */
 header,
 div[role="banner"],
 div[class*="toolbar" i] {
-    background: var(--educacross-bg-card) !important;
-    border-bottom: 1px solid var(--educacross-border) !important;
-    box-shadow: var(--educacross-shadow-sm) !important;
+    background: var(--sb-bg-card) !important;
+    border-bottom: 1px solid var(--sb-border) !important;
+    box-shadow: var(--sb-shadow-sm) !important;
 }
 
-/* Canvas de preview com sombra suave */
+/* Canvas preview */
 div[id*="storybook-preview" i],
 iframe {
     border-radius: 14px !important;
-    box-shadow: var(--educacross-shadow-md) !important;
-    border: 2px solid var(--educacross-border) !important;
+    box-shadow: var(--sb-shadow-md) !important;
+    border: 2px solid var(--sb-border) !important;
 }
 
-/* ========== UTILITY CLASSES ========== */
-.educacross-card {
-    border-radius: var(--radius-lg) !important;
-    padding: var(--space-6) !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    box-shadow: var(--educacross-shadow-sm) !important;
-    background: var(--educacross-bg-card) !important;
+/* ========== UTILITY CLASSES (prefixo sb-) ========== */
+.sb-card {
+    border-radius: 14px !important;
+    padding: 24px !important;
+    border: 1px solid var(--sb-border-light) !important;
+    box-shadow: var(--sb-shadow-sm) !important;
+    background: var(--sb-bg-card) !important;
 }
 
-.educacross-divider {
+.sb-divider {
     height: 1px !important;
-    background: var(--educacross-border-light) !important;
-    margin: var(--space-8) 0 !important;
+    background: var(--sb-border-light) !important;
+    margin: 32px 0 !important;
     border: none !important;
 }
 
-/* Modern elevation system */
-.elevation-0 { box-shadow: none !important; }
-.elevation-1 { box-shadow: var(--educacross-shadow-xs) !important; }
-.elevation-2 { box-shadow: var(--educacross-shadow-sm) !important; }
-.elevation-3 { box-shadow: var(--educacross-shadow-md) !important; }
-.elevation-4 { box-shadow: var(--educacross-shadow-lg) !important; } 
+/* Elevation */
+.sb-elevation-0 { box-shadow: none !important; }
+.sb-elevation-1 { box-shadow: var(--sb-shadow-xs) !important; }
+.sb-elevation-2 { box-shadow: var(--sb-shadow-sm) !important; }
+.sb-elevation-3 { box-shadow: var(--sb-shadow-md) !important; }
+.sb-elevation-4 { box-shadow: var(--sb-shadow-lg) !important; }

@@ -43,9 +43,17 @@ const config: StorybookConfig = {
 
     viteFinal: async (config) => {
         config.resolve = config.resolve || {};
+        
+        /**
+         * Pixel Perfect Mode:
+         * - Removido alias para packages/ui/src
+         * - Storybook agora consome o pacote via node_modules (pnpm workspace link)
+         * - Isso garante que o consumo seja idêntico a um app externo
+         */
         config.resolve.alias = {
             ...config.resolve.alias,
-            "@educacross/ui": resolve(__dirname, "../../../packages/ui/src"),
+            // Alias apenas para facilitar imports nos stories, aponta para dist
+            "@educacross/ui": resolve(__dirname, "../../../packages/ui/dist"),
         };
 
         // Otimizações de build e performance
