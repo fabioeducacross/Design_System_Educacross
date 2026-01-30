@@ -270,12 +270,14 @@ export {
     TabsList,
     TabsTrigger,
     TabsContent,
+    TabsLine,
     tabsListVariants,
     tabsTriggerVariants,
     type TabsProps,
     type TabsListProps,
     type TabsTriggerProps,
     type TabsContentProps,
+    type TabsLineProps,
 } from "./components/Tabs";
 
 export {
