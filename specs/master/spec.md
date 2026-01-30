@@ -181,8 +181,8 @@ Criar um **Design System completo** baseado em React, TypeScript, Tailwind CSS e
 
 | Decisão | Escolha | Alternativa Rejeitada | Razão |
 |---------|---------|----------------------|-------|
-| Primitivos | Radix UI | Headless UI, React Aria | Melhor DX, padrões shadcn/ui |
-| Styling | Tailwind + CVA | CSS Modules, Styled Components | Performance, composição |
+| Primitivos | Radix UI | Headless UI, React Aria | Melhor DX, acessibilidade nativa |
+| Styling | Tailwind + CVA | CSS Modules, Styled Components | Performance, composição, paridade com Frontoffice |
 | Ícones | Feather Icons | Lucide, Heroicons | Simplicidade, tamanho |
 | Bundler | tsup | Rollup, esbuild direto | Configuração simples |
 | Monorepo | pnpm + Turborepo | Yarn, npm, Nx | Performance, caching |
@@ -213,10 +213,10 @@ Criar um **Design System completo** baseado em React, TypeScript, Tailwind CSS e
 | M3 | Componentes P2 (8 componentes) | ✅ Complete |
 | M4 | Componentes P3 (8 componentes) | ✅ Complete |
 | M5 | Iconografia | ✅ Complete |
-| M6 | Testes unitários | 🔲 Pending |
-| M7 | CI/CD | 🔲 Pending |
-| M8 | Publicação NPM | 🔲 Pending |
-| M9 | Play Functions (Storybook) | 🔲 Pending |
+| M6 | Testes unitários | ✅ Complete |
+| M7 | CI/CD | ✅ Complete |
+| M8 | Publicação NPM | ⚠️ Pendente Token |
+| M9 | Play Functions (Storybook) | ✅ Complete |
 | M10 | Visual Regression (Chromatic) | 🔲 Future |
 
 ## 8. Risks & Mitigations
@@ -229,11 +229,11 @@ Criar um **Design System completo** baseado em React, TypeScript, Tailwind CSS e
 
 ## 9. Success Metrics
 
-- [ ] 21 componentes implementados e documentados
-- [ ] Build passa sem erros
-- [ ] TypeCheck passa em strict mode
-- [ ] Storybook renderiza todos os componentes
-- [ ] Zero violações de acessibilidade no addon a11y
+- [x] 28 componentes implementados e documentados
+- [x] Build passa sem erros
+- [x] TypeCheck passa em strict mode
+- [x] Storybook renderiza todos os componentes
+- [x] Zero violações de acessibilidade no addon a11y
 - [ ] Bundle size < 100KB (ESM gzip)
 
 ---

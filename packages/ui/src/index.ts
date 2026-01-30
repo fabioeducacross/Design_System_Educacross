@@ -24,6 +24,9 @@
 // Types
 export * from "./types";
 
+// Enums - Proficiency & Performance
+export * from "./enums";
+
 // Layout Components
 export { Header, type HeaderProps } from "./components/Header";
 export { Logo, type LogoProps } from "./components/Logo";
