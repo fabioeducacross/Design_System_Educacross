@@ -4,6 +4,12 @@ import { cn } from "../../utils";
 
 /**
  * Tabs list variants.
+ * 
+ * Variante "rounded" replica exatamente o TabRouter.vue do Frontoffice:
+ * - Abas com sobreposição usando translateX negativo
+ * - Bordas arredondadas no topo (15px)
+ * - Sombra suave
+ * - Hover com fundo primário
  */
 const tabsListVariants = cva(
     [
@@ -16,7 +22,13 @@ const tabsListVariants = cva(
                 default: "bg-muted justify-center",
                 outline: "bg-transparent border justify-center",
                 pills: "bg-transparent gap-1 justify-center",
-                rounded: "bg-transparent p-0 h-auto relative justify-start",
+                // Replica .tabs-row do Frontoffice
+                rounded: [
+                    "bg-transparent p-0 h-auto relative justify-start",
+                    "flex-nowrap overflow-x-auto",
+                    // Scrollbar estilizada
+                    "[scrollbar-width:thin]",
+                ].join(" "),
             },
         },
         defaultVariants: {
@@ -27,6 +39,14 @@ const tabsListVariants = cva(
 
 /**
  * Tab trigger variants.
+ * 
+ * Variante "rounded" replica exatamente .tab-link do Frontoffice:
+ * - padding: 14px 24px 10px 24px
+ * - border-radius: 15px 15px 0 0
+ * - box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.14)
+ * - transform: translateX(calc(var(--index) * -10px))
+ * - hover: background $primary, color white
+ * - active: background $primary (#6E63E8), color white
  */
 const tabsTriggerVariants = cva(
     [
@@ -45,8 +65,27 @@ const tabsTriggerVariants = cva(
                     "px-3 py-1.5 text-sm data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:text-foreground rounded-none",
                 pills:
                     "px-3 py-1.5 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full",
-                rounded:
-                    "bg-white text-[#6e6b7b] rounded-t-[15px] shadow-[0_0_8px_rgba(0,0,0,0.14)] text-sm leading-[20.3px] tracking-[0.14px] px-6 pt-[14px] pb-[10px] gap-[3.5px] data-[state=active]:bg-[#6E63E8] data-[state=active]:text-white data-[state=active]:shadow-[0_0_8px_rgba(0,0,0,0.14)] data-[state=active]:z-[3]",
+                // Replica exatamente .tab-link do TabRouter.vue do Frontoffice
+                rounded: [
+                    // Layout base
+                    "inline-flex items-center gap-1",
+                    // Padding exato: 14px 24px 10px 24px
+                    "pt-[14px] pr-[24px] pb-[10px] pl-[24px]",
+                    // Border radius: 15px 15px 0 0
+                    "rounded-t-[15px] rounded-b-none",
+                    // Box shadow
+                    "shadow-[0_0_8px_rgba(0,0,0,0.14)]",
+                    // Cor de texto padrão (gray)
+                    "text-[#6e6b7b]",
+                    // Background branco por padrão
+                    "bg-white",
+                    // Sem decoração de texto
+                    "no-underline",
+                    // Hover: fundo primário, texto branco
+                    "hover:bg-primary hover:text-white",
+                    // Estado ativo: fundo primário (#6E63E8), texto branco
+                    "data-[state=active]:bg-[#6E63E8] data-[state=active]:text-white",
+                ].join(" "),
             },
         },
         defaultVariants: {
@@ -59,6 +98,10 @@ interface TabsContextValue {
     value: string;
     onValueChange: (value: string) => void;
     variant?: "default" | "outline" | "pills" | "rounded";
+    /** Total de tabs para cálculo de z-index (variante rounded) */
+    totalTabs: number;
+    /** Registra uma tab no contexto */
+    registerTab: () => number;
 }
 
 const TabsContext = React.createContext<TabsContextValue | null>(null);
@@ -112,6 +155,15 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
             defaultValue ?? ""
         );
         const activeValue = value !== undefined ? value : internalValue;
+        
+        // Contador para atribuir índices às tabs
+        const tabCounterRef = React.useRef(0);
+        const [totalTabs, setTotalTabs] = React.useState(0);
+        
+        // Reset do contador a cada render para garantir índices corretos
+        React.useLayoutEffect(() => {
+            tabCounterRef.current = 0;
+        });
 
         const handleValueChange = React.useCallback(
             (newValue: string) => {
@@ -122,6 +174,16 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
             },
             [value, onValueChange]
         );
+        
+        const registerTab = React.useCallback(() => {
+            const index = tabCounterRef.current;
+            tabCounterRef.current += 1;
+            // Atualiza o total após o primeiro render
+            if (tabCounterRef.current > totalTabs) {
+                setTotalTabs(tabCounterRef.current);
+            }
+            return index;
+        }, [totalTabs]);
 
         return (
             <TabsContext.Provider
@@ -129,6 +191,8 @@ const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
                     value: activeValue,
                     onValueChange: handleValueChange,
                     variant: variant ?? "default",
+                    totalTabs,
+                    registerTab,
                 }}
             >
                 <div ref={ref} className={cn("w-full", className)} {...props}>
@@ -172,15 +236,42 @@ export interface TabsTriggerProps
      * The unique value for this tab.
      */
     value: string;
+    /**
+     * Índice manual da tab (opcional). Se não fornecido, será calculado automaticamente.
+     * Usado para calcular translateX e z-index na variante rounded.
+     */
+    index?: number;
 }
 
 /**
  * TabsTrigger - clickable tab button.
+ * 
+ * Na variante "rounded", replica o comportamento do TabRouter.vue do Frontoffice:
+ * - translateX negativo para sobreposição das abas
+ * - z-index dinâmico baseado na posição e estado ativo
  */
 const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
-    ({ className, value, variant, ...props }, ref) => {
+    ({ className, value, variant, index: indexProp, style, ...props }, ref) => {
         const context = React.useContext(TabsContext);
         const isActive = context?.value === value;
+        const effectiveVariant = variant ?? context?.variant;
+        
+        // Calcula o índice da tab para a variante rounded
+        const indexRef = React.useRef<number | null>(null);
+        if (indexRef.current === null && context?.registerTab) {
+            indexRef.current = indexProp ?? context.registerTab();
+        }
+        const tabIndex = indexRef.current ?? 0;
+        
+        // Para a variante rounded, aplicamos estilos inline para translateX e z-index
+        // Isso replica o comportamento do TabRouter.vue:
+        // transform: translateX(calc(var(--index) * -10px))
+        // z-index: isActive ? totalTabs : totalTabs - index
+        const roundedStyles: React.CSSProperties = effectiveVariant === "rounded" ? {
+            transform: `translateX(${tabIndex * -10}px)`,
+            zIndex: isActive ? (context?.totalTabs ?? 1) : (context?.totalTabs ?? 1) - tabIndex,
+            ...style,
+        } : style ?? {};
 
         return (
             <button
@@ -192,10 +283,11 @@ const TabsTrigger = React.forwardRef<HTMLButtonElement, TabsTriggerProps>(
                 onClick={() => context?.onValueChange(value)}
                 className={cn(
                     tabsTriggerVariants({
-                        variant: variant ?? context?.variant,
+                        variant: effectiveVariant,
                     }),
                     className
                 )}
+                style={roundedStyles}
                 {...props}
             />
         );
@@ -241,11 +333,39 @@ const TabsContent = React.forwardRef<HTMLDivElement, TabsContentProps>(
 );
 TabsContent.displayName = "TabsContent";
 
+/**
+ * TabsLine - linha separadora abaixo das abas (usada na variante rounded).
+ * 
+ * Replica a classe .tab-line do TabRouter.vue do Frontoffice:
+ * - border: 1px solid $primary
+ * - height: 1px
+ * - width: 100%
+ * - margin-bottom: 1rem
+ */
+export interface TabsLineProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const TabsLine = React.forwardRef<HTMLDivElement, TabsLineProps>(
+    ({ className, ...props }, ref) => {
+        return (
+            <div
+                ref={ref}
+                className={cn(
+                    "h-px w-full bg-primary mb-4",
+                    className
+                )}
+                {...props}
+            />
+        );
+    }
+);
+TabsLine.displayName = "TabsLine";
+
 export {
     Tabs,
     TabsList,
     TabsTrigger,
     TabsContent,
+    TabsLine,
     tabsListVariants,
     tabsTriggerVariants,
 };

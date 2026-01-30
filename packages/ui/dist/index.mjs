@@ -153,6 +153,13 @@ __export(src_exports, {
   formFieldLabelVariants: () => formFieldLabelVariants,
   formFieldMessageVariants: () => formFieldMessageVariants,
   formFieldVariants: () => formFieldVariants,
+  formatPercentage: () => formatPercentage,
+  getPerformanceId: () => getPerformanceId,
+  getPerformanceLabel: () => getPerformanceLabel,
+  getPerformanceRule: () => getPerformanceRule,
+  getPerformanceVariant: () => getPerformanceVariant,
+  getProficiencyById: () => getProficiencyById,
+  getProficiencyVariant: () => getProficiencyVariant,
   getSelectedRowIds: () => getSelectedRowIds,
   getSelectedRows: () => getSelectedRows,
   iconCategories: () => iconCategories,
@@ -171,7 +178,13 @@ __export(src_exports, {
   misc: () => misc,
   opacityColors: () => opacityColors,
   paginationButtonVariants: () => paginationButtonVariants,
+  performanceColorArray: () => performanceColorArray,
+  performanceColors: () => performanceColors,
+  performanceRules: () => performanceRules,
   popoverContentVariants: () => popoverContentVariants,
+  proficiency: () => proficiency,
+  proficiencyWithInProgress: () => proficiencyWithInProgress,
+  proficiencyWithNotCompleted: () => proficiencyWithNotCompleted,
   progressVariants: () => progressVariants,
   radioVariants: () => radioVariants,
   scrollToTopVariants: () => scrollToTopVariants,
@@ -210,6 +223,131 @@ function isReactElement(value) {
 function isFunction(value) {
   return typeof value === "function";
 }
+
+// src/enums/proficiency.ts
+var proficiency = [
+  {
+    id: 1,
+    label: "Abaixo do B\xE1sico",
+    variant: "legend-below-basic",
+    icon: "frown",
+    description: "Desempenho abaixo do esperado"
+  },
+  {
+    id: 2,
+    label: "B\xE1sico",
+    variant: "legend-basic",
+    icon: "meh",
+    description: "Desempenho b\xE1sico"
+  },
+  {
+    id: 3,
+    label: "Proficiente",
+    variant: "legend-proficient",
+    icon: "smile",
+    description: "Desempenho proficiente"
+  },
+  {
+    id: 4,
+    label: "Avan\xE7ado",
+    variant: "legend-advanced",
+    icon: "star",
+    description: "Desempenho avan\xE7ado"
+  }
+];
+var proficiencyWithNotCompleted = [
+  {
+    id: 0,
+    label: "N\xE3o fizeram",
+    variant: "legend-not-completed",
+    icon: "user-x",
+    description: "N\xE3o realizaram a atividade"
+  },
+  ...proficiency
+];
+var proficiencyWithInProgress = [
+  {
+    id: 0,
+    label: "Em Andamento",
+    variant: "legend-in-progress",
+    icon: "clock",
+    description: "Atividade em andamento"
+  },
+  ...proficiency
+];
+function getProficiencyById(id, includeNotCompleted = false, includeInProgress = false) {
+  const list = includeInProgress ? proficiencyWithInProgress : includeNotCompleted ? proficiencyWithNotCompleted : proficiency;
+  return list.find((item) => item.id === id);
+}
+function getProficiencyVariant(id, includeNotCompleted = false, includeInProgress = false) {
+  return getProficiencyById(id, includeNotCompleted, includeInProgress)?.variant;
+}
+
+// src/enums/performance.ts
+var performanceRules = [
+  {
+    id: 1,
+    label: "Abaixo do B\xE1sico",
+    variant: "legend-below-basic",
+    min: 0,
+    max: 24,
+    matches: (percentage) => percentage >= 0 && percentage < 25
+  },
+  {
+    id: 2,
+    label: "B\xE1sico",
+    variant: "legend-basic",
+    min: 25,
+    max: 49,
+    matches: (percentage) => percentage >= 25 && percentage < 50
+  },
+  {
+    id: 3,
+    label: "Proficiente",
+    variant: "legend-proficient",
+    min: 50,
+    max: 74,
+    matches: (percentage) => percentage >= 50 && percentage < 75
+  },
+  {
+    id: 4,
+    label: "Avan\xE7ado",
+    variant: "legend-advanced",
+    min: 75,
+    max: 100,
+    matches: (percentage) => percentage >= 75 && percentage <= 100
+  }
+];
+function getPerformanceRule(percentage) {
+  const clampedPercentage = Math.max(0, Math.min(100, percentage));
+  return performanceRules.find((rule) => rule.matches(clampedPercentage));
+}
+function getPerformanceVariant(percentage) {
+  return getPerformanceRule(percentage)?.variant;
+}
+function getPerformanceId(percentage) {
+  return getPerformanceRule(percentage)?.id;
+}
+function getPerformanceLabel(percentage) {
+  return getPerformanceRule(percentage)?.label;
+}
+function formatPercentage(value, decimals = 0) {
+  return `${value.toFixed(decimals)}%`;
+}
+var performanceColors = {
+  advanced: "#6e63e8",
+  proficient: "#28c76f",
+  basic: "#ff9f43",
+  belowBasic: "#ea5455",
+  notCompleted: "#b4b7bd",
+  inProgress: "#00cfe8"
+};
+var performanceColorArray = [
+  performanceColors.belowBasic,
+  performanceColors.basic,
+  performanceColors.proficient,
+  performanceColors.advanced
+];
 
 // src/components/Header/Header.tsx
 import * as React6 from "react";
@@ -8256,6 +8394,13 @@ export {
   formFieldLabelVariants,
   formFieldMessageVariants,
   formFieldVariants,
+  formatPercentage,
+  getPerformanceId,
+  getPerformanceLabel,
+  getPerformanceRule,
+  getPerformanceVariant,
+  getProficiencyById,
+  getProficiencyVariant,
   getSelectedRowIds,
   getSelectedRows,
   iconCategories,
@@ -8274,7 +8419,13 @@ export {
   misc,
   opacityColors,
   paginationButtonVariants,
+  performanceColorArray,
+  performanceColors,
+  performanceRules,
   popoverContentVariants,
+  proficiency,
+  proficiencyWithInProgress,
+  proficiencyWithNotCompleted,
   progressVariants,
   radioVariants,
   scrollToTopVariants,

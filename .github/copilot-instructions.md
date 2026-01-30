@@ -1,12 +1,35 @@
 # Educacross Design System - Copilot Instructions
 
+## ⚠️ IMPORTANTE: Fonte da Verdade
+
+Este Design System replica **exatamente** os componentes do **Frontoffice Vue** (`educacross-frontoffice/`).
+**NÃO** seguimos padrões do shadcn/ui. A referência canônica é o Frontoffice.
+
+Consulte o catálogo completo: `specs/001-ds-frontoffice-catalog/spec.md`
+
 ## Arquitetura
 
 Este é um **monorepo** com pnpm + Turborepo contendo:
 - `packages/ui` → Pacote NPM `@educacross/ui` (componentes React)
-- `apps/storybook` → Documentação interativa Storybook 8
+- `apps/storybook` → Documentação interativa Storybook 10
 
-Stack: **React 18+**, **Tailwind CSS 3.4+**, **Radix UI** (primitivos acessíveis), **class-variance-authority** (CVA).
+Stack: **React 18+**, **Tailwind CSS 3.4+**, **Radix UI** (apenas para primitivos acessíveis), **class-variance-authority** (CVA).
+
+## Sistema de Cores Legend (CRÍTICO!)
+
+O Frontoffice usa cores específicas para proficiência que são **diferentes** das cores semânticas:
+
+```css
+/* ⚠️ legend-basic é LARANJA, NÃO é warning (amarelo)! */
+--color-legend-advanced: #6e63e8;       /* Avançado - Roxo */
+--color-legend-proficient: #28c76f;     /* Proficiente - Verde */
+--color-legend-basic: #ff9f43;          /* Básico - LARANJA! */
+--color-legend-below-basic: #ea5455;    /* Abaixo do Básico - Vermelho */
+--color-legend-not-completed: #b4b7bd;  /* Não Concluído - Cinza */
+--color-legend-in-progress: #00cfe8;    /* Em Andamento - Ciano */
+```
+
+Use classes como: `text-legend-basic`, `bg-legend-advanced`, `border-legend-proficient`
 
 ## Comandos Essenciais
 

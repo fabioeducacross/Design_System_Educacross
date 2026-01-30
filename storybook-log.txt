@@ -1,0 +1,53 @@
+
+[90mÔöî[39m  storybook v10.2.0
+[90mÔöé[39m
+[31mÔûá[39m  [38;2;241;97;97mSB_CORE-SERVER_0006 (MainFileMissingError): No configuration files[39m
+[90mÔöé[39m  [33mhave been found in your configDir:[39m
+[90mÔöé[39m  [33m[33mC:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/.storybook[39m.
+[90mÔöé[39m  Storybook needs a "main.js|ts" file, please add it.
+
+[90mÔöé[39m  You can pass a --config-dir flag to tell Storybook, where your
+[90mÔöé[39m  main.js|ts file is located at.
+
+[90mÔöé[39m  More info: ]8;;https://storybook.js.org/docs/configure?ref=errorhttps://storybook.js.org/docs/configure?ref=error]8;;
+[90mÔöé[39m  [39m
+[90mÔöé[39m  at validateConfigurationFiles
+[90mÔöé[39m  (file:///C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/node_modules/.pnpm/storybook@10.2.0_@testing-library+dom@10.4.0_prettier@3.8.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-6QCIDOPJ.js:9971:11)
+[90mÔöé[39m  at async loadMainConfig
+[90mÔöé[39m  (file:///C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/node_modules/.pnpm/storybook@10.2.0_@testing-library+dom@10.4.0_prettier@3.8.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-6QCIDOPJ.js:11673:3)
+[90mÔöé[39m  at async buildDevStandalone
+[90mÔöé[39m  (file:///C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/node_modules/.pnpm/storybook@10.2.0_@testing-library+dom@10.4.0_prettier@3.8.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/core-server/index.js:7518:16)
+[90mÔöé[39m  at async withTelemetry
+[90mÔöé[39m  (file:///C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/node_modules/.pnpm/storybook@10.2.0_@testing-library+dom@10.4.0_prettier@3.8.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-5T2PCIM6.js:218:12)
+[90mÔöé[39m  at async dev
+[90mÔöé[39m  (file:///C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/node_modules/.pnpm/storybook@10.2.0_@testing-library+dom@10.4.0_prettier@3.8.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/bin/core.js:2734:3)
+[90mÔöé[39m  at async _Command.<anonymous>
+[90mÔöé[39m  (file:///C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/node_modules/.pnpm/storybook@10.2.0_@testing-library+dom@10.4.0_prettier@3.8.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/bin/core.js:2801:92)
+[90mÔöé[39m
+[33mÔû▓[39m  Broken build, fix the error above.
+[90mÔöé[39m  You may need to refresh the browser.
+file:///C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/node_modules/.pnpm/storybook@10.2.0_@testing-library+dom@10.4.0_prettier@3.8.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-6QCIDOPJ.js:9971
+    throw new MainFileMissingError({ location: configDir });
+          ^
+
+SB_CORE-SERVER_0006 (MainFileMissingError): No configuration files have been found in your configDir: C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/.storybook.
+Storybook needs a "main.js|ts" file, please add it.
+
+You can pass a --config-dir flag to tell Storybook, where your main.js|ts file is located at.
+
+More info: https://storybook.js.org/docs/configure?ref=error
+
+    at validateConfigurationFiles (file:///C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/node_modules/.pnpm/storybook@10.2.0_@testing-library+dom@10.4.0_prettier@3.8.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-6QCIDOPJ.js:9971:11) {
+  data: {
+    location: 'C:/Users/Educacross/Documents/Educacross/Design_System_Educacross/Design_System_Educacross/.storybook'
+  },
+  fromStorybook: true,
+  isHandledError: false,
+  subErrors: [],
+  category: 'CORE-SERVER',
+  documentation: 'https://storybook.js.org/docs/configure?ref=error',
+  code: 6,
+  _name: 'MainFileMissingError'
+}
+
+Node.js v22.22.0

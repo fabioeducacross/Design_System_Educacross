@@ -84,13 +84,20 @@ All contributors MUST comply with this constitution. Violations block merge.
 | ----------------- | -------------------------------------------------- |
 | Framework         | React 18+                                          |
 | Styling           | Tailwind CSS 3.4+ (extends tokens via preset)      |
-| Primitives        | Radix UI (headless, accessible)                    |
-| Component recipes | shadcn/ui patterns (copy-paste, own the code)      |
-| Documentation     | Storybook 8+ with `@storybook/addon-*`             |
+| Primitives        | Radix UI (headless, accessible) - apenas quando necessário |
+| Component recipes | **Frontoffice Vue** (espelhar comportamento e visual) |
+| Documentation     | Storybook 10+ with `@storybook/addon-*`            |
 | Bundler           | Vite (for Storybook) or as required by consumers   |
 | Package manager   | pnpm (workspace protocol)                          |
 | TypeScript        | Strict mode (`"strict": true`)                     |
 | Linting           | ESLint + Prettier                                  |
+
+### ⚠️ IMPORTANTE: Frontoffice como Fonte da Verdade
+
+Os componentes deste Design System **NÃO** devem seguir padrões do shadcn/ui.
+A referência canônica é o **Frontoffice Vue** (`educacross-frontoffice/src/components/`).
+
+Consulte o catálogo completo em: `specs/001-ds-frontoffice-catalog/spec.md`
 
 ### Monorepo Structure
 
@@ -176,6 +183,29 @@ export default {
 - Theme switching MUST rely on a `.dark` class on `<html>` or `<body>`.
 - Components MUST NOT hard-code light or dark values; always reference tokens.
 - Storybook MUST include a theme switcher via `@storybook/addon-themes` or Docs toolbar.
+
+### 5.4 Legend Colors (Sistema de Proficiência)
+
+O Frontoffice usa um sistema de cores específico para legendas de proficiência e performance.
+Estas cores **NÃO são equivalentes** às cores semânticas (primary, success, warning, etc.).
+
+**⚠️ ATENÇÃO: `legend-basic` é LARANJA (#ff9f43), NÃO é amarelo como `warning`!**
+
+```css
+:root {
+  /* Legend Colors - Sistema de Proficiência Educacross */
+  --color-legend-advanced: 110 82 232;       /* #6e63e8 - Avançado */
+  --color-legend-proficient: 40 199 111;     /* #28c76f - Proficiente */
+  --color-legend-basic: 255 159 67;          /* #ff9f43 - Básico (LARANJA!) */
+  --color-legend-below-basic: 234 84 85;     /* #ea5455 - Abaixo do Básico */
+  --color-legend-not-completed: 180 183 189; /* #b4b7bd - Não Concluído */
+  --color-legend-in-progress: 0 207 232;     /* #00cfe8 - Em Andamento */
+}
+```
+
+Classes Tailwind geradas:
+- `text-legend-*`, `bg-legend-*`, `border-legend-*`
+- Variantes com opacidade: `bg-legend-basic/10` para backgrounds light
 
 ---
 
