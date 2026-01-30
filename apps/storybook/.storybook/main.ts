@@ -45,7 +45,7 @@ const config: StorybookConfig = {
         config.resolve = config.resolve || {};
         config.resolve.alias = {
             ...config.resolve.alias,
-            "@educacross/ui": resolve(__dirname, "../../../packages/ui/src"),
+            "@educacross/ui": resolve(__dirname, "../../../packages/ui/dist"),
         };
 
         // Otimizações de build e performance

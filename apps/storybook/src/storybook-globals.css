@@ -1,0 +1,14 @@
+/**
+ * STORYBOOK GLOBALS - MODO PIXEL PERFECT
+ * 
+ * Este arquivo importa os tokens e utilitários do Design System
+ * diretamente do dist compilado do pacote @fabioeducacross/ui.
+ * 
+ * ⚠️ IMPORTANTE: Não duplique diretivas @tailwind aqui.
+ * O CSS importado já contém base, components e utilities.
+ * 
+ * Referência: packages/ui/dist/styles.css
+ */
+
+/* Importa os tokens e utilitários do Design System do dist */
+@import "@fabioeducacross/ui/styles.css";

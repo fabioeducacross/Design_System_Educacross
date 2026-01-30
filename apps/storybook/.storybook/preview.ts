@@ -1,14 +1,34 @@
-import type { Preview } from "@storybook/react-vite";
+import type { Preview, StoryContext } from "@storybook/react-vite";
 import { withThemeByClassName } from "@storybook/addon-themes";
+import type { ReactRenderer } from "@storybook/react";
 
-// Import Tailwind CSS and design tokens
-import "../src/styles.css";
-
-// Import Bootstrap-Vue compatibility layer (for Frontoffice visual fidelity)
-import "../src/bootstrap-vue-compat.css";
+// Import Storybook globals (tokens e utilitários do Design System)
+import "../src/storybook-globals.css";
 
 // Import custom Storybook styles
 import "./custom-styles.css";
+
+/**
+ * Decorator para carregar Bootstrap-Vue compat de forma opt-in
+ * Use nas stories que precisarem: parameters.bootstrapCompat = true
+ */
+const withBootstrapCompat = (
+  StoryFn: any,
+  context: StoryContext<ReactRenderer>
+) => {
+  if (context.parameters?.bootstrapCompat) {
+    // Carrega dinamicamente o CSS de compatibilidade Bootstrap-Vue
+    const link = document.getElementById("bootstrap-compat") as HTMLLinkElement;
+    if (!link) {
+      const newLink = document.createElement("link");
+      newLink.id = "bootstrap-compat";
+      newLink.rel = "stylesheet";
+      newLink.href = "/bootstrap-vue-compat.css";
+      document.head.appendChild(newLink);
+    }
+  }
+  return StoryFn();
+};
 
 const preview: Preview = {
   parameters: {
@@ -65,6 +85,7 @@ const preview: Preview = {
     },
   },
   decorators: [
+    withBootstrapCompat,
     withThemeByClassName({
       themes: {
         light: "",

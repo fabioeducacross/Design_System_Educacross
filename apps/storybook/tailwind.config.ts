@@ -4,7 +4,7 @@ import { educacrossPreset } from "@fabioeducacross/ui/tailwind-preset";
 const config: Config = {
     content: [
         "./stories/**/*.{ts,tsx,mdx}",
-        "../../packages/ui/src/**/*.{ts,tsx}",
+        "../../packages/ui/dist/**/*.{js,mjs}",
     ],
     presets: [educacrossPreset],
 };

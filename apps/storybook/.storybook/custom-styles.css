@@ -1,69 +1,73 @@
 /* ===============================================
    EDUCACROSS DESIGN SYSTEM - STORYBOOK CUSTOM STYLES
-   Tema Light Vibrante e Moderno
+   Tema Light Vibrante e Moderno - Modo Pixel Perfect
    Versão Storybook 10+ Compatible
+   
+   ⚠️ IMPORTANTE: Este arquivo usa tokens do Design System
+   e define apenas variáveis específicas do Storybook com
+   o prefixo --sb-*
    =============================================== */
 
-/* ========== MODERN UI DESIGN SYSTEM ========== */
+/* ========== STORYBOOK-SPECIFIC VARIABLES ========== */
 :root {
-    /* Colors - Refined palette */
-    --educacross-primary: #6366F1;
-    --educacross-primary-light: #818CF8;
-    --educacross-primary-dark: #4F46E5;
-    --educacross-accent: #EC4899;
-    --educacross-success: #10B981;
-    --educacross-warning: #F59E0B;
+    /* Storybook UI Colors - baseados em tokens do DS */
+    --sb-primary: var(--color-primary-500, #6e63e8);
+    --sb-primary-light: var(--color-primary-400, #8e88eb);
+    --sb-primary-dark: var(--color-primary-600, #635ad1);
+    --sb-accent: #EC4899;
+    --sb-success: var(--color-success-500, #28c76f);
+    --sb-warning: var(--color-warning-500, #ffd643);
     
-    /* Backgrounds - Subtle gradients */
-    --educacross-bg-page: #FAFBFC;
-    --educacross-bg-card: #FFFFFF;
-    --educacross-bg-sidebar: #FFFFFF;
-    --educacross-bg-hover: #F8F9FB;
+    /* Storybook Backgrounds */
+    --sb-bg-page: #FAFBFC;
+    --sb-bg-card: #FFFFFF;
+    --sb-bg-sidebar: #FFFFFF;
+    --sb-bg-hover: #F8F9FB;
     
-    /* Text - Clear hierarchy */
-    --educacross-text-primary: #111827;
-    --educacross-text-secondary: #6B7280;
-    --educacross-text-tertiary: #9CA3AF;
+    /* Storybook Text */
+    --sb-text-primary: #111827;
+    --sb-text-secondary: #6B7280;
+    --sb-text-tertiary: #9CA3AF;
     
-    /* Borders - Minimal and refined */
-    --educacross-border-light: #F3F4F6;
-    --educacross-border: #E5E7EB;
-    --educacross-border-medium: #D1D5DB;
+    /* Storybook Borders */
+    --sb-border-light: #F3F4F6;
+    --sb-border: #E5E7EB;
+    --sb-border-medium: #D1D5DB;
     
-    /* Shadows - Layered depth */
-    --educacross-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --educacross-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
-    --educacross-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
-    --educacross-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-    --educacross-shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
+    /* Storybook Shadows */
+    --sb-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --sb-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --sb-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --sb-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --sb-shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.12);
     
-    /* Spacing - 4px base grid */
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 12px;
-    --space-4: 16px;
-    --space-5: 20px;
-    --space-6: 24px;
-    --space-8: 32px;
-    --space-10: 40px;
-    --space-12: 48px;
-    --space-16: 64px;
+    /* Storybook Spacing - usa tokens do DS quando possível */
+    --sb-space-1: var(--padding-1, 4px);
+    --sb-space-2: var(--padding-2, 8px);
+    --sb-space-3: var(--padding-3, 12px);
+    --sb-space-4: var(--padding-4, 16px);
+    --sb-space-5: var(--padding-5, 20px);
+    --sb-space-6: var(--padding-6, 24px);
+    --sb-space-8: var(--padding-8, 32px);
+    --sb-space-10: var(--padding-10, 40px);
+    --sb-space-12: var(--padding-12, 48px);
+    --sb-space-16: var(--padding-16, 64px);
     
-    /* Border radius - Consistent rounded corners */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 14px;
-    --radius-xl: 18px;
+    /* Storybook Border radius - usa tokens do DS */
+    --sb-radius-sm: var(--sb-radius-sm, 6px);
+    --sb-radius-md: var(--sb-radius-md, 10px);
+    --sb-radius-lg: var(--sb-radius-lg, 14px);
+    --sb-radius-xl: var(--sb-radius-xl, 18px);
     
-    /* Typography scale */
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
+    /* Storybook Typography scale */
+    --sb-font-size-xs: 0.75rem;
+    --sb-font-size-sm: 0.875rem;
+    --sb-font-size-base: 1rem;
+    --sb-font-size-lg: 1.125rem;
+    --sb-font-size-xl: 1.25rem;
+    --sb-font-size-2xl: 1.5rem;
+    --sb-font-size-3xl: 1.875rem;
+    --sb-font-size-4xl: 2.25rem;
 }
 
 /* ========== CLEAN LIGHT THEME ========== */
@@ -71,10 +75,10 @@ body,
 html,
 #storybook-root,
 #storybook-docs {
-    background: var(--educacross-bg-page) !important;
-    color: var(--educacross-text-primary) !important;
+    background: var(--sb-bg-page) !important;
+    color: var(--sb-text-primary) !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-    font-size: var(--font-size-base) !important;
+    font-size: var(--sb-font-size-base) !important;
     line-height: 1.6 !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
@@ -85,8 +89,8 @@ aside[role="navigation"],
 nav[aria-label*="sidebar" i],
 div[class*="sidebar" i],
 div[id*="sidebar" i] {
-    background: var(--educacross-bg-sidebar) !important;
-    border-right: 1px solid var(--educacross-border) !important;
+    background: var(--sb-bg-sidebar) !important;
+    border-right: 1px solid var(--sb-border) !important;
     box-shadow: 2px 0 8px rgba(115, 103, 240, 0.04) !important;
 }
 
@@ -102,7 +106,7 @@ div[class*="LeafNode" i] a {
     margin: 3px 8px !important;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
     font-weight: 500 !important;
-    color: var(--educacross-text-secondary) !important;
+    color: var(--sb-text-secondary) !important;
     font-size: 0.95rem !important;
 }
 
@@ -114,8 +118,8 @@ div[class*="TreeNode" i]:hover a,
 div[class*="LeafNode" i]:hover a {
     background: linear-gradient(135deg, rgba(115, 103, 240, 0.12) 0%, rgba(156, 143, 254, 0.08) 100%) !important;
     transform: translateX(4px);
-    box-shadow: inset 4px 0 0 var(--educacross-primary), var(--educacross-shadow-sm) !important;
-    color: var(--educacross-primary) !important;
+    box-shadow: inset 4px 0 0 var(--sb-primary), var(--sb-shadow-sm) !important;
+    color: var(--sb-primary) !important;
 }
 
 /* Selected state com gradiente vibrante */
@@ -127,10 +131,10 @@ aside a[aria-current],
 div[class*="TreeNode" i][class*="selected" i] a,
 div[class*="LeafNode" i][class*="selected" i] a {
     background: linear-gradient(135deg, rgba(115, 103, 240, 0.18) 0%, rgba(156, 143, 254, 0.12) 100%) !important;
-    border-left: 5px solid var(--educacross-primary) !important;
+    border-left: 5px solid var(--sb-primary) !important;
     font-weight: 700 !important;
-    color: var(--educacross-primary-dark) !important;
-    box-shadow: var(--educacross-shadow-md) !important;
+    color: var(--sb-primary-dark) !important;
+    box-shadow: var(--sb-shadow-md) !important;
 }
 
 /* ========== DOCS PAGE LIGHT THEME ========== */
@@ -141,7 +145,7 @@ article {
     max-width: 1200px !important;
     padding: 48px 64px !important;
     margin: 0 auto !important;
-    background: var(--educacross-bg-card) !important;
+    background: var(--sb-bg-card) !important;
     min-height: 100vh !important;
 }
 
@@ -165,34 +169,34 @@ div[class*="sbdocs" i] h1 {
 main h2,
 article h2,
 div[class*="sbdocs" i] h2 {
-    font-size: var(--font-size-2xl) !important;
+    font-size: var(--sb-font-size-2xl) !important;
     font-weight: 600 !important;
-    margin-top: var(--space-12) !important;
-    margin-bottom: var(--space-4) !important;
-    padding-bottom: var(--space-3);
-    border-bottom: 1px solid var(--educacross-border-light);
-    color: var(--educacross-text-primary) !important;
+    margin-top: var(--sb-space-12) !important;
+    margin-bottom: var(--sb-space-4) !important;
+    padding-bottom: var(--sb-space-3);
+    border-bottom: 1px solid var(--sb-border-light);
+    color: var(--sb-text-primary) !important;
     letter-spacing: -0.02em !important;
 }
 
 main h3,
 article h3,
 div[class*="sbdocs" i] h3 {
-    font-size: var(--font-size-xl) !important;
+    font-size: var(--sb-font-size-xl) !important;
     font-weight: 600 !important;
-    margin-top: var(--space-8) !important;
-    margin-bottom: var(--space-3) !important;
-    color: var(--educacross-text-primary) !important;
+    margin-top: var(--sb-space-8) !important;
+    margin-bottom: var(--sb-space-3) !important;
+    color: var(--sb-text-primary) !important;
     letter-spacing: -0.015em !important;
 }
 
 main h4,
 article h4 {
-    font-size: var(--font-size-lg) !important;
+    font-size: var(--sb-font-size-lg) !important;
     font-weight: 600 !important;
-    margin-top: var(--space-6) !important;
-    margin-bottom: var(--space-2) !important;
-    color: var(--educacross-text-secondary) !important;
+    margin-top: var(--sb-space-6) !important;
+    margin-bottom: var(--sb-space-2) !important;
+    color: var(--sb-text-secondary) !important;
 }
 
 /* Clean paragraphs */
@@ -200,9 +204,9 @@ main p,
 article p,
 div[class*="sbdocs" i] p {
     line-height: 1.7 !important;
-    margin-bottom: var(--space-4) !important;
-    color: var(--educacross-text-secondary) !important;
-    font-size: var(--font-size-base) !important;
+    margin-bottom: var(--sb-space-4) !important;
+    color: var(--sb-text-secondary) !important;
+    font-size: var(--sb-font-size-base) !important;
     max-width: 68ch !important;
 }
 
@@ -211,15 +215,15 @@ main ul,
 main ol,
 article ul,
 article ol {
-    margin: var(--space-4) 0 !important;
-    padding-left: var(--space-6) !important;
+    margin: var(--sb-space-4) 0 !important;
+    padding-left: var(--sb-space-6) !important;
 }
 
 main li,
 article li {
     line-height: 1.7 !important;
-    margin-bottom: var(--space-2) !important;
-    color: var(--educacross-text-secondary) !important;
+    margin-bottom: var(--sb-space-2) !important;
+    color: var(--sb-text-secondary) !important;
 }
 
 /* ========== CODE BLOCKS LIGHT THEME ========== */
@@ -229,8 +233,8 @@ code[class*="prism" i] {
     border-radius: 14px !important;
     padding: 28px !important;
     background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%) !important;
-    border: 2px solid var(--educacross-border) !important;
-    box-shadow: var(--educacross-shadow-md) !important;
+    border: 2px solid var(--sb-border) !important;
+    box-shadow: var(--sb-shadow-md) !important;
     margin: 28px 0 !important;
 }
 
@@ -239,7 +243,7 @@ pre code {
     font-family: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace !important;
     font-size: 0.92em !important;
     line-height: 1.7 !important;
-    color: var(--educacross-text-primary) !important;
+    color: var(--sb-text-primary) !important;
 }
 
 /* Inline code com destaque roxo vibrante */
@@ -247,12 +251,12 @@ p code:not([class*="prism" i]),
 li code:not([class*="prism" i]),
 td code:not([class*="prism" i]) {
     background: linear-gradient(135deg, rgba(115, 103, 240, 0.15) 0%, rgba(199, 210, 254, 0.12) 100%) !important;
-    color: var(--educacross-primary-dark) !important;
+    color: var(--sb-primary-dark) !important;
     padding: 4px 10px !important;
     border-radius: 7px !important;
     font-weight: 700 !important;
     font-size: 0.92em !important;
-    border: 1px solid var(--educacross-border) !important;
+    border: 1px solid var(--sb-border) !important;
     box-shadow: 0 1px 2px rgba(115, 103, 240, 0.08) !important;
 }
 
@@ -260,29 +264,29 @@ td code:not([class*="prism" i]) {
 div[class*="Canvas" i],
 div[id*="story" i],
 div[class*="DocsStory" i] {
-    border-radius: var(--radius-lg) !important;
+    border-radius: var(--sb-radius-lg) !important;
     overflow: hidden !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    box-shadow: var(--educacross-shadow-sm) !important;
-    margin: var(--space-8) 0 !important;
-    background: var(--educacross-bg-card) !important;
+    border: 1px solid var(--sb-border-light) !important;
+    box-shadow: var(--sb-shadow-sm) !important;
+    margin: var(--sb-space-8) 0 !important;
+    background: var(--sb-bg-card) !important;
 }
 
 /* Minimal toolbar */
 div[class*="toolbar" i],
 div[id*="toolbar" i] {
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
-    background: var(--educacross-bg-page) !important;
-    border-bottom: 1px solid var(--educacross-border-light) !important;
-    padding: var(--space-2) var(--space-3) !important;
+    border-radius: var(--sb-radius-lg) var(--sb-radius-lg) 0 0 !important;
+    background: var(--sb-bg-page) !important;
+    border-bottom: 1px solid var(--sb-border-light) !important;
+    padding: var(--sb-space-2) var(--sb-space-3) !important;
 }
 
 /* ========== MINIMAL TABLES ========== */
 table {
-    border-radius: var(--radius-md) !important;
+    border-radius: var(--sb-radius-md) !important;
     overflow: hidden !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    margin: var(--space-6) 0 !important;
+    border: 1px solid var(--sb-border-light) !important;
+    margin: var(--sb-space-6) 0 !important;
     width: 100% !important;
     border-collapse: separate !important;
     border-spacing: 0 !important;
@@ -290,22 +294,22 @@ table {
 
 thead th,
 th {
-    background: var(--educacross-bg-page) !important;
+    background: var(--sb-bg-page) !important;
     font-weight: 600 !important;
-    padding: var(--space-3) var(--space-4) !important;
+    padding: var(--sb-space-3) var(--sb-space-4) !important;
     text-align: left !important;
-    color: var(--educacross-text-primary) !important;
-    border-bottom: 1px solid var(--educacross-border) !important;
-    font-size: var(--font-size-sm) !important;
+    color: var(--sb-text-primary) !important;
+    border-bottom: 1px solid var(--sb-border) !important;
+    font-size: var(--sb-font-size-sm) !important;
     letter-spacing: 0.01em !important;
 }
 
 tbody td,
 td {
-    padding: var(--space-3) var(--space-4) !important;
-    border-bottom: 1px solid var(--educacross-border-light) !important;
-    color: var(--educacross-text-secondary) !important;
-    font-size: var(--font-size-sm) !important;
+    padding: var(--sb-space-3) var(--sb-space-4) !important;
+    border-bottom: 1px solid var(--sb-border-light) !important;
+    color: var(--sb-text-secondary) !important;
+    font-size: var(--sb-font-size-sm) !important;
 }
 
 tbody tr:last-child td {
@@ -313,14 +317,14 @@ tbody tr:last-child td {
 }
 
 tbody tr:hover {
-    background: var(--educacross-bg-hover) !important;
+    background: var(--sb-bg-hover) !important;
 }
 
 /* ========== CLEAN CONTROLS ========== */
 div[id*="panel" i],
 div[id*="control" i],
 div[role="tabpanel"] {
-    padding: var(--space-6) !important;
+    padding: var(--sb-space-6) !important;
 }
 
 /* Minimal form controls */
@@ -328,60 +332,60 @@ input[type="text"],
 input[type="number"],
 textarea,
 select {
-    border-radius: var(--radius-md) !important;
-    padding: var(--space-2) var(--space-3) !important;
-    border: 1px solid var(--educacross-border) !important;
+    border-radius: var(--sb-radius-md) !important;
+    padding: var(--sb-space-2) var(--sb-space-3) !important;
+    border: 1px solid var(--sb-border) !important;
     transition: all 0.15s ease !important;
-    font-size: var(--font-size-sm) !important;
-    background: var(--educacross-bg-card) !important;
-    color: var(--educacross-text-primary) !important;
+    font-size: var(--sb-font-size-sm) !important;
+    background: var(--sb-bg-card) !important;
+    color: var(--sb-text-primary) !important;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-    border-color: var(--educacross-primary) !important;
+    border-color: var(--sb-primary) !important;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
     outline: none !important;
 }
 
 /* Clean buttons */
 button:not([class*="Icon" i]) {
-    border-radius: var(--radius-md) !important;
-    padding: var(--space-2) var(--space-4) !important;
+    border-radius: var(--sb-radius-md) !important;
+    padding: var(--sb-space-2) var(--sb-space-4) !important;
     font-weight: 500 !important;
     transition: all 0.15s ease !important;
-    font-size: var(--font-size-sm) !important;
+    font-size: var(--sb-font-size-sm) !important;
 }
 
 button[class*="primary" i] {
-    background: var(--educacross-primary) !important;
+    background: var(--sb-primary) !important;
     color: white !important;
     border: none !important;
 }
 
 button[class*="primary" i]:hover {
-    background: var(--educacross-primary-dark) !important;
-    box-shadow: var(--educacross-shadow-md) !important;
+    background: var(--sb-primary-dark) !important;
+    box-shadow: var(--sb-shadow-md) !important;
 }
 
 /* ========== MINIMAL SEARCH ========== */
 input[type="search"],
 input[placeholder*="Find" i],
 input[placeholder*="Search" i] {
-    border-radius: var(--radius-md) !important;
-    padding: var(--space-2) var(--space-3) !important;
-    padding-left: var(--space-8) !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    background: var(--educacross-bg-card) !important;
+    border-radius: var(--sb-radius-md) !important;
+    padding: var(--sb-space-2) var(--sb-space-3) !important;
+    padding-left: var(--sb-space-8) !important;
+    border: 1px solid var(--sb-border-light) !important;
+    background: var(--sb-bg-card) !important;
     transition: all 0.15s ease !important;
-    font-size: var(--font-size-sm) !important;
+    font-size: var(--sb-font-size-sm) !important;
 }
 
 input[type="search"]:focus,
 input[placeholder*="Find" i]:focus,
 input[placeholder*="Search" i]:focus {
-    border-color: var(--educacross-primary) !important;
+    border-color: var(--sb-primary) !important;
     box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12) !important;
     outline: none !important;
 }
@@ -390,14 +394,14 @@ input[placeholder*="Search" i]:focus {
 span[class*="badge" i],
 span[class*="tag" i],
 div[class*="badge" i] {
-    border-radius: var(--radius-sm) !important;
-    padding: 2px var(--space-2) !important;
+    border-radius: var(--sb-radius-sm) !important;
+    padding: 2px var(--sb-space-2) !important;
     font-weight: 500 !important;
-    font-size: var(--font-size-xs) !important;
+    font-size: var(--sb-font-size-xs) !important;
     letter-spacing: 0.01em !important;
-    background: var(--educacross-bg-hover) !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    color: var(--educacross-text-secondary) !important;
+    background: var(--sb-bg-hover) !important;
+    border: 1px solid var(--sb-border-light) !important;
+    color: var(--sb-text-secondary) !important;
 }
 
 /* ========== SUBTLE ANIMATIONS ========== */
@@ -420,7 +424,7 @@ div[class*="sbdocs" i] > * {
 /* ========== MINIMAL SCROLLBAR ========== */
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--educacross-border-medium) transparent;
+    scrollbar-color: var(--sb-border-medium) transparent;
 }
 
 ::-webkit-scrollbar {
@@ -433,14 +437,14 @@ div[class*="sbdocs" i] > * {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--educacross-border-medium);
+    background: var(--sb-border-medium);
     border-radius: 4px;
     border: 2px solid transparent;
     background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--educacross-text-tertiary);
+    background: var(--sb-text-tertiary);
     background-clip: padding-box;
 }
 
@@ -450,7 +454,7 @@ div[class*="sbdocs" i] > * {
 
 /* ========== ACCESSIBILITY & FOCUS ========== */
 *:focus-visible {
-    outline: 2px solid var(--educacross-primary) !important;
+    outline: 2px solid var(--sb-primary) !important;
     outline-offset: 2px !important;
 }
 
@@ -459,7 +463,7 @@ div[class*="sbdocs" i] > * {
 }
 
 a {
-    color: var(--educacross-primary) !important;
+    color: var(--sb-primary) !important;
     text-decoration: none !important;
 }
 
@@ -474,45 +478,45 @@ aside,
 nav,
 div[id*="panel" i],
 div[class*="Panel" i] {
-    background: var(--educacross-bg-card) !important;
+    background: var(--sb-bg-card) !important;
 }
 
 /* Toolbar e header claros */
 header,
 div[role="banner"],
 div[class*="toolbar" i] {
-    background: var(--educacross-bg-card) !important;
-    border-bottom: 1px solid var(--educacross-border) !important;
-    box-shadow: var(--educacross-shadow-sm) !important;
+    background: var(--sb-bg-card) !important;
+    border-bottom: 1px solid var(--sb-border) !important;
+    box-shadow: var(--sb-shadow-sm) !important;
 }
 
 /* Canvas de preview com sombra suave */
 div[id*="storybook-preview" i],
 iframe {
     border-radius: 14px !important;
-    box-shadow: var(--educacross-shadow-md) !important;
-    border: 2px solid var(--educacross-border) !important;
+    box-shadow: var(--sb-shadow-md) !important;
+    border: 2px solid var(--sb-border) !important;
 }
 
 /* ========== UTILITY CLASSES ========== */
 .educacross-card {
-    border-radius: var(--radius-lg) !important;
-    padding: var(--space-6) !important;
-    border: 1px solid var(--educacross-border-light) !important;
-    box-shadow: var(--educacross-shadow-sm) !important;
-    background: var(--educacross-bg-card) !important;
+    border-radius: var(--sb-radius-lg) !important;
+    padding: var(--sb-space-6) !important;
+    border: 1px solid var(--sb-border-light) !important;
+    box-shadow: var(--sb-shadow-sm) !important;
+    background: var(--sb-bg-card) !important;
 }
 
 .educacross-divider {
     height: 1px !important;
-    background: var(--educacross-border-light) !important;
-    margin: var(--space-8) 0 !important;
+    background: var(--sb-border-light) !important;
+    margin: var(--sb-space-8) 0 !important;
     border: none !important;
 }
 
 /* Modern elevation system */
 .elevation-0 { box-shadow: none !important; }
-.elevation-1 { box-shadow: var(--educacross-shadow-xs) !important; }
-.elevation-2 { box-shadow: var(--educacross-shadow-sm) !important; }
-.elevation-3 { box-shadow: var(--educacross-shadow-md) !important; }
-.elevation-4 { box-shadow: var(--educacross-shadow-lg) !important; } 
+.elevation-1 { box-shadow: var(--sb-shadow-xs) !important; }
+.elevation-2 { box-shadow: var(--sb-shadow-sm) !important; }
+.elevation-3 { box-shadow: var(--sb-shadow-md) !important; }
+.elevation-4 { box-shadow: var(--sb-shadow-lg) !important; } 
