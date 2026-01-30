@@ -232,6 +232,46 @@ var educacrossPreset = {
           "opacity-32": "var(--color-gray-32)",
           "opacity-38": "var(--color-gray-38)"
         },
+        // ========================================
+        // LEGEND COLORS - Sistema de Proficiência Educacross
+        // ⚠️ ATENÇÃO: legend-basic é LARANJA, NÃO é warning (amarelo)!
+        // ========================================
+        "legend-advanced": {
+          DEFAULT: "rgb(var(--color-legend-advanced) / <alpha-value>)",
+          solid: "var(--legend-advanced)",
+          "opacity-8": "var(--color-legend-advanced-8)",
+          "opacity-16": "var(--color-legend-advanced-16)"
+        },
+        "legend-proficient": {
+          DEFAULT: "rgb(var(--color-legend-proficient) / <alpha-value>)",
+          solid: "var(--legend-proficient)",
+          "opacity-8": "var(--color-legend-proficient-8)",
+          "opacity-16": "var(--color-legend-proficient-16)"
+        },
+        "legend-basic": {
+          DEFAULT: "rgb(var(--color-legend-basic) / <alpha-value>)",
+          solid: "var(--legend-basic)",
+          "opacity-8": "var(--color-legend-basic-8)",
+          "opacity-16": "var(--color-legend-basic-16)"
+        },
+        "legend-below-basic": {
+          DEFAULT: "rgb(var(--color-legend-below-basic) / <alpha-value>)",
+          solid: "var(--legend-below-basic)",
+          "opacity-8": "var(--color-legend-below-basic-8)",
+          "opacity-16": "var(--color-legend-below-basic-16)"
+        },
+        "legend-not-completed": {
+          DEFAULT: "rgb(var(--color-legend-not-completed) / <alpha-value>)",
+          solid: "var(--legend-not-completed)",
+          "opacity-8": "var(--color-legend-not-completed-8)",
+          "opacity-16": "var(--color-legend-not-completed-16)"
+        },
+        "legend-in-progress": {
+          DEFAULT: "rgb(var(--color-legend-in-progress) / <alpha-value>)",
+          solid: "var(--legend-in-progress)",
+          "opacity-8": "var(--color-legend-in-progress-8)",
+          "opacity-16": "var(--color-legend-in-progress-16)"
+        },
         // Cores semânticas de tema (variáveis do Figma)
         theme: {
           // Textos

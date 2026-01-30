@@ -194,6 +194,44 @@
         --color-gray-38: rgba(205, 205, 216, 0.38);
 
         /* ========================================
+       LEGEND COLORS - Sistema de Proficiência Educacross
+       (Frontoffice: src/assets/scss/variables/_variables.scss)
+       
+       ⚠️ ATENÇÃO: legend-basic é LARANJA (#ff9f43), NÃO amarelo!
+       É DIFERENTE de warning (#ffd643).
+       ======================================== */
+
+        /* Legend Colors - Valores base (RGB triplets para Tailwind opacity) */
+        --color-legend-advanced: 110 99 232;        /* #6e63e8 - Roxo - Avançado */
+        --color-legend-proficient: 40 199 111;      /* #28c76f - Verde - Proficiente */
+        --color-legend-basic: 255 159 67;           /* #ff9f43 - LARANJA - Básico */
+        --color-legend-below-basic: 234 84 85;      /* #ea5455 - Vermelho - Abaixo do Básico */
+        --color-legend-not-completed: 180 183 189;  /* #b4b7bd - Cinza - Não Concluído */
+        --color-legend-in-progress: 0 207 232;      /* #00cfe8 - Ciano - Em Andamento */
+
+        /* Legend Colors - Hex values para uso direto */
+        --legend-advanced: #6e63e8;
+        --legend-proficient: #28c76f;
+        --legend-basic: #ff9f43;
+        --legend-below-basic: #ea5455;
+        --legend-not-completed: #b4b7bd;
+        --legend-in-progress: #00cfe8;
+
+        /* Legend Colors - Opacity variants (backgrounds claros) */
+        --color-legend-advanced-8: rgba(110, 99, 232, 0.08);
+        --color-legend-advanced-16: rgba(110, 99, 232, 0.16);
+        --color-legend-proficient-8: rgba(40, 199, 111, 0.08);
+        --color-legend-proficient-16: rgba(40, 199, 111, 0.16);
+        --color-legend-basic-8: rgba(255, 159, 67, 0.08);
+        --color-legend-basic-16: rgba(255, 159, 67, 0.16);
+        --color-legend-below-basic-8: rgba(234, 84, 85, 0.08);
+        --color-legend-below-basic-16: rgba(234, 84, 85, 0.16);
+        --color-legend-not-completed-8: rgba(180, 183, 189, 0.08);
+        --color-legend-not-completed-16: rgba(180, 183, 189, 0.16);
+        --color-legend-in-progress-8: rgba(0, 207, 232, 0.08);
+        --color-legend-in-progress-16: rgba(0, 207, 232, 0.16);
+
+        /* ========================================
        SEMANTIC VARIABLES - Light Mode (do Figma)
        ======================================== */
 

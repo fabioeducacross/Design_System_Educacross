@@ -40,158 +40,235 @@ export default meta;
 type Story = StoryObj;
 
 interface Tab {
-  label: string;
-  route: string;
+  title: string;
+  route: { name: string };
   icon?: string;
-  badge?: number;
-  disabled?: boolean;
+  variant?: string;
 }
 
-// Mock do componente Vue
+/**
+ * Mock do componente TabRouter do Frontoffice
+ * Replica exatamente os estilos de: educacross-frontoffice/src/components/tab/TabRouter.vue
+ */
 const TabRouterMock = ({ 
   tabs,
-  activeRoute = "",
-  variant = "underline"
+  activeTab = 0,
+  tabTitle = "",
+  tabTitleIcon = "",
+  showContent = true,
 }: { 
   tabs: Tab[];
-  activeRoute?: string;
-  variant?: "underline" | "pills" | "cards";
+  activeTab?: number;
+  tabTitle?: string;
+  tabTitleIcon?: string;
+  showContent?: boolean;
 }) => {
-  const variantClasses = {
-    underline: {
-      container: "border-b border-border",
-      tab: "px-4 py-2 -mb-px",
-      active: "border-b-2 border-primary text-primary",
-      inactive: "text-muted-foreground hover:text-foreground",
-    },
-    pills: {
-      container: "bg-muted rounded-lg p-1 inline-flex",
-      tab: "px-4 py-2 rounded-md",
-      active: "bg-background text-foreground shadow-sm",
-      inactive: "text-muted-foreground hover:text-foreground",
-    },
-    cards: {
-      container: "flex gap-2",
-      tab: "px-4 py-2 rounded-t-lg border border-b-0",
-      active: "bg-card text-foreground border-border",
-      inactive: "bg-muted/50 text-muted-foreground hover:bg-muted border-transparent",
-    },
-  };
-
-  const styles = variantClasses[variant];
+  const [currentTab, setCurrentTab] = React.useState(activeTab);
 
   return (
-    <div className={styles.container}>
-      {tabs.map((tab) => {
-        const isActive = tab.route === activeRoute;
-        
-        return (
-          <button
-            key={tab.route}
-            className={`
-              inline-flex items-center gap-2 font-medium text-sm transition-colors
-              ${styles.tab}
-              ${isActive ? styles.active : styles.inactive}
-              ${tab.disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
-            `}
-            disabled={tab.disabled}
-          >
-            {tab.icon && (
-              <span className="material-symbols-outlined text-lg">{tab.icon}</span>
+    <div className="min-vh-100">
+      {/* Header row com tabs e título */}
+      <div className="d-flex flex-column-reverse flex-md-row justify-content-center justify-content-md-between align-items-md-baseline flex-nowrap">
+        {/* Tabs */}
+        <div className={`tabs-row ${tabs.length > 1 ? 'd-flex' : 'd-none'} d-md-flex`}>
+          {tabs.map((tab, index) => {
+            const isActive = currentTab === index;
+            const offset = -10;
+            
+            return (
+              <a
+                key={index}
+                className={`tab-link d-flex align-items-center gap-1 ${isActive ? 'active' : ''} ${
+                  tab.variant && !isActive ? `hover:bg-${tab.variant} text-${tab.variant}` : ''
+                } ${tab.variant && isActive ? `bg-${tab.variant}` : ''}`}
+                style={{
+                  '--offset': `${offset}px`,
+                  '--index': index,
+                  zIndex: isActive ? tabs.length : tabs.length - index,
+                  transform: `translateX(calc(${index} * ${offset}px))`,
+                } as React.CSSProperties}
+                onClick={() => setCurrentTab(index)}
+              >
+                {tab.icon && (
+                  <span className="material-symbols-outlined tab-icon">
+                    {tab.icon}
+                  </span>
+                )}
+                {tab.title}
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Tab title (direita) */}
+        {tabTitle && (
+          <div className="d-flex align-items-center justify-content-center justify-content-md-end mb-50 mb-md-0 gap-1 text-primary font-bold text-uppercase">
+            {tabTitleIcon && (
+              <span className="material-symbols-outlined">{tabTitleIcon}</span>
             )}
-            {tab.label}
-            {tab.badge !== undefined && tab.badge > 0 && (
-              <span className="bg-primary text-primary-foreground text-xs px-1.5 py-0.5 rounded-full min-w-[1.25rem] text-center">
-                {tab.badge}
-              </span>
-            )}
-          </button>
-        );
-      })}
+            {tabTitle}
+          </div>
+        )}
+      </div>
+
+      {/* Linha divisória roxa */}
+      <div className={`tab-line ${tabs.length > 1 ? 'd-block' : 'd-none d-md-block'}`} />
+
+      {/* Conteúdo da tab */}
+      {showContent && (
+        <div className="p-4 bg-white rounded-lg shadow-sm">
+          <h3 className="text-lg font-semibold mb-2">Conteúdo da Tab {currentTab + 1}</h3>
+          <p className="text-muted">
+            Este é o conteúdo da aba "{tabs[currentTab]?.title}". 
+            Em produção, aqui seria renderizado o slot default do Vue.
+          </p>
+        </div>
+      )}
     </div>
   );
 };
 
+// Importar React para useState
+import React from "react";
+
 const defaultTabs: Tab[] = [
-  { label: "Visão Geral", route: "/dashboard" },
-  { label: "Alunos", route: "/dashboard/students" },
-  { label: "Turmas", route: "/dashboard/classes" },
-  { label: "Relatórios", route: "/dashboard/reports" },
+  { title: "Visão Geral", route: { name: "dashboard" } },
+  { title: "Alunos", route: { name: "students" } },
+  { title: "Turmas", route: { name: "classes" } },
+  { title: "Relatórios", route: { name: "reports" } },
 ];
 
-export const Underline: Story = {
-  render: () => <TabRouterMock tabs={defaultTabs} activeRoute="/dashboard" variant="underline" />,
+/**
+ * Estilo padrão do TabRouter - tabs com cantos arredondados e sombra
+ */
+export const Default: Story = {
+  render: () => <TabRouterMock tabs={defaultTabs} activeTab={0} />,
 };
 
-export const Pills: Story = {
-  render: () => <TabRouterMock tabs={defaultTabs} activeRoute="/dashboard/students" variant="pills" />,
+/**
+ * TabRouter com título no lado direito
+ */
+export const WithTitle: Story = {
+  name: "Com Título",
+  render: () => (
+    <TabRouterMock 
+      tabs={defaultTabs} 
+      activeTab={1} 
+      tabTitle="DASHBOARD" 
+      tabTitleIcon="dashboard"
+    />
+  ),
 };
 
-export const Cards: Story = {
-  render: () => <TabRouterMock tabs={defaultTabs} activeRoute="/dashboard/classes" variant="cards" />,
-};
-
+/**
+ * Tabs com ícones Material Symbols
+ */
 export const WithIcons: Story = {
+  name: "Com Ícones",
   render: () => (
     <TabRouterMock 
       tabs={[
-        { label: "Visão Geral", route: "/dashboard", icon: "dashboard" },
-        { label: "Alunos", route: "/dashboard/students", icon: "people" },
-        { label: "Turmas", route: "/dashboard/classes", icon: "school" },
-        { label: "Relatórios", route: "/dashboard/reports", icon: "assessment" },
+        { title: "Visão Geral", route: { name: "dashboard" }, icon: "dashboard" },
+        { title: "Alunos", route: { name: "students" }, icon: "people" },
+        { title: "Turmas", route: { name: "classes" }, icon: "school" },
+        { title: "Relatórios", route: { name: "reports" }, icon: "assessment" },
       ]}
-      activeRoute="/dashboard"
+      activeTab={0}
+      tabTitle="PAINEL"
     />
   ),
 };
 
-export const WithBadges: Story = {
+/**
+ * Tabs com variantes de cor
+ */
+export const ColorVariants: Story = {
+  name: "Variantes de Cor",
   render: () => (
     <TabRouterMock 
       tabs={[
-        { label: "Todas", route: "/tasks", badge: 24 },
-        { label: "Pendentes", route: "/tasks/pending", badge: 5 },
-        { label: "Concluídas", route: "/tasks/done", badge: 19 },
-        { label: "Arquivadas", route: "/tasks/archived", badge: 0 },
+        { title: "Padrão", route: { name: "default" } },
+        { title: "Sucesso", route: { name: "success" }, variant: "success" },
+        { title: "Perigo", route: { name: "danger" }, variant: "danger" },
+        { title: "Aviso", route: { name: "warning" }, variant: "warning" },
+        { title: "Info", route: { name: "info" }, variant: "info" },
       ]}
-      activeRoute="/tasks/pending"
+      activeTab={0}
     />
   ),
 };
 
-export const WithDisabled: Story = {
+/**
+ * Tab única (exibida apenas em desktop)
+ */
+export const SingleTab: Story = {
+  name: "Tab Única",
   render: () => (
     <TabRouterMock 
-      tabs={[
-        { label: "Ativo", route: "/page1" },
-        { label: "Habilitado", route: "/page2" },
-        { label: "Desabilitado", route: "/page3", disabled: true },
-        { label: "Também Desabilitado", route: "/page4", disabled: true },
-      ]}
-      activeRoute="/page1"
+      tabs={[{ title: "Única Aba", route: { name: "single" } }]}
+      activeTab={0}
+      tabTitle="MODO SIMPLES"
     />
   ),
 };
 
-export const ReportTabs: Story = {
-  name: "Exemplo: Abas de Relatório",
+/**
+ * Muitas tabs com scroll horizontal
+ */
+export const ManyTabs: Story = {
+  name: "Muitas Tabs (Scroll)",
   render: () => (
-    <div className="space-y-4">
-      <TabRouterMock 
-        tabs={[
-          { label: "Desempenho Geral", route: "/reports/overview", icon: "bar_chart" },
-          { label: "Por Habilidade", route: "/reports/skills", icon: "psychology" },
-          { label: "Por Aluno", route: "/reports/students", icon: "person" },
-          { label: "Comparativo", route: "/reports/compare", icon: "compare" },
-        ]}
-        activeRoute="/reports/overview"
-      />
-      
-      <div className="p-6 bg-card border rounded-lg">
-        <p className="text-muted-foreground text-center">
-          Conteúdo da aba "Desempenho Geral" seria exibido aqui
-        </p>
-      </div>
-    </div>
+    <TabRouterMock 
+      tabs={[
+        { title: "Tab 1", route: { name: "tab1" } },
+        { title: "Tab 2", route: { name: "tab2" } },
+        { title: "Tab 3", route: { name: "tab3" } },
+        { title: "Tab 4", route: { name: "tab4" } },
+        { title: "Tab 5", route: { name: "tab5" } },
+        { title: "Tab 6", route: { name: "tab6" } },
+        { title: "Tab 7", route: { name: "tab7" } },
+        { title: "Tab 8", route: { name: "tab8" } },
+      ]}
+      activeTab={2}
+    />
+  ),
+};
+
+/**
+ * Exemplo real: Relatório de Eventos
+ */
+export const EventsReport: Story = {
+  name: "Exemplo: Relatório de Eventos",
+  render: () => (
+    <TabRouterMock 
+      tabs={[
+        { title: "Instituições", route: { name: "institutions" }, icon: "business" },
+        { title: "Turmas", route: { name: "classes" }, icon: "groups" },
+        { title: "Alunos", route: { name: "students" }, icon: "person" },
+      ]}
+      activeTab={0}
+      tabTitle="RESULTADOS DO EVENTO"
+      tabTitleIcon="emoji_events"
+    />
+  ),
+};
+
+/**
+ * Exemplo real: Dashboard de Escolas
+ */
+export const SchoolsDashboard: Story = {
+  name: "Exemplo: Dashboard Escolas",
+  render: () => (
+    <TabRouterMock 
+      tabs={[
+        { title: "Visão Geral", route: { name: "overview" } },
+        { title: "Por Habilidade", route: { name: "skills" } },
+        { title: "Por Aluno", route: { name: "by-student" } },
+        { title: "Evolução", route: { name: "evolution" } },
+      ]}
+      activeTab={0}
+      tabTitle="DASHBOARD ESCOLAS"
+    />
+
   ),
 };

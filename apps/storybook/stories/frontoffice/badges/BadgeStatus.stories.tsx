@@ -57,7 +57,7 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof Badge>;
 
-// Simulação do enum de proficiência
+// Simulação do enum de proficiência (igual ao Frontoffice)
 const proficiencyEnum = [
   { id: 0, label: "Não fizeram", variant: "legend-not-completed" },
   { id: 1, label: "Abaixo do Básico", variant: "legend-below-basic" },
@@ -67,105 +67,124 @@ const proficiencyEnum = [
 ];
 
 /**
+ * Mock do BadgeStatus Vue (estilo light com borda)
+ * Replica: educacross-frontoffice/src/components/badge/BadgeStatus.vue
+ */
+const BadgeStatusMock = ({ 
+  value, 
+  pill = true 
+}: { 
+  value: number; 
+  pill?: boolean;
+}) => {
+  const enumObject = proficiencyEnum.find(e => e.id === value) || proficiencyEnum[0];
+  
+  return (
+    <span 
+      className={`
+        badge badge-pill 
+        badge-light-${enumObject.variant} 
+        border-${enumObject.variant}
+        text-uppercase px-2 py-25 
+        d-flex align-items-center justify-content-center gap-1
+      `}
+    >
+      {!pill && (
+        <span 
+          className={`material-symbols-outlined text-${enumObject.variant}`}
+          style={{ fontSize: '12px' }}
+        >
+          person_edit
+        </span>
+      )}
+      {enumObject.label}
+    </span>
+  );
+};
+
+/**
  * Badge de status mostrando nível "Avançado" (valor 4)
  */
 export const Advanced: Story = {
-  args: {
-    children: "Avançado",
-    className: "bg-legend-advanced text-white",
-  },
+  render: () => <BadgeStatusMock value={4} />,
 };
 
 /**
  * Badge de status mostrando nível "Proficiente" (valor 3)
  */
 export const Proficient: Story = {
-  args: {
-    children: "Proficiente",
-    className: "bg-legend-proficient text-white",
-  },
+  render: () => <BadgeStatusMock value={3} />,
 };
 
 /**
- * ⚠️ ATENÇÃO: Básico é LARANJA, não amarelo!
+ * ⚠️ ATENÇÃO: Básico é LARANJA (#ff9f43), não amarelo!
  */
 export const Basic: Story = {
-  args: {
-    children: "Básico",
-    className: "bg-legend-basic text-white",
-  },
+  render: () => <BadgeStatusMock value={2} />,
 };
 
 /**
  * Badge de status mostrando nível "Abaixo do Básico" (valor 1)
  */
 export const BelowBasic: Story = {
-  args: {
-    children: "Abaixo do Básico",
-    className: "bg-legend-below-basic text-white",
-  },
+  render: () => <BadgeStatusMock value={1} />,
 };
 
 /**
  * Badge de status mostrando "Não fizeram" (valor 0)
  */
 export const NotCompleted: Story = {
-  args: {
-    children: "Não fizeram",
-    className: "bg-legend-not-completed text-white",
-  },
+  render: () => <BadgeStatusMock value={0} />,
 };
 
 /**
- * Badge de status mostrando "Em Andamento"
+ * Badge de status mostrando "Em Andamento" (valor especial)
  */
 export const InProgress: Story = {
-  args: {
-    children: "Em Andamento",
-    className: "bg-legend-in-progress text-white",
-  },
+  render: () => (
+    <span className="badge badge-pill badge-light-legend-in-progress border-legend-in-progress text-uppercase px-2 py-25 d-flex align-items-center justify-content-center">
+      Em Andamento
+    </span>
+  ),
 };
 
 /**
- * Todos os níveis de proficiência lado a lado
+ * Todos os níveis de proficiência lado a lado (estilo Frontoffice)
  */
 export const AllProficiencyLevels: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-2">
+    <div className="d-flex flex-wrap gap-2">
       {proficiencyEnum.map((item) => (
-        <Badge key={item.id} className={`bg-${item.variant} text-white`}>
-          {item.label}
-        </Badge>
+        <BadgeStatusMock key={item.id} value={item.id} />
       ))}
     </div>
   ),
   parameters: {
     docs: {
       description: {
-        story: "Exibe todos os níveis de proficiência com suas respectivas cores Legend.",
+        story: "Exibe todos os níveis de proficiência com o estilo light + borda do Bootstrap-Vue.",
       },
     },
   },
 };
 
 /**
- * Uso com ícones (como no Frontoffice)
+ * Variante sem pill (com ícone person_edit)
  */
 export const WithIcons: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-2">
-      <Badge className="bg-legend-advanced text-white flex items-center gap-1">
-        <span>⭐</span> Avançado
-      </Badge>
-      <Badge className="bg-legend-proficient text-white flex items-center gap-1">
-        <span>😊</span> Proficiente
-      </Badge>
-      <Badge className="bg-legend-basic text-white flex items-center gap-1">
-        <span>😐</span> Básico
-      </Badge>
-      <Badge className="bg-legend-below-basic text-white flex items-center gap-1">
-        <span>😟</span> Abaixo do Básico
-      </Badge>
+    <div className="d-flex flex-wrap gap-2">
+      {proficiencyEnum.map((item) => (
+        <BadgeStatusMock key={item.id} value={item.id} pill={false} />
+      ))}
     </div>
   ),
+  parameters: {
+    docs: {
+      description: {
+        story: "Variante com ícone, usado quando pill=false no componente Vue original.",
+      },
+    },
+  },
+
 };
