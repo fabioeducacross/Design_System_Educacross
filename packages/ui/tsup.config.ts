@@ -8,7 +8,7 @@ export default defineConfig({
     format: ["cjs", "esm"],
     dts: true,
     sourcemap: true,
-    clean: true,
+    clean: false, // Não limpar - o clean é feito no script build antes
     external: ["react", "react-dom"],
     esbuildOptions(options) {
         options.banner = {
@@ -16,15 +16,10 @@ export default defineConfig({
         };
     },
     onSuccess: async () => {
-        // Copy CSS and assets to dist
+        // CSS já foi compilado pelo script build:css (pnpm build:css)
+        // Apenas copiar assets para o dist
         const fs = await import("fs");
         const path = await import("path");
-        
-        // Copy styles.css
-        const cssSrc = path.resolve("src/styles.css");
-        const cssDest = path.resolve("dist/styles.css");
-        fs.copyFileSync(cssSrc, cssDest);
-        console.log("✓ Copied styles.css to dist");
         
         // Copy assets folder
         const assetsSrc = path.resolve("src/assets");

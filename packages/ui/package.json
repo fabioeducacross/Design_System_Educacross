@@ -42,7 +42,8 @@
         "dist"
     ],
     "scripts": {
-        "build": "tsup && pnpm generate:metadata",
+        "build": "pnpm clean && pnpm build:css && tsup --config tsup.config.ts && pnpm generate:metadata",
+        "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
         "dev": "tsup --watch",
         "lint": "eslint src --ext .ts,.tsx",
         "typecheck": "tsc --noEmit",
