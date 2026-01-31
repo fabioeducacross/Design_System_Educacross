@@ -7,6 +7,23 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+### Added
+- **Storybook Pixel Perfect Mode**: Modo que garante consumo idêntico ao de apps externos
+  - `storybook-globals.css` importando `@fabioeducacross/ui/styles.css` via export público
+  - Decorator `withBootstrapCompat` para opt-in de CSS Bootstrap-Vue por story
+  - `TokensShowcase.stories.tsx` para validação visual de tokens e detecção de regressões
+  - Documentação completa em `docs/PIXEL_PERFECT_IMPLEMENTATION.md`
+
+### Changed
+- **Storybook Alias**: Alterado de `packages/ui/src` para `packages/ui/dist` (consumo real)
+- **Tailwind Content**: Atualizado para escanear `dist/**/*.{js,mjs}` em vez de `src`
+- **custom-styles.css**: Refatorado com prefixo `--sb-*` para evitar conflitos com tokens DS
+
+### Fixed
+- **CSS Duplicado**: Removidas diretivas `@tailwind` duplicadas no Storybook
+- **Bootstrap-Vue Global**: Agora é opt-in, não sobrescreve mais tokens globalmente
+- **Variáveis Conflitantes**: Namespace `--sb-*` isola estilos do Storybook
+
 ### Changed
 - **Node.js Requirement**: Padronizado Node 20 LTS (20.18.0) em todo o projeto
   - Criado `.nvmrc` para auto-switch com nvm

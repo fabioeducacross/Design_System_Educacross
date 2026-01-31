@@ -71,9 +71,14 @@ cd Deisign_System_Educacross
 # Instale dependências
 pnpm install
 
+# Build do pacote (necessário para Pixel Perfect Mode)
+pnpm --filter @fabioeducacross/ui build
+
 # Rode o Storybook
 pnpm storybook
 ```
+
+> **📌 Nota**: O Storybook opera em **Pixel Perfect Mode**, consumindo o CSS do pacote via `dist/` exatamente como um app externo faria. Por isso, é necessário fazer build do pacote antes de iniciar o Storybook.
 
 ### Configuração Básica (React)
 
@@ -150,6 +155,7 @@ pnpm clean              # Remove dist e node_modules
 - 📖 **[Guia de Uso](./USAGE.md)** - Como instalar e usar o Design System
 - 🤝 **[Como Contribuir](./CONTRIBUTING.md)** - Guidelines para contribuidores
 - 🚀 **[Configuração Chromatic](./docs/CHROMATIC.md)** - Setup técnico completo
+- 🎯 **[Pixel Perfect Mode](./docs/PIXEL_PERFECT_IMPLEMENTATION.md)** - Arquitetura de consumo real do DS no Storybook
 
 ## Componentes MVP
 

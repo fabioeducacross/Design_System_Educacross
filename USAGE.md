@@ -87,12 +87,20 @@ export default config;
 No seu CSS principal (ex: `src/app/globals.css` ou `src/index.css`):
 
 ```css
+/* Importa tokens e estilos base do Design System */
 @import "@fabioeducacross/ui/styles.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ⚠️ IMPORTANTE: O CSS do pacote já inclui @tailwind base/components/utilities.
+   NÃO adicione novamente as diretivas @tailwind aqui, pois isso causará duplicação.
+   
+   Se precisar de utilities customizadas, use @layer:
+   @layer utilities {
+     .sua-classe { ... }
+   }
+*/
 ```
+
+> **💡 Dica**: O `@fabioeducacross/ui/styles.css` já contém todas as diretivas Tailwind. Adicionar `@tailwind base; @tailwind components; @tailwind utilities;` novamente causará CSS duplicado e possíveis conflitos.
 
 ---
 

@@ -35,6 +35,9 @@ git checkout -b fix/correcao-button
 - Siga o princípio **Spec-First**: defina a especificação antes de implementar
 - Siga o princípio **Test-First**: escreva stories com `play` functions antes do código
 - Siga o princípio **Tokens-First**: nunca use valores mágicos
+- Siga o princípio **Pixel-Perfect**: o Storybook consome CSS do `dist/`, não do `src/`
+
+> **⚠️ Importante**: Antes de rodar o Storybook, execute `pnpm --filter @fabioeducacross/ui build` para garantir que o CSS compilado esteja disponível.
 
 ### 3. Verifique qualidade
 
